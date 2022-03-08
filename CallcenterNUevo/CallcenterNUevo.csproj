@@ -1,0 +1,1660 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{D27C0DBD-763A-409F-92A9-9EDBAF32EAE7}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CallcenterNUevo</RootNamespace>
+    <AssemblyName>CallcenterNUevo</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AjaxControlToolkit, Version=3.0.20229.20843, Culture=neutral, PublicKeyToken=28f01b0e84b6d53e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\LibExternas\AjaxControlToolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="DocumentFormat.OpenXml, Version=2.0.5022.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\CallCenter_Pruebas\CallCenterBenaNewConexion\CallcenterNUevo\Librerias\DocumentFormat.OpenXml.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ApplicationBlocks.Data">
+      <HintPath>..\LibExternas\Microsoft.ApplicationBlocks.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Common, Version=4.1.0.0, Culture=neutral, PublicKeyToken=e44a2bc38ed2c13c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\LibExternas\Microsoft.Practices.EnterpriseLibrary.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Data">
+      <HintPath>..\LibExternas\Microsoft.Practices.EnterpriseLibrary.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.ObjectBuilder, Version=1.0.51206.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\LibExternas\Microsoft.Practices.ObjectBuilder.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.ServiceLocation">
+      <HintPath>..\LibExternas\Microsoft.Practices.ServiceLocation.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity, Version=1.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\LibExternas\Microsoft.Practices.Unity.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity.Interception">
+      <HintPath>..\LibExternas\Microsoft.Practices.Unity.Interception.dll</HintPath>
+    </Reference>
+    <Reference Include="SpreadsheetLight, Version=3.4.0.0, Culture=neutral, PublicKeyToken=32fbb46dc1730c57, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\CallCenter_Pruebas\CallCenterBenaNewConexion\CallcenterNUevo\Librerias\SpreadsheetLight.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="AspNet.ScriptManager.jQuery">
+      <HintPath>..\packages\AspNet.ScriptManager.jQuery.1.7.1\lib\net40\AspNet.ScriptManager.jQuery.dll</HintPath>
+    </Reference>
+    <Reference Include="AspNet.ScriptManager.jQuery.UI.Combined">
+      <HintPath>..\packages\AspNet.ScriptManager.jQuery.UI.Combined.1.8.20\lib\net40\AspNet.ScriptManager.jQuery.UI.Combined.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=4.4.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net40\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Providers, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+      <HintPath>..\packages\Microsoft.AspNet.Providers.Core.1.1\lib\net40\System.Web.Providers.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.Core, Version=4.0.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\DotNetOpenAuth.Core.4.0.3.12153\lib\net40-full\DotNetOpenAuth.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.OAuth, Version=4.0.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\DotNetOpenAuth.OAuth.Core.4.0.3.12153\lib\net40-full\DotNetOpenAuth.OAuth.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.OAuth.Consumer, Version=4.0.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\DotNetOpenAuth.OAuth.Consumer.4.0.3.12153\lib\net40-full\DotNetOpenAuth.OAuth.Consumer.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.OpenId, Version=4.0.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\DotNetOpenAuth.OpenId.Core.4.0.3.12153\lib\net40-full\DotNetOpenAuth.OpenId.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.OpenId.RelyingParty, Version=4.0.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\DotNetOpenAuth.OpenId.RelyingParty.4.0.3.12153\lib\net40-full\DotNetOpenAuth.OpenId.RelyingParty.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.AspNet, Version=4.0.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\DotNetOpenAuth.AspNet.4.0.3.12153\lib\net40-full\DotNetOpenAuth.AspNet.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Membership.OpenAuth, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+      <HintPath>..\packages\Microsoft.AspNet.Membership.OpenAuth.1.0.0\lib\net40\Microsoft.AspNet.Membership.OpenAuth.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Web.Spreadsheet">
+      <HintPath>..\lib\RCAJAX\2016.1.225.40\AdditionalLibraries\Bin40\Telerik.Web.Spreadsheet.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Web.UI, Version=2016.1.225.40, Culture=neutral, PublicKeyToken=121fae78165ba3d4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\lib\RCAJAX\2016.1.225.40\Telerik.Web.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Web.UI.Skins, Version=2016.1.225.40, Culture=neutral, PublicKeyToken=121fae78165ba3d4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\lib\RCAJAX\2016.1.225.40\Telerik.Web.UI.Skins.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Documents.Core, Version=2016.1.106.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\lib\RCAJAX\2016.1.225.40\AdditionalLibraries\Bin40\Telerik.Windows.Documents.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Documents.Flow, Version=2016.1.106.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\lib\RCAJAX\2016.1.225.40\AdditionalLibraries\Bin40\Telerik.Windows.Documents.Flow.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Documents.Spreadsheet, Version=2016.1.106.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\lib\RCAJAX\2016.1.225.40\AdditionalLibraries\Bin40\Telerik.Windows.Documents.Spreadsheet.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Documents.Spreadsheet.FormatProviders.OpenXml, Version=2016.1.106.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\lib\RCAJAX\2016.1.225.40\AdditionalLibraries\Bin40\Telerik.Windows.Documents.Spreadsheet.FormatProviders.OpenXml.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Zip, Version=2016.1.106.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\lib\RCAJAX\2016.1.225.40\AdditionalLibraries\Bin40\Telerik.Windows.Zip.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="About.aspx" />
+    <Content Include="Account\bienvenida.html" />
+    <Content Include="Account\Login.aspx" />
+    <Content Include="Account\Passwordchange.aspx" />
+    <Content Include="Account\PaswordRecovery.aspx" />
+    <Content Include="AdminC\Alta.aspx" />
+    <Content Include="AdminC\Asignacion.aspx" />
+    <Content Include="AdminC\Consulta.aspx" />
+    <Content Include="AdminC\Editar.aspx" />
+    <Content Include="AdminC\QuitarCupon.aspx" />
+    <Content Include="AdminMecanicas\Combo.aspx" />
+    <Content Include="AdminMecanicas\Copiar.aspx" />
+    <Content Include="AdminMecanicas\Detalle.aspx" />
+    <Content Include="AdminMecanicas\EdicionLista.aspx" />
+    <Content Include="AdminMecanicas\EdicionNM.aspx" />
+    <Content Include="AdminMecanicas\Lista.aspx" />
+    <Content Include="AdminMecanicas\NM_Piezas.aspx" />
+    <Content Include="AdminPromociones\AdmonCatalogos\AdmonCatalogos.aspx" />
+    <Content Include="AdminPromociones\AjustePromocion.aspx" />
+    <Content Include="AdminPromociones\AltaPromocion.aspx" />
+    <Content Include="AdminPromociones\AltaPromocionACDineroEntregaPzaz.aspx" />
+    <Content Include="AdminPromociones\AltaPromocionAcumulacionBase.aspx" />
+    <Content Include="AdminPromociones\AltaPromocionDE.aspx" />
+    <Content Include="AdminPromociones\AltaPromocionDescuentos.aspx" />
+    <Content Include="AdminPromociones\AltaPromocionEscalonada.aspx" />
+    <Content Include="AdminPromociones\AltaPromoDobleAcumulacion.aspx" />
+    <Content Include="AdminPromociones\ConsultaPromACDineroEntregaPzas.aspx" />
+    <Content Include="AdminPromociones\ConsultaPromPendxAutDesAut.aspx" />
+    <Content Include="AdminPromociones\cssAdminProm\cssAdminPromocion.css" />
+    <Content Include="AdminPromociones\ImportarPromociones.aspx" />
+    <Content Include="AdminPromociones\jsAdminProm\jsAdminPromocion.js" />
+    <Content Include="AdminPromociones\MuestraDatos.aspx" />
+    <Content Include="AdminPromociones\MuestraDatosACBase.aspx" />
+    <Content Include="AdminPromociones\MuestraDatosAcumulacionDinero.aspx" />
+    <Content Include="AdminPromociones\MuestraDatosAutDesAut.aspx" />
+    <Content Include="AdminPromociones\MuestraDatosAutDesAutACDineroEntregaPzas.aspx" />
+    <Content Include="AdminPromociones\MuestraDatosDEPorc.aspx" />
+    <Content Include="AdminPromociones\MuestraPromoDesc.aspx" />
+    <Content Include="AdminPromociones\MuestraPromoEscalonada.aspx" />
+    <Content Include="AdminPromociones\PromoDobleAcumulacion.aspx" />
+    <Content Include="AvisoPrivacidad.aspx" />
+    <Content Include="CALLCENTER\BusquedaCliente.aspx" />
+    <Content Include="CALLCENTER\CancelaContactoXPadecimiento.aspx" />
+    <Content Include="CALLCENTER\ConsultaPromociones.aspx" />
+    <Content Include="CALLCENTER\rptBloquearTarjeta.aspx" />
+    <Content Include="CALLCENTER\rptCaptacionDatos.aspx" />
+    <Content Include="CALLCENTER\ReporteImportes3MesesTl.aspx" />
+    <Content Include="CALLCENTER\ReporteImportesXPeriodoTl.aspx" />
+    <Content Include="CALLCENTER\ReporteTicketsXPeriodoTl.aspx" />
+    <Content Include="CALLCENTER\ReporteTickets3MesesTl.aspx" />
+    <Content Include="CALLCENTER\rptCapturaDatosTotales.aspx" />
+    <Content Include="CALLCENTER\rptDesBloqueos.aspx" />
+    <Content Include="CALLCENTER\RecuperarContraseñaCallCenter.aspx" />
+    <Content Include="CALLCENTER\RegistroClienteCallCenter.aspx" />
+    <Content Include="CALLCENTER\RegistroCliente_PrimeraVez.aspx" />
+    <Content Include="CALLCENTER\RegistroLLamadas.aspx" />
+    <Content Include="CALLCENTER\ReporteActivacion3MesesTl.aspx" />
+    <Content Include="CALLCENTER\ReporteActivacionXPeriodo.aspx" />
+    <Content Include="CALLCENTER\ReporteActivacionXPeriodoTl.aspx" />
+    <Content Include="CALLCENTER\ReporteAsistencias.aspx" />
+    <Content Include="CALLCENTER\ReporteReenvioMailB.aspx" />
+    <Content Include="CALLCENTER\ReportesBenavides.aspx" />
+    <Content Include="CALLCENTER\rptBloqueos.aspx" />
+    <Content Include="CALLCENTER\rptConsultaTraspasos.aspx" />
+    <Content Include="CALLCENTER\rptHistorico.aspx" />
+    <Content Include="CALLCENTER\rptTraspasos.aspx" />
+    <Content Include="CALLCENTER\SaldoMovClienteCallCenter.aspx" />
+    <Content Include="CALLCENTER\ValidaCodigoTarjeta.aspx" />
+    <Content Include="CALLCENTER\VCodigoCel.aspx" />
+    <Content Include="CALLCENTER\WebForm1.aspx" />
+    <Content Include="Catalogos\CatPromociones.aspx" />
+    <Content Include="Catalogos\ComboBeneficio.aspx" />
+    <Content Include="Catalogos\ConsultaPromo.aspx" />
+    <Content Include="Catalogos\NuevaPromo.aspx" />
+    <Content Include="Catalogos\RegistroGeneral.aspx" />
+    <Content Include="Contact.aspx" />
+    <Content Include="Content\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\EstilosBenavides.css" />
+    <Content Include="Content\MisEstilos.css" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Content\themes\base\images\ui-icons_222222_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_454545_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_888888_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Content\themes\base\jquery-ui.css" />
+    <Content Include="Content\themes\base\jquery.ui.accordion.css" />
+    <Content Include="Content\themes\base\jquery.ui.all.css" />
+    <Content Include="Content\themes\base\jquery.ui.autocomplete.css" />
+    <Content Include="Content\themes\base\jquery.ui.base.css" />
+    <Content Include="Content\themes\base\jquery.ui.button.css" />
+    <Content Include="Content\themes\base\jquery.ui.core.css" />
+    <Content Include="Content\themes\base\jquery.ui.datepicker.css" />
+    <Content Include="Content\themes\base\jquery.ui.dialog.css" />
+    <Content Include="Content\themes\base\jquery.ui.progressbar.css" />
+    <Content Include="Content\themes\base\jquery.ui.resizable.css" />
+    <Content Include="Content\themes\base\jquery.ui.selectable.css" />
+    <Content Include="Content\themes\base\jquery.ui.slider.css" />
+    <Content Include="Content\themes\base\jquery.ui.tabs.css" />
+    <Content Include="Content\themes\base\jquery.ui.theme.css" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_222222_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_454545_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_888888_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Content\themes\base\minified\jquery-ui.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.accordion.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.autocomplete.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.button.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.core.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.datepicker.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.dialog.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.progressbar.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.resizable.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.selectable.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.slider.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.tabs.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.theme.min.css" />
+    <Content Include="Controles\ControlMnu\administracionPerfiles.aspx" />
+    <Content Include="Controles\ControlMnu\mantenimientomenu.aspx" />
+    <Content Include="Controles\ControlMnu\MnuManager.ascx" />
+    <Content Include="Controles\ControlMnu\usuarios.aspx" />
+    <Content Include="Controles\HeaderCliente.ascx" />
+    <Content Include="DashBoard\DashBenavides1.aspx" />
+    <Content Include="DashBoard\DashBenavides2.aspx" />
+    <Content Include="DashBoard\DashBenavides3.aspx" />
+    <Content Include="DashBoard\DashBenavides4.aspx" />
+    <Content Include="DashBoard\DashBenavidesGraficos.aspx" />
+    <Content Include="DashBoard\DashBenavidesTop10.aspx" />
+    <Content Include="Estadisticas\TiemposPromedioPOS.aspx" />
+    <Content Include="fonts\FuturaStd-Bold.svg" />
+    <Content Include="fonts\FuturaStd-Book.svg" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="fonts\interstate_light-webfont.svg" />
+    <Content Include="Herramientas\ConsultaLogsAppBenavides.aspx" />
+    <Content Include="Herramientas\utils.aspx" />
+    <Content Include="Imagenes\acceso-registro-header.jpg" />
+    <Content Include="Imagenes\aero_light.gif" />
+    <Content Include="Imagenes\Logo.gif" />
+    <Content Include="Imagenes\Logo.png" />
+    <Content Include="Imagenes\Logo1.png" />
+    <Content Include="Imagenes_Benavides\01800-img.png" />
+    <Content Include="Imagenes_Benavides\1-Micrositio-Benavides_Acceso.jpg" />
+    <Content Include="Imagenes_Benavides\3-Micrositio-Benavides_Inicio.jpg" />
+    <Content Include="Imagenes_Benavides\acceso-registro-header.jpg" />
+    <Content Include="Imagenes_Benavides\banner-prueba.png" />
+    <Content Include="Imagenes_Benavides\banner-puntos.jpg" />
+    <Content Include="Imagenes_Benavides\banners\banner-formula.jpg" />
+    <Content Include="Imagenes_Benavides\banners\Banner-principal-BI.jpg" />
+    <Content Include="Imagenes_Benavides\banners\banner-promociones.jpg" />
+    <Content Include="Imagenes_Benavides\banners\banner-serviciodomicilio.jpg" />
+    <Content Include="Imagenes_Benavides\banners\banner-umeb.jpg" />
+    <Content Include="Imagenes_Benavides\Bebes.png" />
+    <Content Include="Imagenes_Benavides\Belleza.png" />
+    <Content Include="Imagenes_Benavides\benavides.png" />
+    <Content Include="Imagenes_Benavides\beneficios-back.jpg" />
+    <Content Include="Imagenes_Benavides\beneficios-btn-BI.jpg" />
+    <Content Include="Imagenes_Benavides\beneficios-btn.jpg" />
+    <Content Include="Imagenes_Benavides\beneficios-fondo-BI.jpg" />
+    <Content Include="Imagenes_Benavides\botones\align bottom.png" />
+    <Content Include="Imagenes_Benavides\botones\align bottom_Menu.png" />
+    <Content Include="Imagenes_Benavides\botones\beneficios-btn-BI.PNG" />
+    <Content Include="Imagenes_Benavides\botones\btn-guardar.png" />
+    <Content Include="Imagenes_Benavides\botones\BuscarF.png" />
+    <Content Include="Imagenes_Benavides\botones\cambiarcontrasena-btn-over.png" />
+    <Content Include="Imagenes_Benavides\botones\cambiarcontrasena-btn.png" />
+    <Content Include="Imagenes_Benavides\botones\cancelar-btn-over.png" />
+    <Content Include="Imagenes_Benavides\botones\cancelar-btn.png" />
+    <Content Include="Imagenes_Benavides\botones\cd.png" />
+    <Content Include="Imagenes_Benavides\botones\cerrar-btn-over.jpg" />
+    <Content Include="Imagenes_Benavides\botones\cerrar-btn-over.png" />
+    <Content Include="Imagenes_Benavides\botones\cerrar-btn.jpg" />
+    <Content Include="Imagenes_Benavides\botones\cerrar-btn.png" />
+    <Content Include="Imagenes_Benavides\botones\cerrarsesion-btn-over.jpg" />
+    <Content Include="Imagenes_Benavides\botones\cerrarsesion-btn.jpg" />
+    <Content Include="Imagenes_Benavides\botones\chat.png" />
+    <Content Include="Imagenes_Benavides\botones\Default.png" />
+    <Content Include="Imagenes_Benavides\botones\del.ico.us.png" />
+    <Content Include="Imagenes_Benavides\botones\del.ico.us_Menu.png" />
+    <Content Include="Imagenes_Benavides\botones\entrar-btn-over.png" />
+    <Content Include="Imagenes_Benavides\botones\entrar-btn.png" />
+    <Content Include="Imagenes_Benavides\botones\enviar-btn-over.png" />
+    <Content Include="Imagenes_Benavides\botones\enviar-btn.png" />
+    <Content Include="Imagenes_Benavides\botones\Excel.png" />
+    <Content Include="Imagenes_Benavides\botones\farma.png" />
+    <Content Include="Imagenes_Benavides\botones\farma2.png" />
+    <Content Include="Imagenes_Benavides\botones\farma3.png" />
+    <Content Include="Imagenes_Benavides\botones\farma4.png" />
+    <Content Include="Imagenes_Benavides\botones\farma5.png" />
+    <Content Include="Imagenes_Benavides\botones\files_add.png" />
+    <Content Include="Imagenes_Benavides\botones\files_add_Menu.png" />
+    <Content Include="Imagenes_Benavides\botones\home.png" />
+    <Content Include="Imagenes_Benavides\botones\home_Menu.png" />
+    <Content Include="Imagenes_Benavides\botones\icn-1.png" />
+    <Content Include="Imagenes_Benavides\botones\icn-2.png" />
+    <Content Include="Imagenes_Benavides\botones\icn-3.png" />
+    <Content Include="Imagenes_Benavides\botones\icn-4.png" />
+    <Content Include="Imagenes_Benavides\botones\icn-5.png" />
+    <Content Include="Imagenes_Benavides\botones\icn-6.png" />
+    <Content Include="Imagenes_Benavides\botones\icn-7.png" />
+    <Content Include="Imagenes_Benavides\botones\icn-8.png" />
+    <Content Include="Imagenes_Benavides\botones\imgRoles.jpg" />
+    <Content Include="Imagenes_Benavides\botones\info.png" />
+    <Content Include="Imagenes_Benavides\botones\keyboard.png" />
+    <Content Include="Imagenes_Benavides\botones\masinf-btn-over.png" />
+    <Content Include="Imagenes_Benavides\botones\masinf-btn.png" />
+    <Content Include="Imagenes_Benavides\botones\minimize.png" />
+    <Content Include="Imagenes_Benavides\botones\minimize_Menu.png" />
+    <Content Include="Imagenes_Benavides\botones\mouse.png" />
+    <Content Include="Imagenes_Benavides\botones\network.png" />
+    <Content Include="Imagenes_Benavides\botones\network_Menu.png" />
+    <Content Include="Imagenes_Benavides\botones\next-horizontal.png" />
+    <Content Include="Imagenes_Benavides\botones\next-vertical.png" />
+    <Content Include="Imagenes_Benavides\botones\phone.png" />
+    <Content Include="Imagenes_Benavides\botones\ppActivaPromo.png" />
+    <Content Include="Imagenes_Benavides\botones\prev-horizontal.png" />
+    <Content Include="Imagenes_Benavides\botones\question.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Imagenes_Benavides\botones\registrar-btn-over.png" />
+    <Content Include="Imagenes_Benavides\botones\registrar-btn.png" />
+    <Content Include="Imagenes_Benavides\botones\restart.png" />
+    <Content Include="Imagenes_Benavides\botones\right_top.png" />
+    <Content Include="Imagenes_Benavides\botones\right_top_Menu.png" />
+    <Content Include="Imagenes_Benavides\botones\save.png" />
+    <Content Include="Imagenes_Benavides\botones\scroll left.png" />
+    <Content Include="Imagenes_Benavides\botones\search.png" />
+    <Content Include="Imagenes_Benavides\botones\search_Menu.png" />
+    <Content Include="Imagenes_Benavides\botones\shopping cart.png" />
+    <Content Include="Imagenes_Benavides\botones\shopping cart_Menu.png" />
+    <Content Include="Imagenes_Benavides\botones\undo.png" />
+    <Content Include="Imagenes_Benavides\botones\undo_Menu.png" />
+    <Content Include="Imagenes_Benavides\botones\waiting.png" />
+    <Content Include="Imagenes_Benavides\botones\write 1.png" />
+    <Content Include="Imagenes_Benavides\btnEntrar.png" />
+    <Content Include="Imagenes_Benavides\cambiar-contraseña-fondo.png" />
+    <Content Include="Imagenes_Benavides\cerrar-btn-over.png" />
+    <Content Include="Imagenes_Benavides\cerrar-btn.png" />
+    <Content Include="Imagenes_Benavides\cerrarsesion-btn-over.png" />
+    <Content Include="Imagenes_Benavides\cerrarsesion-btn.png" />
+    <Content Include="Imagenes_Benavides\como-ganas-back.jpg" />
+    <Content Include="Imagenes_Benavides\como-ganas-btn.jpg" />
+    <Content Include="Imagenes_Benavides\como-ganas-puntos.jpg" />
+    <Content Include="Imagenes_Benavides\como-ganas.jpg" />
+    <Content Include="Imagenes_Benavides\contacto-fondo.png" />
+    <Content Include="Imagenes_Benavides\cuadro1.png" />
+    <Content Include="Imagenes_Benavides\cuadro2.png" />
+    <Content Include="Imagenes_Benavides\cuadro3.png" />
+    <Content Include="Imagenes_Benavides\cuidado.png" />
+    <Content Include="Imagenes_Benavides\edocuenta-bi_1_01.jpg" />
+    <Content Include="Imagenes_Benavides\edocuenta-bi_1_02.jpg" />
+    <Content Include="Imagenes_Benavides\edocuenta-bi_1_03.jpg" />
+    <Content Include="Imagenes_Benavides\edocuenta-bi_1_04.jpg" />
+    <Content Include="Imagenes_Benavides\edocuenta-bi_1_05.jpg" />
+    <Content Include="Imagenes_Benavides\edocuenta-bi_1_06.jpg" />
+    <Content Include="Imagenes_Benavides\edocuenta-bi_1_07.jpg" />
+    <Content Include="Imagenes_Benavides\edocuenta-bi_1_08.jpg" />
+    <Content Include="Imagenes_Benavides\edocuenta-bi_1_09.jpg" />
+    <Content Include="Imagenes_Benavides\edocuenta-bi_1_10.jpg" />
+    <Content Include="Imagenes_Benavides\edocuenta-bi_1_11.jpg" />
+    <Content Include="Imagenes_Benavides\edocuenta-bi_1_12.jpg" />
+    <Content Include="Imagenes_Benavides\edocuenta-bi_1_13.jpg" />
+    <Content Include="Imagenes_Benavides\edocuenta-bi_1_14.jpg" />
+    <Content Include="Imagenes_Benavides\edocuenta-bi_1_15.jpg" />
+    <Content Include="Imagenes_Benavides\edocuenta-bi_1_16.jpg" />
+    <Content Include="Imagenes_Benavides\edocuenta-bi_1_17.jpg" />
+    <Content Include="Imagenes_Benavides\edocuenta-bi_1_18.jpg" />
+    <Content Include="Imagenes_Benavides\edocuenta-bi_1_19.jpg" />
+    <Content Include="Imagenes_Benavides\edocuenta-bi_1_20.jpg" />
+    <Content Include="Imagenes_Benavides\edocuenta-bi_1_21.jpg" />
+    <Content Include="Imagenes_Benavides\edocuenta-bi_1_22.jpg" />
+    <Content Include="Imagenes_Benavides\edocuenta-bi_1_23.jpg" />
+    <Content Include="Imagenes_Benavides\farma.png" />
+    <Content Include="Imagenes_Benavides\fondoBco.jpg" />
+    <Content Include="Imagenes_Benavides\fondoConfirmaContraseña.jpg" />
+    <Content Include="Imagenes_Benavides\header-azul.jpg" />
+    <Content Include="Imagenes_Benavides\header-azul.png" />
+    <Content Include="Imagenes_Benavides\header-tabla.png" />
+    <Content Include="Imagenes_Benavides\icono-telefono.png" />
+    <Content Include="Imagenes_Benavides\Index.png" />
+    <Content Include="Imagenes_Benavides\informacion-BI.jpg" />
+    <Content Include="Imagenes_Benavides\Libreta.png" />
+    <Content Include="Imagenes_Benavides\logo-benavides.png" />
+    <Content Include="Imagenes_Benavides\logo-beneficio-int.png" />
+    <Content Include="Imagenes_Benavides\LogoAzul.png" />
+    <Content Include="Imagenes_Benavides\LogoFarBen.jpg" />
+    <Content Include="Imagenes_Benavides\Man.png" />
+    <Content Include="Imagenes_Benavides\masinf-btn-over.png" />
+    <Content Include="Imagenes_Benavides\masinf-btn.png" />
+    <Content Include="Imagenes_Benavides\MasterNueva\11-contacto\bg-contacto-495x560.png" />
+    <Content Include="Imagenes_Benavides\MasterNueva\13-cambiar_contrasena\bg-cambiar_contrasena-495x425.png" />
+    <Content Include="Imagenes_Benavides\MasterNueva\13-cambiar_contrasena\btn-guardar-hover.jpg" />
+    <Content Include="Imagenes_Benavides\MasterNueva\13-cambiar_contrasena\btn-guardar.jpg" />
+    <Content Include="Imagenes_Benavides\MasterNueva\14-club_peques_que_es\btn-registrate-aqui-hover.png" />
+    <Content Include="Imagenes_Benavides\MasterNueva\14-club_peques_que_es\btn-registrate-aqui.png" />
+    <Content Include="Imagenes_Benavides\MasterNueva\14-club_peques_que_es\img-clubpeques-que-es-555x420.jpg" />
+    <Content Include="Imagenes_Benavides\MasterNueva\14-club_peques_que_es\submenu-clubpeques\submenu-clubpeques_1-hover.jpg" />
+    <Content Include="Imagenes_Benavides\MasterNueva\14-club_peques_que_es\submenu-clubpeques\submenu-clubpeques_2-hover.jpg" />
+    <Content Include="Imagenes_Benavides\MasterNueva\14-club_peques_que_es\submenu-clubpeques\submenu-clubpeques_3-hover.jpg" />
+    <Content Include="Imagenes_Benavides\MasterNueva\14-club_peques_que_es\submenu-clubpeques\submenu-club_peques_1.jpg" />
+    <Content Include="Imagenes_Benavides\MasterNueva\14-club_peques_que_es\submenu-clubpeques\submenu-club_peques_2.jpg" />
+    <Content Include="Imagenes_Benavides\MasterNueva\14-club_peques_que_es\submenu-clubpeques\submenu-club_peques_3.jpg" />
+    <Content Include="Imagenes_Benavides\MasterNueva\2-mis_datos\btn-actualizar-datos-hover.jpg" />
+    <Content Include="Imagenes_Benavides\MasterNueva\2-mis_datos\btn-actualizar-datos.jpg" />
+    <Content Include="Imagenes_Benavides\MasterNueva\2-mis_datos\btn-cambiar-contasena-hover.jpg" />
+    <Content Include="Imagenes_Benavides\MasterNueva\2-mis_datos\btn-cambiar-contasena.jpg" />
+    <Content Include="Imagenes_Benavides\MasterNueva\2-mis_datos\img-mis_datos-85x420.png" />
+    <Content Include="Imagenes_Benavides\MasterNueva\21-descuentos_laboratorios\img-tabla-descuentos\img-tabla-descuentos_01.jpg" />
+    <Content Include="Imagenes_Benavides\MasterNueva\21-descuentos_laboratorios\img-tabla-descuentos\img-tabla-descuentos_02.jpg" />
+    <Content Include="Imagenes_Benavides\MasterNueva\21-descuentos_laboratorios\img-tabla-descuentos\img-tabla-descuentos_03.jpg" />
+    <Content Include="Imagenes_Benavides\MasterNueva\21-descuentos_laboratorios\img-tabla-descuentos\img-tabla-descuentos_04.jpg" />
+    <Content Include="Imagenes_Benavides\MasterNueva\21-descuentos_laboratorios\img-tabla-descuentos\img-tabla-descuentos_05.jpg" />
+    <Content Include="Imagenes_Benavides\MasterNueva\22-club_peques_promo\img-clubpeques-promo-555x420.jpg" />
+    <Content Include="Imagenes_Benavides\MasterNueva\23-popup_atencion\bg-contacto-500x500.png" />
+    <Content Include="Imagenes_Benavides\MasterNueva\24-iconos_cumpleanios\Circle_Blue.png" />
+    <Content Include="Imagenes_Benavides\MasterNueva\24-iconos_cumpleanios\Circle_Green.png" />
+    <Content Include="Imagenes_Benavides\MasterNueva\24-iconos_cumpleanios\Circle_Grey.png" />
+    <Content Include="Imagenes_Benavides\MasterNueva\24-iconos_cumpleanios\Circle_Orange.png" />
+    <Content Include="Imagenes_Benavides\MasterNueva\24-iconos_cumpleanios\Circle_Red.png" />
+    <Content Include="Imagenes_Benavides\MasterNueva\24-iconos_cumpleanios\Circle_Yellow.png" />
+    <Content Include="Imagenes_Benavides\MasterNueva\3-mis_compras\img-tabla-compras\img-tabla-compras_01.jpg" />
+    <Content Include="Imagenes_Benavides\MasterNueva\3-mis_compras\img-tabla-compras\img-tabla-compras_02.jpg" />
+    <Content Include="Imagenes_Benavides\MasterNueva\3-mis_compras\img-tabla-compras\img-tabla-compras_03.jpg" />
+    <Content Include="Imagenes_Benavides\MasterNueva\3-mis_compras\img-tabla-compras\img-tabla-compras_04.jpg" />
+    <Content Include="Imagenes_Benavides\MasterNueva\3-mis_compras\img-tabla-compras\img-tabla-compras_05.jpg" />
+    <Content Include="Imagenes_Benavides\MasterNueva\3-mis_compras\img-tabla-compras\img-tabla-compras_06.jpg" />
+    <Content Include="Imagenes_Benavides\MasterNueva\3-mis_compras\img-tabla-compras\Separador.jpg" />
+    <Content Include="Imagenes_Benavides\MasterNueva\4-mis_beneficios_blue\btn-beneficios-blue-235x60-5-hover.png" />
+    <Content Include="Imagenes_Benavides\MasterNueva\4-mis_beneficios_blue\btn-beneficios-blue-235x60-5.png" />
+    <Content Include="Imagenes_Benavides\MasterNueva\4-mis_beneficios_blue\btn-beneficios-blue-235x60-6-hover.png" />
+    <Content Include="Imagenes_Benavides\MasterNueva\4-mis_beneficios_blue\btn-beneficios-blue-235x60-6.png" />
+    <Content Include="Imagenes_Benavides\MasterNueva\4-mis_beneficios_blue\img-beneficios-blue-235x60-1.png" />
+    <Content Include="Imagenes_Benavides\MasterNueva\4-mis_beneficios_blue\img-beneficios-blue-235x60-2.png" />
+    <Content Include="Imagenes_Benavides\MasterNueva\4-mis_beneficios_blue\img-beneficios-blue-235x60-3.png" />
+    <Content Include="Imagenes_Benavides\MasterNueva\4-mis_beneficios_blue\img-beneficios-blue-235x60-4.png" />
+    <Content Include="Imagenes_Benavides\MasterNueva\4-mis_beneficios_blue\img-beneficios-blue.png" />
+    <Content Include="Imagenes_Benavides\MasterNueva\4-mis_beneficios_blue\submenu-mis_beneficios\submenu-mis_beneficios_1-hover.jpg" />
+    <Content Include="Imagenes_Benavides\MasterNueva\4-mis_beneficios_blue\submenu-mis_beneficios\submenu-mis_beneficios_1.jpg" />
+    <Content Include="Imagenes_Benavides\MasterNueva\4-mis_beneficios_blue\submenu-mis_beneficios\submenu-mis_beneficios_2-hover.jpg" />
+    <Content Include="Imagenes_Benavides\MasterNueva\4-mis_beneficios_blue\submenu-mis_beneficios\submenu-mis_beneficios_2.jpg" />
+    <Content Include="Imagenes_Benavides\MasterNueva\4-mis_beneficios_blue\submenu-mis_beneficios\submenu-mis_beneficios_3-hover.jpg" />
+    <Content Include="Imagenes_Benavides\MasterNueva\4-mis_beneficios_blue\submenu-mis_beneficios\submenu-mis_beneficios_3.jpg" />
+    <Content Include="Imagenes_Benavides\MasterNueva\5-mis_beneficios_platino\btn-beneficios-platino-235x60-10-hover.png" />
+    <Content Include="Imagenes_Benavides\MasterNueva\5-mis_beneficios_platino\btn-beneficios-platino-235x60-10.png" />
+    <Content Include="Imagenes_Benavides\MasterNueva\5-mis_beneficios_platino\btn-beneficios-platino-235x60-5-hover.png" />
+    <Content Include="Imagenes_Benavides\MasterNueva\5-mis_beneficios_platino\btn-beneficios-platino-235x60-5.png" />
+    <Content Include="Imagenes_Benavides\MasterNueva\5-mis_beneficios_platino\btn-beneficios-platino-235x60-6-hover.png" />
+    <Content Include="Imagenes_Benavides\MasterNueva\5-mis_beneficios_platino\btn-beneficios-platino-235x60-6.png" />
+    <Content Include="Imagenes_Benavides\MasterNueva\5-mis_beneficios_platino\btn-beneficios-platino-235x60-7-hover.png" />
+    <Content Include="Imagenes_Benavides\MasterNueva\5-mis_beneficios_platino\btn-beneficios-platino-235x60-7.png" />
+    <Content Include="Imagenes_Benavides\MasterNueva\5-mis_beneficios_platino\btn-beneficios-platino-235x60-8-hover.png" />
+    <Content Include="Imagenes_Benavides\MasterNueva\5-mis_beneficios_platino\btn-beneficios-platino-235x60-8.png" />
+    <Content Include="Imagenes_Benavides\MasterNueva\5-mis_beneficios_platino\btn-beneficios-platino-235x60-9-hover.png" />
+    <Content Include="Imagenes_Benavides\MasterNueva\5-mis_beneficios_platino\btn-beneficios-platino-235x60-9.png" />
+    <Content Include="Imagenes_Benavides\MasterNueva\5-mis_beneficios_platino\img-beneficios-platino-235x60-1.png" />
+    <Content Include="Imagenes_Benavides\MasterNueva\5-mis_beneficios_platino\img-beneficios-platino-235x60-2.png" />
+    <Content Include="Imagenes_Benavides\MasterNueva\5-mis_beneficios_platino\img-beneficios-platino-235x60-3.png" />
+    <Content Include="Imagenes_Benavides\MasterNueva\5-mis_beneficios_platino\img-beneficios-platino-235x60-4.png" />
+    <Content Include="Imagenes_Benavides\MasterNueva\5-mis_beneficios_platino\img-beneficios-platino.png" />
+    <Content Include="Imagenes_Benavides\MasterNueva\6-login\btn-entrar-hover.jpg" />
+    <Content Include="Imagenes_Benavides\MasterNueva\6-login\btn-entrar.jpg" />
+    <Content Include="Imagenes_Benavides\MasterNueva\6-login\fondo.jpg" />
+    <Content Include="Imagenes_Benavides\MasterNueva\6-login\img-login-bienvenida-420x100.png" />
+    <Content Include="Imagenes_Benavides\MasterNueva\6-login\img-login-tarjeta-blue-400x650.png" />
+    <Content Include="Imagenes_Benavides\MasterNueva\7-olvidaste_contrasena\btn-enviar-hover.jpg" />
+    <Content Include="Imagenes_Benavides\MasterNueva\7-olvidaste_contrasena\btn-enviar.jpg" />
+    <Content Include="Imagenes_Benavides\MasterNueva\7-olvidaste_contrasena\btn-regresar-hover.jpg" />
+    <Content Include="Imagenes_Benavides\MasterNueva\7-olvidaste_contrasena\btn-regresar.jpg" />
+    <Content Include="Imagenes_Benavides\MasterNueva\8-registro\bg-registro-clubpeques\bg-registro-clubpeques_1.png" />
+    <Content Include="Imagenes_Benavides\MasterNueva\8-registro\bg-registro-clubpeques\bg-registro-clubpeques_2.png" />
+    <Content Include="Imagenes_Benavides\MasterNueva\8-registro\bg-registro-clubpeques\bg-registro-clubpeques_3.png" />
+    <Content Include="Imagenes_Benavides\MasterNueva\8-registro\btn-aceptar-hover.jpg" />
+    <Content Include="Imagenes_Benavides\MasterNueva\8-registro\btn-aceptar.jpg" />
+    <Content Include="Imagenes_Benavides\MasterNueva\8-registro\img-categorias-25x25-1.png" />
+    <Content Include="Imagenes_Benavides\MasterNueva\8-registro\img-categorias-25x25-2.png" />
+    <Content Include="Imagenes_Benavides\MasterNueva\8-registro\img-categorias-25x25-3.png" />
+    <Content Include="Imagenes_Benavides\MasterNueva\8-registro\img-categorias-25x25-4.png" />
+    <Content Include="Imagenes_Benavides\MasterNueva\8-registro\img-categorias-25x25-5.png" />
+    <Content Include="Imagenes_Benavides\MasterNueva\8-registro\img-categorias-logo-140x15.png" />
+    <Content Include="Imagenes_Benavides\MasterNueva\8-registro\img-check-25x25.png" />
+    <Content Include="Imagenes_Benavides\MasterNueva\8-registro\img-checkbox-25x25-off.png" />
+    <Content Include="Imagenes_Benavides\MasterNueva\8-registro\img-checkbox-25x25-on.png" />
+    <Content Include="Imagenes_Benavides\MasterNueva\8-registro\img-circulo-25x25-hover.png" />
+    <Content Include="Imagenes_Benavides\MasterNueva\8-registro\img-circulo-25x25.png" />
+    <Content Include="Imagenes_Benavides\MasterNueva\8-registro\img-clubpeques-logo-200x140.png" />
+    <Content Include="Imagenes_Benavides\MasterNueva\8-registro\img-combo-10x17.png" />
+    <Content Include="Imagenes_Benavides\MasterNueva\8-registro\img-genero-25x25-1.png" />
+    <Content Include="Imagenes_Benavides\MasterNueva\8-registro\img-genero-25x25-2.png" />
+    <Content Include="Imagenes_Benavides\MasterNueva\8-registro\img-genero-25x25-3.png" />
+    <Content Include="Imagenes_Benavides\MasterNueva\8-registro\img-genero-25x25-4.png" />
+    <Content Include="Imagenes_Benavides\MasterNueva\8-registro\img-registro-tarjeta-platino-235x800.png" />
+    <Content Include="Imagenes_Benavides\MasterNueva\8-registro\MasInfo.png" />
+    <Content Include="Imagenes_Benavides\MasterNueva\9-niveles\bg-niveles-555x420.jpg" />
+    <Content Include="Imagenes_Benavides\MasterNueva\9-niveles\img-niveles-445x182.png" />
+    <Content Include="Imagenes_Benavides\MasterNueva\banner_inferior.png" />
+    <Content Include="Imagenes_Benavides\MasterNueva\bg-popup_01.png" />
+    <Content Include="Imagenes_Benavides\MasterNueva\bg-popup_02.png" />
+    <Content Include="Imagenes_Benavides\MasterNueva\boomerangs.png" />
+    <Content Include="Imagenes_Benavides\MasterNueva\boomerang_solo.png" />
+    <Content Include="Imagenes_Benavides\MasterNueva\btn-cerrar-hover.jpg" />
+    <Content Include="Imagenes_Benavides\MasterNueva\btn-cerrar.jpg" />
+    <Content Include="Imagenes_Benavides\MasterNueva\pantene.png" />
+    <Content Include="Imagenes_Benavides\MasterNueva\termometro.png" />
+    <Content Include="Imagenes_Benavides\menu\contacto-btn-over.png" />
+    <Content Include="Imagenes_Benavides\menu\contacto-btn.png" />
+    <Content Include="Imagenes_Benavides\menu\inicio-btn-over.png" />
+    <Content Include="Imagenes_Benavides\menu\inicio-btn.png" />
+    <Content Include="Imagenes_Benavides\menu\mis_datos-btn-over.png" />
+    <Content Include="Imagenes_Benavides\menu\mis_datos-btn.png" />
+    <Content Include="Imagenes_Benavides\menu\promociones-btn-over.png" />
+    <Content Include="Imagenes_Benavides\menu\promociones-btn.png" />
+    <Content Include="Imagenes_Benavides\mi-perfil-fondo.jpg" />
+    <Content Include="Imagenes_Benavides\misdatos-fondo.jpg" />
+    <Content Include="Imagenes_Benavides\misdatos-fondo2.png" />
+    <Content Include="Imagenes_Benavides\nuevo-logo-bi.png" />
+    <Content Include="Imagenes_Benavides\otros-back.jpg" />
+    <Content Include="Imagenes_Benavides\otrosprogramas-btn.jpg" />
+    <Content Include="Imagenes_Benavides\reg.png" />
+    <Content Include="Imagenes_Benavides\registro-acceso-fondo-reportes.jpg" />
+    <Content Include="Imagenes_Benavides\registro-acceso-fondo.jpg" />
+    <Content Include="Imagenes_Benavides\registro.png" />
+    <Content Include="Imagenes_Benavides\SaldoCliente.png" />
+    <Content Include="Imagenes_Benavides\SaldoMov-fondo.png" />
+    <Content Include="Imagenes_Benavides\Snack.png" />
+    <Content Include="Imagenes_Benavides\tarjeta-azul.png" />
+    <Content Include="Imagenes_Benavides\Woman.png" />
+    <Content Include="Images\accent.png" />
+    <Content Include="Images\alta_user.ico" />
+    <Content Include="Images\bullet.png" />
+    <Content Include="Images\heroAccent.png" />
+    <Content Include="Images\imgProductos.png" />
+    <Content Include="Images\imgSucursales.png" />
+    <Content Include="Images\i_Buscar.png" />
+    <Content Include="Images\orderedList0.png" />
+    <Content Include="Images\orderedList1.png" />
+    <Content Include="Images\orderedList2.png" />
+    <Content Include="Images\orderedList3.png" />
+    <Content Include="Images\orderedList4.png" />
+    <Content Include="Images\orderedList5.png" />
+    <Content Include="Images\orderedList6.png" />
+    <Content Include="Images\orderedList7.png" />
+    <Content Include="Images\orderedList8.png" />
+    <Content Include="Images\orderedList9.png" />
+    <Content Include="Librerias\AjaxControlToolkit.dll" />
+    <Content Include="Librerias\AspNet.ScriptManager.jQuery.dll" />
+    <Content Include="Librerias\AspNet.ScriptManager.jQuery.UI.Combined.dll" />
+    <Content Include="Librerias\CallcenterNUevo.dll" />
+    <Content Include="Librerias\CallcenterNUevo.pdb" />
+    <Content Include="Librerias\CallcenterNUevo.XmlSerializers.dll" />
+    <Content Include="Librerias\DataSQL.dll" />
+    <Content Include="Librerias\DataSQL.pdb" />
+    <Content Include="Librerias\Datos.dll" />
+    <Content Include="Librerias\Datos.pdb" />
+    <Content Include="Librerias\DocumentFormat.OpenXml.dll" />
+    <Content Include="Librerias\DotNetOpenAuth.AspNet.dll" />
+    <Content Include="Librerias\DotNetOpenAuth.Core.dll" />
+    <Content Include="Librerias\DotNetOpenAuth.OAuth.Consumer.dll" />
+    <Content Include="Librerias\DotNetOpenAuth.OAuth.dll" />
+    <Content Include="Librerias\DotNetOpenAuth.OpenId.dll" />
+    <Content Include="Librerias\DotNetOpenAuth.OpenId.RelyingParty.dll" />
+    <Content Include="Librerias\Entidades.dll" />
+    <Content Include="Librerias\Entidades.pdb" />
+    <Content Include="Librerias\EntityFramework.dll" />
+    <Content Include="Librerias\Imagenes_Benavides\botones\question.png" />
+    <Content Include="Librerias\Imagenes_Benavides\delete-icon.png" />
+    <Content Include="Librerias\Microsoft.ApplicationBlocks.Data.dll" />
+    <Content Include="Librerias\Microsoft.AspNet.Membership.OpenAuth.dll" />
+    <Content Include="Librerias\Microsoft.Practices.EnterpriseLibrary.Common.dll" />
+    <Content Include="Librerias\Microsoft.Practices.EnterpriseLibrary.Data.dll" />
+    <Content Include="Librerias\Microsoft.Practices.ObjectBuilder.dll" />
+    <Content Include="Librerias\Microsoft.Practices.ServiceLocation.dll" />
+    <Content Include="Librerias\Microsoft.Practices.Unity.dll" />
+    <Content Include="Librerias\Microsoft.Practices.Unity.Interception.dll" />
+    <Content Include="Librerias\Microsoft.Web.Infrastructure.dll" />
+    <Content Include="Librerias\Microsoft.Web.Infrastructure.xml" />
+    <Content Include="Librerias\Negocio.dll" />
+    <Content Include="Librerias\Negocio.pdb" />
+    <Content Include="Librerias\SpreadsheetLight.dll" />
+    <Content Include="Librerias\System.Web.Providers.dll" />
+    <Content Include="Librerias\Telerik.Web.Spreadsheet.dll" />
+    <Content Include="Librerias\Telerik.Web.UI.dll" />
+    <Content Include="Librerias\Telerik.Web.UI.Skins.dll" />
+    <Content Include="Librerias\Telerik.Windows.Documents.Core.dll" />
+    <Content Include="Librerias\Telerik.Windows.Documents.Core.xml" />
+    <Content Include="Librerias\Telerik.Windows.Documents.Flow.dll" />
+    <Content Include="Librerias\Telerik.Windows.Documents.Flow.xml" />
+    <Content Include="Librerias\Telerik.Windows.Documents.Spreadsheet.dll" />
+    <Content Include="Librerias\Telerik.Windows.Documents.Spreadsheet.FormatProviders.OpenXml.dll" />
+    <Content Include="Librerias\Telerik.Windows.Documents.Spreadsheet.FormatProviders.OpenXml.xml" />
+    <Content Include="Librerias\Telerik.Windows.Documents.Spreadsheet.xml" />
+    <Content Include="Librerias\Telerik.Windows.Maths.dll" />
+    <Content Include="Librerias\Telerik.Windows.Maths.xml" />
+    <Content Include="Librerias\Telerik.Windows.Zip.dll" />
+    <Content Include="Librerias\Telerik.Windows.Zip.xml" />
+    <Content Include="packages.config" />
+    <Content Include="fonts\FuturaStd-Bold.eot" />
+    <Content Include="fonts\FuturaStd-Bold.woff" />
+    <Content Include="fonts\FuturaStd-Book.eot" />
+    <Content Include="fonts\FuturaStd-Book.woff" />
+    <Content Include="fonts\interstate-regular-webfont.eot" />
+    <Content Include="fonts\interstate_light-webfont.ttf" />
+    <Content Include="fonts\interstate_light-webfont.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\bootstrap-theme.min.css.map" />
+    <Content Include="Content\bootstrap-theme.css.map" />
+    <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Perfil\BeneficiosEsp.aspx" />
+    <Content Include="Perfil\ComunicacionEnv.aspx" />
+    <Content Include="Perfil\DetallePromo.aspx" />
+    <Content Include="Perfil\DineroE.aspx" />
+    <Content Include="Perfil\HistoricoPromo.aspx" />
+    <Content Include="Perfil\Llamadas.aspx" />
+    <Content Include="Perfil\Perfil.aspx" />
+    <Content Include="Perfil\Promociones.aspx" />
+    <Content Include="Perfil\Traspasos.aspx" />
+    <Content Include="POS\AcumulaTicketsXContingencia.aspx" />
+    <Content Include="Scripts\jquery-1.10.2.min.map" />
+    <Content Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </Content>
+    <Content Include="Librerias\CallcenterNUevo.dll.config" />
+    <Content Include="Librerias\CallCenterNuevo.rar" />
+    <None Include="Properties\PublishProfiles\Callcenter.pubxml" />
+    <None Include="Scripts\jquery-1.7.1.intellisense.js" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\jquery-1.10.2.js" />
+    <Content Include="Scripts\jquery-1.10.2.min.js" />
+    <Content Include="Scripts\jquery-1.7.1.js" />
+    <Content Include="Scripts\jquery-1.7.1.min.js" />
+    <None Include="Scripts\jquery-2.1.0.intellisense.js" />
+    <Content Include="Scripts\jquery-2.1.0.js" />
+    <Content Include="Scripts\jquery-2.1.0.min.js" />
+    <Content Include="Scripts\jquery-ui-1.10.4.js" />
+    <Content Include="Scripts\jquery-ui-1.10.4.min.js" />
+    <Content Include="Scripts\jquery-ui-1.8.20.js" />
+    <Content Include="Scripts\jquery-ui-1.8.20.min.js" />
+    <Content Include="Scripts\modernizr-2.5.3.js" />
+    <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\respond.js" />
+    <Content Include="Scripts\respond.min.js" />
+    <Content Include="Scripts\_references.js" />
+    <Content Include="Default.aspx" />
+    <Content Include="favicon.ico" />
+    <Content Include="Global.asax" />
+    <Content Include="segundoplano\rptTraspasos.aspx" />
+    <Content Include="Service References\WsReglasNegocio\CallcenterNUevo.WsReglasNegocio.ActivaTarjetaFBResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\WsReglasNegocio\CallcenterNUevo.WsReglasNegocio.ActivaTarjetaResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\WsReglasNegocio\CallcenterNUevo.WsReglasNegocio.BuscarPacienteResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\WsReglasNegocio\CallcenterNUevo.WsReglasNegocio.CancelarCompraResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\WsReglasNegocio\CallcenterNUevo.WsReglasNegocio.CancelarPagoResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\WsReglasNegocio\CallcenterNUevo.WsReglasNegocio.CerrarCotizacionSalida.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\WsReglasNegocio\CallcenterNUevo.WsReglasNegocio.ConsultaAcumulacionPendienteResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\WsReglasNegocio\CallcenterNUevo.WsReglasNegocio.ConsultaAcumulacionResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\WsReglasNegocio\CallcenterNUevo.WsReglasNegocio.ConsultaMovimientosResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\WsReglasNegocio\CallcenterNUevo.WsReglasNegocio.HistorialCompras.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\WsReglasNegocio\CallcenterNUevo.WsReglasNegocio.ListaPromociones.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\WsReglasNegocio\CallcenterNUevo.WsReglasNegocio.ProcesarPagoResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\WsReglasNegocio\CallcenterNUevo.WsReglasNegocio.TraspasaPuntosResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\WsReglasNegocio\CallcenterNUevo.WsReglasNegocio.TraspasosResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\WsReglasNegocio\CallcenterNUevo.WsReglasNegocio.ValidaTarjetaResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\WsReglasNegocio\CallcenterNUevo.WsReglasNegocio.wsTicket.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <None Include="Service References\WsReglasNegocio\WsReglasNegocio.disco" />
+    <None Include="Service References\WsReglasNegocio\configuration91.svcinfo" />
+    <None Include="Service References\WsReglasNegocio\configuration.svcinfo" />
+    <None Include="Service References\WsReglasNegocio\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <Content Include="style\css\calendario.css" />
+    <Content Include="style\css\canje-operacion.css" />
+    <Content Include="style\css\editor\estilos.css" />
+    <Content Include="style\css\estilo-operacion.css" />
+    <Content Include="style\css\extras.css" />
+    <Content Include="style\css\smk-accordion.css" />
+    <Content Include="style\images\calendar.png" />
+    <Content Include="style\images\cancel.png" />
+    <Content Include="style\images\img_ingresar_back.png" />
+    <Content Include="style\images\img_notificacion_back.png" />
+    <Content Include="style\images\img_validacion_back.jpg" />
+    <Content Include="style\images\loading.gif" />
+    <Content Include="style\images\login\botonDorado.png" />
+    <Content Include="style\images\login\botonDorado150.png" />
+    <Content Include="style\images\login\campoTexto.png" />
+    <Content Include="style\images\Logo-LMS.png" />
+    <Content Include="style\images\Logo-LMS1.png" />
+    <Content Include="style\images\logo-loyaltypoints.png" />
+    <Content Include="style\images\LogoVW.png" />
+    <Content Include="style\images\logo_triangulo-premia.png" />
+    <Content Include="style\images\logo_triangulo-premia1.jpg" />
+    <Content Include="style\images\No.gif" />
+    <Content Include="style\images\pleca_mensaje.png" />
+    <Content Include="style\images\pleca_texto1.png" />
+    <Content Include="style\images\pleca_texto1_1.png" />
+    <Content Include="style\images\pleca_texto2.png" />
+    <Content Include="style\images\pleca_texto3.png" />
+    <Content Include="style\images\pleca_texto3_1.png" />
+    <Content Include="style\images\pleca_texto4.png" />
+    <Content Include="style\images\pleca_texto5.png" />
+    <Content Include="style\images\pleca_texto_escalamiento.png" />
+    <Content Include="style\images\pleca_texto_fecha.png" />
+    <Content Include="style\images\pleca_texto_tipo_transaccion.png" />
+    <Content Include="style\images\premios\imagen-no-disponible.PNG" />
+    <Content Include="style\images\Si.gif" />
+    <Content Include="style\images\textoDudas.png" />
+    <Content Include="style\images\texto_vceMensaje.png" />
+    <Content Include="style\js\htmltooltip.js" />
+    <Content Include="style\js\jquery-1.2.2.pack.js" />
+    <Content Include="Terminos.aspx" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Account\Passwordchange.aspx.cs">
+      <DependentUpon>Passwordchange.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\Passwordchange.aspx.designer.cs">
+      <DependentUpon>Passwordchange.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\PaswordRecovery.aspx.cs">
+      <DependentUpon>PaswordRecovery.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\PaswordRecovery.aspx.designer.cs">
+      <DependentUpon>PaswordRecovery.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminC\Alta.aspx.cs">
+      <DependentUpon>Alta.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminC\Alta.aspx.designer.cs">
+      <DependentUpon>Alta.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminC\Asignacion.aspx.cs">
+      <DependentUpon>Asignacion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminC\Asignacion.aspx.designer.cs">
+      <DependentUpon>Asignacion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminC\Consulta.aspx.cs">
+      <DependentUpon>Consulta.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminC\Consulta.aspx.designer.cs">
+      <DependentUpon>Consulta.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminC\Editar.aspx.cs">
+      <DependentUpon>Editar.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminC\Editar.aspx.designer.cs">
+      <DependentUpon>Editar.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminC\QuitarCupon.aspx.cs">
+      <DependentUpon>QuitarCupon.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminC\QuitarCupon.aspx.designer.cs">
+      <DependentUpon>QuitarCupon.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminMecanicas\Combo.aspx.cs">
+      <DependentUpon>Combo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminMecanicas\Combo.aspx.designer.cs">
+      <DependentUpon>Combo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminMecanicas\Copiar.aspx.cs">
+      <DependentUpon>Copiar.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminMecanicas\Copiar.aspx.designer.cs">
+      <DependentUpon>Copiar.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminMecanicas\Detalle.aspx.cs">
+      <DependentUpon>Detalle.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminMecanicas\Detalle.aspx.designer.cs">
+      <DependentUpon>Detalle.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminMecanicas\EdicionLista.aspx.cs">
+      <DependentUpon>EdicionLista.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminMecanicas\EdicionLista.aspx.designer.cs">
+      <DependentUpon>EdicionLista.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminMecanicas\EdicionNM.aspx.cs">
+      <DependentUpon>EdicionNM.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminMecanicas\EdicionNM.aspx.designer.cs">
+      <DependentUpon>EdicionNM.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminMecanicas\Lista.aspx.cs">
+      <DependentUpon>Lista.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminMecanicas\Lista.aspx.designer.cs">
+      <DependentUpon>Lista.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminMecanicas\NM_Piezas.aspx.cs">
+      <DependentUpon>NM_Piezas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminMecanicas\NM_Piezas.aspx.designer.cs">
+      <DependentUpon>NM_Piezas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminPromociones\AdmonCatalogos\AdmonCatalogos.aspx.cs">
+      <DependentUpon>AdmonCatalogos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminPromociones\AdmonCatalogos\AdmonCatalogos.aspx.designer.cs">
+      <DependentUpon>AdmonCatalogos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminPromociones\AjustePromocion.aspx.cs">
+      <DependentUpon>AjustePromocion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminPromociones\AjustePromocion.aspx.designer.cs">
+      <DependentUpon>AjustePromocion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminPromociones\AltaPromocion.aspx.cs">
+      <DependentUpon>AltaPromocion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminPromociones\AltaPromocion.aspx.designer.cs">
+      <DependentUpon>AltaPromocion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminPromociones\AltaPromocionACDineroEntregaPzaz.aspx.cs">
+      <DependentUpon>AltaPromocionACDineroEntregaPzaz.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminPromociones\AltaPromocionACDineroEntregaPzaz.aspx.designer.cs">
+      <DependentUpon>AltaPromocionACDineroEntregaPzaz.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminPromociones\AltaPromocionAcumulacionBase.aspx.cs">
+      <DependentUpon>AltaPromocionAcumulacionBase.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminPromociones\AltaPromocionAcumulacionBase.aspx.designer.cs">
+      <DependentUpon>AltaPromocionAcumulacionBase.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminPromociones\AltaPromocionDE.aspx.cs">
+      <DependentUpon>AltaPromocionDE.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminPromociones\AltaPromocionDE.aspx.designer.cs">
+      <DependentUpon>AltaPromocionDE.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminPromociones\AltaPromocionDescuentos.aspx.cs">
+      <DependentUpon>AltaPromocionDescuentos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminPromociones\AltaPromocionDescuentos.aspx.designer.cs">
+      <DependentUpon>AltaPromocionDescuentos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminPromociones\AltaPromocionEscalonada.aspx.cs">
+      <DependentUpon>AltaPromocionEscalonada.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminPromociones\AltaPromocionEscalonada.aspx.designer.cs">
+      <DependentUpon>AltaPromocionEscalonada.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminPromociones\AltaPromoDobleAcumulacion.aspx.cs">
+      <DependentUpon>AltaPromoDobleAcumulacion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminPromociones\AltaPromoDobleAcumulacion.aspx.designer.cs">
+      <DependentUpon>AltaPromoDobleAcumulacion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminPromociones\ConsultaPromACDineroEntregaPzas.aspx.cs">
+      <DependentUpon>ConsultaPromACDineroEntregaPzas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminPromociones\ConsultaPromACDineroEntregaPzas.aspx.designer.cs">
+      <DependentUpon>ConsultaPromACDineroEntregaPzas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminPromociones\ConsultaPromPendxAutDesAut.aspx.cs">
+      <DependentUpon>ConsultaPromPendxAutDesAut.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminPromociones\ConsultaPromPendxAutDesAut.aspx.designer.cs">
+      <DependentUpon>ConsultaPromPendxAutDesAut.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminPromociones\ImportarPromociones.aspx.cs">
+      <DependentUpon>ImportarPromociones.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminPromociones\ImportarPromociones.aspx.designer.cs">
+      <DependentUpon>ImportarPromociones.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminPromociones\MuestraDatos.aspx.cs">
+      <DependentUpon>MuestraDatos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminPromociones\MuestraDatos.aspx.designer.cs">
+      <DependentUpon>MuestraDatos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminPromociones\MuestraDatosACBase.aspx.cs">
+      <DependentUpon>MuestraDatosACBase.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminPromociones\MuestraDatosACBase.aspx.designer.cs">
+      <DependentUpon>MuestraDatosACBase.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminPromociones\MuestraDatosAcumulacionDinero.aspx.cs">
+      <DependentUpon>MuestraDatosAcumulacionDinero.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminPromociones\MuestraDatosAcumulacionDinero.aspx.designer.cs">
+      <DependentUpon>MuestraDatosAcumulacionDinero.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminPromociones\MuestraDatosAutDesAut.aspx.cs">
+      <DependentUpon>MuestraDatosAutDesAut.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminPromociones\MuestraDatosAutDesAut.aspx.designer.cs">
+      <DependentUpon>MuestraDatosAutDesAut.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminPromociones\MuestraDatosAutDesAutACDineroEntregaPzas.aspx.cs">
+      <DependentUpon>MuestraDatosAutDesAutACDineroEntregaPzas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminPromociones\MuestraDatosAutDesAutACDineroEntregaPzas.aspx.designer.cs">
+      <DependentUpon>MuestraDatosAutDesAutACDineroEntregaPzas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminPromociones\MuestraDatosDEPorc.aspx.cs">
+      <DependentUpon>MuestraDatosDEPorc.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminPromociones\MuestraDatosDEPorc.aspx.designer.cs">
+      <DependentUpon>MuestraDatosDEPorc.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminPromociones\MuestraPromoDesc.aspx.cs">
+      <DependentUpon>MuestraPromoDesc.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminPromociones\MuestraPromoDesc.aspx.designer.cs">
+      <DependentUpon>MuestraPromoDesc.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminPromociones\MuestraPromoEscalonada.aspx.cs">
+      <DependentUpon>MuestraPromoEscalonada.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminPromociones\MuestraPromoEscalonada.aspx.designer.cs">
+      <DependentUpon>MuestraPromoEscalonada.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminPromociones\PromoDobleAcumulacion.aspx.cs">
+      <DependentUpon>PromoDobleAcumulacion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminPromociones\PromoDobleAcumulacion.aspx.designer.cs">
+      <DependentUpon>PromoDobleAcumulacion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App_Start\AuthConfig.cs" />
+    <Compile Include="About.aspx.cs">
+      <DependentUpon>About.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="About.aspx.designer.cs">
+      <DependentUpon>About.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AvisoPrivacidad.aspx.cs">
+      <DependentUpon>AvisoPrivacidad.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AvisoPrivacidad.aspx.designer.cs">
+      <DependentUpon>AvisoPrivacidad.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Bitacora\Bitacora.cs" />
+    <Compile Include="Bitacora\Modelo\BitacoraLog.cs" />
+    <Compile Include="CALLCENTER\BusquedaCliente.aspx.cs">
+      <DependentUpon>BusquedaCliente.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CALLCENTER\BusquedaCliente.aspx.designer.cs">
+      <DependentUpon>BusquedaCliente.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CALLCENTER\CancelaContactoXPadecimiento.aspx.cs">
+      <DependentUpon>CancelaContactoXPadecimiento.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CALLCENTER\CancelaContactoXPadecimiento.aspx.designer.cs">
+      <DependentUpon>CancelaContactoXPadecimiento.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CALLCENTER\ConsultaPromociones.aspx.cs">
+      <DependentUpon>ConsultaPromociones.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CALLCENTER\ConsultaPromociones.aspx.designer.cs">
+      <DependentUpon>ConsultaPromociones.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CALLCENTER\rptBloquearTarjeta.aspx.cs">
+      <DependentUpon>rptBloquearTarjeta.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CALLCENTER\rptBloquearTarjeta.aspx.designer.cs">
+      <DependentUpon>rptBloquearTarjeta.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CALLCENTER\rptCaptacionDatos.aspx.cs">
+      <DependentUpon>rptCaptacionDatos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CALLCENTER\rptCaptacionDatos.aspx.designer.cs">
+      <DependentUpon>rptCaptacionDatos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CALLCENTER\ReporteImportes3MesesTl.aspx.cs">
+      <DependentUpon>ReporteImportes3MesesTl.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CALLCENTER\ReporteImportes3MesesTl.aspx.designer.cs">
+      <DependentUpon>ReporteImportes3MesesTl.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CALLCENTER\ReporteImportesXPeriodoTl.aspx.cs">
+      <DependentUpon>ReporteImportesXPeriodoTl.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CALLCENTER\ReporteImportesXPeriodoTl.aspx.designer.cs">
+      <DependentUpon>ReporteImportesXPeriodoTl.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CALLCENTER\ReporteTicketsXPeriodoTl.aspx.cs">
+      <DependentUpon>ReporteTicketsXPeriodoTl.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CALLCENTER\ReporteTicketsXPeriodoTl.aspx.designer.cs">
+      <DependentUpon>ReporteTicketsXPeriodoTl.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CALLCENTER\ReporteTickets3MesesTl.aspx.cs">
+      <DependentUpon>ReporteTickets3MesesTl.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CALLCENTER\ReporteTickets3MesesTl.aspx.designer.cs">
+      <DependentUpon>ReporteTickets3MesesTl.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CALLCENTER\rptCapturaDatosTotales.aspx.cs">
+      <DependentUpon>rptCapturaDatosTotales.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CALLCENTER\rptCapturaDatosTotales.aspx.designer.cs">
+      <DependentUpon>rptCapturaDatosTotales.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CALLCENTER\rptDesBloqueos.aspx.cs">
+      <DependentUpon>rptDesBloqueos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CALLCENTER\rptDesBloqueos.aspx.designer.cs">
+      <DependentUpon>rptDesBloqueos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CALLCENTER\RecuperarContraseñaCallCenter.aspx.cs">
+      <DependentUpon>RecuperarContraseñaCallCenter.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CALLCENTER\RecuperarContraseñaCallCenter.aspx.designer.cs">
+      <DependentUpon>RecuperarContraseñaCallCenter.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CALLCENTER\RegistroClienteCallCenter.aspx.cs">
+      <DependentUpon>RegistroClienteCallCenter.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CALLCENTER\RegistroClienteCallCenter.aspx.designer.cs">
+      <DependentUpon>RegistroClienteCallCenter.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CALLCENTER\RegistroCliente_PrimeraVez.aspx.cs">
+      <DependentUpon>RegistroCliente_PrimeraVez.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CALLCENTER\RegistroCliente_PrimeraVez.aspx.designer.cs">
+      <DependentUpon>RegistroCliente_PrimeraVez.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CALLCENTER\RegistroLLamadas.aspx.cs">
+      <DependentUpon>RegistroLLamadas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CALLCENTER\RegistroLLamadas.aspx.designer.cs">
+      <DependentUpon>RegistroLLamadas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CALLCENTER\ReporteActivacion3MesesTl.aspx.cs">
+      <DependentUpon>ReporteActivacion3MesesTl.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CALLCENTER\ReporteActivacion3MesesTl.aspx.designer.cs">
+      <DependentUpon>ReporteActivacion3MesesTl.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CALLCENTER\ReporteActivacionXPeriodo.aspx.cs">
+      <DependentUpon>ReporteActivacionXPeriodo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CALLCENTER\ReporteActivacionXPeriodo.aspx.designer.cs">
+      <DependentUpon>ReporteActivacionXPeriodo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CALLCENTER\ReporteActivacionXPeriodoTl.aspx.cs">
+      <DependentUpon>ReporteActivacionXPeriodoTl.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CALLCENTER\ReporteActivacionXPeriodoTl.aspx.designer.cs">
+      <DependentUpon>ReporteActivacionXPeriodoTl.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CALLCENTER\ReporteAsistencias.aspx.cs">
+      <DependentUpon>ReporteAsistencias.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CALLCENTER\ReporteAsistencias.aspx.designer.cs">
+      <DependentUpon>ReporteAsistencias.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CALLCENTER\ReporteReenvioMailB.aspx.cs">
+      <DependentUpon>ReporteReenvioMailB.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CALLCENTER\ReporteReenvioMailB.aspx.designer.cs">
+      <DependentUpon>ReporteReenvioMailB.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CALLCENTER\ReportesBenavides.aspx.cs">
+      <DependentUpon>ReportesBenavides.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CALLCENTER\ReportesBenavides.aspx.designer.cs">
+      <DependentUpon>ReportesBenavides.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CALLCENTER\rptBloqueos.aspx.cs">
+      <DependentUpon>rptBloqueos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CALLCENTER\rptBloqueos.aspx.designer.cs">
+      <DependentUpon>rptBloqueos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CALLCENTER\rptConsultaTraspasos.aspx.cs">
+      <DependentUpon>rptConsultaTraspasos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CALLCENTER\rptConsultaTraspasos.aspx.designer.cs">
+      <DependentUpon>rptConsultaTraspasos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CALLCENTER\rptHistorico.aspx.cs">
+      <DependentUpon>rptHistorico.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CALLCENTER\rptHistorico.aspx.designer.cs">
+      <DependentUpon>rptHistorico.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CALLCENTER\rptTraspasos.aspx.cs">
+      <DependentUpon>rptTraspasos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CALLCENTER\rptTraspasos.aspx.designer.cs">
+      <DependentUpon>rptTraspasos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CALLCENTER\SaldoMovClienteCallCenter.aspx.cs">
+      <DependentUpon>SaldoMovClienteCallCenter.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CALLCENTER\SaldoMovClienteCallCenter.aspx.designer.cs">
+      <DependentUpon>SaldoMovClienteCallCenter.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CALLCENTER\ValidaCodigoTarjeta.aspx.cs">
+      <DependentUpon>ValidaCodigoTarjeta.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CALLCENTER\ValidaCodigoTarjeta.aspx.designer.cs">
+      <DependentUpon>ValidaCodigoTarjeta.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CALLCENTER\VCodigoCel.aspx.cs">
+      <DependentUpon>VCodigoCel.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CALLCENTER\VCodigoCel.aspx.designer.cs">
+      <DependentUpon>VCodigoCel.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CALLCENTER\WebForm1.aspx.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CALLCENTER\WebForm1.aspx.designer.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Catalogos\CatPromociones.aspx.cs">
+      <DependentUpon>CatPromociones.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Catalogos\CatPromociones.aspx.designer.cs">
+      <DependentUpon>CatPromociones.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Catalogos\ComboBeneficio.aspx.cs">
+      <DependentUpon>ComboBeneficio.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Catalogos\ComboBeneficio.aspx.designer.cs">
+      <DependentUpon>ComboBeneficio.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Catalogos\ConsultaPromo.aspx.cs">
+      <DependentUpon>ConsultaPromo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Catalogos\ConsultaPromo.aspx.designer.cs">
+      <DependentUpon>ConsultaPromo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Catalogos\NuevaPromo.aspx.cs">
+      <DependentUpon>NuevaPromo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Catalogos\NuevaPromo.aspx.designer.cs">
+      <DependentUpon>NuevaPromo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Catalogos\RegistroGeneral.aspx.cs">
+      <DependentUpon>RegistroGeneral.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Catalogos\RegistroGeneral.aspx.designer.cs">
+      <DependentUpon>RegistroGeneral.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Contact.aspx.cs">
+      <DependentUpon>Contact.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Contact.aspx.designer.cs">
+      <DependentUpon>Contact.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Controles\ControlMnu\administracionPerfiles.aspx.cs">
+      <DependentUpon>administracionPerfiles.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controles\ControlMnu\administracionPerfiles.aspx.designer.cs">
+      <DependentUpon>administracionPerfiles.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Controles\ControlMnu\mantenimientomenu.aspx.cs">
+      <DependentUpon>mantenimientomenu.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controles\ControlMnu\mantenimientomenu.aspx.designer.cs">
+      <DependentUpon>mantenimientomenu.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Controles\ControlMnu\MnuManager.ascx.cs">
+      <DependentUpon>MnuManager.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controles\ControlMnu\MnuManager.ascx.designer.cs">
+      <DependentUpon>MnuManager.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controles\ControlMnu\usuarios.aspx.cs">
+      <DependentUpon>usuarios.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controles\ControlMnu\usuarios.aspx.designer.cs">
+      <DependentUpon>usuarios.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Controles\HeaderCliente.ascx.cs">
+      <DependentUpon>HeaderCliente.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controles\HeaderCliente.ascx.designer.cs">
+      <DependentUpon>HeaderCliente.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="DashBoard\DashBenavides1.aspx.cs">
+      <DependentUpon>DashBenavides1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DashBoard\DashBenavides1.aspx.designer.cs">
+      <DependentUpon>DashBenavides1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DashBoard\DashBenavides2.aspx.cs">
+      <DependentUpon>DashBenavides2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DashBoard\DashBenavides2.aspx.designer.cs">
+      <DependentUpon>DashBenavides2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DashBoard\DashBenavides3.aspx.cs">
+      <DependentUpon>DashBenavides3.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DashBoard\DashBenavides3.aspx.designer.cs">
+      <DependentUpon>DashBenavides3.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DashBoard\DashBenavides4.aspx.cs">
+      <DependentUpon>DashBenavides4.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DashBoard\DashBenavides4.aspx.designer.cs">
+      <DependentUpon>DashBenavides4.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DashBoard\DashBenavidesGraficos.aspx.cs">
+      <DependentUpon>DashBenavidesGraficos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DashBoard\DashBenavidesGraficos.aspx.designer.cs">
+      <DependentUpon>DashBenavidesGraficos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DashBoard\DashBenavidesTop10.aspx.cs">
+      <DependentUpon>DashBenavidesTop10.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DashBoard\DashBenavidesTop10.aspx.designer.cs">
+      <DependentUpon>DashBenavidesTop10.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Estadisticas\TiemposPromedioPOS.aspx.cs">
+      <DependentUpon>TiemposPromedioPOS.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Estadisticas\TiemposPromedioPOS.aspx.designer.cs">
+      <DependentUpon>TiemposPromedioPOS.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Herramientas\ConsultaLogsAppBenavides.aspx.cs">
+      <DependentUpon>ConsultaLogsAppBenavides.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Herramientas\ConsultaLogsAppBenavides.aspx.designer.cs">
+      <DependentUpon>ConsultaLogsAppBenavides.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Herramientas\ModeloLogApp.cs" />
+    <Compile Include="Herramientas\utils.aspx.cs">
+      <DependentUpon>utils.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Herramientas\utils.aspx.designer.cs">
+      <DependentUpon>utils.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Perfil\BeneficiosEsp.aspx.cs">
+      <DependentUpon>BeneficiosEsp.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Perfil\BeneficiosEsp.aspx.designer.cs">
+      <DependentUpon>BeneficiosEsp.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Perfil\ComunicacionEnv.aspx.cs">
+      <DependentUpon>ComunicacionEnv.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Perfil\ComunicacionEnv.aspx.designer.cs">
+      <DependentUpon>ComunicacionEnv.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Perfil\DetallePromo.aspx.cs">
+      <DependentUpon>DetallePromo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Perfil\DetallePromo.aspx.designer.cs">
+      <DependentUpon>DetallePromo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Perfil\DineroE.aspx.cs">
+      <DependentUpon>DineroE.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Perfil\DineroE.aspx.designer.cs">
+      <DependentUpon>DineroE.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Perfil\HistoricoPromo.aspx.cs">
+      <DependentUpon>HistoricoPromo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Perfil\HistoricoPromo.aspx.designer.cs">
+      <DependentUpon>HistoricoPromo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Perfil\Llamadas.aspx.cs">
+      <DependentUpon>Llamadas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Perfil\Llamadas.aspx.designer.cs">
+      <DependentUpon>Llamadas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Perfil\Perfil.aspx.cs">
+      <DependentUpon>Perfil.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Perfil\Perfil.aspx.designer.cs">
+      <DependentUpon>Perfil.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Perfil\Promociones.aspx.cs">
+      <DependentUpon>Promociones.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Perfil\Promociones.aspx.designer.cs">
+      <DependentUpon>Promociones.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Perfil\Traspasos.aspx.cs">
+      <DependentUpon>Traspasos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Perfil\Traspasos.aspx.designer.cs">
+      <DependentUpon>Traspasos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="POS\AcumulaTicketsXContingencia.aspx.cs">
+      <DependentUpon>AcumulaTicketsXContingencia.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="POS\AcumulaTicketsXContingencia.aspx.designer.cs">
+      <DependentUpon>AcumulaTicketsXContingencia.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="segundoplano\rptTraspasos.aspx.cs">
+      <DependentUpon>rptTraspasos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="segundoplano\rptTraspasos.aspx.designer.cs">
+      <DependentUpon>rptTraspasos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\WsReglasNegocio\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Site.Master.cs">
+      <DependentUpon>Site.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Site.Master.designer.cs">
+      <DependentUpon>Site.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Site1.Master.cs">
+      <DependentUpon>Site1.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Site1.Master.designer.cs">
+      <DependentUpon>Site1.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Terminos.aspx.cs">
+      <DependentUpon>Terminos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Terminos.aspx.designer.cs">
+      <DependentUpon>Terminos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Utilerias\ExportarExcel.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Account\Web.config" />
+    <Content Include="Site.Master" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Site1.Master" />
+    <None Include="Service References\WsReglasNegocio\WsReglasNegocio.wsdl" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DataSQL\DataSQL.csproj">
+      <Project>{c17322d0-8ff5-4b57-bff1-3fdc1bd380c5}</Project>
+      <Name>DataSQL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Infraestructura\Datos\Datos.csproj">
+      <Project>{ceb2e923-146b-4828-8fc3-b9cfb89f3586}</Project>
+      <Name>Datos</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Infraestructura\Entidades\Entidades.csproj">
+      <Project>{9c834930-82a4-4b38-bef2-70e3c14e8c30}</Project>
+      <Name>Entidades</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Infraestructura\Negocio\Negocio.csproj">
+      <Project>{9b4f4765-82aa-4b38-a3b6-00d19f5cd3ec}</Project>
+      <Name>Negocio</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferences Include="Web References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\WsReglasNegocio\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>18963</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:15858/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

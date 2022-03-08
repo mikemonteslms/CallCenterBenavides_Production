@@ -1,0 +1,775 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://WsLMS_eCardCRM_DynamicsVzla.com.mx/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" targetNamespace="http://WsLMS_eCardCRM_DynamicsVzla.com.mx/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://WsLMS_eCardCRM_DynamicsVzla.com.mx/">
+      <s:element name="TarjetasRegistradas">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="programaID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="key" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="tipoExtraccion" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="fecha" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strUsuario" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TarjetasRegistradasResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="TarjetasRegistradasResult" type="tns:ArrayOfTarjetaCliente" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfTarjetaCliente">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="TarjetaCliente" nillable="true" type="tns:TarjetaCliente" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="TarjetaCliente">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Error" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Mensaje" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="TotalRegistros" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="PaqueteEntrega" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="ClienteID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TarjetaID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ApellidoP" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ApellidoM" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Nombre" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="FechaAlta" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Cedula" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Telefono" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Medico" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="IDSucursal" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Mecanicas" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="TarjetaClienteConfirmacion">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="programaID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="key" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="paqueteEntrega" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="listatarjetacliente" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="estatus" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TarjetaClienteConfirmacionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="TarjetaClienteConfirmacionResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TarjetasRegistradasDemo">
+        <s:complexType />
+      </s:element>
+      <s:element name="TarjetasRegistradasDemoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="TarjetasRegistradasDemoResult" type="tns:ArrayOfTarjetaCliente" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Transacciones">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="programaID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="key" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="tipoExtraccion" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="fecha" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strUsuario" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TransaccionesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="TransaccionesResult" type="tns:ArrayOfTransacciones" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfTransacciones">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Transacciones" nillable="true" type="tns:Transacciones" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Transacciones">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Error" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Mensaje" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="TotalRegistros" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="RegistroInsercion" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="TransaccionIntID" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="CadenaIntID" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="SucursalIntID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="SucursalStrID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TarjetaStrNumero" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TransaccionDateFecha" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PresentacionIntSKU" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PresentacionStrID" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="TransaccionIntCantidad" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="TransaccionStrTipoMov" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TransaccionStrSubTipoMov" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="TransaccionesConfirmacion">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="programaID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="key" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="paqueteEntrega" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="listatransacciones" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="estatus" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TransaccionesConfirmacionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="TransaccionesConfirmacionResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TransaccionesDemo">
+        <s:complexType />
+      </s:element>
+      <s:element name="TransaccionesDemoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="TransaccionesDemoResult" type="tns:ArrayOfTransacciones" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="MaestroCadenas">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="programaID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="key" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="listaCadenas" type="tns:ArrayOfCadenas" />
+            <s:element minOccurs="0" maxOccurs="1" name="strUsuario" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfCadenas">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Cadenas" nillable="true" type="tns:Cadenas" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Cadenas">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="CadenaIntID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Cadena_strNombre" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Cadena_intParticipa" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="MaestroCadenasResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="MaestroCadenasResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="MaestroCadenasDemo">
+        <s:complexType />
+      </s:element>
+      <s:element name="MaestroCadenasDemoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="MaestroCadenasDemoResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="MaestroTarjetas">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="programaID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="key" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="listaTarjetas" type="tns:ArrayOfTarjetas" />
+            <s:element minOccurs="0" maxOccurs="1" name="strUsuario" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfTarjetas">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Tarjetas" nillable="true" type="tns:Tarjetas" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Tarjetas">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Tarjeta_StrID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Tarjeta_StrMecanicas" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Tarjeta_IntParticipa" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="MaestroTarjetasResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="MaestroTarjetasResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="MaestroTarjetasDemo">
+        <s:complexType />
+      </s:element>
+      <s:element name="MaestroTarjetasDemoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="MaestroTarjetasDemoResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="MaestroSucursales">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="programaID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="key" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="listaSucursales" type="tns:ArrayOfSucursales" />
+            <s:element minOccurs="0" maxOccurs="1" name="strUsuario" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfSucursales">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Sucursales" nillable="true" type="tns:Sucursales" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Sucursales">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Cadena_IntID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Sucursal_StrID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Sucursal_StrNombre" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Sucursal_IntParticipa" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="MaestroSucursalesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="MaestroSucursalesResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="MaestroSucursalesDemo">
+        <s:complexType />
+      </s:element>
+      <s:element name="MaestroSucursalesDemoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="MaestroSucursalesDemoResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="MaestroProductos">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="programaID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="key" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="listaProductos" type="tns:ArrayOfProducto" />
+            <s:element minOccurs="0" maxOccurs="1" name="strUsuario" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfProducto">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Producto" nillable="true" type="tns:Producto" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Producto">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="ProductoStrID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ProductoStrDescripcion" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="ProductoIntStatus" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="MaestroProductosResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="MaestroProductosResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="MaestroProductosDemo">
+        <s:complexType />
+      </s:element>
+      <s:element name="MaestroProductosDemoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="MaestroProductosDemoResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="MaestroProductosPresentacion">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="programaID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="key" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="listaProductosPresentacion" type="tns:ArrayOfPresentacion" />
+            <s:element minOccurs="0" maxOccurs="1" name="strUsuario" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfPresentacion">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Presentacion" nillable="true" type="tns:Presentacion" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Presentacion">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="PresentacionStrSKU" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ProductoStrID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PresentacionStrID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PresentacionStrDescripcion" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PresentacionStrSKUBeneficio" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="PresentacionIntCantidadCompra" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="PresentacionIntCantidadBeneficio" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="PresentacionIntLimiteMensual" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="PresentacionIntStatus" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="MaestroProductosPresentacionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="MaestroProductosPresentacionResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="TarjetasRegistradasSoapIn">
+    <wsdl:part name="parameters" element="tns:TarjetasRegistradas" />
+  </wsdl:message>
+  <wsdl:message name="TarjetasRegistradasSoapOut">
+    <wsdl:part name="parameters" element="tns:TarjetasRegistradasResponse" />
+  </wsdl:message>
+  <wsdl:message name="TarjetaClienteConfirmacionSoapIn">
+    <wsdl:part name="parameters" element="tns:TarjetaClienteConfirmacion" />
+  </wsdl:message>
+  <wsdl:message name="TarjetaClienteConfirmacionSoapOut">
+    <wsdl:part name="parameters" element="tns:TarjetaClienteConfirmacionResponse" />
+  </wsdl:message>
+  <wsdl:message name="TarjetasRegistradasDemoSoapIn">
+    <wsdl:part name="parameters" element="tns:TarjetasRegistradasDemo" />
+  </wsdl:message>
+  <wsdl:message name="TarjetasRegistradasDemoSoapOut">
+    <wsdl:part name="parameters" element="tns:TarjetasRegistradasDemoResponse" />
+  </wsdl:message>
+  <wsdl:message name="TransaccionesSoapIn">
+    <wsdl:part name="parameters" element="tns:Transacciones" />
+  </wsdl:message>
+  <wsdl:message name="TransaccionesSoapOut">
+    <wsdl:part name="parameters" element="tns:TransaccionesResponse" />
+  </wsdl:message>
+  <wsdl:message name="TransaccionesConfirmacionSoapIn">
+    <wsdl:part name="parameters" element="tns:TransaccionesConfirmacion" />
+  </wsdl:message>
+  <wsdl:message name="TransaccionesConfirmacionSoapOut">
+    <wsdl:part name="parameters" element="tns:TransaccionesConfirmacionResponse" />
+  </wsdl:message>
+  <wsdl:message name="TransaccionesDemoSoapIn">
+    <wsdl:part name="parameters" element="tns:TransaccionesDemo" />
+  </wsdl:message>
+  <wsdl:message name="TransaccionesDemoSoapOut">
+    <wsdl:part name="parameters" element="tns:TransaccionesDemoResponse" />
+  </wsdl:message>
+  <wsdl:message name="MaestroCadenasSoapIn">
+    <wsdl:part name="parameters" element="tns:MaestroCadenas" />
+  </wsdl:message>
+  <wsdl:message name="MaestroCadenasSoapOut">
+    <wsdl:part name="parameters" element="tns:MaestroCadenasResponse" />
+  </wsdl:message>
+  <wsdl:message name="MaestroCadenasDemoSoapIn">
+    <wsdl:part name="parameters" element="tns:MaestroCadenasDemo" />
+  </wsdl:message>
+  <wsdl:message name="MaestroCadenasDemoSoapOut">
+    <wsdl:part name="parameters" element="tns:MaestroCadenasDemoResponse" />
+  </wsdl:message>
+  <wsdl:message name="MaestroTarjetasSoapIn">
+    <wsdl:part name="parameters" element="tns:MaestroTarjetas" />
+  </wsdl:message>
+  <wsdl:message name="MaestroTarjetasSoapOut">
+    <wsdl:part name="parameters" element="tns:MaestroTarjetasResponse" />
+  </wsdl:message>
+  <wsdl:message name="MaestroTarjetasDemoSoapIn">
+    <wsdl:part name="parameters" element="tns:MaestroTarjetasDemo" />
+  </wsdl:message>
+  <wsdl:message name="MaestroTarjetasDemoSoapOut">
+    <wsdl:part name="parameters" element="tns:MaestroTarjetasDemoResponse" />
+  </wsdl:message>
+  <wsdl:message name="MaestroSucursalesSoapIn">
+    <wsdl:part name="parameters" element="tns:MaestroSucursales" />
+  </wsdl:message>
+  <wsdl:message name="MaestroSucursalesSoapOut">
+    <wsdl:part name="parameters" element="tns:MaestroSucursalesResponse" />
+  </wsdl:message>
+  <wsdl:message name="MaestroSucursalesDemoSoapIn">
+    <wsdl:part name="parameters" element="tns:MaestroSucursalesDemo" />
+  </wsdl:message>
+  <wsdl:message name="MaestroSucursalesDemoSoapOut">
+    <wsdl:part name="parameters" element="tns:MaestroSucursalesDemoResponse" />
+  </wsdl:message>
+  <wsdl:message name="MaestroProductosSoapIn">
+    <wsdl:part name="parameters" element="tns:MaestroProductos" />
+  </wsdl:message>
+  <wsdl:message name="MaestroProductosSoapOut">
+    <wsdl:part name="parameters" element="tns:MaestroProductosResponse" />
+  </wsdl:message>
+  <wsdl:message name="MaestroProductosDemoSoapIn">
+    <wsdl:part name="parameters" element="tns:MaestroProductosDemo" />
+  </wsdl:message>
+  <wsdl:message name="MaestroProductosDemoSoapOut">
+    <wsdl:part name="parameters" element="tns:MaestroProductosDemoResponse" />
+  </wsdl:message>
+  <wsdl:message name="MaestroProductosPresentacionSoapIn">
+    <wsdl:part name="parameters" element="tns:MaestroProductosPresentacion" />
+  </wsdl:message>
+  <wsdl:message name="MaestroProductosPresentacionSoapOut">
+    <wsdl:part name="parameters" element="tns:MaestroProductosPresentacionResponse" />
+  </wsdl:message>
+  <wsdl:portType name="WsLMSeCardCRMSoap">
+    <wsdl:operation name="TarjetasRegistradas">
+      <wsdl:input message="tns:TarjetasRegistradasSoapIn" />
+      <wsdl:output message="tns:TarjetasRegistradasSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="TarjetaClienteConfirmacion">
+      <wsdl:input message="tns:TarjetaClienteConfirmacionSoapIn" />
+      <wsdl:output message="tns:TarjetaClienteConfirmacionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="TarjetasRegistradasDemo">
+      <wsdl:input message="tns:TarjetasRegistradasDemoSoapIn" />
+      <wsdl:output message="tns:TarjetasRegistradasDemoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Transacciones">
+      <wsdl:input message="tns:TransaccionesSoapIn" />
+      <wsdl:output message="tns:TransaccionesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="TransaccionesConfirmacion">
+      <wsdl:input message="tns:TransaccionesConfirmacionSoapIn" />
+      <wsdl:output message="tns:TransaccionesConfirmacionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="TransaccionesDemo">
+      <wsdl:input message="tns:TransaccionesDemoSoapIn" />
+      <wsdl:output message="tns:TransaccionesDemoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="MaestroCadenas">
+      <wsdl:input message="tns:MaestroCadenasSoapIn" />
+      <wsdl:output message="tns:MaestroCadenasSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="MaestroCadenasDemo">
+      <wsdl:input message="tns:MaestroCadenasDemoSoapIn" />
+      <wsdl:output message="tns:MaestroCadenasDemoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="MaestroTarjetas">
+      <wsdl:input message="tns:MaestroTarjetasSoapIn" />
+      <wsdl:output message="tns:MaestroTarjetasSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="MaestroTarjetasDemo">
+      <wsdl:input message="tns:MaestroTarjetasDemoSoapIn" />
+      <wsdl:output message="tns:MaestroTarjetasDemoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="MaestroSucursales">
+      <wsdl:input message="tns:MaestroSucursalesSoapIn" />
+      <wsdl:output message="tns:MaestroSucursalesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="MaestroSucursalesDemo">
+      <wsdl:input message="tns:MaestroSucursalesDemoSoapIn" />
+      <wsdl:output message="tns:MaestroSucursalesDemoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="MaestroProductos">
+      <wsdl:input message="tns:MaestroProductosSoapIn" />
+      <wsdl:output message="tns:MaestroProductosSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="MaestroProductosDemo">
+      <wsdl:input message="tns:MaestroProductosDemoSoapIn" />
+      <wsdl:output message="tns:MaestroProductosDemoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="MaestroProductosPresentacion">
+      <wsdl:input message="tns:MaestroProductosPresentacionSoapIn" />
+      <wsdl:output message="tns:MaestroProductosPresentacionSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WsLMSeCardCRMSoap" type="tns:WsLMSeCardCRMSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="TarjetasRegistradas">
+      <soap:operation soapAction="http://WsLMS_eCardCRM_DynamicsVzla.com.mx/TarjetasRegistradas" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TarjetaClienteConfirmacion">
+      <soap:operation soapAction="http://WsLMS_eCardCRM_DynamicsVzla.com.mx/TarjetaClienteConfirmacion" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TarjetasRegistradasDemo">
+      <soap:operation soapAction="http://WsLMS_eCardCRM_DynamicsVzla.com.mx/TarjetasRegistradasDemo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Transacciones">
+      <soap:operation soapAction="http://WsLMS_eCardCRM_DynamicsVzla.com.mx/Transacciones" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TransaccionesConfirmacion">
+      <soap:operation soapAction="http://WsLMS_eCardCRM_DynamicsVzla.com.mx/TransaccionesConfirmacion" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TransaccionesDemo">
+      <soap:operation soapAction="http://WsLMS_eCardCRM_DynamicsVzla.com.mx/TransaccionesDemo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MaestroCadenas">
+      <soap:operation soapAction="http://WsLMS_eCardCRM_DynamicsVzla.com.mx/MaestroCadenas" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MaestroCadenasDemo">
+      <soap:operation soapAction="http://WsLMS_eCardCRM_DynamicsVzla.com.mx/MaestroCadenasDemo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MaestroTarjetas">
+      <soap:operation soapAction="http://WsLMS_eCardCRM_DynamicsVzla.com.mx/MaestroTarjetas" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MaestroTarjetasDemo">
+      <soap:operation soapAction="http://WsLMS_eCardCRM_DynamicsVzla.com.mx/MaestroTarjetasDemo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MaestroSucursales">
+      <soap:operation soapAction="http://WsLMS_eCardCRM_DynamicsVzla.com.mx/MaestroSucursales" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MaestroSucursalesDemo">
+      <soap:operation soapAction="http://WsLMS_eCardCRM_DynamicsVzla.com.mx/MaestroSucursalesDemo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MaestroProductos">
+      <soap:operation soapAction="http://WsLMS_eCardCRM_DynamicsVzla.com.mx/MaestroProductos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MaestroProductosDemo">
+      <soap:operation soapAction="http://WsLMS_eCardCRM_DynamicsVzla.com.mx/MaestroProductosDemo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MaestroProductosPresentacion">
+      <soap:operation soapAction="http://WsLMS_eCardCRM_DynamicsVzla.com.mx/MaestroProductosPresentacion" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WsLMSeCardCRMSoap12" type="tns:WsLMSeCardCRMSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="TarjetasRegistradas">
+      <soap12:operation soapAction="http://WsLMS_eCardCRM_DynamicsVzla.com.mx/TarjetasRegistradas" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TarjetaClienteConfirmacion">
+      <soap12:operation soapAction="http://WsLMS_eCardCRM_DynamicsVzla.com.mx/TarjetaClienteConfirmacion" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TarjetasRegistradasDemo">
+      <soap12:operation soapAction="http://WsLMS_eCardCRM_DynamicsVzla.com.mx/TarjetasRegistradasDemo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Transacciones">
+      <soap12:operation soapAction="http://WsLMS_eCardCRM_DynamicsVzla.com.mx/Transacciones" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TransaccionesConfirmacion">
+      <soap12:operation soapAction="http://WsLMS_eCardCRM_DynamicsVzla.com.mx/TransaccionesConfirmacion" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TransaccionesDemo">
+      <soap12:operation soapAction="http://WsLMS_eCardCRM_DynamicsVzla.com.mx/TransaccionesDemo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MaestroCadenas">
+      <soap12:operation soapAction="http://WsLMS_eCardCRM_DynamicsVzla.com.mx/MaestroCadenas" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MaestroCadenasDemo">
+      <soap12:operation soapAction="http://WsLMS_eCardCRM_DynamicsVzla.com.mx/MaestroCadenasDemo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MaestroTarjetas">
+      <soap12:operation soapAction="http://WsLMS_eCardCRM_DynamicsVzla.com.mx/MaestroTarjetas" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MaestroTarjetasDemo">
+      <soap12:operation soapAction="http://WsLMS_eCardCRM_DynamicsVzla.com.mx/MaestroTarjetasDemo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MaestroSucursales">
+      <soap12:operation soapAction="http://WsLMS_eCardCRM_DynamicsVzla.com.mx/MaestroSucursales" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MaestroSucursalesDemo">
+      <soap12:operation soapAction="http://WsLMS_eCardCRM_DynamicsVzla.com.mx/MaestroSucursalesDemo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MaestroProductos">
+      <soap12:operation soapAction="http://WsLMS_eCardCRM_DynamicsVzla.com.mx/MaestroProductos" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MaestroProductosDemo">
+      <soap12:operation soapAction="http://WsLMS_eCardCRM_DynamicsVzla.com.mx/MaestroProductosDemo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MaestroProductosPresentacion">
+      <soap12:operation soapAction="http://WsLMS_eCardCRM_DynamicsVzla.com.mx/MaestroProductosPresentacion" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WsLMSeCardCRM">
+    <wsdl:port name="WsLMSeCardCRMSoap" binding="tns:WsLMSeCardCRMSoap">
+      <soap:address location="http://72.32.11.237/WSeCardPfizerVen/WsLMSeCardCRM.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WsLMSeCardCRMSoap12" binding="tns:WsLMSeCardCRMSoap12">
+      <soap12:address location="http://72.32.11.237/WSeCardPfizerVen/WsLMSeCardCRM.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

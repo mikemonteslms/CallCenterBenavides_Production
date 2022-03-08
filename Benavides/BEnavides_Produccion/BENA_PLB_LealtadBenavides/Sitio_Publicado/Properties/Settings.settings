@@ -1,0 +1,18 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="WebPfizer.LMS.eCard.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="WebPfizer_LMS_eCard_ZWS_COMPLIANCEService_ZWS_COMPLIANCE" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://mia33363ap05.managed.cln:8000/sap/bc/srt/rfc/sap/zws_compliance/400/zws_compliance/zws_compliance</Value>
+    </Setting>
+    <Setting Name="WebPfizer_LMS_eCard_WsEcardPrePago_WsEcardPrePago" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://72.32.11.237/WsEcardPrePagoCALIDAD/WsEcardPrePago.asmx</Value>
+    </Setting>
+    <Setting Name="WebPfizer_LMS_eCard_WSeCardPfizerVen_WsLMSeCardCRM" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://72.32.11.237/WSeCardPfizerVen/WsLMSeCardCRM.asmx</Value>
+    </Setting>
+    <Setting Name="WebPfizer_LMS_eCard_WsPrepago_WsEcardPrePago" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://72.32.11.237/WsEcardPrePagoDESA/WsEcardPrePago.asmx</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

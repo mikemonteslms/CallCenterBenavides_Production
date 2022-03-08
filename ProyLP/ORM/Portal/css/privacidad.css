@@ -1,0 +1,108 @@
+﻿.novisible {
+	display: none;
+}
+
+.visible {
+	display: block;
+}
+
+#divMensaje {
+	background: rgba(0, 0, 0, 0.75);
+	height: 100%;
+	left: 0px;
+	margin: auto;
+	position: fixed;
+	top: 0px;
+	width: 100%;
+	z-index: 1000;
+}
+
+#cuadroMensaje {
+	height: 1px;
+	left: -460px;
+	margin: auto;
+	position: relative;
+	top: 5%;
+	width: 1px;
+}
+
+.marcoMensaje {
+	padding: 10px;
+	text-align: left;
+	vertical-align: middle;
+	width: 920px;
+	background-color: #EAEEED;
+	-webkit-border-radius: 8px;
+	border-radius: 8px;
+	border: solid 1px #CFD7D9;
+}
+
+	.marcoMensaje ul {
+		padding-left: 30px;
+	}
+
+	.marcoMensaje li {
+		padding: 0px 5px 2px 7px;
+	}
+
+.privacidad {
+	max-height: 550px;
+	overflow-y: auto;
+}
+
+.terminos {
+	max-height: 550px;
+	overflow-y: auto;
+	font-size: 12px;
+}
+
+.marco_cerrar {
+	width: 100%;
+	height: 40px;
+	text-align: right;
+	position: relative;
+	padding-bottom:10px;
+	top: 0px;
+}
+
+.boton-cerrar {
+	background-image: url(../images/boton-cerrar.png);
+	background-repeat: no-repeat;
+	border: 0;
+	cursor: pointer;
+	padding: 0;
+	height: 40px;
+	width: 40px;
+	position: absolute;
+	top: 0px;
+	right: 0px;
+}
+
+.titulo_privacidad {
+	font-family: 'vw_headline_blackregular';
+	padding-left: 15px;
+	font-size: 14px;
+	color: #2274AC !important;
+	border-bottom: solid 1px #CFD7D9;
+}
+
+.cuerpo_privacidad {
+	font-size: 12px;
+	color: #7B7E84;
+	padding-bottom:10px;
+}
+
+	.cuerpo_privacidad p {
+		font-size: 1em;
+		margin: 0;
+		padding: 10px 10px 0px 10px;
+	}
+
+	.cuerpo_privacidad ul {
+		color: #7B7E84;
+	}
+
+	.cuerpo_privacidad li {
+		list-style: circle;
+		padding-bottom:5px;
+	}

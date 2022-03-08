@@ -1,0 +1,109 @@
+/********************************
+*	DEVELOPED BY ANTONY ACUÑA	*
+*	shopi30@hotmail.com			*
+*********************************/
+INPUT, SELECT, TEXTAREA, .xp{
+	font-size:10px;
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	border-width: 1px;
+	border-color:#999999;
+	border-style:solid;
+}
+.terminal, .titulo, .boton, .total
+{
+	vertical-align: middle;
+	text-transform:uppercase;
+	font-variant:small-caps;
+	font-size:10px;
+	font-family:Terminal, System, Courier, Sans-Serif;
+}
+.titulo, .boton
+{
+	color:white;
+	font-weight:bold;
+}
+
+.titulo:normal
+{
+	color:White;
+}
+.ochar
+{
+	text-transform:none;
+	font-variant:normal;
+	font-family:Verdana, Tahoma, Sans-Serif;
+}
+.boton
+{
+	background-color:#006699;
+	height: 20px;		
+}
+#dg
+{
+	
+}
+.label
+{
+	font-family:Verdana, Tahoma, Sans-Serif;
+	font-size:10px;
+	color:Black;
+	font-weight:bold;
+}
+.labelWhite
+{
+	font-family:Verdana, Tahoma, Sans-Serif;
+	font-size:10px;
+	color:White;
+	font-weight:bold;
+}
+.number
+{
+	text-align:right;
+}
+.nb, #showChart
+{
+	border-width:0px;
+}
+.total
+{
+	color:White;
+	background-color:#006699
+}
+.blanco
+{
+	font-family:Verdana, Tahoma, Sans-Serif;
+	font-size:10px;
+	color: 60483D;
+}
+.resalta
+{
+	font-family:Verdana, Tahoma, Sans-Serif;
+	font-size:10px;
+	color: red;
+}
+.resaltaN
+{
+	font-family:Verdana, Tahoma, Sans-Serif;
+	font-size:11px;
+	color: red;
+	font-weight:bold;
+}
+.labelN
+{
+	font-family:Verdana, Tahoma, Sans-Serif;
+	font-size:10px;
+	color:Black;
+}
+.labelGrid
+{
+	font-family:Verdana, Tahoma, Sans-Serif;
+	font-size:9px;
+	color:Black;
+}
+.labelGridP
+{
+	font-family:Verdana, Tahoma, Sans-Serif;
+	font-size:9px;
+	color:#404040;
+}
+

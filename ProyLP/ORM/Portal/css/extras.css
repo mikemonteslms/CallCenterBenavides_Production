@@ -1,0 +1,271 @@
+﻿.RadMenu .rmVertical .rmText {
+    padding: 3px 24px 3px 0 !important;
+}
+
+.cuadro_texto {
+    height: 20px;
+    border: solid 1px #D2D9DA;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+    padding-left: 4px;
+    padding-right: 4px;
+}
+
+.datos_participante {
+    color: #7B7E85 !important;
+    margin: 0 !important;
+    font-size: 12px;
+}
+
+/* Popup Mensaje */
+.Sombra {
+    background: #000000;
+    filter: alpha(opacity=75);
+    -moz-opacity: .75;
+    opacity: .75;
+    width: 100%;
+    height: 100%;
+}
+
+.cuadro_mensaje {
+    width: 400px;
+    height: 115px;
+    border: solid 1px #CFD7D9;
+    border-radius: 8px;
+    background-color: #fff;
+    padding: 10px 10px 10px 10px;
+    text-align: center;
+}
+
+    .cuadro_mensaje .mensaje {
+        display: block;
+        height: 80px;
+        vertical-align: middle !important;
+    }
+
+.menu_debajo {
+    z-index: 1 !important;
+}
+/* Detalle de premios */
+.cuadro_detalle_premio {
+    display: block;
+    width: 380px;
+    border: solid 1px #CFD7D9;
+    border-radius: 8px;
+    background-color: #fff;
+    padding: 10px 10px 10px 10px;
+    text-align: center;
+    font-size: 13px;
+}
+
+    .cuadro_detalle_premio .marco_producto {
+    }
+
+    .cuadro_detalle_premio .mensaje {
+        display: block;
+        vertical-align: middle !important;
+    }
+
+    .cuadro_detalle_premio .titulo-producto {
+        font-size: 1.2em;
+        text-align: center;
+        padding: 2px;
+    }
+
+    .cuadro_detalle_premio .producto-marca {
+        font-size: 1.2em;
+        text-align: center;
+        padding: 2px;
+    }
+
+    .cuadro_detalle_premio .producto-kilometros {
+        text-align: center;
+        font-family: "vw_headline_bookregular";
+        font-size: 16px;
+    }
+
+/* Guias y tips */
+.guias_p {
+    text-align: left;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 13px;
+    color: #999;
+    margin: 18px 0 8px 25px;
+}
+
+#guias_section {
+    width: 256px;
+    height: 150px;
+    /*background:#FFF;
+	float:left;
+	position:relative;*/
+}
+
+    #guias_section img {
+        float: left;
+        margin: -10px 0 0 20px;
+        padding: 0;
+    }
+
+    #guias_section h1 {
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 14px;
+        color: #333;
+        margin: 10px 0 0 55px;
+    }
+
+    #guias_section a {
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 12px;
+        color: #848484;
+        margin-left: 25px;
+        background: url(../images/traingulo.png) no-repeat;
+        padding-left: 9px;
+    }
+/* Contacto */
+.contacto {
+    height: 500px;
+}
+
+    .contacto p {
+        padding: 5px;
+    }
+
+    .contacto div {
+        margin-left: 15px;
+    }
+
+    .contacto a {
+        margin-left: 30px;
+    }
+
+.Comentarios {
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
+    border: solid 1px #CFD7D9;
+    text-align: left;
+    vertical-align: top;
+}
+/* Proximamente */
+#contenedor_proximamente {
+    margin: 50px auto;
+    width: 705px;
+    min-height: 302px;
+    padding: 18px;
+    text-align: center;
+}
+
+.Azul {
+    color: #006CB0;
+}
+
+/* Mecanica GSF */
+.cuadro-info-gsf {
+    border: 1px solid #eaeaea;
+    border-collapse: collapse;
+    display: table-cell;
+    margin: 0 11px 15px 0;
+}
+
+.titulo-cuadro-info-gsf {
+    text-align: center;
+    display: table-cell;
+    border-bottom: 1px solid #eaeaea;
+    padding: 5px;
+    clear: both;
+}
+
+.contenido-1-gsf {
+    padding: 5px;
+    border-bottom: 1px solid #eaeaea;
+    border-right: 1px solid #eaeaea;
+    width: 100px;
+}
+
+.subtitulo-gsf {
+    padding: 5px;
+    border-bottom: 1px solid #eaeaea;
+    border-right: 1px solid #eaeaea;
+    width: 100px;
+    text-align: center;
+}
+
+.numero-contenido-gsf {
+    padding: 5px 15px 5px 5px;
+    border: 1px solid #eaeaea;
+    margin: 0;
+    text-align: right;
+}
+
+.cuadro-info-2 {
+    border: 1px solid #eaeaea;
+    border-collapse: collapse;
+    display: table-cell;
+    margin: 0 11px 15px 0;
+    width: 300px;
+}
+
+.contenido-2 {
+    padding: 5px;
+    border-bottom: 1px solid #eaeaea;
+    border-right: 1px solid #eaeaea;
+    width: 230px;
+    float: left;
+}
+
+.mecanica-university {
+    border: 1px solid #eaeaea;
+    border-collapse: collapse;
+    display: table-cell;
+    padding: 5px;
+}
+/* Submenu Mis datos*/
+.submenu_activo {
+    color: #2274AC;
+}
+/* Chat */
+.contenedor_chat {
+    height: 30px;
+    width: 150px;
+    position: relative;
+    top: -102px;
+    left: 630px;
+}
+/*This will work for firefox*/
+@-moz-document url-prefix() {
+    .contenedor_chat {
+        top: 18px;
+        left: 425px;
+    }
+}
+
+/* Tooltip de noticias */
+.tooltip1{
+    display: inline;
+    position: relative;
+}
+.tooltip1:hover:after{
+    background: #2274ac;
+    background: rgba(34,116,172, 0.9);
+    border-radius: 5px;
+    bottom: 26px;
+    color: #fff;
+    content: attr(title);
+    font-family: Arial!important;
+    font-weight:normal;
+    left: 40%;
+    padding: 5px 15px;
+    position: absolute;
+    z-index: 98;
+    width: 220px;
+}
+.tooltip1:hover:before{
+    border: solid;
+    border-color: #333 transparent;
+    border-width: 6px 6px 0 6px;
+    bottom: 20px;
+    content: "";
+    left: 50%;
+    position: absolute;
+    z-index: 99;
+}

@@ -1,0 +1,979 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="urn:wsRewards_Service_2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns="http://schemas.xmlsoap.org/wsdl/" targetNamespace="urn:wsRewards_Service_2" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="urn:wsRewards_Service_2">
+      <xsd:import namespace="http://schemas.xmlsoap.org/soap/encoding/" />
+      <xsd:import namespace="http://schemas.xmlsoap.org/wsdl/" />
+      <xsd:complexType name="Actualiza">
+        <xsd:all>
+          <xsd:element name="folio" type="xsd:string" />
+          <xsd:element name="socio" type="xsd:string" />
+          <xsd:element name="propietario" type="xsd:string" />
+          <xsd:element name="razonsocial" type="xsd:string" />
+          <xsd:element name="calle" type="xsd:string" />
+          <xsd:element name="entrecalle" type="xsd:string" />
+          <xsd:element name="ycalles" type="xsd:string" />
+          <xsd:element name="colonia" type="xsd:string" />
+          <xsd:element name="municipio" type="xsd:string" />
+          <xsd:element name="ciudad" type="xsd:string" />
+          <xsd:element name="estado" type="xsd:string" />
+          <xsd:element name="cp" type="xsd:string" />
+          <xsd:element name="telefono" type="xsd:string" />
+          <xsd:element name="asentamiento" type="xsd:string" />
+          <xsd:element name="referencias" type="xsd:string" />
+        </xsd:all>
+      </xsd:complexType>
+      <xsd:complexType name="FoliosActualiza">
+        <xsd:complexContent mixed="false">
+          <xsd:restriction base="SOAP-ENC:Array">
+            <xsd:attribute wsdl:arrayType="tns:Actualiza[]" ref="SOAP-ENC:arrayType" />
+          </xsd:restriction>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:complexType name="rud">
+        <xsd:all>
+          <xsd:element name="folio" type="xsd:string" />
+          <xsd:element name="status" type="xsd:int" />
+          <xsd:element name="error" type="xsd:string" />
+        </xsd:all>
+      </xsd:complexType>
+      <xsd:complexType name="responseUpdateData">
+        <xsd:complexContent mixed="false">
+          <xsd:restriction base="SOAP-ENC:Array">
+            <xsd:attribute wsdl:arrayType="tns:rud[]" ref="SOAP-ENC:arrayType" />
+          </xsd:restriction>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:complexType name="folioStatus">
+        <xsd:all>
+          <xsd:element name="folio" type="xsd:string" />
+          <xsd:element name="status" type="xsd:string" />
+        </xsd:all>
+      </xsd:complexType>
+      <xsd:complexType name="folioStatusReg">
+        <xsd:complexContent mixed="false">
+          <xsd:restriction base="SOAP-ENC:Array">
+            <xsd:attribute wsdl:arrayType="tns:folioStatus[]" ref="SOAP-ENC:arrayType" />
+          </xsd:restriction>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:complexType name="responseCambioStatus">
+        <xsd:complexContent mixed="false">
+          <xsd:restriction base="SOAP-ENC:Array">
+            <xsd:attribute wsdl:arrayType="tns:resga[]" ref="SOAP-ENC:arrayType" />
+          </xsd:restriction>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:complexType name="Garantia">
+        <xsd:all>
+          <xsd:element name="folio" type="xsd:string" />
+          <xsd:element name="fecha" type="xsd:string" />
+          <xsd:element name="comentario" type="xsd:string" />
+          <xsd:element name="prioridad" type="xsd:string" />
+        </xsd:all>
+      </xsd:complexType>
+      <xsd:complexType name="FoliosGarantia">
+        <xsd:complexContent mixed="false">
+          <xsd:restriction base="SOAP-ENC:Array">
+            <xsd:attribute wsdl:arrayType="tns:Garantia[]" ref="SOAP-ENC:arrayType" />
+          </xsd:restriction>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:complexType name="resga">
+        <xsd:all>
+          <xsd:element name="folio" type="xsd:string" />
+          <xsd:element name="status" type="xsd:int" />
+          <xsd:element name="error" type="xsd:string" />
+        </xsd:all>
+      </xsd:complexType>
+      <xsd:complexType name="responseGarantia">
+        <xsd:complexContent mixed="false">
+          <xsd:restriction base="SOAP-ENC:Array">
+            <xsd:attribute wsdl:arrayType="tns:resga[]" ref="SOAP-ENC:arrayType" />
+          </xsd:restriction>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:complexType name="Cancelacion">
+        <xsd:all>
+          <xsd:element name="folio" type="xsd:string" />
+          <xsd:element name="fecha" type="xsd:string" />
+          <xsd:element name="comentario" type="xsd:string" />
+        </xsd:all>
+      </xsd:complexType>
+      <xsd:complexType name="FoliosCancelacion">
+        <xsd:complexContent mixed="false">
+          <xsd:restriction base="SOAP-ENC:Array">
+            <xsd:attribute wsdl:arrayType="tns:Cancelacion[]" ref="SOAP-ENC:arrayType" />
+          </xsd:restriction>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:complexType name="rescan">
+        <xsd:all>
+          <xsd:element name="folio" type="xsd:string" />
+          <xsd:element name="status" type="xsd:int" />
+          <xsd:element name="error" type="xsd:string" />
+        </xsd:all>
+      </xsd:complexType>
+      <xsd:complexType name="responseCancelacion">
+        <xsd:complexContent mixed="false">
+          <xsd:restriction base="SOAP-ENC:Array">
+            <xsd:attribute wsdl:arrayType="tns:rescan[]" ref="SOAP-ENC:arrayType" />
+          </xsd:restriction>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:complexType name="Pedido">
+        <xsd:all>
+          <xsd:element name="pedido" type="xsd:string" />
+          <xsd:element name="folio" type="xsd:string" />
+          <xsd:element name="distribuidora" type="xsd:string" />
+          <xsd:element name="ruta" type="xsd:string" />
+          <xsd:element name="socio" type="xsd:string" />
+          <xsd:element name="propietario" type="xsd:string" />
+          <xsd:element name="razonsocial" type="xsd:string" />
+          <xsd:element name="calle" type="xsd:string" />
+          <xsd:element name="entrecalle" type="xsd:string" />
+          <xsd:element name="ycalles" type="xsd:string" />
+          <xsd:element name="colonia" type="xsd:string" />
+          <xsd:element name="municipio" type="xsd:string" />
+          <xsd:element name="ciudad" type="xsd:string" />
+          <xsd:element name="estado" type="xsd:string" />
+          <xsd:element name="cp" type="xsd:string" />
+          <xsd:element name="telefono" type="xsd:string" />
+          <xsd:element name="clave" type="xsd:string" />
+          <xsd:element name="premio" type="xsd:string" />
+          <xsd:element name="cantidad" type="xsd:string" />
+          <xsd:element name="fechasol" type="xsd:string" />
+          <xsd:element name="fechaprom" type="xsd:string" />
+          <xsd:element name="fechastatus" type="xsd:string" />
+          <xsd:element name="guia" type="xsd:string" />
+          <xsd:element name="recibidopor" type="xsd:string" />
+          <xsd:element name="status" type="xsd:string" />
+          <xsd:element name="observaciones" type="xsd:string" />
+          <xsd:element name="factura" type="xsd:string" />
+          <xsd:element name="proveedor" type="xsd:string" />
+          <xsd:element name="tipoenvio" type="xsd:string" />
+          <xsd:element name="prioridad" type="xsd:string" />
+          <xsd:element name="claveextra" type="xsd:string" />
+          <xsd:element name="asentamiento" type="xsd:string" />
+          <xsd:element name="tipodireccion" type="xsd:string" />
+          <xsd:element name="referencias" type="xsd:string" />
+          <xsd:element name="datotelotar" type="xsd:string" />
+          <xsd:element name="datoconf" type="xsd:string" />
+          <xsd:element name="datocomp" type="xsd:string" />
+          <xsd:element name="latitud" type="xsd:string" />
+          <xsd:element name="longitud" type="xsd:string" />
+        </xsd:all>
+      </xsd:complexType>
+      <xsd:complexType name="Folios">
+        <xsd:complexContent mixed="false">
+          <xsd:restriction base="SOAP-ENC:Array">
+            <xsd:attribute wsdl:arrayType="tns:Pedido[]" ref="SOAP-ENC:arrayType" />
+          </xsd:restriction>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:complexType name="responsePedido">
+        <xsd:all>
+          <xsd:element name="sucursal" type="xsd:string" />
+          <xsd:element name="pedidolms" type="xsd:string" />
+          <xsd:element name="pedidorms" type="xsd:string" />
+          <xsd:element name="foliostotales" type="xsd:string" />
+          <xsd:element name="folioscorrectos" type="xsd:string" />
+          <xsd:element name="folioserroneos" type="xsd:string" />
+          <xsd:element name="duplicados" type="xsd:string" />
+          <xsd:element name="fuerarango" type="xsd:string" />
+          <xsd:element name="sinfolio" type="xsd:string" />
+          <xsd:element name="proveedores" type="xsd:string" />
+        </xsd:all>
+      </xsd:complexType>
+      <xsd:complexType name="PedidoEt">
+        <xsd:all>
+          <xsd:element name="pedido" type="xsd:string" />
+          <xsd:element name="folio" type="xsd:string" />
+          <xsd:element name="distribuidora" type="xsd:string" />
+          <xsd:element name="ruta" type="xsd:string" />
+          <xsd:element name="socio" type="xsd:string" />
+          <xsd:element name="propietario" type="xsd:string" />
+          <xsd:element name="razonsocial" type="xsd:string" />
+          <xsd:element name="calle" type="xsd:string" />
+          <xsd:element name="entrecalle" type="xsd:string" />
+          <xsd:element name="ycalles" type="xsd:string" />
+          <xsd:element name="colonia" type="xsd:string" />
+          <xsd:element name="municipio" type="xsd:string" />
+          <xsd:element name="ciudad" type="xsd:string" />
+          <xsd:element name="estado" type="xsd:string" />
+          <xsd:element name="cp" type="xsd:string" />
+          <xsd:element name="telefono" type="xsd:string" />
+          <xsd:element name="clave" type="xsd:string" />
+          <xsd:element name="premio" type="xsd:string" />
+          <xsd:element name="cantidad" type="xsd:string" />
+          <xsd:element name="fechasol" type="xsd:string" />
+          <xsd:element name="fechaprom" type="xsd:string" />
+          <xsd:element name="fechastatus" type="xsd:string" />
+          <xsd:element name="guia" type="xsd:string" />
+          <xsd:element name="recibidopor" type="xsd:string" />
+          <xsd:element name="status" type="xsd:string" />
+          <xsd:element name="observaciones" type="xsd:string" />
+          <xsd:element name="factura" type="xsd:string" />
+          <xsd:element name="proveedor" type="xsd:string" />
+          <xsd:element name="tipoenvio" type="xsd:string" />
+          <xsd:element name="prioridad" type="xsd:string" />
+          <xsd:element name="claveextra" type="xsd:string" />
+          <xsd:element name="asentamiento" type="xsd:string" />
+          <xsd:element name="tipodireccion" type="xsd:string" />
+          <xsd:element name="referencias" type="xsd:string" />
+          <xsd:element name="propietarioEt" type="xsd:string" />
+          <xsd:element name="razonsocialEt" type="xsd:string" />
+        </xsd:all>
+      </xsd:complexType>
+      <xsd:complexType name="FoliosEt">
+        <xsd:complexContent mixed="false">
+          <xsd:restriction base="SOAP-ENC:Array">
+            <xsd:attribute wsdl:arrayType="tns:PedidoEt[]" ref="SOAP-ENC:arrayType" />
+          </xsd:restriction>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:complexType name="PedidoCS">
+        <xsd:all>
+          <xsd:element name="pedido" type="xsd:string" />
+          <xsd:element name="folio" type="xsd:string" />
+          <xsd:element name="distribuidora" type="xsd:string" />
+          <xsd:element name="ruta" type="xsd:string" />
+          <xsd:element name="socio" type="xsd:string" />
+          <xsd:element name="propietario" type="xsd:string" />
+          <xsd:element name="razonsocial" type="xsd:string" />
+          <xsd:element name="calle" type="xsd:string" />
+          <xsd:element name="entrecalle" type="xsd:string" />
+          <xsd:element name="ycalles" type="xsd:string" />
+          <xsd:element name="colonia" type="xsd:string" />
+          <xsd:element name="municipio" type="xsd:string" />
+          <xsd:element name="ciudad" type="xsd:string" />
+          <xsd:element name="estado" type="xsd:string" />
+          <xsd:element name="cp" type="xsd:string" />
+          <xsd:element name="telefono" type="xsd:string" />
+          <xsd:element name="clave" type="xsd:string" />
+          <xsd:element name="premio" type="xsd:string" />
+          <xsd:element name="cantidad" type="xsd:string" />
+          <xsd:element name="fechasol" type="xsd:string" />
+          <xsd:element name="fechaprom" type="xsd:string" />
+          <xsd:element name="fechastatus" type="xsd:string" />
+          <xsd:element name="guia" type="xsd:string" />
+          <xsd:element name="recibidopor" type="xsd:string" />
+          <xsd:element name="status" type="xsd:string" />
+          <xsd:element name="observaciones" type="xsd:string" />
+          <xsd:element name="factura" type="xsd:string" />
+          <xsd:element name="proveedor" type="xsd:string" />
+          <xsd:element name="tipoenvio" type="xsd:string" />
+          <xsd:element name="prioridad" type="xsd:string" />
+          <xsd:element name="claveextra" type="xsd:string" />
+          <xsd:element name="asentamiento" type="xsd:string" />
+          <xsd:element name="tipodireccion" type="xsd:string" />
+          <xsd:element name="referencias" type="xsd:string" />
+          <xsd:element name="seguro" type="xsd:string" />
+          <xsd:element name="courier" type="xsd:string" />
+        </xsd:all>
+      </xsd:complexType>
+      <xsd:complexType name="FoliosCS">
+        <xsd:complexContent mixed="false">
+          <xsd:restriction base="SOAP-ENC:Array">
+            <xsd:attribute wsdl:arrayType="tns:PedidoCS[]" ref="SOAP-ENC:arrayType" />
+          </xsd:restriction>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:complexType name="responsePedidoCS">
+        <xsd:all>
+          <xsd:element name="sucursal" type="xsd:string" />
+          <xsd:element name="pedidolms" type="xsd:string" />
+          <xsd:element name="pedidorms" type="xsd:string" />
+          <xsd:element name="foliostotales" type="xsd:string" />
+          <xsd:element name="folioscorrectos" type="xsd:string" />
+          <xsd:element name="folioserroneos" type="xsd:string" />
+          <xsd:element name="duplicados" type="xsd:string" />
+          <xsd:element name="fuerarango" type="xsd:string" />
+          <xsd:element name="sinfolio" type="xsd:string" />
+          <xsd:element name="proveedores" type="xsd:string" />
+        </xsd:all>
+      </xsd:complexType>
+      <xsd:complexType name="PedidoCM">
+        <xsd:all>
+          <xsd:element name="pedido" type="xsd:string" />
+          <xsd:element name="folio" type="xsd:string" />
+          <xsd:element name="distribuidora" type="xsd:string" />
+          <xsd:element name="ruta" type="xsd:string" />
+          <xsd:element name="socio" type="xsd:string" />
+          <xsd:element name="propietario" type="xsd:string" />
+          <xsd:element name="razonsocial" type="xsd:string" />
+          <xsd:element name="calle" type="xsd:string" />
+          <xsd:element name="entrecalle" type="xsd:string" />
+          <xsd:element name="ycalles" type="xsd:string" />
+          <xsd:element name="colonia" type="xsd:string" />
+          <xsd:element name="municipio" type="xsd:string" />
+          <xsd:element name="ciudad" type="xsd:string" />
+          <xsd:element name="estado" type="xsd:string" />
+          <xsd:element name="cp" type="xsd:string" />
+          <xsd:element name="telefono" type="xsd:string" />
+          <xsd:element name="clave" type="xsd:string" />
+          <xsd:element name="premio" type="xsd:string" />
+          <xsd:element name="cantidad" type="xsd:string" />
+          <xsd:element name="fechasol" type="xsd:string" />
+          <xsd:element name="fechaprom" type="xsd:string" />
+          <xsd:element name="fechastatus" type="xsd:string" />
+          <xsd:element name="guia" type="xsd:string" />
+          <xsd:element name="recibidopor" type="xsd:string" />
+          <xsd:element name="status" type="xsd:string" />
+          <xsd:element name="observaciones" type="xsd:string" />
+          <xsd:element name="factura" type="xsd:string" />
+          <xsd:element name="proveedor" type="xsd:string" />
+          <xsd:element name="tipoenvio" type="xsd:string" />
+          <xsd:element name="prioridad" type="xsd:string" />
+          <xsd:element name="claveextra" type="xsd:string" />
+          <xsd:element name="ordentarjeta" type="xsd:string" />
+          <xsd:element name="asentamiento" type="xsd:string" />
+          <xsd:element name="tipodireccion" type="xsd:string" />
+          <xsd:element name="referencias" type="xsd:string" />
+          <xsd:element name="monto" type="xsd:string" />
+          <xsd:element name="extra" type="xsd:string" />
+          <xsd:element name="extra2" type="xsd:string" />
+          <xsd:element name="fedex_estado_abrevia" type="xsd:string" />
+          <xsd:element name="comentario" type="xsd:string" />
+        </xsd:all>
+      </xsd:complexType>
+      <xsd:complexType name="FoliosCM">
+        <xsd:complexContent mixed="false">
+          <xsd:restriction base="SOAP-ENC:Array">
+            <xsd:attribute wsdl:arrayType="tns:PedidoCM[]" ref="SOAP-ENC:arrayType" />
+          </xsd:restriction>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:complexType name="responsePedidoCM">
+        <xsd:all>
+          <xsd:element name="sucursal" type="xsd:string" />
+          <xsd:element name="pedidolms" type="xsd:string" />
+          <xsd:element name="pedidorms" type="xsd:string" />
+          <xsd:element name="foliostotales" type="xsd:string" />
+          <xsd:element name="folioscorrectos" type="xsd:string" />
+          <xsd:element name="folioserroneos" type="xsd:string" />
+          <xsd:element name="duplicados" type="xsd:string" />
+          <xsd:element name="fuerarango" type="xsd:string" />
+          <xsd:element name="sinfolio" type="xsd:string" />
+          <xsd:element name="proveedores" type="xsd:string" />
+        </xsd:all>
+      </xsd:complexType>
+      <xsd:complexType name="Consulta">
+        <xsd:all>
+          <xsd:element name="pedidorms" type="xsd:string" />
+          <xsd:element name="pedidolms" type="xsd:string" />
+          <xsd:element name="folio" type="xsd:string" />
+          <xsd:element name="distribuidora" type="xsd:string" />
+          <xsd:element name="ruta" type="xsd:string" />
+          <xsd:element name="socio" type="xsd:string" />
+          <xsd:element name="propietario" type="xsd:string" />
+          <xsd:element name="razonsocial" type="xsd:string" />
+          <xsd:element name="calle" type="xsd:string" />
+          <xsd:element name="entrecalle" type="xsd:string" />
+          <xsd:element name="ycalles" type="xsd:string" />
+          <xsd:element name="colonia" type="xsd:string" />
+          <xsd:element name="municipio" type="xsd:string" />
+          <xsd:element name="ciudad" type="xsd:string" />
+          <xsd:element name="estado" type="xsd:string" />
+          <xsd:element name="cp" type="xsd:string" />
+          <xsd:element name="telefono" type="xsd:string" />
+          <xsd:element name="clave" type="xsd:string" />
+          <xsd:element name="premio" type="xsd:string" />
+          <xsd:element name="cantidad" type="xsd:string" />
+          <xsd:element name="fechasol" type="xsd:string" />
+          <xsd:element name="fechaprom" type="xsd:string" />
+          <xsd:element name="fechastatus" type="xsd:string" />
+          <xsd:element name="mensajeria" type="xsd:string" />
+          <xsd:element name="guia" type="xsd:string" />
+          <xsd:element name="fechaemb" type="xsd:string" />
+          <xsd:element name="origen" type="xsd:string" />
+          <xsd:element name="destino" type="xsd:string" />
+          <xsd:element name="recibidopor" type="xsd:string" />
+          <xsd:element name="status" type="xsd:string" />
+          <xsd:element name="fechaentrega" type="xsd:string" />
+          <xsd:element name="observaciones" type="xsd:string" />
+          <xsd:element name="factura" type="xsd:string" />
+          <xsd:element name="proveedor" type="xsd:string" />
+          <xsd:element name="tipoenvio" type="xsd:string" />
+          <xsd:element name="prioridad" type="xsd:string" />
+          <xsd:element name="comentario" type="xsd:string" />
+          <xsd:element name="claveextra" type="xsd:string" />
+          <xsd:element name="asentamiento" type="xsd:string" />
+          <xsd:element name="tipodireccion" type="xsd:string" />
+          <xsd:element name="referencias" type="xsd:string" />
+          <xsd:element name="factura_rms" type="xsd:string" />
+          <xsd:element name="fecha_factura_rms" type="xsd:string" />
+          <xsd:element name="status_factura_rms" type="xsd:string" />
+          <xsd:element name="extra" type="xsd:string" />
+          <xsd:element name="excepcion" type="xsd:string" />
+        </xsd:all>
+      </xsd:complexType>
+      <xsd:complexType name="ConsultaFolios">
+        <xsd:complexContent mixed="false">
+          <xsd:restriction base="SOAP-ENC:Array">
+            <xsd:attribute wsdl:arrayType="tns:Consulta[]" ref="SOAP-ENC:arrayType" />
+          </xsd:restriction>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:complexType name="Filtros">
+        <xsd:all>
+          <xsd:element name="folio" type="xsd:string" />
+          <xsd:element name="pedidolms" type="xsd:string" />
+          <xsd:element name="pedidorms" type="xsd:string" />
+          <xsd:element name="socio" type="xsd:string" />
+          <xsd:element name="fechasolini" type="xsd:string" />
+          <xsd:element name="fechasolfin" type="xsd:string" />
+          <xsd:element name="fechaentregaini" type="xsd:string" />
+          <xsd:element name="fechaentregafin" type="xsd:string" />
+          <xsd:element name="factura" type="xsd:string" />
+          <xsd:element name="status" type="xsd:string" />
+          <xsd:element name="observaciones" type="xsd:string" />
+          <xsd:element name="prioridad" type="xsd:string" />
+          <xsd:element name="proveedor" type="xsd:string" />
+          <xsd:element name="cliente" type="xsd:string" />
+          <xsd:element name="fechastatusini" type="xsd:string" />
+          <xsd:element name="fechastatusfin" type="xsd:string" />
+        </xsd:all>
+      </xsd:complexType>
+      <xsd:complexType name="Logon">
+        <xsd:all>
+          <xsd:element name="usuario" type="xsd:string" />
+          <xsd:element name="password" type="xsd:string" />
+        </xsd:all>
+      </xsd:complexType>
+      <xsd:complexType name="FiltrosM">
+        <xsd:all>
+          <xsd:element name="folio" type="xsd:string" />
+        </xsd:all>
+      </xsd:complexType>
+      <xsd:complexType name="FiltrosMultiples">
+        <xsd:complexContent mixed="false">
+          <xsd:restriction base="SOAP-ENC:Array">
+            <xsd:attribute wsdl:arrayType="tns:FiltrosM[]" ref="SOAP-ENC:arrayType" />
+          </xsd:restriction>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:complexType name="LogonM">
+        <xsd:all>
+          <xsd:element name="usuario" type="xsd:string" />
+          <xsd:element name="password" type="xsd:string" />
+        </xsd:all>
+      </xsd:complexType>
+      <xsd:complexType name="ConsultaMultiple">
+        <xsd:all>
+          <xsd:element name="pedidorms" type="xsd:string" />
+          <xsd:element name="pedidolms" type="xsd:string" />
+          <xsd:element name="folio" type="xsd:string" />
+          <xsd:element name="distribuidora" type="xsd:string" />
+          <xsd:element name="ruta" type="xsd:string" />
+          <xsd:element name="socio" type="xsd:string" />
+          <xsd:element name="propietario" type="xsd:string" />
+          <xsd:element name="razonsocial" type="xsd:string" />
+          <xsd:element name="calle" type="xsd:string" />
+          <xsd:element name="entrecalle" type="xsd:string" />
+          <xsd:element name="ycalles" type="xsd:string" />
+          <xsd:element name="colonia" type="xsd:string" />
+          <xsd:element name="municipio" type="xsd:string" />
+          <xsd:element name="ciudad" type="xsd:string" />
+          <xsd:element name="estado" type="xsd:string" />
+          <xsd:element name="cp" type="xsd:string" />
+          <xsd:element name="telefono" type="xsd:string" />
+          <xsd:element name="clave" type="xsd:string" />
+          <xsd:element name="premio" type="xsd:string" />
+          <xsd:element name="cantidad" type="xsd:string" />
+          <xsd:element name="fechasol" type="xsd:string" />
+          <xsd:element name="fechaprom" type="xsd:string" />
+          <xsd:element name="fechastatus" type="xsd:string" />
+          <xsd:element name="mensajeria" type="xsd:string" />
+          <xsd:element name="guia" type="xsd:string" />
+          <xsd:element name="fechaemb" type="xsd:string" />
+          <xsd:element name="origen" type="xsd:string" />
+          <xsd:element name="destino" type="xsd:string" />
+          <xsd:element name="recibidopor" type="xsd:string" />
+          <xsd:element name="status" type="xsd:string" />
+          <xsd:element name="fechaentrega" type="xsd:string" />
+          <xsd:element name="observaciones" type="xsd:string" />
+          <xsd:element name="factura" type="xsd:string" />
+          <xsd:element name="proveedor" type="xsd:string" />
+          <xsd:element name="tipoenvio" type="xsd:string" />
+          <xsd:element name="prioridad" type="xsd:string" />
+          <xsd:element name="comentario" type="xsd:string" />
+          <xsd:element name="claveextra" type="xsd:string" />
+          <xsd:element name="asentamiento" type="xsd:string" />
+          <xsd:element name="tipodireccion" type="xsd:string" />
+          <xsd:element name="referencias" type="xsd:string" />
+          <xsd:element name="factura_rms" type="xsd:string" />
+          <xsd:element name="fecha_factura_rms" type="xsd:string" />
+          <xsd:element name="status_factura_rms" type="xsd:string" />
+          <xsd:element name="extra" type="xsd:string" />
+          <xsd:element name="excepcion" type="xsd:string" />
+        </xsd:all>
+      </xsd:complexType>
+      <xsd:complexType name="ConsultaFoliosMultiple">
+        <xsd:complexContent mixed="false">
+          <xsd:restriction base="SOAP-ENC:Array">
+            <xsd:attribute wsdl:arrayType="tns:ConsultaMultiple[]" ref="SOAP-ENC:arrayType" />
+          </xsd:restriction>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:complexType name="Guia">
+        <xsd:all>
+          <xsd:element name="folio" type="xsd:string" />
+          <xsd:element name="mensajeria" type="xsd:string" />
+          <xsd:element name="numguia" type="xsd:string" />
+        </xsd:all>
+      </xsd:complexType>
+      <xsd:complexType name="FoliosGuias">
+        <xsd:complexContent mixed="false">
+          <xsd:restriction base="SOAP-ENC:Array">
+            <xsd:attribute wsdl:arrayType="tns:Guia[]" ref="SOAP-ENC:arrayType" />
+          </xsd:restriction>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:complexType name="resguia">
+        <xsd:all>
+          <xsd:element name="folio" type="xsd:string" />
+          <xsd:element name="mensajeria" type="xsd:string" />
+          <xsd:element name="numguia" type="xsd:string" />
+          <xsd:element name="status" type="xsd:int" />
+          <xsd:element name="error" type="xsd:string" />
+        </xsd:all>
+      </xsd:complexType>
+      <xsd:complexType name="responseGuias">
+        <xsd:complexContent mixed="false">
+          <xsd:restriction base="SOAP-ENC:Array">
+            <xsd:attribute wsdl:arrayType="tns:resguia[]" ref="SOAP-ENC:arrayType" />
+          </xsd:restriction>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:complexType name="GuiaNuevo">
+        <xsd:all>
+          <xsd:element name="folio" type="xsd:string" />
+          <xsd:element name="numguia" type="xsd:string" />
+          <xsd:element name="mensajeria" type="xsd:string" />
+          <xsd:element name="tipo" type="xsd:int" />
+          <xsd:element name="numguiaant" type="xsd:string" />
+        </xsd:all>
+      </xsd:complexType>
+      <xsd:complexType name="FoliosGuiasNuevo">
+        <xsd:complexContent mixed="false">
+          <xsd:restriction base="SOAP-ENC:Array">
+            <xsd:attribute wsdl:arrayType="tns:GuiaNuevo[]" ref="SOAP-ENC:arrayType" />
+          </xsd:restriction>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:complexType name="resguiaNuevo">
+        <xsd:all>
+          <xsd:element name="folio" type="xsd:string" />
+          <xsd:element name="mensajeria" type="xsd:string" />
+          <xsd:element name="numguia" type="xsd:string" />
+          <xsd:element name="status" type="xsd:int" />
+          <xsd:element name="error" type="xsd:string" />
+        </xsd:all>
+      </xsd:complexType>
+      <xsd:complexType name="responseGuiasNuevo">
+        <xsd:complexContent mixed="false">
+          <xsd:restriction base="SOAP-ENC:Array">
+            <xsd:attribute wsdl:arrayType="tns:resguiaNuevo[]" ref="SOAP-ENC:arrayType" />
+          </xsd:restriction>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:complexType name="PedidoMR">
+        <xsd:all>
+          <xsd:element name="pedido" type="xsd:string" />
+          <xsd:element name="folio" type="xsd:string" />
+          <xsd:element name="distribuidora" type="xsd:string" />
+          <xsd:element name="ruta" type="xsd:string" />
+          <xsd:element name="socio" type="xsd:string" />
+          <xsd:element name="propietario" type="xsd:string" />
+          <xsd:element name="razonsocial" type="xsd:string" />
+          <xsd:element name="calle" type="xsd:string" />
+          <xsd:element name="entrecalle" type="xsd:string" />
+          <xsd:element name="ycalles" type="xsd:string" />
+          <xsd:element name="colonia" type="xsd:string" />
+          <xsd:element name="municipio" type="xsd:string" />
+          <xsd:element name="ciudad" type="xsd:string" />
+          <xsd:element name="estado" type="xsd:string" />
+          <xsd:element name="cp" type="xsd:string" />
+          <xsd:element name="telefono" type="xsd:string" />
+          <xsd:element name="clave" type="xsd:string" />
+          <xsd:element name="premio" type="xsd:string" />
+          <xsd:element name="cantidad" type="xsd:string" />
+          <xsd:element name="fechasol" type="xsd:string" />
+          <xsd:element name="fechaprom" type="xsd:string" />
+          <xsd:element name="fechastatus" type="xsd:string" />
+          <xsd:element name="guia" type="xsd:string" />
+          <xsd:element name="recibidopor" type="xsd:string" />
+          <xsd:element name="status" type="xsd:string" />
+          <xsd:element name="observaciones" type="xsd:string" />
+          <xsd:element name="factura" type="xsd:string" />
+          <xsd:element name="proveedor" type="xsd:string" />
+          <xsd:element name="tipoenvio" type="xsd:string" />
+          <xsd:element name="prioridad" type="xsd:string" />
+          <xsd:element name="claveextra" type="xsd:string" />
+          <xsd:element name="asentamiento" type="xsd:string" />
+          <xsd:element name="tipodireccion" type="xsd:string" />
+          <xsd:element name="referencias" type="xsd:string" />
+          <xsd:element name="tarjeta" type="xsd:string" />
+          <xsd:element name="foliomr" type="xsd:string" />
+          <xsd:element name="orden" type="xsd:string" />
+          <xsd:element name="idproducto" type="xsd:string" />
+          <xsd:element name="fedex_estado_abrevia" type="xsd:string" />
+        </xsd:all>
+      </xsd:complexType>
+      <xsd:complexType name="FoliosMR">
+        <xsd:complexContent mixed="false">
+          <xsd:restriction base="SOAP-ENC:Array">
+            <xsd:attribute wsdl:arrayType="tns:PedidoMR[]" ref="SOAP-ENC:arrayType" />
+          </xsd:restriction>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:complexType name="responsePedidoMR">
+        <xsd:all>
+          <xsd:element name="sucursal" type="xsd:string" />
+          <xsd:element name="pedidolms" type="xsd:string" />
+          <xsd:element name="pedidorms" type="xsd:string" />
+          <xsd:element name="foliostotales" type="xsd:string" />
+          <xsd:element name="folioscorrectos" type="xsd:string" />
+          <xsd:element name="folioserroneos" type="xsd:string" />
+          <xsd:element name="duplicados" type="xsd:string" />
+          <xsd:element name="fuerarango" type="xsd:string" />
+          <xsd:element name="sinfolio" type="xsd:string" />
+          <xsd:element name="proveedores" type="xsd:string" />
+        </xsd:all>
+      </xsd:complexType>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="wsUpdateDataRequest">
+    <wsdl:part name="data" type="tns:FoliosActualiza" />
+    <wsdl:part name="logon" type="tns:Logon" />
+  </wsdl:message>
+  <wsdl:message name="wsUpdateDataResponse">
+    <wsdl:part name="return" type="tns:responseUpdateData" />
+  </wsdl:message>
+  <wsdl:message name="wsCambioFolioStatusRequest">
+    <wsdl:part name="data" type="tns:folioStatusReg" />
+    <wsdl:part name="logon" type="tns:Logon" />
+  </wsdl:message>
+  <wsdl:message name="wsCambioFolioStatusResponse">
+    <wsdl:part name="return" type="tns:responseCambioStatus" />
+  </wsdl:message>
+  <wsdl:message name="wsRegGarantiaRequest">
+    <wsdl:part name="data" type="tns:FoliosGarantia" />
+    <wsdl:part name="logon" type="tns:Logon" />
+  </wsdl:message>
+  <wsdl:message name="wsRegGarantiaResponse">
+    <wsdl:part name="return" type="tns:responseGarantia" />
+  </wsdl:message>
+  <wsdl:message name="wsRegCancelacionRequest">
+    <wsdl:part name="data" type="tns:FoliosCancelacion" />
+    <wsdl:part name="logon" type="tns:Logon" />
+  </wsdl:message>
+  <wsdl:message name="wsRegCancelacionResponse">
+    <wsdl:part name="return" type="tns:responseCancelacion" />
+  </wsdl:message>
+  <wsdl:message name="wsInsertaPedidoRequest">
+    <wsdl:part name="pedido" type="tns:Folios" />
+    <wsdl:part name="logon" type="tns:Logon" />
+    <wsdl:part name="prefijo" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="wsInsertaPedidoResponse">
+    <wsdl:part name="return" type="tns:responsePedido" />
+  </wsdl:message>
+  <wsdl:message name="wsInsertaPedidoBancaRequest">
+    <wsdl:part name="pedido" type="tns:Folios" />
+    <wsdl:part name="logon" type="tns:Logon" />
+    <wsdl:part name="prefijo" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="wsInsertaPedidoBancaResponse">
+    <wsdl:part name="return" type="tns:responsePedido" />
+  </wsdl:message>
+  <wsdl:message name="wsInsertaPedidoConEtiquetaRequest">
+    <wsdl:part name="pedido" type="tns:FoliosEt" />
+    <wsdl:part name="logon" type="tns:Logon" />
+    <wsdl:part name="prefijo" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="wsInsertaPedidoConEtiquetaResponse">
+    <wsdl:part name="return" type="tns:responsePedido" />
+  </wsdl:message>
+  <wsdl:message name="wsInsertaPedidoConSeguroRequest">
+    <wsdl:part name="pedido" type="tns:Folios" />
+    <wsdl:part name="logon" type="tns:Logon" />
+    <wsdl:part name="prefijo" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="wsInsertaPedidoConSeguroResponse">
+    <wsdl:part name="return" type="tns:responsePedidoCS" />
+  </wsdl:message>
+  <wsdl:message name="wsInsertaPedidoConMontoRequest">
+    <wsdl:part name="pedido" type="tns:FoliosCM" />
+    <wsdl:part name="logon" type="tns:Logon" />
+    <wsdl:part name="prefijo" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="wsInsertaPedidoConMontoResponse">
+    <wsdl:part name="return" type="tns:responsePedidoCM" />
+  </wsdl:message>
+  <wsdl:message name="wsConsultaDeFoliosRequest">
+    <wsdl:part name="filtros" type="tns:Filtros" />
+    <wsdl:part name="logon" type="tns:Logon" />
+  </wsdl:message>
+  <wsdl:message name="wsConsultaDeFoliosResponse">
+    <wsdl:part name="return" type="tns:ConsultaFolios" />
+  </wsdl:message>
+  <wsdl:message name="wsConsultaDeFoliosMultipleRequest">
+    <wsdl:part name="filtros" type="tns:FiltrosMultiples" />
+    <wsdl:part name="logon" type="tns:LogonM" />
+  </wsdl:message>
+  <wsdl:message name="wsConsultaDeFoliosMultipleResponse">
+    <wsdl:part name="return" type="tns:ConsultaFoliosMultiple" />
+  </wsdl:message>
+  <wsdl:message name="wsRegGuiasRequest">
+    <wsdl:part name="data" type="tns:FoliosGuias" />
+    <wsdl:part name="logon" type="tns:Logon" />
+  </wsdl:message>
+  <wsdl:message name="wsRegGuiasResponse">
+    <wsdl:part name="return" type="tns:responseGuias" />
+  </wsdl:message>
+  <wsdl:message name="wsRegGuiasNuevoRequest">
+    <wsdl:part name="data" type="tns:FoliosGuiasNuevo" />
+    <wsdl:part name="logon" type="tns:Logon" />
+  </wsdl:message>
+  <wsdl:message name="wsRegGuiasNuevoResponse">
+    <wsdl:part name="return" type="tns:responseGuiasNuevo" />
+  </wsdl:message>
+  <wsdl:message name="wsInsertaPedidoMRRequest">
+    <wsdl:part name="pedido" type="tns:FoliosMR" />
+    <wsdl:part name="logon" type="tns:Logon" />
+    <wsdl:part name="prefijo" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="wsInsertaPedidoMRResponse">
+    <wsdl:part name="return" type="tns:responsePedidoMR" />
+  </wsdl:message>
+  <wsdl:message name="wsInsertaPedido2015Request">
+    <wsdl:part name="pedido" type="tns:Folios" />
+    <wsdl:part name="logon" type="tns:Logon" />
+    <wsdl:part name="prefijo" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="wsInsertaPedido2015Response">
+    <wsdl:part name="return" type="tns:responsePedido" />
+  </wsdl:message>
+  <wsdl:portType name="wsRewards_Service_2PortType">
+    <wsdl:operation name="wsUpdateData">
+      <documentation>Actualización de datos de dirección</documentation>
+      <wsdl:input message="tns:wsUpdateDataRequest" />
+      <wsdl:output message="tns:wsUpdateDataResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="wsCambioFolioStatus">
+      <documentation>Cambia el estatus al folio</documentation>
+      <wsdl:input message="tns:wsCambioFolioStatusRequest" />
+      <wsdl:output message="tns:wsCambioFolioStatusResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="wsRegGarantia">
+      <documentation>Registra las garantias</documentation>
+      <wsdl:input message="tns:wsRegGarantiaRequest" />
+      <wsdl:output message="tns:wsRegGarantiaResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="wsRegCancelacion">
+      <documentation>Registra las Cancelaciones</documentation>
+      <wsdl:input message="tns:wsRegCancelacionRequest" />
+      <wsdl:output message="tns:wsRegCancelacionResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="wsInsertaPedido">
+      <documentation>Insercion de pedido y folios</documentation>
+      <wsdl:input message="tns:wsInsertaPedidoRequest" />
+      <wsdl:output message="tns:wsInsertaPedidoResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="wsInsertaPedidoBanca">
+      <documentation>Insercion de pedido y folios</documentation>
+      <wsdl:input message="tns:wsInsertaPedidoBancaRequest" />
+      <wsdl:output message="tns:wsInsertaPedidoBancaResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="wsInsertaPedidoConEtiqueta">
+      <documentation>Insercion de pedido y folios con etiqueta</documentation>
+      <wsdl:input message="tns:wsInsertaPedidoConEtiquetaRequest" />
+      <wsdl:output message="tns:wsInsertaPedidoConEtiquetaResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="wsInsertaPedidoConSeguro">
+      <documentation>Insercion de pedido y folios con seguro para la guia</documentation>
+      <wsdl:input message="tns:wsInsertaPedidoConSeguroRequest" />
+      <wsdl:output message="tns:wsInsertaPedidoConSeguroResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="wsInsertaPedidoConMonto">
+      <documentation>Insercion de pedido y folios con monto para Ford</documentation>
+      <wsdl:input message="tns:wsInsertaPedidoConMontoRequest" />
+      <wsdl:output message="tns:wsInsertaPedidoConMontoResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="wsConsultaDeFolios">
+      <documentation>Cosnulta de los datos de los folios</documentation>
+      <wsdl:input message="tns:wsConsultaDeFoliosRequest" />
+      <wsdl:output message="tns:wsConsultaDeFoliosResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="wsConsultaDeFoliosMultiple">
+      <documentation>Cosnulta de los datos de los folios</documentation>
+      <wsdl:input message="tns:wsConsultaDeFoliosMultipleRequest" />
+      <wsdl:output message="tns:wsConsultaDeFoliosMultipleResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="wsRegGuias">
+      <documentation>Registro de Guias</documentation>
+      <wsdl:input message="tns:wsRegGuiasRequest" />
+      <wsdl:output message="tns:wsRegGuiasResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="wsRegGuiasNuevo">
+      <documentation>Registro de Guias Nuevo</documentation>
+      <wsdl:input message="tns:wsRegGuiasNuevoRequest" />
+      <wsdl:output message="tns:wsRegGuiasNuevoResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="wsInsertaPedidoMR">
+      <documentation>Insercion de pedido y folios  de MR</documentation>
+      <wsdl:input message="tns:wsInsertaPedidoMRRequest" />
+      <wsdl:output message="tns:wsInsertaPedidoMRResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="wsInsertaPedido2015">
+      <documentation>Insercion de pedido y folios. Con nuevos campos para monederos y recargas.</documentation>
+      <wsdl:input message="tns:wsInsertaPedido2015Request" />
+      <wsdl:output message="tns:wsInsertaPedido2015Response" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="wsRewards_Service_2Binding" type="tns:wsRewards_Service_2PortType">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="rpc" />
+    <wsdl:operation name="wsUpdateData">
+      <soap:operation soapAction="urn:wsRewards_Service_2#wsUpdateData" style="rpc" />
+      <wsdl:input>
+        <soap:body use="encoded" namespace="urn:wsRewards_Service_2" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" namespace="urn:wsRewards_Service_2" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="wsCambioFolioStatus">
+      <soap:operation soapAction="urn:wsRewards_Service_2#wsCambioFolioStatus" style="rpc" />
+      <wsdl:input>
+        <soap:body use="encoded" namespace="urn:wsRewards_Service_2" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" namespace="urn:wsRewards_Service_2" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="wsRegGarantia">
+      <soap:operation soapAction="urn:wsRewards_Service_2#wsRegGarantia" style="rpc" />
+      <wsdl:input>
+        <soap:body use="encoded" namespace="urn:wsRewards_Service_2" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" namespace="urn:wsRewards_Service_2" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="wsRegCancelacion">
+      <soap:operation soapAction="urn:wsRewards_Service_2#wsRegCancelacion" style="rpc" />
+      <wsdl:input>
+        <soap:body use="encoded" namespace="urn:wsRewards_Service_2" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" namespace="urn:wsRewards_Service_2" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="wsInsertaPedido">
+      <soap:operation soapAction="urn:wsRewards_Service_2#responsePedido" style="rpc" />
+      <wsdl:input>
+        <soap:body use="encoded" namespace="urn:wsRewards_Service_2" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" namespace="urn:wsRewards_Service_2" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="wsInsertaPedidoBanca">
+      <soap:operation soapAction="urn:wsRewards_Service_3#responsePedido" style="rpc" />
+      <wsdl:input>
+        <soap:body use="encoded" namespace="urn:wsRewards_Service_3" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" namespace="urn:wsRewards_Service_3" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="wsInsertaPedidoConEtiqueta">
+      <soap:operation soapAction="urn:wsRewards_Service_2#responsePedido" style="rpc" />
+      <wsdl:input>
+        <soap:body use="encoded" namespace="urn:wsRewards_Service_2" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" namespace="urn:wsRewards_Service_2" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="wsInsertaPedidoConSeguro">
+      <soap:operation soapAction="urn:wsRewards_Service_2#responsePedidoCS" style="rpc" />
+      <wsdl:input>
+        <soap:body use="encoded" namespace="urn:wsRewards_Service_2" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" namespace="urn:wsRewards_Service_2" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="wsInsertaPedidoConMonto">
+      <soap:operation soapAction="urn:wsRewards_Service_2#responsePedidoCM" style="rpc" />
+      <wsdl:input>
+        <soap:body use="encoded" namespace="urn:wsRewards_Service_2" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" namespace="urn:wsRewards_Service_2" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="wsConsultaDeFolios">
+      <soap:operation soapAction="urn:wsRewards_Service_2#ConsultaFolios" style="rpc" />
+      <wsdl:input>
+        <soap:body use="encoded" namespace="urn:wsRewards_Service_2" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" namespace="urn:wsRewards_Service_2" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="wsConsultaDeFoliosMultiple">
+      <soap:operation soapAction="urn:wsRewards_Service_2#wsConsultaDeFoliosMultiple" style="rpc" />
+      <wsdl:input>
+        <soap:body use="encoded" namespace="urn:wsRewards_Service_2" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" namespace="urn:wsRewards_Service_2" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="wsRegGuias">
+      <soap:operation soapAction="urn:wsRewards_Service_2#wsRegGuias" style="rpc" />
+      <wsdl:input>
+        <soap:body use="encoded" namespace="urn:wsRewards_Service_2" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" namespace="urn:wsRewards_Service_2" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="wsRegGuiasNuevo">
+      <soap:operation soapAction="urn:wsRewards_Service_2#wsRegGuiasNuevo" style="rpc" />
+      <wsdl:input>
+        <soap:body use="encoded" namespace="urn:wsRewards_Service_2" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" namespace="urn:wsRewards_Service_2" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="wsInsertaPedidoMR">
+      <soap:operation soapAction="urn:wsRewards_Service_3#responsePedidoMR" style="rpc" />
+      <wsdl:input>
+        <soap:body use="encoded" namespace="urn:wsRewards_Service_3" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" namespace="urn:wsRewards_Service_3" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="wsInsertaPedido2015">
+      <soap:operation soapAction="urn:wsRewards_Service_2#responsePedido" style="rpc" />
+      <wsdl:input>
+        <soap:body use="encoded" namespace="urn:wsRewards_Service_2" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" namespace="urn:wsRewards_Service_2" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="wsRewards_Service_2">
+    <wsdl:port name="wsRewards_Service_2Port" binding="tns:wsRewards_Service_2Binding">
+      <soap:address location="http://rewards.com.mx/wsrms/wsRewards_Service_2.php" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

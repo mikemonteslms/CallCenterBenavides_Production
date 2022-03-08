@@ -1,0 +1,248 @@
+﻿@charset "UTF-8";
+/* CSS Document */
+
+/* Fuentes */
+@font-face {
+	font-family: 'vw_headline_blackregular';
+	src: url('../fonts/vwheabla-webfont.eot');
+	src: url('../fonts/vwheabla-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/vwheabla-webfont.woff') format('woff'), url('../fonts/vwheabla-webfont.ttf') format('truetype'), url('../fonts/vwheabla-webfont.svg#vw_headline_blackregular') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'vw_headline_bookregular';
+	src: url('../fonts/vwheaboo-webfont.eot');
+	src: url('../fonts/vwheaboo-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/vwheaboo-webfont.woff') format('woff'), url('../fonts/vwheaboo-webfont.ttf') format('truetype'), url('../fonts/vwheaboo-webfont.svg#vw_headline_bookregular') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+/* General */
+body {
+	font-family: Arial, Helvetica, sans-serif;
+	background: #fff;    
+	margin: 0;
+	padding: 0;
+}
+
+ul, ol, dl {
+	padding: 0;
+	margin: 0;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+	margin-top: 0;
+	padding-right: 15px;
+	padding-left: 15px;
+}
+
+a img {
+	border: none;
+}
+/* Header */
+#vw-header {
+	margin: 50px auto 35px auto;
+	width: 960px;
+	height: 110px;
+}
+
+	#vw-header h1#logoLoyalty {
+		background-image: url(../images/logo-loyaltypoints.png);
+		background-repeat: no-repeat;
+		width: 172px;
+		height: 110px;
+		float: left;
+	}
+
+		#vw-header h1#logoLoyalty span {
+			position: absolute;
+			left: -10000px;
+		}
+/* Contenedor */
+#contenedor {
+	margin: 0 auto;
+	width: 960px;
+	height: 380px;
+}
+
+#slider {
+	width: 980px;
+	height: 340px;
+	-webkit-border-radius: 8px;
+	border-radius: 8px;
+	border: solid 1px #fff;
+	background-image: url(../images/acceso/banner-prueba.jpg);
+	background-repeat: no-repeat;
+	-webkit-box-shadow: 0 0 6px 0 rgba(0,0,0,.5);
+	box-shadow: 0 0 6px 0 rgba(0,0,0,.5);
+}
+
+#textoSlide {
+	width: 350px;
+	height: 125px;
+}
+
+.grisTitulo {
+	color: #949FA9;
+}
+
+#tituloSlide {
+	font-family: 'vw_headline_blackregular';
+	font-size: 30px;
+	margin: 15px 0 0 20px;
+}
+
+.subtitulo {
+	height: 18px;
+	font-size: 20px;
+	font-weight: bold;
+	color: #2274AC;
+	margin: 57px 0 0 15px;
+}
+
+#cuadro {
+	width: 309px;
+	height: 280px;
+	background-color: #E8EBEB;
+	float: right;
+	padding: 30px 30px 30px 15px;
+}
+
+#cuerpo2 {
+	font-weight: normal;
+	font-size: 12px;
+	color: #424242;
+}
+
+#boton {
+	padding-top: 3px;
+	color: #fff;
+	width: 59px;
+	height: 17px;
+	float: right;
+	margin-top: 10px;
+	-webkit-border-radius: 2px;
+	border-radius: 2px;
+	border: solid 1px #FF9327;
+	background: #ffbc79; /* Old browsers */
+	background: -moz-linear-gradient(top, #ffbc79 0%, #ff9327 50%, #ff9327 51%, #ff9327 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffbc79), color-stop(50%,#ff9327), color-stop(51%,#ff9327), color-stop(100%,#ff9327)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top, #ffbc79 0%,#ff9327 50%,#ff9327 51%,#ff9327 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top, #ffbc79 0%,#ff9327 50%,#ff9327 51%,#ff9327 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top, #ffbc79 0%,#ff9327 50%,#ff9327 51%,#ff9327 100%); /* IE10+ */
+	background: linear-gradient(to bottom, #ffbc79 0%,#ff9327 50%,#ff9327 51%,#ff9327 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffbc79', endColorstr='#ff9327',GradientType=0 ); /* IE6-9 */
+	-webkit-box-shadow: 0 1px 2px 0 rgba(000000,000000,000000,.4);
+	box-shadow: 0 1px 2px 0 rgba(000000,000000,000000,.4);
+}
+
+#boton {
+	font-family: 'vw_headline_bookregular';
+}
+
+	#boton a {
+		color: #fff;
+	}
+
+	#boton:hover {
+		background: #ff9327; /* Old browsers */
+		background: -moz-linear-gradient(top, #ff9327 0%, #ff9327 49%, #ff9327 50%, #ffbc79 100%); /* FF3.6+ */
+		background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ff9327), color-stop(49%,#ff9327), color-stop(50%,#ff9327), color-stop(100%,#ffbc79)); /* Chrome,Safari4+ */
+		background: -webkit-linear-gradient(top, #ff9327 0%,#ff9327 49%,#ff9327 50%,#ffbc79 100%); /* Chrome10+,Safari5.1+ */
+		background: -o-linear-gradient(top, #ff9327 0%,#ff9327 49%,#ff9327 50%,#ffbc79 100%); /* Opera 11.10+ */
+		background: -ms-linear-gradient(top, #ff9327 0%,#ff9327 49%,#ff9327 50%,#ffbc79 100%); /* IE10+ */
+		background: linear-gradient(to bottom, #ff9327 0%,#ff9327 49%,#ff9327 50%,#ffbc79 100%); /* W3C */
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff9327', endColorstr='#ffbc79',GradientType=0 ); /* IE6-9 */
+	}
+
+#plecagris a {
+	text-decoration: none;
+}
+
+#triangulo {
+	width: 3px;
+	height: 6px;
+	background-image: url(../images/triangulito.png);
+	background-repeat: no-repeat;
+	background-position: 0 5px;
+}
+
+#cuerpo1 a {
+	text-decoration: none;
+}
+/* Footer */
+footer {
+	background: #FFF;
+	height: 48px;
+	font-size: 12px;
+	line-height: 15px;
+	/*margin-left: 20px;*/
+}
+
+#pie, #pie a {
+	margin: 0 auto;
+	padding-top: 18px;
+	width: 960px;
+	font-size: 10px;
+	color: #8994A0;
+}
+
+	#pie a:hover {
+		color: #2274AC;
+	}
+
+#pieizq {
+	float: left;
+}
+
+#pieder {
+	float: right;
+}
+
+.bold {
+	font-weight: bolder;
+}
+
+#pleca {
+	margin: 0 auto;
+	height: 1px;
+	width: 980px;
+	background-color: #D2D9DA;
+}
+
+.UserName, .Password, .Email {
+	height: 20px;
+	width: 270px;
+	border: solid 1px #D2D9DA;
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
+	padding-left: 25px;
+}
+
+.UserName {
+	background-image: url(../images/acceso/usuario.png);
+	background-repeat: no-repeat;
+	background-position: 5px 5px;
+}
+
+.Password {
+	background-image: url(../images/acceso/contrasena.png);
+	background-repeat: no-repeat;
+	background-position: 5px 5px;
+}
+.Email {
+	background-image: url(../images/acceso/email.png);
+	background-repeat: no-repeat;
+	background-position: 5px 5px;
+}
+
+#olvido a {
+	float: left;
+	font-size: 11px;
+	margin-left: 15px;
+	color: #949FA9;
+}
+
+	#olvido a:hover {
+		color: #2274AC;
+	}

@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="Membership_Distributor">
+  <DataContextMoniker Name="/Membership_DistributorDataContext" />
+  <nestedChildShapes>
+    <classShape Id="f6cbccab-40de-4b45-bba4-dba3fe288a90" absoluteBounds="4.5, 1, 2, 1.3862939453125">
+      <DataClassMoniker Name="/Membership_DistributorDataContext/aspnet_Membership_Distributor" />
+      <nestedChildShapes>
+        <elementListCompartment Id="bf3b570f-044d-4ae9-b458-84f78621c74f" absoluteBounds="4.515, 1.46, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="58dcbb73-a6a3-4adb-8243-4c47cc6e8e1a" absoluteBounds="2, 0.625, 2, 3.1170068359375">
+      <DataClassMoniker Name="/Membership_DistributorDataContext/distributor" />
+      <nestedChildShapes>
+        <elementListCompartment Id="87c0641d-3a1f-4d93-988a-9eaec8ef627b" absoluteBounds="2.015, 1.085, 1.9700000000000002, 2.5570068359375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

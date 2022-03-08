@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="3d091737-1728-4da9-ab07-eca8cf7cb118" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://beneficiointeligente.com.mx/WsLealtadBenavidesPruebasV7/WsReglasNegocio.asmx" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="WsReglasNegocio.disco" MetadataType="Disco" ID="f30fc5c4-fd92-4ad9-ae4e-98567b8b9b4f" SourceId="1" SourceUrl="http://beneficiointeligente.com.mx/WsLealtadBenavidesPruebasV7/WsReglasNegocio.asmx?disco" />
+    <MetadataFile FileName="WsReglasNegocio.wsdl" MetadataType="Wsdl" ID="789db251-c2c9-4716-8458-fae1659e23ec" SourceId="1" SourceUrl="http://beneficiointeligente.com.mx/WsLealtadBenavidesPruebasV7/WsReglasNegocio.asmx?wsdl" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

@@ -1,0 +1,27 @@
+﻿p {
+    color: #7B7E84 !important;
+    font-size: 1em;
+    margin: 0;
+    padding: 10px 10px 0px 10px;
+}
+
+a, a:active {
+    text-decoration: none;
+    color: #525252;
+}
+
+    a:hover {
+        color: #2274AC;
+    }
+
+
+ul {
+    color: #7B7E84;
+    padding-left: 30px;
+}
+
+li {
+    list-style: circle !IMPORTANT;
+    padding-bottom: 5px;
+    padding: 0px 5px 2px 7px;
+}

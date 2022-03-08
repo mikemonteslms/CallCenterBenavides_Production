@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="carga">
+  <DataContextMoniker Name="/cargaDataContext" />
+  <nestedChildShapes>
+    <classShape Id="c72332cc-1ea7-4997-a4bb-152798b9e516" absoluteBounds="0.5, 0.5, 2, 4.8477197265625">
+      <DataClassMoniker Name="/cargaDataContext/TmpVentas" />
+      <nestedChildShapes>
+        <elementListCompartment Id="0a4304f2-86e1-4bcc-a96b-d582e1fcc622" absoluteBounds="0.51500000000000012, 0.96, 1.9700000000000002, 4.2877197265625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="9da2e497-7604-49ee-b561-f884405ec479" absoluteBounds="6, 2.5, 2, 2.7324039713541666">
+      <DataClassMoniker Name="/cargaDataContext/StatusCarga" />
+      <nestedChildShapes>
+        <elementListCompartment Id="64c782c8-e471-40b7-bb3e-4dd0ca064ec5" absoluteBounds="6.015, 2.96, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="2ce27e33-3965-4bf2-8af2-70d0db2778b3" absoluteBounds="3.375, 0.625, 2, 1.1939925130208331">
+      <DataClassMoniker Name="/cargaDataContext/TmpVentasError" />
+      <nestedChildShapes>
+        <elementListCompartment Id="1f1ce184-90c2-4b81-a29d-ed35f0ca78e5" absoluteBounds="3.3899999999999997, 1.085, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="41967def-7493-449a-84ca-9a1e825fc862" absoluteBounds="3.375, 2.5, 2, 1.9631982421875">
+      <DataClassMoniker Name="/cargaDataContext/HistoricoCargas" />
+      <nestedChildShapes>
+        <elementListCompartment Id="e17f5e16-baa9-4caf-ab1e-10a4388fd716" absoluteBounds="3.3899999999999997, 2.96, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(5.375 : 3.48159912109375); (6 : 3.48159912109375)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/cargaDataContext/HistoricoCargas/HistoricoCarga_StatusCarga" />
+      <nodes>
+        <classShapeMoniker Id="41967def-7493-449a-84ca-9a1e825fc862" />
+        <classShapeMoniker Id="9da2e497-7604-49ee-b561-f884405ec479" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="3db9dde1-4235-4969-90cd-9d8d60880bfd" absoluteBounds="3.5, 5.375, 2, 1.7708968098958331">
+      <DataClassMoniker Name="/cargaDataContext/HistoricoCargaPartes" />
+      <nestedChildShapes>
+        <elementListCompartment Id="ba7bc969-6d1e-4734-95cf-5e6dd7937342" absoluteBounds="3.5149999999999997, 5.835, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(4.4375 : 4.4631982421875); (4.4375 : 5.375)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/cargaDataContext/HistoricoCargas/HistoricoCargas_HistoricoCargaPartes" />
+      <nodes>
+        <classShapeMoniker Id="41967def-7493-449a-84ca-9a1e825fc862" />
+        <classShapeMoniker Id="3db9dde1-4235-4969-90cd-9d8d60880bfd" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(6 : 5.23240397135417); (5.5 : 5.375)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/cargaDataContext/StatusCarga/StatusCarga_HistoricoCargaPartes" />
+      <nodes>
+        <classShapeMoniker Id="9da2e497-7604-49ee-b561-f884405ec479" />
+        <classShapeMoniker Id="3db9dde1-4235-4969-90cd-9d8d60880bfd" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

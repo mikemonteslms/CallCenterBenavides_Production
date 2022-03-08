@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="CatalogoLlamada">
+  <DataContextMoniker Name="/CatalogoLlamadaDataContext" />
+  <nestedChildShapes>
+    <classShape Id="6c3cfa5f-8bee-45a2-8f41-f04ac571e2eb" absoluteBounds="3.5, 1.125, 2.375, 2.9247054036458326">
+      <DataClassMoniker Name="/CatalogoLlamadaDataContext/TipoLlamada" />
+      <nestedChildShapes>
+        <elementListCompartment Id="bb044d53-8b0f-450c-8ab6-ae0b0feb7a30" absoluteBounds="3.515, 1.585, 2.3449999999999998, 2.364705403645833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="1d37d332-5dee-4b2d-a1c8-de6a3f095c0a" absoluteBounds="0.5, 1.125, 2, 2.9247054036458331">
+      <DataClassMoniker Name="/CatalogoLlamadaDataContext/CategoriaTipoLlamada" />
+      <nestedChildShapes>
+        <elementListCompartment Id="95917a7c-2eee-4de4-95fc-e7658cd544bf" absoluteBounds="0.51500000000000012, 1.585, 1.9700000000000002, 2.364705403645833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(2.5 : 2.58735270182292); (3.5 : 2.58735270182292)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/CatalogoLlamadaDataContext/CategoriaTipoLlamada/categoria_tipo_llamada_TipoLlamada" />
+      <nodes>
+        <classShapeMoniker Id="1d37d332-5dee-4b2d-a1c8-de6a3f095c0a" />
+        <classShapeMoniker Id="6c3cfa5f-8bee-45a2-8f41-f04ac571e2eb" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

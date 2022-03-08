@@ -1,0 +1,1763 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{A8DA54BF-4143-4D12-9512-93B2170847C2}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ORMOperacion</RootNamespace>
+    <AssemblyName>ORMOperacion</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AjaxControlToolkit">
+      <HintPath>..\..\packages\LoyaltyPoints-Web40.1.0.0\lib\AjaxControlToolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="BotonEnviar">
+      <HintPath>..\..\packages\LoyaltyPoints-Web40.1.0.0\lib\BotonEnviar.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework">
+      <HintPath>..\..\packages\EntityFramework.6.1.2\lib\net40\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\..\packages\EntityFramework.6.1.2\lib\net40\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Data">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Core">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.ComponentModel.DataAnnotations">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.EnterpriseServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.EnterpriseServices.dll</HintPath>
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.ServiceModel">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Extensions">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Mobile" />
+    <Reference Include="System.Xml.Linq">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Drawing">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Configuration">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Services">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.DynamicData">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Entity">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.ApplicationServices">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.OpenAccess, Version=2014.3.1027.1, Culture=neutral, PublicKeyToken=7ce17eeaf1d59342">
+      <HintPath>C:\Program Files (x86)\Telerik\Data Access\bin\Telerik.OpenAccess.dll</HintPath>
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="Telerik.OpenAccess.35.Extensions, Version=2014.3.1027.1, Culture=neutral, PublicKeyToken=7ce17eeaf1d59342">
+      <HintPath>C:\Program Files (x86)\Telerik\Data Access\bin\Telerik.OpenAccess.35.Extensions.dll</HintPath>
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="Telerik.OpenAccess.Runtime, Version=2014.3.1027.1, Culture=neutral, PublicKeyToken=7ce17eeaf1d59342">
+      <Private>True</Private>
+      <HintPath>C:\Program Files (x86)\Telerik\Data Access\bin\Telerik.OpenAccess.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.OpenAccess.Web, Version=2014.3.1027.1, Culture=neutral, PublicKeyToken=7ce17eeaf1d59342">
+      <HintPath>C:\Program Files (x86)\Telerik\Data Access\bin\Telerik.OpenAccess.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.OpenAccess.Web.40, Version=2014.3.1027.1, Culture=neutral, PublicKeyToken=7ce17eeaf1d59342">
+      <HintPath>C:\Program Files (x86)\Telerik\Data Access\bin\Telerik.OpenAccess.Web.40.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Web.UI, Version=2015.1.401.40, Culture=neutral, PublicKeyToken=121fae78165ba3d4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\RCAJAX\2015.1.401.40\Telerik.Web.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Web.UI.Skins, Version=2015.1.401.40, Culture=neutral, PublicKeyToken=121fae78165ba3d4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\RCAJAX\2015.1.401.40\Telerik.Web.UI.Skins.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Documents.Core, Version=2015.1.401.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\RCAJAX\2015.1.401.40\AdditionalLibraries\Bin40\Telerik.Windows.Documents.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Documents.Flow, Version=2015.1.401.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\RCAJAX\2015.1.401.40\AdditionalLibraries\Bin40\Telerik.Windows.Documents.Flow.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Documents.Spreadsheet, Version=2015.1.401.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\RCAJAX\2015.1.401.40\AdditionalLibraries\Bin40\Telerik.Windows.Documents.Spreadsheet.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Documents.Spreadsheet.FormatProviders.OpenXml, Version=2015.1.401.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\RCAJAX\2015.1.401.40\AdditionalLibraries\Bin40\Telerik.Windows.Documents.Spreadsheet.FormatProviders.OpenXml.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Maths, Version=2015.1.401.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\RCAJAX\2015.1.401.40\AdditionalLibraries\Bin40\Telerik.Windows.Maths.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Zip, Version=2015.1.401.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\RCAJAX\2015.1.401.40\AdditionalLibraries\Bin40\Telerik.Windows.Zip.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="About.aspx" />
+    <Content Include="Account\Login.aspx" />
+    <Content Include="aclaraciones.aspx" />
+    <Content Include="administracionPerfiles.aspx" />
+    <Content Include="AgregarFuncionesRol.ascx" />
+    <Content Include="App_Data\datosContacto.xml" />
+    <Content Include="busqueda.aspx" />
+    <Content Include="CalendarioMundial.aspx" />
+    <Content Include="cambiarPassword.ascx" />
+    <Content Include="comentarios\comentarios.aspx" />
+    <Content Include="configurarMenu.aspx" />
+    <Content Include="consultaAccesosParticipantes.aspx" />
+    <Content Include="consultaCanjesParticipantes.aspx" />
+    <Content Include="consultaEncuestasParticipantes.aspx" />
+    <Content Include="consultaEventosParticipantes.aspx" />
+    <Content Include="consultaHistoricoVentas.aspx" />
+    <Content Include="consultaTransacciones.aspx" />
+    <Content Include="Content\themes\base\images\animated-overlay.gif" />
+    <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Content\themes\base\images\ui-icons_222222_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_454545_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_888888_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Content\themes\base\jquery-ui.css" />
+    <Content Include="Content\themes\base\jquery.ui.accordion.css" />
+    <Content Include="Content\themes\base\jquery.ui.all.css" />
+    <Content Include="Content\themes\base\jquery.ui.autocomplete.css" />
+    <Content Include="Content\themes\base\jquery.ui.base.css" />
+    <Content Include="Content\themes\base\jquery.ui.button.css" />
+    <Content Include="Content\themes\base\jquery.ui.core.css" />
+    <Content Include="Content\themes\base\jquery.ui.datepicker.css" />
+    <Content Include="Content\themes\base\jquery.ui.dialog.css" />
+    <Content Include="Content\themes\base\jquery.ui.menu.css" />
+    <Content Include="Content\themes\base\jquery.ui.progressbar.css" />
+    <Content Include="Content\themes\base\jquery.ui.resizable.css" />
+    <Content Include="Content\themes\base\jquery.ui.selectable.css" />
+    <Content Include="Content\themes\base\jquery.ui.slider.css" />
+    <Content Include="Content\themes\base\jquery.ui.spinner.css" />
+    <Content Include="Content\themes\base\jquery.ui.tabs.css" />
+    <Content Include="Content\themes\base\jquery.ui.theme.css" />
+    <Content Include="Content\themes\base\jquery.ui.tooltip.css" />
+    <Content Include="Content\themes\base\minified\images\animated-overlay.gif" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_222222_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_454545_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_888888_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Content\themes\base\minified\jquery-ui.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.accordion.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.autocomplete.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.button.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.core.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.datepicker.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.dialog.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.menu.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.progressbar.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.resizable.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.selectable.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.slider.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.spinner.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.tabs.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.theme.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.tooltip.min.css" />
+    <Content Include="controles\categoria.ascx" />
+    <Content Include="controles\ucDireccionDistribuidor_MX.ascx" />
+    <Content Include="controles\ucDireccion_AR.ascx" />
+    <Content Include="controles\ucDireccion_BR.ascx" />
+    <Content Include="controles\ucDireccion_CO.ascx" />
+    <Content Include="controles\ucDireccion_MX.ascx" />
+    <Content Include="editarMecanicas.aspx" />
+    <Content Include="editor\avisoEdit.aspx" />
+    <Content Include="editor\comentariosEdit.aspx" />
+    <Content Include="editor\css\EditorContentStyleAviso.css" />
+    <Content Include="editor\css\EditorContentStylePromociones.css" />
+    <Content Include="editor\css\EditorContentStylesMecanica.css" />
+    <Content Include="editor\css\EditorContentStyleGuias.css" />
+    <Content Include="editor\faqsEdit.aspx" />
+    <Content Include="editor\guiasEdit.aspx" />
+    <Content Include="editor\mecanica.aspx" />
+    <Content Include="editor\promocionesEdit.aspx" />
+    <Content Include="editor\terminosEdit.aspx" />
+    <Content Include="envioMensaje.aspx" />
+    <Content Include="envioRMS.aspx" />
+    <Content Include="Error.aspx" />
+    <Content Include="historicoLlamadas.aspx" />
+    <Content Include="fonts\images\acceso\banner-prueba.jpg" />
+    <Content Include="fonts\images\acceso\contrasena.png" />
+    <Content Include="fonts\images\acceso\email.png" />
+    <Content Include="fonts\images\acceso\imagenVW.jpg" />
+    <Content Include="fonts\images\acceso\usuario.png" />
+    <Content Include="fonts\images\background.jpg" />
+    <Content Include="fonts\images\background_old.jpg" />
+    <Content Include="fonts\images\balon.jpg" />
+    <Content Include="fonts\images\banner-prueba.jpg" />
+    <Content Include="fonts\images\banner.jpg" />
+    <Content Include="fonts\images\bannerLoyaltySolution.png" />
+    <Content Include="fonts\images\BG-desert-final.jpg" />
+    <Content Include="fonts\images\boton-cerrar.png" />
+    <Content Include="fonts\images\btnConfirmarGal.png" />
+    <Content Include="fonts\images\checklist-icon.png" />
+    <Content Include="fonts\images\delete.gif" />
+    <Content Include="fonts\images\espacio.gif" />
+    <Content Include="fonts\images\guias\guias.png" />
+    <Content Include="fonts\images\guias\manual.png" />
+    <Content Include="fonts\images\guias\tips.png" />
+    <Content Include="fonts\images\icon-guias.jpg" />
+    <Content Include="fonts\images\icon-tips.jpg" />
+    <Content Include="fonts\images\info-icon.png" />
+    <Content Include="fonts\images\logo-loyaltypoints.png" />
+    <Content Include="fonts\images\logo.jpg" />
+    <Content Include="fonts\images\logoLMS.png" />
+    <Content Include="fonts\images\logoLoyaltySolution.png" />
+    <Content Include="fonts\images\logoLW.png" />
+    <Content Include="fonts\images\logosVW.png" />
+    <Content Include="fonts\images\mailingVW-10mayo-web.jpg" />
+    <Content Include="fonts\images\mailing\tables\acumulacion\Acumulacion-Puntos-Final_01.gif" />
+    <Content Include="fonts\images\mailing\tables\acumulacion\Acumulacion-Puntos-Final_02.gif" />
+    <Content Include="fonts\images\mailing\tables\acumulacion\Acumulacion-Puntos-Final_03.gif" />
+    <Content Include="fonts\images\mailing\tables\acumulacion\Acumulacion-Puntos-Final_04.gif" />
+    <Content Include="fonts\images\mailing\tables\acumulacion\Acumulacion-Puntos-Final_05.gif" />
+    <Content Include="fonts\images\mailing\tables\acumulacion\Acumulacion-Puntos-Final_06.gif" />
+    <Content Include="fonts\images\mailing\tables\acumulacion\Acumulacion-Puntos-Final_07.gif" />
+    <Content Include="fonts\images\mailing\tables\acumulacion\Acumulacion-Puntos-Final_08.gif" />
+    <Content Include="fonts\images\mailing\tables\acumulacion\Acumulacion-Puntos-Final_09.gif" />
+    <Content Include="fonts\images\mailing\tables\acumulacion\Acumulacion-Puntos-Final_10.gif" />
+    <Content Include="fonts\images\mailing\tables\acumulacion\Acumulacion-Puntos-Final_11.gif" />
+    <Content Include="fonts\images\mailing\tables\acumulacion\Acumulacion-Puntos-Final_12.gif" />
+    <Content Include="fonts\images\mailing\tables\acumulacion\Acumulacion-Puntos-Final_13.gif" />
+    <Content Include="fonts\images\mailing\tables\acumulacion\Acumulacion-Puntos-Final_14.gif" />
+    <Content Include="fonts\images\mailing\tables\acumulacion\Acumulacion-Puntos-Final_15.gif" />
+    <Content Include="fonts\images\mailing\tables\acumulacion\Acumulacion-Puntos-Final_16.gif" />
+    <Content Include="fonts\images\mailing\tables\acumulacion\Acumulacion-Puntos-Final_17.gif" />
+    <Content Include="fonts\images\mailing\tables\acumulacion\Acumulacion-Puntos-Final_18.gif" />
+    <Content Include="fonts\images\mailing\tables\acumulacion\Acumulacion-Puntos-Final_19.gif" />
+    <Content Include="fonts\images\mailing\tables\acumulacion\Acumulacion-Puntos-Final_20.gif" />
+    <Content Include="fonts\images\mailing\tables\acumulacion\Acumulacion-Puntos-Final_21.gif" />
+    <Content Include="fonts\images\mailing\tables\acumulacion\Acumulacion-Puntos-Final_22.gif" />
+    <Content Include="fonts\images\mailing\tables\acumulacion\Acumulacion-Puntos-Final_23.gif" />
+    <Content Include="fonts\images\mailing\tables\acumulacion\Acumulacion-Puntos-Final_24.gif" />
+    <Content Include="fonts\images\mailing\tables\acumulacion\Acumulacion-Puntos-Final_25.gif" />
+    <Content Include="fonts\images\mailing\tables\acumulacion\Acumulacion-Puntos-Final_26.gif" />
+    <Content Include="fonts\images\mailing\tables\acumulacion\Acumulacion-Puntos-Final_27.gif" />
+    <Content Include="fonts\images\mailing\tables\acumulacion\Acumulacion-Puntos-Final_28.gif" />
+    <Content Include="fonts\images\mailing\tables\acumulacion\Acumulacion-Puntos-Final_29.gif" />
+    <Content Include="fonts\images\mailing\tables\acumulacion\Acumulacion-Puntos-Final_30.gif" />
+    <Content Include="fonts\images\mailing\tables\acumulacion\espacio.gif" />
+    <Content Include="fonts\images\mailing\altas\teaser_3_vw_01.jpg" />
+    <Content Include="fonts\images\mailing\altas\teaser_3_vw_02.jpg" />
+    <Content Include="fonts\images\mailing\altas\teaser_3_vw_04.jpg" />
+    <Content Include="fonts\images\mailing\altas\teaser_3_vw_05.jpg" />
+    <Content Include="fonts\images\mailing\altas\teaser_3_vw_06.jpg" />
+    <Content Include="fonts\images\mailing\altas\teaser_3_vw_08.jpg" />
+    <Content Include="fonts\images\mailing\altas\teaser_3_vw_09.jpg" />
+    <Content Include="fonts\images\mailing\altas\teaser_3_vw_10.jpg" />
+    <Content Include="fonts\images\mailing\altas\teaser_3_vw_11.jpg" />
+    <Content Include="fonts\images\mailing\mailingFooter.png" />
+    <Content Include="fonts\images\mailing\mailingHeader.png" />
+    <Content Include="fonts\images\mailing\tables\bienvenido\3_01.jpg" />
+    <Content Include="fonts\images\mailing\tables\bienvenido\3_02.jpg" />
+    <Content Include="fonts\images\mailing\tables\bienvenido\3_03.jpg" />
+    <Content Include="fonts\images\mailing\tables\bienvenido\3_04.jpg" />
+    <Content Include="fonts\images\mailing\tables\bienvenido\3_05.jpg" />
+    <Content Include="fonts\images\mailing\tables\bienvenido\3_06.jpg" />
+    <Content Include="fonts\images\mailing\tables\bienvenido\3_07.jpg" />
+    <Content Include="fonts\images\mailing\tables\bienvenido\3_08.jpg" />
+    <Content Include="fonts\images\mailing\tables\bienvenido\espacio.gif" />
+    <Content Include="fonts\images\mailing\tables\canje\3_01.jpg" />
+    <Content Include="fonts\images\mailing\tables\canje\3_02.jpg" />
+    <Content Include="fonts\images\mailing\tables\canje\3_03.jpg" />
+    <Content Include="fonts\images\mailing\tables\canje\3_04.jpg" />
+    <Content Include="fonts\images\mailing\tables\canje\3_05.jpg" />
+    <Content Include="fonts\images\mailing\tables\canje\3_06.jpg" />
+    <Content Include="fonts\images\mailing\tables\canje\3_07.jpg" />
+    <Content Include="fonts\images\mailing\tables\canje\3_08.jpg" />
+    <Content Include="fonts\images\mailing\tables\canje\espacio.gif" />
+    <Content Include="fonts\images\mailing\tables\conoces\1_01.jpg" />
+    <Content Include="fonts\images\mailing\tables\conoces\1_02.jpg" />
+    <Content Include="fonts\images\mailing\tables\conoces\1_03.jpg" />
+    <Content Include="fonts\images\mailing\tables\conoces\1_04.jpg" />
+    <Content Include="fonts\images\mailing\tables\conoces\1_05.jpg" />
+    <Content Include="fonts\images\mailing\tables\conoces\1_06.jpg" />
+    <Content Include="fonts\images\mailing\tables\conoces\1_07.jpg" />
+    <Content Include="fonts\images\mailing\tables\conoces\1_08.jpg" />
+    <Content Include="fonts\images\mailing\tables\conoces\1_09.jpg" />
+    <Content Include="fonts\images\mailing\tables\conoces\1_10.jpg" />
+    <Content Include="fonts\images\mailing\tables\conoces\1_11.jpg" />
+    <Content Include="fonts\images\mailing\tables\conoces\1_12.jpg" />
+    <Content Include="fonts\images\mailing\tables\conoces\1_13.jpg" />
+    <Content Include="fonts\images\mailing\tables\conoces\espacio.gif" />
+    <Content Include="fonts\images\mapa.jpg" />
+    <Content Include="fonts\images\micuenta\vw-map-00.jpg" />
+    <Content Include="fonts\images\micuenta\vw-map-01.jpg" />
+    <Content Include="fonts\images\micuenta\vw-map-02.jpg" />
+    <Content Include="fonts\images\micuenta\vw-map-03.jpg" />
+    <Content Include="fonts\images\micuenta\vw-map-04.jpg" />
+    <Content Include="fonts\images\micuenta\vw-map-05.jpg" />
+    <Content Include="fonts\images\micuenta\vw-map-06.jpg" />
+    <Content Include="fonts\images\micuenta\vw-map-07.jpg" />
+    <Content Include="fonts\images\micuenta\vw-map-08.jpg" />
+    <Content Include="fonts\images\micuenta\vw-map-09.jpg" />
+    <Content Include="fonts\images\micuenta\vw-map-10.jpg" />
+    <Content Include="fonts\images\pdf-icon.png" />
+    <Content Include="fonts\images\pill.png" />
+    <Content Include="fonts\images\plecalms.png" />
+    <Content Include="fonts\images\plecavw.png" />
+    <Content Include="fonts\images\plecavw_contacto.png" />
+    <Content Include="fonts\images\pleca_contacto.jpg" />
+    <Content Include="fonts\images\pleca_sitio.jpg" />
+    <Content Include="fonts\images\plusminus.png" />
+    <Content Include="fonts\images\premios\large\0.6381.23.jpg" />
+    <Content Include="fonts\images\premios\large\01.0521.105.jpg" />
+    <Content Include="fonts\images\premios\large\01.0541.104.jpg" />
+    <Content Include="fonts\images\premios\large\1.3773.jpg" />
+    <Content Include="fonts\images\premios\large\1155.jpg" />
+    <Content Include="fonts\images\premios\large\11550.jpg" />
+    <Content Include="fonts\images\premios\large\1224.jpg" />
+    <Content Include="fonts\images\premios\large\1229.jpg" />
+    <Content Include="fonts\images\premios\large\130720.jpg" />
+    <Content Include="fonts\images\premios\large\2000007988.jpg" />
+    <Content Include="fonts\images\premios\large\2000007995.jpg" />
+    <Content Include="fonts\images\premios\large\2000010170.jpg" />
+    <Content Include="fonts\images\premios\large\2021-1.jpg" />
+    <Content Include="fonts\images\premios\large\25408-MX.jpg" />
+    <Content Include="fonts\images\premios\large\25409.jpg" />
+    <Content Include="fonts\images\premios\large\25475.jpg" />
+    <Content Include="fonts\images\premios\large\26008.CB.jpg" />
+    <Content Include="fonts\images\premios\large\26010.CB.jpg" />
+    <Content Include="fonts\images\premios\large\26025.CB.jpg" />
+    <Content Include="fonts\images\premios\large\261ES.jpg" />
+    <Content Include="fonts\images\premios\large\3.0339.N.jpg" />
+    <Content Include="fonts\images\premios\large\31118R.jpg" />
+    <Content Include="fonts\images\premios\large\31315001.jpg" />
+    <Content Include="fonts\images\premios\large\32388409.jpg" />
+    <Content Include="fonts\images\premios\large\330001-1310.jpg" />
+    <Content Include="fonts\images\premios\large\346018-0010.jpg" />
+    <Content Include="fonts\images\premios\large\351020206C.jpg" />
+    <Content Include="fonts\images\premios\large\351020282R.jpg" />
+    <Content Include="fonts\images\premios\large\351020750.jpg" />
+    <Content Include="fonts\images\premios\large\36073446254738.jpg" />
+    <Content Include="fonts\images\premios\large\3607346197233.jpg" />
+    <Content Include="fonts\images\premios\large\3607349312459.jpg" />
+    <Content Include="fonts\images\premios\large\37532N.jpg" />
+    <Content Include="fonts\images\premios\large\37537.jpg" />
+    <Content Include="fonts\images\premios\large\38520GY.jpg" />
+    <Content Include="fonts\images\premios\large\38830.jpg" />
+    <Content Include="fonts\images\premios\large\4.17-DI.A.jpg" />
+    <Content Include="fonts\images\premios\large\4.6125.TG16.jpg" />
+    <Content Include="fonts\images\premios\large\4.9DI10.A.jpg" />
+    <Content Include="fonts\images\premios\large\4002458068126.jpg" />
+    <Content Include="fonts\images\premios\large\4002458070426.jpg" />
+    <Content Include="fonts\images\premios\large\40274.jpg" />
+    <Content Include="fonts\images\premios\large\40326.jpg" />
+    <Content Include="fonts\images\premios\large\40715.jpg" />
+    <Content Include="fonts\images\premios\large\40894.jpg" />
+    <Content Include="fonts\images\premios\large\42LN5200.jpg" />
+    <Content Include="fonts\images\premios\large\48577.jpg" />
+    <Content Include="fonts\images\premios\large\612060.jpg" />
+    <Content Include="fonts\images\premios\large\614873.jpg" />
+    <Content Include="fonts\images\premios\large\620980M.jpg" />
+    <Content Include="fonts\images\premios\large\622356530620.jpg" />
+    <Content Include="fonts\images\premios\large\62640.jpg" />
+    <Content Include="fonts\images\premios\large\631283.jpg" />
+    <Content Include="fonts\images\premios\large\7-24020-429435.jpg" />
+    <Content Include="fonts\images\premios\large\7-24020-429442.jpg" />
+    <Content Include="fonts\images\premios\large\7-24020-429459.jpg" />
+    <Content Include="fonts\images\premios\large\7-24020-440195.jpg" />
+    <Content Include="fonts\images\premios\large\7-24020-440201.jpg" />
+    <Content Include="fonts\images\premios\large\7-24020-440218.jpg" />
+    <Content Include="fonts\images\premios\large\7211.jpg" />
+    <Content Include="fonts\images\premios\large\7215.jpg" />
+    <Content Include="fonts\images\premios\large\74108227041.jpg" />
+    <Content Include="fonts\images\premios\large\7501095616402.jpg" />
+    <Content Include="fonts\images\premios\large\77924025136.jpg" />
+    <Content Include="fonts\images\premios\large\8002135105607.jpg" />
+    <Content Include="fonts\images\premios\large\8011003807871.jpg" />
+    <Content Include="fonts\images\premios\large\8328B004AA.jpg" />
+    <Content Include="fonts\images\premios\large\8411061741689.jpg" />
+    <Content Include="fonts\images\premios\large\8431754462516.jpg" />
+    <Content Include="fonts\images\premios\large\844061005105.jpg" />
+    <Content Include="fonts\images\premios\large\8440610069911.jpg" />
+    <Content Include="fonts\images\premios\large\848447000081.jpg" />
+    <Content Include="fonts\images\premios\large\848447000159.jpg" />
+    <Content Include="fonts\images\premios\large\8ME590.jpg" />
+    <Content Include="fonts\images\premios\large\8MP2310.jpg" />
+    <Content Include="fonts\images\premios\large\9050.jpg" />
+    <Content Include="fonts\images\premios\large\980-000220.jpg" />
+    <Content Include="fonts\images\premios\large\980-000322.jpg" />
+    <Content Include="fonts\images\premios\large\980-000357.jpg" />
+    <Content Include="fonts\images\premios\large\980-000401.jpg" />
+    <Content Include="fonts\images\premios\large\980-000442.jpg" />
+    <Content Include="fonts\images\premios\large\A4259982.jpg" />
+    <Content Include="fonts\images\premios\large\A490.jpg" />
+    <Content Include="fonts\images\premios\large\ABBK.jpg" />
+    <Content Include="fonts\images\premios\large\ACH11--1TU3-CBK.jpg" />
+    <Content Include="fonts\images\premios\large\ALUBIKE1.jpg" />
+    <Content Include="fonts\images\premios\large\AOT22.5.jpg" />
+    <Content Include="fonts\images\premios\large\ASA320.jpg" />
+    <Content Include="fonts\images\premios\large\AWSBT1.jpg" />
+    <Content Include="fonts\images\premios\large\AX2000.jpg" />
+    <Content Include="fonts\images\premios\large\BD-D5300.jpg" />
+    <Content Include="fonts\images\premios\large\BDE5300ZX copia.jpg" />
+    <Content Include="fonts\images\premios\large\BDE5300zx.jpg" />
+    <Content Include="fonts\images\premios\large\BE45R.jpg" />
+    <Content Include="fonts\images\premios\large\BPC-16.jpg" />
+    <Content Include="fonts\images\premios\large\BPLL-1.jpg" />
+    <Content Include="fonts\images\premios\large\BT277.jpg" />
+    <Content Include="fonts\images\premios\large\BT377AC.jpg" />
+    <Content Include="fonts\images\premios\large\c2020.jpg" />
+    <Content Include="fonts\images\premios\large\C60R.jpg" />
+    <Content Include="fonts\images\premios\large\C61R.jpg" />
+    <Content Include="fonts\images\premios\large\CAB.jpg" />
+    <Content Include="fonts\images\premios\large\CALA-P2.jpg" />
+    <Content Include="fonts\images\premios\large\CB870QES.jpg" />
+    <Content Include="fonts\images\premios\large\CD35.jpg" />
+    <Content Include="fonts\images\premios\large\Cinepolis100.jpg" />
+    <Content Include="fonts\images\premios\large\Cinepolis250.jpg" />
+    <Content Include="fonts\images\premios\large\Cinepolis500.jpg" />
+    <Content Include="fonts\images\premios\large\CP10.jpg" />
+    <Content Include="fonts\images\premios\large\CP2.jpg" />
+    <Content Include="fonts\images\premios\large\CP4.jpg" />
+    <Content Include="fonts\images\premios\large\CP6.jpg" />
+    <Content Include="fonts\images\premios\large\CP8.jpg" />
+    <Content Include="fonts\images\premios\large\CRUSER5.jpg" />
+    <Content Include="fonts\images\premios\large\CS68.jpg" />
+    <Content Include="fonts\images\premios\large\D0749182.jpg" />
+    <Content Include="fonts\images\premios\large\D270-1828.jpg" />
+    <Content Include="fonts\images\premios\large\DEGUSTACION.jpg" />
+    <Content Include="fonts\images\premios\large\DH-4130S.jpg" />
+    <Content Include="fonts\images\premios\large\DSC-W610.jpg" />
+    <Content Include="fonts\images\premios\large\DVD-E360ZX.jpg" />
+    <Content Include="fonts\images\premios\large\DVDE350.jpg" />
+    <Content Include="fonts\images\premios\large\ES-3.jpg" />
+    <Content Include="fonts\images\premios\large\ES2944.jpg" />
+    <Content Include="fonts\images\premios\large\ES3003.jpg" />
+    <Content Include="fonts\images\premios\large\EV-BF13-1WB.jpg" />
+    <Content Include="fonts\images\premios\large\ez1120.jpg" />
+    <Content Include="fonts\images\premios\large\EZW6000YW.jpg" />
+    <Content Include="fonts\images\premios\large\F4G70LAABM.jpg" />
+    <Content Include="fonts\images\premios\large\F7N032QEC00.jpg" />
+    <Content Include="fonts\images\premios\large\FB3ES.jpg" />
+    <Content Include="fonts\images\premios\large\FL701850.jpg" />
+    <Content Include="fonts\images\premios\large\FLL-1.jpg" />
+    <Content Include="fonts\images\premios\large\G2336.jpg" />
+    <Content Include="fonts\images\premios\large\GANDHI10.jpg" />
+    <Content Include="fonts\images\premios\large\GANDHI2.jpg" />
+    <Content Include="fonts\images\premios\large\GANDHI250.jpg" />
+    <Content Include="fonts\images\premios\large\GANDHI5.jpg" />
+    <Content Include="fonts\images\premios\large\GANDHI500.jpg" />
+    <Content Include="fonts\images\premios\large\GMT265MLES.jpg" />
+    <Content Include="fonts\images\premios\large\GS6MES.jpg" />
+    <Content Include="fonts\images\premios\large\GT-P3110TSLTCE.jpg" />
+    <Content Include="fonts\images\premios\large\GT‐P5110TSMTCE.jpg" />
+    <Content Include="fonts\images\premios\large\GW8XDBB.jpg" />
+    <Content Include="fonts\images\premios\large\HG32NB460GFXZA.jpg" />
+    <Content Include="fonts\images\premios\large\HIEL-COMBO.jpg" />
+    <Content Include="fonts\images\premios\large\HP1973.jpg" />
+    <Content Include="fonts\images\premios\large\HUATCAST.jpg" />
+    <Content Include="fonts\images\premios\large\I17R.jpg" />
+    <Content Include="fonts\images\premios\large\I18R.jpg" />
+    <Content Include="fonts\images\premios\large\IPD5AN-B.jpg" />
+    <Content Include="fonts\images\premios\large\IPD5AN-F.jpg" />
+    <Content Include="fonts\images\premios\large\IRBD100.jpg" />
+    <Content Include="fonts\images\premios\large\Ishower.jpg" />
+    <Content Include="fonts\images\premios\large\itunes200.jpg" />
+    <Content Include="fonts\images\premios\large\itunes300.jpg" />
+    <Content Include="fonts\images\premios\large\IUSA100.jpg" />
+    <Content Include="fonts\images\premios\large\iusa200.jpg" />
+    <Content Include="fonts\images\premios\large\iusa50.jpg" />
+    <Content Include="fonts\images\premios\large\J11R.jpg" />
+    <Content Include="fonts\images\premios\large\J97R.jpg" />
+    <Content Include="fonts\images\premios\large\Jawbone.jpg" />
+    <Content Include="fonts\images\premios\large\JB1R.jpg" />
+    <Content Include="fonts\images\premios\large\JU350G52.jpg" />
+    <Content Include="fonts\images\premios\large\KDC-252U.jpg" />
+    <Content Include="fonts\images\premios\large\KPM508.jpg" />
+    <Content Include="fonts\images\premios\large\KT5245A.jpg" />
+    <Content Include="fonts\images\premios\large\KVT-512.jpg" />
+    <Content Include="fonts\images\premios\large\LEDTV1526P.jpg" />
+    <Content Include="fonts\images\premios\large\LEDTV1926.jpg" />
+    <Content Include="fonts\images\premios\large\Liverpool1000.jpg" />
+    <Content Include="fonts\images\premios\large\LNALFA.jpg" />
+    <Content Include="fonts\images\premios\large\M1950.jpg" />
+    <Content Include="fonts\images\premios\large\M2252D.jpg" />
+    <Content Include="fonts\images\premios\large\M260800M.jpg" />
+    <Content Include="fonts\images\premios\large\M8040741.jpg" />
+    <Content Include="fonts\images\premios\large\MA004Y07S.jpg" />
+    <Content Include="fonts\images\premios\large\MC904-EA.jpg" />
+    <Content Include="fonts\images\premios\large\MCR-1%28ROSAG%29.jpg" />
+    <Content Include="fonts\images\premios\large\MCR-1-%28VINOG%29.jpg" />
+    <Content Include="fonts\images\premios\large\MD199EA.jpg" />
+    <Content Include="fonts\images\premios\large\MD480EA.jpg" />
+    <Content Include="fonts\images\premios\large\MD481EA.jpg" />
+    <Content Include="fonts\images\premios\large\MD528EA.jpg" />
+    <Content Include="fonts\images\premios\large\MD531EA.jpg" />
+    <Content Include="fonts\images\premios\large\MD711EA.jpg" />
+    <Content Include="fonts\images\premios\large\MD717EA.jpg" />
+    <Content Include="fonts\images\premios\large\MD720EA.jpg" />
+    <Content Include="fonts\images\premios\large\MD723EA.jpg" />
+    <Content Include="fonts\images\premios\large\MD773EA.jpg" />
+    <Content Include="fonts\images\premios\large\MD775EA.jpg" />
+    <Content Include="fonts\images\premios\large\MD785EA.jpg" />
+    <Content Include="fonts\images\premios\large\MD788EA.jpg" />
+    <Content Include="fonts\images\premios\large\MD794EA.jpg" />
+    <Content Include="fonts\images\premios\large\MD79IEA.jpg" />
+    <Content Include="fonts\images\premios\large\MDR-MA100BIC.jpg" />
+    <Content Include="fonts\images\premios\large\MDR-ZX100WCU.jpg" />
+    <Content Include="fonts\images\premios\large\ME495EA.jpg" />
+    <Content Include="fonts\images\premios\large\ME497EA.jpg" />
+    <Content Include="fonts\images\premios\large\MED-105RO.jpg" />
+    <Content Include="fonts\images\premios\large\MED-110.jpg" />
+    <Content Include="fonts\images\premios\large\MEW-22.jpg" />
+    <Content Include="fonts\images\premios\large\MIO 2245.jpg" />
+    <Content Include="fonts\images\premios\large\MIO-2245.jpg" />
+    <Content Include="fonts\images\premios\large\MIO-5265.jpg" />
+    <Content Include="fonts\images\premios\large\MIXUP1.jpg" />
+    <Content Include="fonts\images\premios\large\MIXUP2.jpg" />
+    <Content Include="fonts\images\premios\large\movi100.jpg" />
+    <Content Include="fonts\images\premios\large\movi200.jpg" />
+    <Content Include="fonts\images\premios\large\movi50.jpg" />
+    <Content Include="fonts\images\premios\large\MP3164005.jpg" />
+    <Content Include="fonts\images\premios\large\nex100.jpg" />
+    <Content Include="fonts\images\premios\large\nex200.jpg" />
+    <Content Include="fonts\images\premios\large\nex50.jpg" />
+    <Content Include="fonts\images\premios\large\NM-12.jpg" />
+    <Content Include="fonts\images\premios\large\NT.L15AL.002.jpg" />
+    <Content Include="fonts\images\premios\large\PD-233.jpg" />
+    <Content Include="fonts\images\premios\large\PEQUENOP.jpg" />
+    <Content Include="fonts\images\premios\large\PKG-230.jpg" />
+    <Content Include="fonts\images\premios\large\POESM-3695.jpg" />
+    <Content Include="fonts\images\premios\large\PS4.jpg" />
+    <Content Include="fonts\images\premios\large\PVM-200.jpg" />
+    <Content Include="fonts\images\premios\large\RCD009U.jpg" />
+    <Content Include="fonts\images\premios\large\RHM800.jpg" />
+    <Content Include="fonts\images\premios\large\RIVMAYOAS.jpg" />
+    <Content Include="fonts\images\premios\large\RME1436VMXB.jpg" />
+    <Content Include="fonts\images\premios\large\RMF0260XMXX.jpg" />
+    <Content Include="fonts\images\premios\large\RMP0925VMXB.jpg" />
+    <Content Include="fonts\images\premios\large\RMP1029VMXS.jpg" />
+    <Content Include="fonts\images\premios\large\Roomba620.jpg" />
+    <Content Include="fonts\images\premios\large\ROTO-12P3.jpg" />
+    <Content Include="fonts\images\premios\large\S4800.jpg" />
+    <Content Include="fonts\images\premios\large\SANBORNS1.jpg" />
+    <Content Include="fonts\images\premios\large\SANBORNS2.jpg" />
+    <Content Include="fonts\images\premios\large\SB10201.jpg" />
+    <Content Include="fonts\images\premios\large\SDX1000.jpg" />
+    <Content Include="fonts\images\premios\large\SDX500.jpg" />
+    <Content Include="fonts\images\premios\large\SEARS2.jpg" />
+    <Content Include="fonts\images\premios\large\SGPT122MXS.jpg" />
+    <Content Include="fonts\images\premios\large\SORPRESABO.jpg" />
+    <Content Include="fonts\images\premios\large\SPACLASICO.jpg" />
+    <Content Include="fonts\images\premios\large\starbucks200.jpg" />
+    <Content Include="fonts\images\premios\large\starbucks500.jpg" />
+    <Content Include="fonts\images\premios\large\T2717A.jpg" />
+    <Content Include="fonts\images\premios\large\TALI-96P.jpg" />
+    <Content Include="fonts\images\premios\large\TEL-600.jpg" />
+    <Content Include="fonts\images\premios\large\tel100.jpg" />
+    <Content Include="fonts\images\premios\large\tel200.jpg" />
+    <Content Include="fonts\images\premios\large\tel50.jpg" />
+    <Content Include="fonts\images\premios\large\TELCEL500.jpg" />
+    <Content Include="fonts\images\premios\large\TF1.jpg" />
+    <Content Include="fonts\images\premios\large\TS25.jpg" />
+    <Content Include="fonts\images\premios\large\TSB226LA-50.jpg" />
+    <Content Include="fonts\images\premios\large\UN32EH40004003.jpg" />
+    <Content Include="fonts\images\premios\large\UN50F5500AFXZX.jpg" />
+    <Content Include="fonts\images\premios\large\une100.jpg" />
+    <Content Include="fonts\images\premios\large\une200.jpg" />
+    <Content Include="fonts\images\premios\large\une50.jpg" />
+    <Content Include="fonts\images\premios\large\VICTORINOX.jpg" />
+    <Content Include="fonts\images\premios\large\VIP-2.jpg" />
+    <Content Include="fonts\images\premios\large\VIP-4.jpg" />
+    <Content Include="fonts\images\premios\large\VIP-6.jpg" />
+    <Content Include="fonts\images\premios\large\VTM-012.jpg" />
+    <Content Include="fonts\images\premios\large\Walmart100.jpg" />
+    <Content Include="fonts\images\premios\large\Walmart200.jpg" />
+    <Content Include="fonts\images\premios\large\Walmart500.jpg" />
+    <Content Include="fonts\images\premios\large\X45AMPR1-H.jpg" />
+    <Content Include="fonts\images\premios\large\XBOX-ONE.jpg" />
+    <Content Include="fonts\images\premios\large\YF90.jpg" />
+    <Content Include="fonts\images\premios\large\YW05.jpg" />
+    <Content Include="fonts\images\premios\small\0.6381.23.jpg" />
+    <Content Include="fonts\images\premios\small\01.0521.105.jpg" />
+    <Content Include="fonts\images\premios\small\01.0541.104.jpg" />
+    <Content Include="fonts\images\premios\small\1.3773.jpg" />
+    <Content Include="fonts\images\premios\small\1155.jpg" />
+    <Content Include="fonts\images\premios\small\11550.jpg" />
+    <Content Include="fonts\images\premios\small\1224.jpg" />
+    <Content Include="fonts\images\premios\small\1229.jpg" />
+    <Content Include="fonts\images\premios\small\130720.jpg" />
+    <Content Include="fonts\images\premios\small\2000007988.jpg" />
+    <Content Include="fonts\images\premios\small\2000007995.jpg" />
+    <Content Include="fonts\images\premios\small\2000010170.jpg" />
+    <Content Include="fonts\images\premios\small\2021-1.jpg" />
+    <Content Include="fonts\images\premios\small\25408-MX.jpg" />
+    <Content Include="fonts\images\premios\small\25409.jpg" />
+    <Content Include="fonts\images\premios\small\25475.jpg" />
+    <Content Include="fonts\images\premios\small\26008.CB.jpg" />
+    <Content Include="fonts\images\premios\small\26010.CB.jpg" />
+    <Content Include="fonts\images\premios\small\26025.CB.jpg" />
+    <Content Include="fonts\images\premios\small\261ES.jpg" />
+    <Content Include="fonts\images\premios\small\3.0339.N.jpg" />
+    <Content Include="fonts\images\premios\small\31118R.jpg" />
+    <Content Include="fonts\images\premios\small\31315001.jpg" />
+    <Content Include="fonts\images\premios\small\32388409.jpg" />
+    <Content Include="fonts\images\premios\small\330001-1310.jpg" />
+    <Content Include="fonts\images\premios\small\346018-0010.jpg" />
+    <Content Include="fonts\images\premios\small\351020206C.jpg" />
+    <Content Include="fonts\images\premios\small\351020282R.jpg" />
+    <Content Include="fonts\images\premios\small\351020750.jpg" />
+    <Content Include="fonts\images\premios\small\36073446254738.jpg" />
+    <Content Include="fonts\images\premios\small\3607346197233.jpg" />
+    <Content Include="fonts\images\premios\small\3607349312459.jpg" />
+    <Content Include="fonts\images\premios\small\37532N.jpg" />
+    <Content Include="fonts\images\premios\small\37537.jpg" />
+    <Content Include="fonts\images\premios\small\38520GY.jpg" />
+    <Content Include="fonts\images\premios\small\38830.jpg" />
+    <Content Include="fonts\images\premios\small\4.17-DI.A.jpg" />
+    <Content Include="fonts\images\premios\small\4.6125.TG16.jpg" />
+    <Content Include="fonts\images\premios\small\4.9DI10.A.jpg" />
+    <Content Include="fonts\images\premios\small\4002458068126.jpg" />
+    <Content Include="fonts\images\premios\small\4002458070426.jpg" />
+    <Content Include="fonts\images\premios\small\40274.jpg" />
+    <Content Include="fonts\images\premios\small\40326.jpg" />
+    <Content Include="fonts\images\premios\small\40715.jpg" />
+    <Content Include="fonts\images\premios\small\40894.jpg" />
+    <Content Include="fonts\images\premios\small\42LN5200.jpg" />
+    <Content Include="fonts\images\premios\small\48577.jpg" />
+    <Content Include="fonts\images\premios\small\612060.jpg" />
+    <Content Include="fonts\images\premios\small\614873.jpg" />
+    <Content Include="fonts\images\premios\small\620980M.jpg" />
+    <Content Include="fonts\images\premios\small\622356530620.jpg" />
+    <Content Include="fonts\images\premios\small\62640.jpg" />
+    <Content Include="fonts\images\premios\small\631283.jpg" />
+    <Content Include="fonts\images\premios\small\7-24020-429435.jpg" />
+    <Content Include="fonts\images\premios\small\7-24020-429442.jpg" />
+    <Content Include="fonts\images\premios\small\7-24020-429459.jpg" />
+    <Content Include="fonts\images\premios\small\7-24020-440195.jpg" />
+    <Content Include="fonts\images\premios\small\7-24020-440201.jpg" />
+    <Content Include="fonts\images\premios\small\7-24020-440218.jpg" />
+    <Content Include="fonts\images\premios\small\7211.jpg" />
+    <Content Include="fonts\images\premios\small\7215.jpg" />
+    <Content Include="fonts\images\premios\small\74108227041.jpg" />
+    <Content Include="fonts\images\premios\small\7501095616402.jpg" />
+    <Content Include="fonts\images\premios\small\77924025136.jpg" />
+    <Content Include="fonts\images\premios\small\8002135105607.jpg" />
+    <Content Include="fonts\images\premios\small\8011003807871.jpg" />
+    <Content Include="fonts\images\premios\small\8328B004AA.jpg" />
+    <Content Include="fonts\images\premios\small\8411061741689.jpg" />
+    <Content Include="fonts\images\premios\small\8431754462516.jpg" />
+    <Content Include="fonts\images\premios\small\844061005105.jpg" />
+    <Content Include="fonts\images\premios\small\8440610069911.jpg" />
+    <Content Include="fonts\images\premios\small\848447000081.jpg" />
+    <Content Include="fonts\images\premios\small\848447000159.jpg" />
+    <Content Include="fonts\images\premios\small\8ME590.jpg" />
+    <Content Include="fonts\images\premios\small\8MP2310.jpg" />
+    <Content Include="fonts\images\premios\small\9050.jpg" />
+    <Content Include="fonts\images\premios\small\980-000220.jpg" />
+    <Content Include="fonts\images\premios\small\980-000322.jpg" />
+    <Content Include="fonts\images\premios\small\980-000357.jpg" />
+    <Content Include="fonts\images\premios\small\980-000401.jpg" />
+    <Content Include="fonts\images\premios\small\980-000442.jpg" />
+    <Content Include="fonts\images\premios\small\A4259982.jpg" />
+    <Content Include="fonts\images\premios\small\A490.jpg" />
+    <Content Include="fonts\images\premios\small\ABBK.jpg" />
+    <Content Include="fonts\images\premios\small\ACH11--1TU3-CBK.jpg" />
+    <Content Include="fonts\images\premios\small\ALUBIKE1.jpg" />
+    <Content Include="fonts\images\premios\small\AOT22.5.jpg" />
+    <Content Include="fonts\images\premios\small\ASA320.jpg" />
+    <Content Include="fonts\images\premios\small\AWSBT1.jpg" />
+    <Content Include="fonts\images\premios\small\AX2000.jpg" />
+    <Content Include="fonts\images\premios\small\BD-D5300.jpg" />
+    <Content Include="fonts\images\premios\small\BDE5300zx.jpg" />
+    <Content Include="fonts\images\premios\small\BE45R.jpg" />
+    <Content Include="fonts\images\premios\small\BPC-16.jpg" />
+    <Content Include="fonts\images\premios\small\BPLL-1.jpg" />
+    <Content Include="fonts\images\premios\small\BT277.jpg" />
+    <Content Include="fonts\images\premios\small\BT377AC.jpg" />
+    <Content Include="fonts\images\premios\small\c2020.jpg" />
+    <Content Include="fonts\images\premios\small\C60R.jpg" />
+    <Content Include="fonts\images\premios\small\C61R.jpg" />
+    <Content Include="fonts\images\premios\small\CAB.jpg" />
+    <Content Include="fonts\images\premios\small\CALA-P2.jpg" />
+    <Content Include="fonts\images\premios\small\CB870QES.jpg" />
+    <Content Include="fonts\images\premios\small\CD35.jpg" />
+    <Content Include="fonts\images\premios\small\Cinepolis100.jpg" />
+    <Content Include="fonts\images\premios\small\Cinepolis250.jpg" />
+    <Content Include="fonts\images\premios\small\Cinepolis500.jpg" />
+    <Content Include="fonts\images\premios\small\CP10.jpg" />
+    <Content Include="fonts\images\premios\small\CP2.jpg" />
+    <Content Include="fonts\images\premios\small\CP4.jpg" />
+    <Content Include="fonts\images\premios\small\CP6.jpg" />
+    <Content Include="fonts\images\premios\small\CP8.jpg" />
+    <Content Include="fonts\images\premios\small\CRUSER5.jpg" />
+    <Content Include="fonts\images\premios\small\CS68.jpg" />
+    <Content Include="fonts\images\premios\small\D0749182.jpg" />
+    <Content Include="fonts\images\premios\small\D270-1828.jpg" />
+    <Content Include="fonts\images\premios\small\DEGUSTACION.jpg" />
+    <Content Include="fonts\images\premios\small\DH-4130S.jpg" />
+    <Content Include="fonts\images\premios\small\DSC-W610.jpg" />
+    <Content Include="fonts\images\premios\small\DVD-E360ZX.jpg" />
+    <Content Include="fonts\images\premios\small\DVDE350.jpg" />
+    <Content Include="fonts\images\premios\small\ES-3.jpg" />
+    <Content Include="fonts\images\premios\small\ES2944.jpg" />
+    <Content Include="fonts\images\premios\small\ES3003.jpg" />
+    <Content Include="fonts\images\premios\small\EV-BF13-1WB.jpg" />
+    <Content Include="fonts\images\premios\small\ez1120.jpg" />
+    <Content Include="fonts\images\premios\small\EZW6000YW.jpg" />
+    <Content Include="fonts\images\premios\small\F4G70LAABM.jpg" />
+    <Content Include="fonts\images\premios\small\F7N032QEC00.jpg" />
+    <Content Include="fonts\images\premios\small\FB3ES.jpg" />
+    <Content Include="fonts\images\premios\small\FL701850.jpg" />
+    <Content Include="fonts\images\premios\small\FLL-1.jpg" />
+    <Content Include="fonts\images\premios\small\G2336.jpg" />
+    <Content Include="fonts\images\premios\small\GANDHI10.jpg" />
+    <Content Include="fonts\images\premios\small\GANDHI2.jpg" />
+    <Content Include="fonts\images\premios\small\GANDHI250.jpg" />
+    <Content Include="fonts\images\premios\small\GANDHI5.jpg" />
+    <Content Include="fonts\images\premios\small\GANDHI500.jpg" />
+    <Content Include="fonts\images\premios\small\GMT265MLES.jpg" />
+    <Content Include="fonts\images\premios\small\GS6MES.jpg" />
+    <Content Include="fonts\images\premios\small\GT-P3110TSLTCE.jpg" />
+    <Content Include="fonts\images\premios\small\GT‐P5110TSMTCE.jpg" />
+    <Content Include="fonts\images\premios\small\GW8XDBB.jpg" />
+    <Content Include="fonts\images\premios\small\HG32NB460GFXZA.jpg" />
+    <Content Include="fonts\images\premios\small\HIEL-COMBO.jpg" />
+    <Content Include="fonts\images\premios\small\HP1973.jpg" />
+    <Content Include="fonts\images\premios\small\HUATCAST.jpg" />
+    <Content Include="fonts\images\premios\small\I17R.jpg" />
+    <Content Include="fonts\images\premios\small\I18R.jpg" />
+    <Content Include="fonts\images\premios\small\IPD5AN-B.jpg" />
+    <Content Include="fonts\images\premios\small\IPD5AN-F.jpg" />
+    <Content Include="fonts\images\premios\small\IRBD100.jpg" />
+    <Content Include="fonts\images\premios\small\Ishower.jpg" />
+    <Content Include="fonts\images\premios\small\itunes200.jpg" />
+    <Content Include="fonts\images\premios\small\itunes300.jpg" />
+    <Content Include="fonts\images\premios\small\IUSA100.jpg" />
+    <Content Include="fonts\images\premios\small\iusa200.jpg" />
+    <Content Include="fonts\images\premios\small\iusa50.jpg" />
+    <Content Include="fonts\images\premios\small\J11R.jpg" />
+    <Content Include="fonts\images\premios\small\J97R.jpg" />
+    <Content Include="fonts\images\premios\small\Jawbone.jpg" />
+    <Content Include="fonts\images\premios\small\JB1R.jpg" />
+    <Content Include="fonts\images\premios\small\JU350G52.jpg" />
+    <Content Include="fonts\images\premios\small\KDC-252U.jpg" />
+    <Content Include="fonts\images\premios\small\KPM508.jpg" />
+    <Content Include="fonts\images\premios\small\KT5245A.jpg" />
+    <Content Include="fonts\images\premios\small\KVT-512.jpg" />
+    <Content Include="fonts\images\premios\small\LEDTV1526P.jpg" />
+    <Content Include="fonts\images\premios\small\LEDTV1926.jpg" />
+    <Content Include="fonts\images\premios\small\Liverpool1000.jpg" />
+    <Content Include="fonts\images\premios\small\LNALFA.jpg" />
+    <Content Include="fonts\images\premios\small\M1950.jpg" />
+    <Content Include="fonts\images\premios\small\M2252D.jpg" />
+    <Content Include="fonts\images\premios\small\M260800M.jpg" />
+    <Content Include="fonts\images\premios\small\M8040741.jpg" />
+    <Content Include="fonts\images\premios\small\MA004Y07S.jpg" />
+    <Content Include="fonts\images\premios\small\MC904-EA.jpg" />
+    <Content Include="fonts\images\premios\small\MCR-1%28ROSAG%29.jpg" />
+    <Content Include="fonts\images\premios\small\MCR-1-%28VINOG%29.jpg" />
+    <Content Include="fonts\images\premios\small\MD199EA.jpg" />
+    <Content Include="fonts\images\premios\small\MD480EA.jpg" />
+    <Content Include="fonts\images\premios\small\MD481EA.jpg" />
+    <Content Include="fonts\images\premios\small\MD528EA.jpg" />
+    <Content Include="fonts\images\premios\small\MD531EA.jpg" />
+    <Content Include="fonts\images\premios\small\MD711EA.jpg" />
+    <Content Include="fonts\images\premios\small\MD717EA.jpg" />
+    <Content Include="fonts\images\premios\small\MD720EA.jpg" />
+    <Content Include="fonts\images\premios\small\MD723EA.jpg" />
+    <Content Include="fonts\images\premios\small\MD773EA.jpg" />
+    <Content Include="fonts\images\premios\small\MD775EA.jpg" />
+    <Content Include="fonts\images\premios\small\MD785EA.jpg" />
+    <Content Include="fonts\images\premios\small\MD788EA.jpg" />
+    <Content Include="fonts\images\premios\small\MD794EA.jpg" />
+    <Content Include="fonts\images\premios\small\MD79IEA.jpg" />
+    <Content Include="fonts\images\premios\small\MDR-MA100BIC.jpg" />
+    <Content Include="fonts\images\premios\small\MDR-ZX100WCU.jpg" />
+    <Content Include="fonts\images\premios\small\ME495EA.jpg" />
+    <Content Include="fonts\images\premios\small\ME497EA.jpg" />
+    <Content Include="fonts\images\premios\small\MED-105RO.jpg" />
+    <Content Include="fonts\images\premios\small\MED-110.jpg" />
+    <Content Include="fonts\images\premios\small\MEW-22.jpg" />
+    <Content Include="fonts\images\premios\small\MIO 2245.jpg" />
+    <Content Include="fonts\images\premios\small\MIO-2245.jpg" />
+    <Content Include="fonts\images\premios\small\MIO-5265.jpg" />
+    <Content Include="fonts\images\premios\small\MIXUP1.jpg" />
+    <Content Include="fonts\images\premios\small\MIXUP2.jpg" />
+    <Content Include="fonts\images\premios\small\movi100.jpg" />
+    <Content Include="fonts\images\premios\small\movi200.jpg" />
+    <Content Include="fonts\images\premios\small\movi50.jpg" />
+    <Content Include="fonts\images\premios\small\MP3164005.jpg" />
+    <Content Include="fonts\images\premios\small\nex100.jpg" />
+    <Content Include="fonts\images\premios\small\nex200.jpg" />
+    <Content Include="fonts\images\premios\small\nex50.jpg" />
+    <Content Include="fonts\images\premios\small\NM-12.jpg" />
+    <Content Include="fonts\images\premios\small\NT.L15AL.002.jpg" />
+    <Content Include="fonts\images\premios\small\PD-233.jpg" />
+    <Content Include="fonts\images\premios\small\PEQUENOP.jpg" />
+    <Content Include="fonts\images\premios\small\PKG-230.jpg" />
+    <Content Include="fonts\images\premios\small\POESM-3695.jpg" />
+    <Content Include="fonts\images\premios\small\PS4.jpg" />
+    <Content Include="fonts\images\premios\small\PVM-200.jpg" />
+    <Content Include="fonts\images\premios\small\RCD009U.jpg" />
+    <Content Include="fonts\images\premios\small\RHM800.jpg" />
+    <Content Include="fonts\images\premios\small\RIVMAYOAS.jpg" />
+    <Content Include="fonts\images\premios\small\RME1436VMXB.jpg" />
+    <Content Include="fonts\images\premios\small\RMF0260XMXX.jpg" />
+    <Content Include="fonts\images\premios\small\RMP0925VMXB.jpg" />
+    <Content Include="fonts\images\premios\small\RMP1029VMXS.jpg" />
+    <Content Include="fonts\images\premios\small\Roomba620.jpg" />
+    <Content Include="fonts\images\premios\small\ROTO-12P3.jpg" />
+    <Content Include="fonts\images\premios\small\S4800.jpg" />
+    <Content Include="fonts\images\premios\small\SANBORNS1.jpg" />
+    <Content Include="fonts\images\premios\small\SANBORNS2.jpg" />
+    <Content Include="fonts\images\premios\small\SB10201.jpg" />
+    <Content Include="fonts\images\premios\small\SDX1000.jpg" />
+    <Content Include="fonts\images\premios\small\SDX500.jpg" />
+    <Content Include="fonts\images\premios\small\SEARS2.jpg" />
+    <Content Include="fonts\images\premios\small\SGPT122MXS.jpg" />
+    <Content Include="fonts\images\premios\small\SORPRESABO.jpg" />
+    <Content Include="fonts\images\premios\small\SPACLASICO.jpg" />
+    <Content Include="fonts\images\premios\small\starbucks200.jpg" />
+    <Content Include="fonts\images\premios\small\starbucks500.jpg" />
+    <Content Include="fonts\images\premios\small\T2717A.jpg" />
+    <Content Include="fonts\images\premios\small\TALI-96P.jpg" />
+    <Content Include="fonts\images\premios\small\TEL-600.jpg" />
+    <Content Include="fonts\images\premios\small\tel100.jpg" />
+    <Content Include="fonts\images\premios\small\tel200.jpg" />
+    <Content Include="fonts\images\premios\small\tel50.jpg" />
+    <Content Include="fonts\images\premios\small\TELCEL500.jpg" />
+    <Content Include="fonts\images\premios\small\TF1.jpg" />
+    <Content Include="fonts\images\premios\small\TS25.jpg" />
+    <Content Include="fonts\images\premios\small\TSB226LA-50.jpg" />
+    <Content Include="fonts\images\premios\small\UN32EH40004003.jpg" />
+    <Content Include="fonts\images\premios\small\UN50F5500AFXZX.jpg" />
+    <Content Include="fonts\images\premios\small\une100.jpg" />
+    <Content Include="fonts\images\premios\small\une200.jpg" />
+    <Content Include="fonts\images\premios\small\une50.jpg" />
+    <Content Include="fonts\images\premios\small\VICTORINOX.jpg" />
+    <Content Include="fonts\images\premios\small\VIP-2.jpg" />
+    <Content Include="fonts\images\premios\small\VIP-4.jpg" />
+    <Content Include="fonts\images\premios\small\VIP-6.jpg" />
+    <Content Include="fonts\images\premios\small\VTM-012.jpg" />
+    <Content Include="fonts\images\premios\small\Walmart100.jpg" />
+    <Content Include="fonts\images\premios\small\Walmart200.jpg" />
+    <Content Include="fonts\images\premios\small\Walmart500.jpg" />
+    <Content Include="fonts\images\premios\small\X45AMPR1-H.jpg" />
+    <Content Include="fonts\images\premios\small\XBOX-ONE.jpg" />
+    <Content Include="fonts\images\premios\small\YF90.jpg" />
+    <Content Include="fonts\images\premios\small\YW05.jpg" />
+    <Content Include="fonts\images\promociones\ventas-mar-abr-GSF.jpg" />
+    <Content Include="fonts\images\promociones\ventas-mar-abr-vendedores.jpg" />
+    <Content Include="fonts\images\puntero.png" />
+    <Content Include="fonts\images\triangulito.png" />
+    <Content Include="fonts\images\tv-led.jpg" />
+    <Content Include="fonts\images\webLoyaltySolution.png" />
+    <Content Include="mailing\conoces_galenia.html" />
+    <Content Include="mailing\estado_cuenta.html" />
+    <Content Include="mailing\notificacion_redencion.html" />
+    <Content Include="mailing\acumulacion_puntos_final.html" />
+    <Content Include="mailing\envioDatosAcceso.aspx" />
+    <Content Include="mailing\tables\acumulacion_puntos_final.html" />
+    <Content Include="mailing\tables\conoces_galenia.html" />
+    <Content Include="mailing\tables\notificacion_redencion.html" />
+    <Content Include="mantenimientoBeneficios.aspx" />
+    <Content Include="MantenimientoCampanias.aspx" />
+    <Content Include="MantenimientoCanjes.aspx" />
+    <Content Include="mantenimientocarrusel.aspx" />
+    <Content Include="mantenimientoCatalogoPremios.aspx" />
+    <Content Include="mantenimientoCatalogos.aspx" />
+    <Content Include="mantenimientoDatosGeneralesParticipantes.aspx" />
+    <Content Include="mantenimientoEncuestas.aspx" />
+    <Content Include="mantenimientoEventos.aspx" />
+    <Content Include="mantenimientoFunciones.aspx" />
+    <Content Include="MantenimientoLlamadas.aspx" />
+    <Content Include="mantenimientoMecanicas.aspx" />
+    <Content Include="mantenimientoMenu.aspx" />
+    <Content Include="mantenimientoprogramas.aspx" />
+    <Content Include="mantenimientoTransacciones.aspx" />
+    <Content Include="mecanicasOperacion.aspx" />
+    <Content Include="packages.config" />
+    <Content Include="favicon.ico" />
+    <Content Include="Global.asax" />
+    <Content Include="plantillas\aviso_canje_audi.html" />
+    <Content Include="plantillas\aviso_canje_porsche.html" />
+    <Content Include="plantillas\aviso_canje_seat.html" />
+    <Content Include="plantillas\aviso_canje_vw.html" />
+    <Content Include="plantillas\aviso_llamada_audi.html" />
+    <Content Include="plantillas\aviso_llamada_porsche.html" />
+    <Content Include="plantillas\aviso_llamada_seat.html" />
+    <Content Include="plantillas\aviso_llamada_vw.html" />
+    <Content Include="plantillas\comentarios_audi.html" />
+    <Content Include="plantillas\comentarios_porsche.html" />
+    <Content Include="plantillas\comentarios_seat.html" />
+    <Content Include="plantillas\comentarios_vw.html" />
+    <Content Include="plantillas\datosacceso_generico_audi.html" />
+    <Content Include="plantillas\datosacceso_generico_porsche.html" />
+    <Content Include="plantillas\datosacceso_generico_seat.html" />
+    <Content Include="plantillas\datosacceso_generico_vw.html" />
+    <Content Include="plantillas\teaser_3_vw.html" />
+    <Content Include="registrar\cargaParticipantes.aspx" />
+    <Content Include="registrar\registrar-gsf.aspx" />
+    <Content Include="registrar\registrarParticipante.aspx" />
+    <Content Include="registrar\registrarParticipantes.aspx" />
+    <Content Include="Reportes\ReporteAsignaciones.aspx" />
+    <Content Include="Reportes\CuboPuntos.aspx" />
+    <Content Include="Reportes\CuboActividad.aspx" />
+    <Content Include="Reportes\CuboParticipantes.aspx" />
+    <Content Include="Reportes\ReportePasivos.aspx" />
+    <Content Include="Reportes\ReportePerfiles.aspx" />
+    <Content Include="Reportes\ReporteDetalleCanjes.aspx" />
+    <Content Include="Reportes\ReporteDetalleLlamadas.aspx" />
+    <Content Include="Reportes\ReportePuntosParticipantes.aspx" />
+    <Content Include="Reportes\Filtros.ascx" />
+    <Content Include="Reportes\ReporteParticipantes.aspx" />
+    <Content Include="docs\Manual_Acuse_recibo.pdf" />
+    <Content Include="docs\Manual_Canje.pdf" />
+    <Content Include="docs\Manual_Mecanica.pdf" />
+    <Content Include="docs\Proceso_Asignacion_ventas.pdf" />
+    <Content Include="FileSystemHandler.ashx" />
+    <Content Include="App_Code\MappingFile.mapping">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Handler.ashx" />
+    <Content Include="fonts\melocheRegular.ttf" />
+    <None Include="Properties\PublishProfiles\DemosOperacion.pubxml" />
+    <None Include="Properties\PublishProfiles\OperacionFileSystem.pubxml" />
+    <None Include="Properties\PublishProfiles\OperacionTestAcuraServer.pubxml" />
+    <None Include="Scripts\jquery-2.1.0.intellisense.js" />
+    <Content Include="Scripts\jquery-2.1.0.js" />
+    <Content Include="Scripts\jquery-2.1.0.min.js" />
+    <Content Include="Scripts\jquery-ui-1.10.4.js" />
+    <Content Include="Scripts\jquery-ui-1.10.4.min.js" />
+    <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\scripts.js" />
+    <Content Include="Scripts\_references.js" />
+    <Content Include="SeguimientoLlamadas.aspx" />
+    <Content Include="src\filtroMarcas.js" />
+    <Content Include="src\jquery.mousewheel.js" />
+    <Content Include="src\min\smk-accordion.min.js" />
+    <Content Include="src\perfect-scrollbar.css" />
+    <Content Include="src\perfect-scrollbar.js" />
+    <Content Include="src\smk-accordion.js" />
+    <Content Include="src\_notes\dwsync.xml" />
+    <Content Include="style\css\calendario.css" />
+    <Content Include="style\css\canje-operacion.css" />
+    <Content Include="style\css\editor\estilos.css" />
+    <Content Include="style\css\estilo-operacion.css" />
+    <Content Include="style\css\extras.css" />
+    <Content Include="style\css\smk-accordion.css" />
+    <Content Include="style\images\calendar.png" />
+    <Content Include="style\images\cancel.png" />
+    <Content Include="style\images\img_ingresar_back.png" />
+    <Content Include="style\images\img_notificacion_back.png" />
+    <Content Include="style\images\img_validacion_back.jpg" />
+    <Content Include="style\images\loading.gif" />
+    <Content Include="style\images\login\botonDorado.png" />
+    <Content Include="style\images\login\botonDorado150.png" />
+    <Content Include="style\images\login\campoTexto.png" />
+    <Content Include="style\images\Logo-LMS.png" />
+    <Content Include="style\images\Logo-LMS1.png" />
+    <Content Include="style\images\logo-loyaltypoints.png" />
+    <Content Include="style\images\LogoVW.png" />
+    <Content Include="style\images\logo_triangulo-premia.png" />
+    <Content Include="style\images\logo_triangulo-premia1.jpg" />
+    <Content Include="style\images\No.gif" />
+    <Content Include="style\images\pleca_mensaje.png" />
+    <Content Include="style\images\pleca_texto1.png" />
+    <Content Include="style\images\pleca_texto1_1.png" />
+    <Content Include="style\images\pleca_texto2.png" />
+    <Content Include="style\images\pleca_texto3.png" />
+    <Content Include="style\images\pleca_texto3_1.png" />
+    <Content Include="style\images\pleca_texto4.png" />
+    <Content Include="style\images\pleca_texto5.png" />
+    <Content Include="style\images\pleca_texto_escalamiento.png" />
+    <Content Include="style\images\pleca_texto_fecha.png" />
+    <Content Include="style\images\pleca_texto_tipo_transaccion.png" />
+    <Content Include="style\images\premios\imagen-no-disponible.PNG" />
+    <Content Include="style\images\Si.gif" />
+    <Content Include="style\images\textoDudas.png" />
+    <Content Include="style\images\texto_vceMensaje.png" />
+    <Content Include="style\js\htmltooltip.js" />
+    <Content Include="style\js\jquery-1.2.2.pack.js" />
+    <Content Include="transaccionManual.aspx" />
+    <Content Include="usuarios.aspx" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Content Include="Scripts\jquery-2.1.0.min.map" />
+    <None Include="Web References\net.solsersistem.servicios\loyalty_vwsp.disco" />
+    <Content Include="validartransacciones.aspx" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Default.aspx" />
+    <Content Include="webservice.aspx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="About.aspx.cs">
+      <DependentUpon>About.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="About.aspx.designer.cs">
+      <DependentUpon>About.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="aclaraciones.aspx.cs">
+      <DependentUpon>aclaraciones.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="aclaraciones.aspx.designer.cs">
+      <DependentUpon>aclaraciones.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="administracionPerfiles.aspx.cs">
+      <DependentUpon>administracionPerfiles.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="administracionPerfiles.aspx.designer.cs">
+      <DependentUpon>administracionPerfiles.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AgregarFuncionesRol.ascx.cs">
+      <DependentUpon>AgregarFuncionesRol.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AgregarFuncionesRol.ascx.designer.cs">
+      <DependentUpon>AgregarFuncionesRol.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="App_Code\CustomFileSystemProvider.cs" />
+    <Compile Include="App_Code\FileSystem.cs" />
+    <Compile Include="editarMecanicas.aspx.cs">
+      <DependentUpon>editarMecanicas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="editarMecanicas.aspx.designer.cs">
+      <DependentUpon>editarMecanicas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="editor\comentariosEdit.aspx.cs">
+      <DependentUpon>comentariosEdit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="editor\comentariosEdit.aspx.designer.cs">
+      <DependentUpon>comentariosEdit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="mantenimientoBeneficios.aspx.cs">
+      <DependentUpon>mantenimientoBeneficios.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="mantenimientoBeneficios.aspx.designer.cs">
+      <DependentUpon>mantenimientoBeneficios.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="mantenimientocarrusel.aspx.cs">
+      <DependentUpon>mantenimientocarrusel.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="mantenimientocarrusel.aspx.designer.cs">
+      <DependentUpon>mantenimientocarrusel.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="mantenimientoMecanicas.aspx.cs">
+      <DependentUpon>mantenimientoMecanicas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="mantenimientoMecanicas.aspx.designer.cs">
+      <DependentUpon>mantenimientoMecanicas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="mantenimientoprogramas.aspx.cs">
+      <DependentUpon>mantenimientoprogramas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="mantenimientoprogramas.aspx.designer.cs">
+      <DependentUpon>mantenimientoprogramas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PathHelper.cs" />
+    <Compile Include="App_GlobalResources\RadGrid.Main.es-MX.designer.cs" />
+    <Compile Include="App_GlobalResources\RadGrid.Main.es-MX1.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RadGrid.Main.es-MX.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\RadGrid.Main1.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RadGrid.Main.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\RadPivotGrid.Main.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RadPivotGrid.Main.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\RadPivotGrid.Main.es-MX.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RadPivotGrid.Main.es-MX.resx</DependentUpon>
+    </Compile>
+    <Compile Include="busqueda.aspx.cs">
+      <DependentUpon>busqueda.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="busqueda.aspx.designer.cs">
+      <DependentUpon>busqueda.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CalendarioMundial.aspx.cs">
+      <DependentUpon>CalendarioMundial.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CalendarioMundial.aspx.designer.cs">
+      <DependentUpon>CalendarioMundial.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="cambiarPassword.ascx.cs">
+      <DependentUpon>cambiarPassword.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="cambiarPassword.ascx.designer.cs">
+      <DependentUpon>cambiarPassword.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="comentarios\comentarios.aspx.cs">
+      <DependentUpon>comentarios.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="comentarios\comentarios.aspx.designer.cs">
+      <DependentUpon>comentarios.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="configurarMenu.aspx.cs">
+      <DependentUpon>configurarMenu.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="configurarMenu.aspx.designer.cs">
+      <DependentUpon>configurarMenu.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="consultaAccesosParticipantes.aspx.cs">
+      <DependentUpon>consultaAccesosParticipantes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="consultaAccesosParticipantes.aspx.designer.cs">
+      <DependentUpon>consultaAccesosParticipantes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="consultaCanjesParticipantes.aspx.cs">
+      <DependentUpon>consultaCanjesParticipantes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="consultaCanjesParticipantes.aspx.designer.cs">
+      <DependentUpon>consultaCanjesParticipantes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="consultaEncuestasParticipantes.aspx.cs">
+      <DependentUpon>consultaEncuestasParticipantes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="consultaEncuestasParticipantes.aspx.designer.cs">
+      <DependentUpon>consultaEncuestasParticipantes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="consultaEventosParticipantes.aspx.cs">
+      <DependentUpon>consultaEventosParticipantes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="consultaEventosParticipantes.aspx.designer.cs">
+      <DependentUpon>consultaEventosParticipantes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="consultaHistoricoVentas.aspx.cs">
+      <DependentUpon>consultaHistoricoVentas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="consultaHistoricoVentas.aspx.designer.cs">
+      <DependentUpon>consultaHistoricoVentas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="consultaTransacciones.aspx.cs">
+      <DependentUpon>consultaTransacciones.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="consultaTransacciones.aspx.designer.cs">
+      <DependentUpon>consultaTransacciones.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="contenido.Master.cs">
+      <DependentUpon>contenido.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="contenido.Master.designer.cs">
+      <DependentUpon>contenido.Master</DependentUpon>
+    </Compile>
+    <Compile Include="controles\categoria.ascx.cs">
+      <DependentUpon>categoria.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="controles\categoria.ascx.designer.cs">
+      <DependentUpon>categoria.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="controles\ucDireccionDistribuidor_MX.ascx.cs">
+      <DependentUpon>ucDireccionDistribuidor_MX.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="controles\ucDireccionDistribuidor_MX.ascx.designer.cs">
+      <DependentUpon>ucDireccionDistribuidor_MX.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="controles\ucDireccion_AR.ascx.cs">
+      <DependentUpon>ucDireccion_AR.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="controles\ucDireccion_AR.ascx.designer.cs">
+      <DependentUpon>ucDireccion_AR.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="controles\ucDireccion_BR.ascx.cs">
+      <DependentUpon>ucDireccion_BR.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="controles\ucDireccion_BR.ascx.designer.cs">
+      <DependentUpon>ucDireccion_BR.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="controles\ucDireccion_CO.ascx.cs">
+      <DependentUpon>ucDireccion_CO.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="controles\ucDireccion_CO.ascx.designer.cs">
+      <DependentUpon>ucDireccion_CO.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="controles\ucDireccion_MX.ascx.cs">
+      <DependentUpon>ucDireccion_MX.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="controles\ucDireccion_MX.ascx.designer.cs">
+      <DependentUpon>ucDireccion_MX.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="editor\avisoEdit.aspx.cs">
+      <DependentUpon>avisoEdit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="editor\avisoEdit.aspx.designer.cs">
+      <DependentUpon>avisoEdit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="editor\faqsEdit.aspx.cs">
+      <DependentUpon>faqsEdit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="editor\faqsEdit.aspx.designer.cs">
+      <DependentUpon>faqsEdit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="editor\guiasEdit.aspx.cs">
+      <DependentUpon>guiasEdit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="editor\guiasEdit.aspx.designer.cs">
+      <DependentUpon>guiasEdit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="editor\mecanica.aspx.cs">
+      <DependentUpon>mecanica.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="editor\mecanica.aspx.designer.cs">
+      <DependentUpon>mecanica.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="editor\promocionesEdit.aspx.cs">
+      <DependentUpon>promocionesEdit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="editor\promocionesEdit.aspx.designer.cs">
+      <DependentUpon>promocionesEdit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="editor\terminosEdit.aspx.cs">
+      <DependentUpon>terminosEdit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="editor\terminosEdit.aspx.designer.cs">
+      <DependentUpon>terminosEdit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="envioMensaje.aspx.cs">
+      <DependentUpon>envioMensaje.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="envioMensaje.aspx.designer.cs">
+      <DependentUpon>envioMensaje.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="envioRMS.aspx.cs">
+      <DependentUpon>envioRMS.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="envioRMS.aspx.designer.cs">
+      <DependentUpon>envioRMS.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Error.aspx.cs">
+      <DependentUpon>Error.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Error.aspx.designer.cs">
+      <DependentUpon>Error.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="historicoLlamadas.aspx.cs">
+      <DependentUpon>historicoLlamadas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="historicoLlamadas.aspx.designer.cs">
+      <DependentUpon>historicoLlamadas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="mailing\envioDatosAcceso.aspx.cs">
+      <DependentUpon>envioDatosAcceso.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="mailing\envioDatosAcceso.aspx.designer.cs">
+      <DependentUpon>envioDatosAcceso.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MantenimientoCampanias.aspx.cs">
+      <DependentUpon>MantenimientoCampanias.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MantenimientoCampanias.aspx.designer.cs">
+      <DependentUpon>MantenimientoCampanias.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MantenimientoCanjes.aspx.cs">
+      <DependentUpon>MantenimientoCanjes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MantenimientoCanjes.aspx.designer.cs">
+      <DependentUpon>MantenimientoCanjes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="mantenimientoCatalogoPremios.aspx.cs">
+      <DependentUpon>mantenimientoCatalogoPremios.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="mantenimientoCatalogoPremios.aspx.designer.cs">
+      <DependentUpon>mantenimientoCatalogoPremios.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="mantenimientoCatalogos.aspx.cs">
+      <DependentUpon>mantenimientoCatalogos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="mantenimientoCatalogos.aspx.designer.cs">
+      <DependentUpon>mantenimientoCatalogos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="mantenimientoDatosGeneralesParticipantes.aspx.cs">
+      <DependentUpon>mantenimientoDatosGeneralesParticipantes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="mantenimientoDatosGeneralesParticipantes.aspx.designer.cs">
+      <DependentUpon>mantenimientoDatosGeneralesParticipantes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="mantenimientoEncuestas.aspx.cs">
+      <DependentUpon>mantenimientoEncuestas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="mantenimientoEncuestas.aspx.designer.cs">
+      <DependentUpon>mantenimientoEncuestas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="mantenimientoEventos.aspx.cs">
+      <DependentUpon>mantenimientoEventos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="mantenimientoEventos.aspx.designer.cs">
+      <DependentUpon>mantenimientoEventos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="mantenimientoFunciones.aspx.cs">
+      <DependentUpon>mantenimientoFunciones.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="mantenimientoFunciones.aspx.designer.cs">
+      <DependentUpon>mantenimientoFunciones.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MantenimientoLlamadas.aspx.cs">
+      <DependentUpon>MantenimientoLlamadas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MantenimientoLlamadas.aspx.designer.cs">
+      <DependentUpon>MantenimientoLlamadas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="mantenimientoMenu.aspx.cs">
+      <DependentUpon>mantenimientoMenu.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="mantenimientoMenu.aspx.designer.cs">
+      <DependentUpon>mantenimientoMenu.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="mantenimientoTransacciones.aspx.cs">
+      <DependentUpon>mantenimientoTransacciones.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="mantenimientoTransacciones.aspx.designer.cs">
+      <DependentUpon>mantenimientoTransacciones.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="mecanicasOperacion.aspx.cs">
+      <DependentUpon>mecanicasOperacion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="mecanicasOperacion.aspx.designer.cs">
+      <DependentUpon>mecanicasOperacion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="registrar\cargaParticipantes.aspx.cs">
+      <DependentUpon>cargaParticipantes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="registrar\cargaParticipantes.aspx.designer.cs">
+      <DependentUpon>cargaParticipantes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="registrar\registrar-gsf.aspx.cs">
+      <DependentUpon>registrar-gsf.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="registrar\registrar-gsf.aspx.designer.cs">
+      <DependentUpon>registrar-gsf.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="registrar\registrarParticipante.aspx.cs">
+      <DependentUpon>registrarParticipante.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="registrar\registrarParticipante.aspx.designer.cs">
+      <DependentUpon>registrarParticipante.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="registrar\registrarParticipantes.aspx.cs">
+      <DependentUpon>registrarParticipantes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="registrar\registrarParticipantes.aspx.designer.cs">
+      <DependentUpon>registrarParticipantes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\ReporteAsignaciones.aspx.cs">
+      <DependentUpon>ReporteAsignaciones.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reportes\ReporteAsignaciones.aspx.designer.cs">
+      <DependentUpon>ReporteAsignaciones.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\CuboPuntos.aspx.cs">
+      <DependentUpon>CuboPuntos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reportes\CuboPuntos.aspx.designer.cs">
+      <DependentUpon>CuboPuntos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\CuboActividad.aspx.cs">
+      <DependentUpon>CuboActividad.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reportes\CuboActividad.aspx.designer.cs">
+      <DependentUpon>CuboActividad.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\CuboParticipantes.aspx.cs">
+      <DependentUpon>CuboParticipantes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reportes\CuboParticipantes.aspx.designer.cs">
+      <DependentUpon>CuboParticipantes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\ReportePasivos.aspx.cs">
+      <DependentUpon>ReportePasivos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reportes\ReportePasivos.aspx.designer.cs">
+      <DependentUpon>ReportePasivos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\ReportePerfiles.aspx.cs">
+      <DependentUpon>ReportePerfiles.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reportes\ReportePerfiles.aspx.designer.cs">
+      <DependentUpon>ReportePerfiles.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\ReporteDetalleCanjes.aspx.cs">
+      <DependentUpon>ReporteDetalleCanjes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reportes\ReporteDetalleCanjes.aspx.designer.cs">
+      <DependentUpon>ReporteDetalleCanjes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\ReporteDetalleLlamadas.aspx.cs">
+      <DependentUpon>ReporteDetalleLlamadas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reportes\ReporteDetalleLlamadas.aspx.designer.cs">
+      <DependentUpon>ReporteDetalleLlamadas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\ReportePuntosParticipantes.aspx.cs">
+      <DependentUpon>ReportePuntosParticipantes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reportes\ReportePuntosParticipantes.aspx.designer.cs">
+      <DependentUpon>ReportePuntosParticipantes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\Filtros.ascx.cs">
+      <DependentUpon>Filtros.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reportes\Filtros.ascx.designer.cs">
+      <DependentUpon>Filtros.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\ReporteParticipantes.aspx.cs">
+      <DependentUpon>ReporteParticipantes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reportes\ReporteParticipantes.aspx.designer.cs">
+      <DependentUpon>ReporteParticipantes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SeguimientoLlamadas.aspx.cs">
+      <DependentUpon>SeguimientoLlamadas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SeguimientoLlamadas.aspx.designer.cs">
+      <DependentUpon>SeguimientoLlamadas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Site.Master.cs">
+      <DependentUpon>Site.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Site.Master.designer.cs">
+      <DependentUpon>Site.Master</DependentUpon>
+    </Compile>
+    <Compile Include="SiteError.Master.cs">
+      <DependentUpon>SiteError.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SiteError.Master.designer.cs">
+      <DependentUpon>SiteError.Master</DependentUpon>
+    </Compile>
+    <Compile Include="transaccionManual.aspx.cs">
+      <DependentUpon>transaccionManual.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="transaccionManual.aspx.designer.cs">
+      <DependentUpon>transaccionManual.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="usuarios.aspx.cs">
+      <DependentUpon>usuarios.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="usuarios.aspx.designer.cs">
+      <DependentUpon>usuarios.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="validartransacciones.aspx.cs">
+      <DependentUpon>validartransacciones.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="validartransacciones.aspx.designer.cs">
+      <DependentUpon>validartransacciones.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\net.solsersistem.servicios\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="webservice.aspx.cs">
+      <DependentUpon>webservice.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="webservice.aspx.designer.cs">
+      <DependentUpon>webservice.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Account\Web.config" />
+    <Content Include="Site.Master" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="contenido.Master" />
+    <Content Include="App_Browsers\ie.browser" />
+    <Content Include="App_Browsers\firefox.browser" />
+    <Content Include="plantillas\PlantillaPremios.xlsx" />
+    <Content Include="SiteError.Master" />
+    <None Include="Web References\net.solsersistem.servicios\loyalty_vwsp.wsdl" />
+    <Content Include="Web References\net.solsersistem.servicios\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </Content>
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_GlobalResources\RadGrid.Main.es-MX.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>RadGrid.Main.es-MX1.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="App_GlobalResources\RadGrid.Main.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>RadGrid.Main1.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_GlobalResources\RadPivotGrid.Main.es-MX.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>RadPivotGrid.Main.es-MX.designer.cs</LastGenOutput>
+    </Content>
+    <Content Include="App_GlobalResources\RadPivotGrid.Main.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>RadPivotGrid.Main.designer.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferences Include="Web References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferenceUrl Include="http://servicios.solsersistem.net/Concesionarios/concesionarios_loyalty/loyalty_vwsp.asmx%3fop=services_loyaltyvwsp">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\net.solsersistem.servicios\</RelPath>
+      <UpdateFromURL>http://servicios.solsersistem.net/Concesionarios/concesionarios_loyalty/loyalty_vwsp.asmx%3fop=services_loyaltyvwsp</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>ORMOperacion_net_solsersistem_servicios_loyalty_vwsp</CachedSettingsPropName>
+    </WebReferenceUrl>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\CNegocio\CNegocio.csproj">
+      <Project>{5f2a2496-1196-4db3-9728-d576a9a53d5f}</Project>
+      <Name>CNegocio</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\DataSQL\DataSQL.csproj">
+      <Project>{5b02aee7-ff3d-4115-bbd4-8025e7a5dd1d}</Project>
+      <Name>DataSQL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ORMModel\ORMModel.csproj">
+      <Project>{c50145e6-a244-4f1f-b41f-90d1925b4a00}</Project>
+      <Name>ORMModel</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>False</AutoAssignPort>
+          <DevelopmentServerPort>2273</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:2269</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

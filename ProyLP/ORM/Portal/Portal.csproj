@@ -1,0 +1,1149 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{F9F92CD4-18E1-4345-B961-85F9A89F8ECF}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Portal</RootNamespace>
+    <AssemblyName>Portal</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AjaxControlToolkit">
+      <HintPath>..\..\packages\LoyaltyPoints-Web40.1.0.0\lib\AjaxControlToolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="BotonEnviar, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\LoyaltyPoints-Web40.1.0.0\lib\BotonEnviar.dll</HintPath>
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="EntityFramework">
+      <HintPath>..\..\packages\EntityFramework.6.1.2\lib\net40\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\..\packages\EntityFramework.6.1.2\lib\net40\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.DynamicData">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Entity">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.ApplicationServices">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.ComponentModel.DataAnnotations">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Data">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Core">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Extensions">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Drawing">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Configuration">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Services">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.EnterpriseServices">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Telerik.OpenAccess, Version=2015.1.225.1, Culture=neutral, PublicKeyToken=7ce17eeaf1d59342">
+      <Private>True</Private>
+      <HintPath>C:\Program Files (x86)\Telerik\Data Access\bin\Telerik.OpenAccess.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.OpenAccess.35.Extensions, Version=2015.1.225.1, Culture=neutral, PublicKeyToken=7ce17eeaf1d59342">
+      <HintPath>C:\Program Files (x86)\Telerik\Data Access\bin\Telerik.OpenAccess.35.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.OpenAccess.Runtime, Version=2015.1.225.1, Culture=neutral, PublicKeyToken=7ce17eeaf1d59342">
+      <Private>True</Private>
+      <HintPath>C:\Program Files (x86)\Telerik\Data Access\bin\Telerik.OpenAccess.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.OpenAccess.Web, Version=2015.1.225.1, Culture=neutral, PublicKeyToken=7ce17eeaf1d59342">
+      <HintPath>C:\Program Files (x86)\Telerik\Data Access\bin\Telerik.OpenAccess.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.OpenAccess.Web.40, Version=2015.1.225.1, Culture=neutral, PublicKeyToken=7ce17eeaf1d59342">
+      <HintPath>C:\Program Files (x86)\Telerik\Data Access\bin\Telerik.OpenAccess.Web.40.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Web.UI, Version=2015.1.401.40, Culture=neutral, PublicKeyToken=121fae78165ba3d4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\RCAJAX\2015.1.401.40\Telerik.Web.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Web.UI.Skins, Version=2015.1.401.40, Culture=neutral, PublicKeyToken=121fae78165ba3d4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\RCAJAX\2015.1.401.40\Telerik.Web.UI.Skins.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Documents.Core, Version=2015.1.401.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\RCAJAX\2015.1.401.40\AdditionalLibraries\Bin40\Telerik.Windows.Documents.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Documents.Flow, Version=2015.1.401.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\RCAJAX\2015.1.401.40\AdditionalLibraries\Bin40\Telerik.Windows.Documents.Flow.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Documents.Spreadsheet, Version=2015.1.401.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\RCAJAX\2015.1.401.40\AdditionalLibraries\Bin40\Telerik.Windows.Documents.Spreadsheet.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Documents.Spreadsheet.FormatProviders.OpenXml, Version=2015.1.401.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\RCAJAX\2015.1.401.40\AdditionalLibraries\Bin40\Telerik.Windows.Documents.Spreadsheet.FormatProviders.OpenXml.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Maths, Version=2015.1.401.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\RCAJAX\2015.1.401.40\AdditionalLibraries\Bin40\Telerik.Windows.Maths.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Zip, Version=2015.1.401.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\RCAJAX\2015.1.401.40\AdditionalLibraries\Bin40\Telerik.Windows.Zip.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="acceso\cambiar.aspx" />
+    <Content Include="acceso\login.aspx" />
+    <Content Include="acceso\recupera.aspx" />
+    <Content Include="asignacionventas.aspx" />
+    <Content Include="bin\BotonEnviar.dll" />
+    <Content Include="busqueda.aspx" />
+    <Content Include="cambiocontrasena.aspx" />
+    <Content Include="carrito.aspx" />
+    <Content Include="catalogo.aspx" />
+    <Content Include="contacto.aspx" />
+    <Content Include="controles\categoria.ascx" />
+    <Content Include="controles\ucDireccionDistribuidor_MX.ascx" />
+    <Content Include="controles\ucDireccion_MX.ascx" />
+    <Content Include="css\estilos.css" />
+    <Content Include="css\estilos_acceso.css" />
+    <Content Include="css\extras.css" />
+    <Content Include="css\menuVendedor.css" />
+    <Content Include="css\passwordstrenght.css" />
+    <Content Include="css\privacidad.css" />
+    <Content Include="css\quiniela.css" />
+    <Content Include="css\smk-accordion.css" />
+    <Content Include="default.aspx" />
+    <Content Include="Error.aspx" />
+    <Content Include="Canjes.aspx" />
+    <Content Include="fonts\scoreboard-webfont.svg" />
+    <Content Include="fonts\vwheabla-webfont.svg" />
+    <Content Include="fonts\vwheaboo-webfont.svg" />
+    <Content Include="guias.aspx" />
+    <Content Include="images\acceso\banner-prueba.jpg" />
+    <Content Include="images\acceso\contrasena.png" />
+    <Content Include="images\acceso\email.png" />
+    <Content Include="images\acceso\imagenVW.jpg" />
+    <Content Include="images\acceso\usuario.png" />
+    <Content Include="images\background.jpg" />
+    <Content Include="images\balon.jpg" />
+    <Content Include="images\banner-prueba.jpg" />
+    <Content Include="images\banner.jpg" />
+    <Content Include="images\BG-desert-final.jpg" />
+    <Content Include="images\boton-cerrar.png" />
+    <Content Include="images\checklist-icon.png" />
+    <Content Include="images\delete.gif" />
+    <Content Include="images\espacio.gif" />
+    <Content Include="images\guias\guias.png" />
+    <Content Include="images\guias\manual.png" />
+    <Content Include="images\guias\tips.png" />
+    <Content Include="images\icon-guias.jpg" />
+    <Content Include="images\icon-tips.jpg" />
+    <Content Include="images\info-icon.png" />
+    <Content Include="images\logo-loyaltypoints.png" />
+    <Content Include="images\logoLW.png" />
+    <Content Include="images\logosVW.png" />
+    <Content Include="images\mailingVW-10mayo-web.jpg" />
+    <Content Include="images\mapa.jpg" />
+    <Content Include="images\micuenta\vw-map-00.jpg" />
+    <Content Include="images\micuenta\vw-map-01.jpg" />
+    <Content Include="images\micuenta\vw-map-02.jpg" />
+    <Content Include="images\micuenta\vw-map-03.jpg" />
+    <Content Include="images\micuenta\vw-map-04.jpg" />
+    <Content Include="images\micuenta\vw-map-05.jpg" />
+    <Content Include="images\micuenta\vw-map-06.jpg" />
+    <Content Include="images\micuenta\vw-map-07.jpg" />
+    <Content Include="images\micuenta\vw-map-08.jpg" />
+    <Content Include="images\micuenta\vw-map-09.jpg" />
+    <Content Include="images\micuenta\vw-map-10.jpg" />
+    <Content Include="images\pdf-icon.png" />
+    <Content Include="images\plecalms.png" />
+    <Content Include="images\plecavw.png" />
+    <Content Include="images\plecavw_contacto.png" />
+    <Content Include="images\pleca_contacto.jpg" />
+    <Content Include="images\pleca_sitio.jpg" />
+    <Content Include="images\plusminus.png" />
+    <Content Include="images\premios\large\0.6381.23.jpg" />
+    <Content Include="images\premios\large\01.0521.105.jpg" />
+    <Content Include="images\premios\large\01.0541.104.jpg" />
+    <Content Include="images\premios\large\1.3773.jpg" />
+    <Content Include="images\premios\large\1155.jpg" />
+    <Content Include="images\premios\large\11550.jpg" />
+    <Content Include="images\premios\large\1224.jpg" />
+    <Content Include="images\premios\large\1229.jpg" />
+    <Content Include="images\premios\large\130720.jpg" />
+    <Content Include="images\premios\large\2000007988.jpg" />
+    <Content Include="images\premios\large\2000007995.jpg" />
+    <Content Include="images\premios\large\2000010170.jpg" />
+    <Content Include="images\premios\large\2021-1.jpg" />
+    <Content Include="images\premios\large\25408-MX.jpg" />
+    <Content Include="images\premios\large\25409.jpg" />
+    <Content Include="images\premios\large\25475.jpg" />
+    <Content Include="images\premios\large\26008.CB.jpg" />
+    <Content Include="images\premios\large\26010.CB.jpg" />
+    <Content Include="images\premios\large\26025.CB.jpg" />
+    <Content Include="images\premios\large\261ES.jpg" />
+    <Content Include="images\premios\large\3.0339.N.jpg" />
+    <Content Include="images\premios\large\31118R.jpg" />
+    <Content Include="images\premios\large\31315001.jpg" />
+    <Content Include="images\premios\large\32388409.jpg" />
+    <Content Include="images\premios\large\330001-1310.jpg" />
+    <Content Include="images\premios\large\346018-0010.jpg" />
+    <Content Include="images\premios\large\351020206C.jpg" />
+    <Content Include="images\premios\large\351020282R.jpg" />
+    <Content Include="images\premios\large\351020750.jpg" />
+    <Content Include="images\premios\large\36073446254738.jpg" />
+    <Content Include="images\premios\large\3607346197233.jpg" />
+    <Content Include="images\premios\large\3607349312459.jpg" />
+    <Content Include="images\premios\large\37532N.jpg" />
+    <Content Include="images\premios\large\37537.jpg" />
+    <Content Include="images\premios\large\38520GY.jpg" />
+    <Content Include="images\premios\large\38830.jpg" />
+    <Content Include="images\premios\large\4.17-DI.A.jpg" />
+    <Content Include="images\premios\large\4.6125.TG16.jpg" />
+    <Content Include="images\premios\large\4.9DI10.A.jpg" />
+    <Content Include="images\premios\large\4002458068126.jpg" />
+    <Content Include="images\premios\large\4002458070426.jpg" />
+    <Content Include="images\premios\large\40274.jpg" />
+    <Content Include="images\premios\large\40326.jpg" />
+    <Content Include="images\premios\large\40715.jpg" />
+    <Content Include="images\premios\large\40894.jpg" />
+    <Content Include="images\premios\large\42LN5200.jpg" />
+    <Content Include="images\premios\large\48577.jpg" />
+    <Content Include="images\premios\large\612060.jpg" />
+    <Content Include="images\premios\large\614873.jpg" />
+    <Content Include="images\premios\large\620980M.jpg" />
+    <Content Include="images\premios\large\622356530620.jpg" />
+    <Content Include="images\premios\large\62640.jpg" />
+    <Content Include="images\premios\large\631283.jpg" />
+    <Content Include="images\premios\large\7-24020-429435.jpg" />
+    <Content Include="images\premios\large\7-24020-429442.jpg" />
+    <Content Include="images\premios\large\7-24020-429459.jpg" />
+    <Content Include="images\premios\large\7-24020-440195.jpg" />
+    <Content Include="images\premios\large\7-24020-440201.jpg" />
+    <Content Include="images\premios\large\7-24020-440218.jpg" />
+    <Content Include="images\premios\large\7211.jpg" />
+    <Content Include="images\premios\large\7215.jpg" />
+    <Content Include="images\premios\large\74108227041.jpg" />
+    <Content Include="images\premios\large\7501095616402.jpg" />
+    <Content Include="images\premios\large\77924025136.jpg" />
+    <Content Include="images\premios\large\8002135105607.jpg" />
+    <Content Include="images\premios\large\8011003807871.jpg" />
+    <Content Include="images\premios\large\8328B004AA.jpg" />
+    <Content Include="images\premios\large\8411061741689.jpg" />
+    <Content Include="images\premios\large\8431754462516.jpg" />
+    <Content Include="images\premios\large\844061005105.jpg" />
+    <Content Include="images\premios\large\8440610069911.jpg" />
+    <Content Include="images\premios\large\848447000081.jpg" />
+    <Content Include="images\premios\large\848447000159.jpg" />
+    <Content Include="images\premios\large\8ME590.jpg" />
+    <Content Include="images\premios\large\8MP2310.jpg" />
+    <Content Include="images\premios\large\9050.jpg" />
+    <Content Include="images\premios\large\980-000220.jpg" />
+    <Content Include="images\premios\large\980-000322.jpg" />
+    <Content Include="images\premios\large\980-000357.jpg" />
+    <Content Include="images\premios\large\980-000401.jpg" />
+    <Content Include="images\premios\large\980-000442.jpg" />
+    <Content Include="images\premios\large\A4259982.jpg" />
+    <Content Include="images\premios\large\A490.jpg" />
+    <Content Include="images\premios\large\ABBK.jpg" />
+    <Content Include="images\premios\large\ACH11--1TU3-CBK.jpg" />
+    <Content Include="images\premios\large\ALUBIKE1.jpg" />
+    <Content Include="images\premios\large\AOT22.5.jpg" />
+    <Content Include="images\premios\large\ASA320.jpg" />
+    <Content Include="images\premios\large\AWSBT1.jpg" />
+    <Content Include="images\premios\large\AX2000.jpg" />
+    <Content Include="images\premios\large\BD-D5300.jpg" />
+    <Content Include="images\premios\large\BDE5300ZX copia.jpg" />
+    <Content Include="images\premios\large\BDE5300zx.jpg" />
+    <Content Include="images\premios\large\BE45R.jpg" />
+    <Content Include="images\premios\large\BPC-16.jpg" />
+    <Content Include="images\premios\large\BPLL-1.jpg" />
+    <Content Include="images\premios\large\BT277.jpg" />
+    <Content Include="images\premios\large\BT377AC.jpg" />
+    <Content Include="images\premios\large\c2020.jpg" />
+    <Content Include="images\premios\large\C60R.jpg" />
+    <Content Include="images\premios\large\C61R.jpg" />
+    <Content Include="images\premios\large\CAB.jpg" />
+    <Content Include="images\premios\large\CALA-P2.jpg" />
+    <Content Include="images\premios\large\CB870QES.jpg" />
+    <Content Include="images\premios\large\CD35.jpg" />
+    <Content Include="images\premios\large\Cinepolis100.jpg" />
+    <Content Include="images\premios\large\Cinepolis250.jpg" />
+    <Content Include="images\premios\large\Cinepolis500.jpg" />
+    <Content Include="images\premios\large\CP10.jpg" />
+    <Content Include="images\premios\large\CP2.jpg" />
+    <Content Include="images\premios\large\CP4.jpg" />
+    <Content Include="images\premios\large\CP6.jpg" />
+    <Content Include="images\premios\large\CP8.jpg" />
+    <Content Include="images\premios\large\CRUSER5.jpg" />
+    <Content Include="images\premios\large\CS68.jpg" />
+    <Content Include="images\premios\large\D0749182.jpg" />
+    <Content Include="images\premios\large\D270-1828.jpg" />
+    <Content Include="images\premios\large\DEGUSTACION.jpg" />
+    <Content Include="images\premios\large\DH-4130S.jpg" />
+    <Content Include="images\premios\large\DSC-W610.jpg" />
+    <Content Include="images\premios\large\DVD-E360ZX.jpg" />
+    <Content Include="images\premios\large\DVDE350.jpg" />
+    <Content Include="images\premios\large\ES-3.jpg" />
+    <Content Include="images\premios\large\ES2944.jpg" />
+    <Content Include="images\premios\large\ES3003.jpg" />
+    <Content Include="images\premios\large\EV-BF13-1WB.jpg" />
+    <Content Include="images\premios\large\ez1120.jpg" />
+    <Content Include="images\premios\large\EZW6000YW.jpg" />
+    <Content Include="images\premios\large\F4G70LAABM.jpg" />
+    <Content Include="images\premios\large\F7N032QEC00.jpg" />
+    <Content Include="images\premios\large\FB3ES.jpg" />
+    <Content Include="images\premios\large\FL701850.jpg" />
+    <Content Include="images\premios\large\FLL-1.jpg" />
+    <Content Include="images\premios\large\G2336.jpg" />
+    <Content Include="images\premios\large\GANDHI10.jpg" />
+    <Content Include="images\premios\large\GANDHI2.jpg" />
+    <Content Include="images\premios\large\GANDHI250.jpg" />
+    <Content Include="images\premios\large\GANDHI5.jpg" />
+    <Content Include="images\premios\large\GANDHI500.jpg" />
+    <Content Include="images\premios\large\GMT265MLES.jpg" />
+    <Content Include="images\premios\large\GS6MES.jpg" />
+    <Content Include="images\premios\large\GT-P3110TSLTCE.jpg" />
+    <Content Include="images\premios\large\GT‐P5110TSMTCE.jpg" />
+    <Content Include="images\premios\large\GW8XDBB.jpg" />
+    <Content Include="images\premios\large\HG32NB460GFXZA.jpg" />
+    <Content Include="images\premios\large\HIEL-COMBO.jpg" />
+    <Content Include="images\premios\large\HP1973.jpg" />
+    <Content Include="images\premios\large\HUATCAST.jpg" />
+    <Content Include="images\premios\large\I17R.jpg" />
+    <Content Include="images\premios\large\I18R.jpg" />
+    <Content Include="images\premios\large\IPD5AN-B.jpg" />
+    <Content Include="images\premios\large\IPD5AN-F.jpg" />
+    <Content Include="images\premios\large\IRBD100.jpg" />
+    <Content Include="images\premios\large\Ishower.jpg" />
+    <Content Include="images\premios\large\itunes200.jpg" />
+    <Content Include="images\premios\large\itunes300.jpg" />
+    <Content Include="images\premios\large\IUSA100.jpg" />
+    <Content Include="images\premios\large\iusa200.jpg" />
+    <Content Include="images\premios\large\iusa50.jpg" />
+    <Content Include="images\premios\large\J11R.jpg" />
+    <Content Include="images\premios\large\J97R.jpg" />
+    <Content Include="images\premios\large\Jawbone.jpg" />
+    <Content Include="images\premios\large\JB1R.jpg" />
+    <Content Include="images\premios\large\JU350G52.jpg" />
+    <Content Include="images\premios\large\KDC-252U.jpg" />
+    <Content Include="images\premios\large\KPM508.jpg" />
+    <Content Include="images\premios\large\KT5245A.jpg" />
+    <Content Include="images\premios\large\KVT-512.jpg" />
+    <Content Include="images\premios\large\LEDTV1526P.jpg" />
+    <Content Include="images\premios\large\LEDTV1926.jpg" />
+    <Content Include="images\premios\large\Liverpool1000.jpg" />
+    <Content Include="images\premios\large\LNALFA.jpg" />
+    <Content Include="images\premios\large\M1950.jpg" />
+    <Content Include="images\premios\large\M2252D.jpg" />
+    <Content Include="images\premios\large\M260800M.jpg" />
+    <Content Include="images\premios\large\M8040741.jpg" />
+    <Content Include="images\premios\large\MA004Y07S.jpg" />
+    <Content Include="images\premios\large\MC904-EA.jpg" />
+    <Content Include="images\premios\large\MCR-1%28ROSAG%29.jpg" />
+    <Content Include="images\premios\large\MCR-1-%28VINOG%29.jpg" />
+    <Content Include="images\premios\large\MD199EA.jpg" />
+    <Content Include="images\premios\large\MD480EA.jpg" />
+    <Content Include="images\premios\large\MD481EA.jpg" />
+    <Content Include="images\premios\large\MD528EA.jpg" />
+    <Content Include="images\premios\large\MD531EA.jpg" />
+    <Content Include="images\premios\large\MD711EA.jpg" />
+    <Content Include="images\premios\large\MD717EA.jpg" />
+    <Content Include="images\premios\large\MD720EA.jpg" />
+    <Content Include="images\premios\large\MD723EA.jpg" />
+    <Content Include="images\premios\large\MD773EA.jpg" />
+    <Content Include="images\premios\large\MD775EA.jpg" />
+    <Content Include="images\premios\large\MD785EA.jpg" />
+    <Content Include="images\premios\large\MD788EA.jpg" />
+    <Content Include="images\premios\large\MD794EA.jpg" />
+    <Content Include="images\premios\large\MD79IEA.jpg" />
+    <Content Include="images\premios\large\MDR-MA100BIC.jpg" />
+    <Content Include="images\premios\large\MDR-ZX100WCU.jpg" />
+    <Content Include="images\premios\large\ME495EA.jpg" />
+    <Content Include="images\premios\large\ME497EA.jpg" />
+    <Content Include="images\premios\large\MED-105RO.jpg" />
+    <Content Include="images\premios\large\MED-110.jpg" />
+    <Content Include="images\premios\large\MEW-22.jpg" />
+    <Content Include="images\premios\large\MIO 2245.jpg" />
+    <Content Include="images\premios\large\MIO-2245.jpg" />
+    <Content Include="images\premios\large\MIO-5265.jpg" />
+    <Content Include="images\premios\large\MIXUP1.jpg" />
+    <Content Include="images\premios\large\MIXUP2.jpg" />
+    <Content Include="images\premios\large\movi100.jpg" />
+    <Content Include="images\premios\large\movi200.jpg" />
+    <Content Include="images\premios\large\movi50.jpg" />
+    <Content Include="images\premios\large\MP3164005.jpg" />
+    <Content Include="images\premios\large\nex100.jpg" />
+    <Content Include="images\premios\large\nex200.jpg" />
+    <Content Include="images\premios\large\nex50.jpg" />
+    <Content Include="images\premios\large\NM-12.jpg" />
+    <Content Include="images\premios\large\NT.L15AL.002.jpg" />
+    <Content Include="images\premios\large\PD-233.jpg" />
+    <Content Include="images\premios\large\PEQUENOP.jpg" />
+    <Content Include="images\premios\large\PKG-230.jpg" />
+    <Content Include="images\premios\large\POESM-3695.jpg" />
+    <Content Include="images\premios\large\PS4.jpg" />
+    <Content Include="images\premios\large\PVM-200.jpg" />
+    <Content Include="images\premios\large\RCD009U.jpg" />
+    <Content Include="images\premios\large\RHM800.jpg" />
+    <Content Include="images\premios\large\RIVMAYOAS.jpg" />
+    <Content Include="images\premios\large\RME1436VMXB.jpg" />
+    <Content Include="images\premios\large\RMF0260XMXX.jpg" />
+    <Content Include="images\premios\large\RMP0925VMXB.jpg" />
+    <Content Include="images\premios\large\RMP1029VMXS.jpg" />
+    <Content Include="images\premios\large\Roomba620.jpg" />
+    <Content Include="images\premios\large\ROTO-12P3.jpg" />
+    <Content Include="images\premios\large\S4800.jpg" />
+    <Content Include="images\premios\large\SANBORNS1.jpg" />
+    <Content Include="images\premios\large\SANBORNS2.jpg" />
+    <Content Include="images\premios\large\SB10201.jpg" />
+    <Content Include="images\premios\large\SDX1000.jpg" />
+    <Content Include="images\premios\large\SDX500.jpg" />
+    <Content Include="images\premios\large\SEARS2.jpg" />
+    <Content Include="images\premios\large\SGPT122MXS.jpg" />
+    <Content Include="images\premios\large\SORPRESABO.jpg" />
+    <Content Include="images\premios\large\SPACLASICO.jpg" />
+    <Content Include="images\premios\large\starbucks200.jpg" />
+    <Content Include="images\premios\large\starbucks500.jpg" />
+    <Content Include="images\premios\large\T2717A.jpg" />
+    <Content Include="images\premios\large\TALI-96P.jpg" />
+    <Content Include="images\premios\large\TEL-600.jpg" />
+    <Content Include="images\premios\large\tel100.jpg" />
+    <Content Include="images\premios\large\tel200.jpg" />
+    <Content Include="images\premios\large\tel50.jpg" />
+    <Content Include="images\premios\large\TELCEL500.jpg" />
+    <Content Include="images\premios\large\TF1.jpg" />
+    <Content Include="images\premios\large\TS25.jpg" />
+    <Content Include="images\premios\large\TSB226LA-50.jpg" />
+    <Content Include="images\premios\large\UN32EH40004003.jpg" />
+    <Content Include="images\premios\large\UN50F5500AFXZX.jpg" />
+    <Content Include="images\premios\large\une100.jpg" />
+    <Content Include="images\premios\large\une200.jpg" />
+    <Content Include="images\premios\large\une50.jpg" />
+    <Content Include="images\premios\large\VICTORINOX.jpg" />
+    <Content Include="images\premios\large\VIP-2.jpg" />
+    <Content Include="images\premios\large\VIP-4.jpg" />
+    <Content Include="images\premios\large\VIP-6.jpg" />
+    <Content Include="images\premios\large\VTM-012.jpg" />
+    <Content Include="images\premios\large\Walmart100.jpg" />
+    <Content Include="images\premios\large\Walmart200.jpg" />
+    <Content Include="images\premios\large\Walmart500.jpg" />
+    <Content Include="images\premios\large\X45AMPR1-H.jpg" />
+    <Content Include="images\premios\large\XBOX-ONE.jpg" />
+    <Content Include="images\premios\large\YF90.jpg" />
+    <Content Include="images\premios\large\YW05.jpg" />
+    <Content Include="images\premios\small\0.6381.23.jpg" />
+    <Content Include="images\premios\small\01.0521.105.jpg" />
+    <Content Include="images\premios\small\01.0541.104.jpg" />
+    <Content Include="images\premios\small\1.3773.jpg" />
+    <Content Include="images\premios\small\1155.jpg" />
+    <Content Include="images\premios\small\11550.jpg" />
+    <Content Include="images\premios\small\1224.jpg" />
+    <Content Include="images\premios\small\1229.jpg" />
+    <Content Include="images\premios\small\130720.jpg" />
+    <Content Include="images\premios\small\2000007988.jpg" />
+    <Content Include="images\premios\small\2000007995.jpg" />
+    <Content Include="images\premios\small\2000010170.jpg" />
+    <Content Include="images\premios\small\2021-1.jpg" />
+    <Content Include="images\premios\small\25408-MX.jpg" />
+    <Content Include="images\premios\small\25409.jpg" />
+    <Content Include="images\premios\small\25475.jpg" />
+    <Content Include="images\premios\small\26008.CB.jpg" />
+    <Content Include="images\premios\small\26010.CB.jpg" />
+    <Content Include="images\premios\small\26025.CB.jpg" />
+    <Content Include="images\premios\small\261ES.jpg" />
+    <Content Include="images\premios\small\3.0339.N.jpg" />
+    <Content Include="images\premios\small\31118R.jpg" />
+    <Content Include="images\premios\small\31315001.jpg" />
+    <Content Include="images\premios\small\32388409.jpg" />
+    <Content Include="images\premios\small\330001-1310.jpg" />
+    <Content Include="images\premios\small\346018-0010.jpg" />
+    <Content Include="images\premios\small\351020206C.jpg" />
+    <Content Include="images\premios\small\351020282R.jpg" />
+    <Content Include="images\premios\small\351020750.jpg" />
+    <Content Include="images\premios\small\36073446254738.jpg" />
+    <Content Include="images\premios\small\3607346197233.jpg" />
+    <Content Include="images\premios\small\3607349312459.jpg" />
+    <Content Include="images\premios\small\37532N.jpg" />
+    <Content Include="images\premios\small\37537.jpg" />
+    <Content Include="images\premios\small\38520GY.jpg" />
+    <Content Include="images\premios\small\38830.jpg" />
+    <Content Include="images\premios\small\4.17-DI.A.jpg" />
+    <Content Include="images\premios\small\4.6125.TG16.jpg" />
+    <Content Include="images\premios\small\4.9DI10.A.jpg" />
+    <Content Include="images\premios\small\4002458068126.jpg" />
+    <Content Include="images\premios\small\4002458070426.jpg" />
+    <Content Include="images\premios\small\40274.jpg" />
+    <Content Include="images\premios\small\40326.jpg" />
+    <Content Include="images\premios\small\40715.jpg" />
+    <Content Include="images\premios\small\40894.jpg" />
+    <Content Include="images\premios\small\42LN5200.jpg" />
+    <Content Include="images\premios\small\48577.jpg" />
+    <Content Include="images\premios\small\612060.jpg" />
+    <Content Include="images\premios\small\614873.jpg" />
+    <Content Include="images\premios\small\620980M.jpg" />
+    <Content Include="images\premios\small\622356530620.jpg" />
+    <Content Include="images\premios\small\62640.jpg" />
+    <Content Include="images\premios\small\631283.jpg" />
+    <Content Include="images\premios\small\7-24020-429435.jpg" />
+    <Content Include="images\premios\small\7-24020-429442.jpg" />
+    <Content Include="images\premios\small\7-24020-429459.jpg" />
+    <Content Include="images\premios\small\7-24020-440195.jpg" />
+    <Content Include="images\premios\small\7-24020-440201.jpg" />
+    <Content Include="images\premios\small\7-24020-440218.jpg" />
+    <Content Include="images\premios\small\7211.jpg" />
+    <Content Include="images\premios\small\7215.jpg" />
+    <Content Include="images\premios\small\74108227041.jpg" />
+    <Content Include="images\premios\small\7501095616402.jpg" />
+    <Content Include="images\premios\small\77924025136.jpg" />
+    <Content Include="images\premios\small\8002135105607.jpg" />
+    <Content Include="images\premios\small\8011003807871.jpg" />
+    <Content Include="images\premios\small\8328B004AA.jpg" />
+    <Content Include="images\premios\small\8411061741689.jpg" />
+    <Content Include="images\premios\small\8431754462516.jpg" />
+    <Content Include="images\premios\small\844061005105.jpg" />
+    <Content Include="images\premios\small\8440610069911.jpg" />
+    <Content Include="images\premios\small\848447000081.jpg" />
+    <Content Include="images\premios\small\848447000159.jpg" />
+    <Content Include="images\premios\small\8ME590.jpg" />
+    <Content Include="images\premios\small\8MP2310.jpg" />
+    <Content Include="images\premios\small\9050.jpg" />
+    <Content Include="images\premios\small\980-000220.jpg" />
+    <Content Include="images\premios\small\980-000322.jpg" />
+    <Content Include="images\premios\small\980-000357.jpg" />
+    <Content Include="images\premios\small\980-000401.jpg" />
+    <Content Include="images\premios\small\980-000442.jpg" />
+    <Content Include="images\premios\small\A4259982.jpg" />
+    <Content Include="images\premios\small\A490.jpg" />
+    <Content Include="images\premios\small\ABBK.jpg" />
+    <Content Include="images\premios\small\ACH11--1TU3-CBK.jpg" />
+    <Content Include="images\premios\small\ALUBIKE1.jpg" />
+    <Content Include="images\premios\small\AOT22.5.jpg" />
+    <Content Include="images\premios\small\ASA320.jpg" />
+    <Content Include="images\premios\small\AWSBT1.jpg" />
+    <Content Include="images\premios\small\AX2000.jpg" />
+    <Content Include="images\premios\small\BD-D5300.jpg" />
+    <Content Include="images\premios\small\BDE5300zx.jpg" />
+    <Content Include="images\premios\small\BE45R.jpg" />
+    <Content Include="images\premios\small\BPC-16.jpg" />
+    <Content Include="images\premios\small\BPLL-1.jpg" />
+    <Content Include="images\premios\small\BT277.jpg" />
+    <Content Include="images\premios\small\BT377AC.jpg" />
+    <Content Include="images\premios\small\c2020.jpg" />
+    <Content Include="images\premios\small\C60R.jpg" />
+    <Content Include="images\premios\small\C61R.jpg" />
+    <Content Include="images\premios\small\CAB.jpg" />
+    <Content Include="images\premios\small\CALA-P2.jpg" />
+    <Content Include="images\premios\small\CB870QES.jpg" />
+    <Content Include="images\premios\small\CD35.jpg" />
+    <Content Include="images\premios\small\Cinepolis100.jpg" />
+    <Content Include="images\premios\small\Cinepolis250.jpg" />
+    <Content Include="images\premios\small\Cinepolis500.jpg" />
+    <Content Include="images\premios\small\CP10.jpg" />
+    <Content Include="images\premios\small\CP2.jpg" />
+    <Content Include="images\premios\small\CP4.jpg" />
+    <Content Include="images\premios\small\CP6.jpg" />
+    <Content Include="images\premios\small\CP8.jpg" />
+    <Content Include="images\premios\small\CRUSER5.jpg" />
+    <Content Include="images\premios\small\CS68.jpg" />
+    <Content Include="images\premios\small\D0749182.jpg" />
+    <Content Include="images\premios\small\D270-1828.jpg" />
+    <Content Include="images\premios\small\DEGUSTACION.jpg" />
+    <Content Include="images\premios\small\DH-4130S.jpg" />
+    <Content Include="images\premios\small\DSC-W610.jpg" />
+    <Content Include="images\premios\small\DVD-E360ZX.jpg" />
+    <Content Include="images\premios\small\DVDE350.jpg" />
+    <Content Include="images\premios\small\ES-3.jpg" />
+    <Content Include="images\premios\small\ES2944.jpg" />
+    <Content Include="images\premios\small\ES3003.jpg" />
+    <Content Include="images\premios\small\EV-BF13-1WB.jpg" />
+    <Content Include="images\premios\small\ez1120.jpg" />
+    <Content Include="images\premios\small\EZW6000YW.jpg" />
+    <Content Include="images\premios\small\F4G70LAABM.jpg" />
+    <Content Include="images\premios\small\F7N032QEC00.jpg" />
+    <Content Include="images\premios\small\FB3ES.jpg" />
+    <Content Include="images\premios\small\FL701850.jpg" />
+    <Content Include="images\premios\small\FLL-1.jpg" />
+    <Content Include="images\premios\small\G2336.jpg" />
+    <Content Include="images\premios\small\GANDHI10.jpg" />
+    <Content Include="images\premios\small\GANDHI2.jpg" />
+    <Content Include="images\premios\small\GANDHI250.jpg" />
+    <Content Include="images\premios\small\GANDHI5.jpg" />
+    <Content Include="images\premios\small\GANDHI500.jpg" />
+    <Content Include="images\premios\small\GMT265MLES.jpg" />
+    <Content Include="images\premios\small\GS6MES.jpg" />
+    <Content Include="images\premios\small\GT-P3110TSLTCE.jpg" />
+    <Content Include="images\premios\small\GT‐P5110TSMTCE.jpg" />
+    <Content Include="images\premios\small\GW8XDBB.jpg" />
+    <Content Include="images\premios\small\HG32NB460GFXZA.jpg" />
+    <Content Include="images\premios\small\HIEL-COMBO.jpg" />
+    <Content Include="images\premios\small\HP1973.jpg" />
+    <Content Include="images\premios\small\HUATCAST.jpg" />
+    <Content Include="images\premios\small\I17R.jpg" />
+    <Content Include="images\premios\small\I18R.jpg" />
+    <Content Include="images\premios\small\IPD5AN-B.jpg" />
+    <Content Include="images\premios\small\IPD5AN-F.jpg" />
+    <Content Include="images\premios\small\IRBD100.jpg" />
+    <Content Include="images\premios\small\Ishower.jpg" />
+    <Content Include="images\premios\small\itunes200.jpg" />
+    <Content Include="images\premios\small\itunes300.jpg" />
+    <Content Include="images\premios\small\IUSA100.jpg" />
+    <Content Include="images\premios\small\iusa200.jpg" />
+    <Content Include="images\premios\small\iusa50.jpg" />
+    <Content Include="images\premios\small\J11R.jpg" />
+    <Content Include="images\premios\small\J97R.jpg" />
+    <Content Include="images\premios\small\Jawbone.jpg" />
+    <Content Include="images\premios\small\JB1R.jpg" />
+    <Content Include="images\premios\small\JU350G52.jpg" />
+    <Content Include="images\premios\small\KDC-252U.jpg" />
+    <Content Include="images\premios\small\KPM508.jpg" />
+    <Content Include="images\premios\small\KT5245A.jpg" />
+    <Content Include="images\premios\small\KVT-512.jpg" />
+    <Content Include="images\premios\small\LEDTV1526P.jpg" />
+    <Content Include="images\premios\small\LEDTV1926.jpg" />
+    <Content Include="images\premios\small\Liverpool1000.jpg" />
+    <Content Include="images\premios\small\LNALFA.jpg" />
+    <Content Include="images\premios\small\M1950.jpg" />
+    <Content Include="images\premios\small\M2252D.jpg" />
+    <Content Include="images\premios\small\M260800M.jpg" />
+    <Content Include="images\premios\small\M8040741.jpg" />
+    <Content Include="images\premios\small\MA004Y07S.jpg" />
+    <Content Include="images\premios\small\MC904-EA.jpg" />
+    <Content Include="images\premios\small\MCR-1%28ROSAG%29.jpg" />
+    <Content Include="images\premios\small\MCR-1-%28VINOG%29.jpg" />
+    <Content Include="images\premios\small\MD199EA.jpg" />
+    <Content Include="images\premios\small\MD480EA.jpg" />
+    <Content Include="images\premios\small\MD481EA.jpg" />
+    <Content Include="images\premios\small\MD528EA.jpg" />
+    <Content Include="images\premios\small\MD531EA.jpg" />
+    <Content Include="images\premios\small\MD711EA.jpg" />
+    <Content Include="images\premios\small\MD717EA.jpg" />
+    <Content Include="images\premios\small\MD720EA.jpg" />
+    <Content Include="images\premios\small\MD723EA.jpg" />
+    <Content Include="images\premios\small\MD773EA.jpg" />
+    <Content Include="images\premios\small\MD775EA.jpg" />
+    <Content Include="images\premios\small\MD785EA.jpg" />
+    <Content Include="images\premios\small\MD788EA.jpg" />
+    <Content Include="images\premios\small\MD794EA.jpg" />
+    <Content Include="images\premios\small\MD79IEA.jpg" />
+    <Content Include="images\premios\small\MDR-MA100BIC.jpg" />
+    <Content Include="images\premios\small\MDR-ZX100WCU.jpg" />
+    <Content Include="images\premios\small\ME495EA.jpg" />
+    <Content Include="images\premios\small\ME497EA.jpg" />
+    <Content Include="images\premios\small\MED-105RO.jpg" />
+    <Content Include="images\premios\small\MED-110.jpg" />
+    <Content Include="images\premios\small\MEW-22.jpg" />
+    <Content Include="images\premios\small\MIO 2245.jpg" />
+    <Content Include="images\premios\small\MIO-2245.jpg" />
+    <Content Include="images\premios\small\MIO-5265.jpg" />
+    <Content Include="images\premios\small\MIXUP1.jpg" />
+    <Content Include="images\premios\small\MIXUP2.jpg" />
+    <Content Include="images\premios\small\movi100.jpg" />
+    <Content Include="images\premios\small\movi200.jpg" />
+    <Content Include="images\premios\small\movi50.jpg" />
+    <Content Include="images\premios\small\MP3164005.jpg" />
+    <Content Include="images\premios\small\nex100.jpg" />
+    <Content Include="images\premios\small\nex200.jpg" />
+    <Content Include="images\premios\small\nex50.jpg" />
+    <Content Include="images\premios\small\NM-12.jpg" />
+    <Content Include="images\premios\small\NT.L15AL.002.jpg" />
+    <Content Include="images\premios\small\PD-233.jpg" />
+    <Content Include="images\premios\small\PEQUENOP.jpg" />
+    <Content Include="images\premios\small\PKG-230.jpg" />
+    <Content Include="images\premios\small\POESM-3695.jpg" />
+    <Content Include="images\premios\small\PS4.jpg" />
+    <Content Include="images\premios\small\PVM-200.jpg" />
+    <Content Include="images\premios\small\RCD009U.jpg" />
+    <Content Include="images\premios\small\RHM800.jpg" />
+    <Content Include="images\premios\small\RIVMAYOAS.jpg" />
+    <Content Include="images\premios\small\RME1436VMXB.jpg" />
+    <Content Include="images\premios\small\RMF0260XMXX.jpg" />
+    <Content Include="images\premios\small\RMP0925VMXB.jpg" />
+    <Content Include="images\premios\small\RMP1029VMXS.jpg" />
+    <Content Include="images\premios\small\Roomba620.jpg" />
+    <Content Include="images\premios\small\ROTO-12P3.jpg" />
+    <Content Include="images\premios\small\S4800.jpg" />
+    <Content Include="images\premios\small\SANBORNS1.jpg" />
+    <Content Include="images\premios\small\SANBORNS2.jpg" />
+    <Content Include="images\premios\small\SB10201.jpg" />
+    <Content Include="images\premios\small\SDX1000.jpg" />
+    <Content Include="images\premios\small\SDX500.jpg" />
+    <Content Include="images\premios\small\SEARS2.jpg" />
+    <Content Include="images\premios\small\SGPT122MXS.jpg" />
+    <Content Include="images\premios\small\SORPRESABO.jpg" />
+    <Content Include="images\premios\small\SPACLASICO.jpg" />
+    <Content Include="images\premios\small\starbucks200.jpg" />
+    <Content Include="images\premios\small\starbucks500.jpg" />
+    <Content Include="images\premios\small\T2717A.jpg" />
+    <Content Include="images\premios\small\TALI-96P.jpg" />
+    <Content Include="images\premios\small\TEL-600.jpg" />
+    <Content Include="images\premios\small\tel100.jpg" />
+    <Content Include="images\premios\small\tel200.jpg" />
+    <Content Include="images\premios\small\tel50.jpg" />
+    <Content Include="images\premios\small\TELCEL500.jpg" />
+    <Content Include="images\premios\small\TF1.jpg" />
+    <Content Include="images\premios\small\TS25.jpg" />
+    <Content Include="images\premios\small\TSB226LA-50.jpg" />
+    <Content Include="images\premios\small\UN32EH40004003.jpg" />
+    <Content Include="images\premios\small\UN50F5500AFXZX.jpg" />
+    <Content Include="images\premios\small\une100.jpg" />
+    <Content Include="images\premios\small\une200.jpg" />
+    <Content Include="images\premios\small\une50.jpg" />
+    <Content Include="images\premios\small\VICTORINOX.jpg" />
+    <Content Include="images\premios\small\VIP-2.jpg" />
+    <Content Include="images\premios\small\VIP-4.jpg" />
+    <Content Include="images\premios\small\VIP-6.jpg" />
+    <Content Include="images\premios\small\VTM-012.jpg" />
+    <Content Include="images\premios\small\Walmart100.jpg" />
+    <Content Include="images\premios\small\Walmart200.jpg" />
+    <Content Include="images\premios\small\Walmart500.jpg" />
+    <Content Include="images\premios\small\X45AMPR1-H.jpg" />
+    <Content Include="images\premios\small\XBOX-ONE.jpg" />
+    <Content Include="images\premios\small\YF90.jpg" />
+    <Content Include="images\premios\small\YW05.jpg" />
+    <Content Include="images\promociones\ventas-mar-abr-GSF.jpg" />
+    <Content Include="images\promociones\ventas-mar-abr-vendedores.jpg" />
+    <Content Include="images\puntero.png" />
+    <Content Include="images\quiniela\bg-marco.png" />
+    <Content Include="images\quiniela\bg_marcador.png" />
+    <Content Include="images\quiniela\bg_pais.png" />
+    <Content Include="images\quiniela\bg_quinielas.jpg" />
+    <Content Include="images\quiniela\btn-regresar-hover.png" />
+    <Content Include="images\quiniela\btn-regresar.png" />
+    <Content Include="images\quiniela\btn_anterior-hover.png" />
+    <Content Include="images\quiniela\btn_anterior.png" />
+    <Content Include="images\quiniela\btn_guardar-hover.png" />
+    <Content Include="images\quiniela\btn_guardar.png" />
+    <Content Include="images\quiniela\btn_historico-hover.png" />
+    <Content Include="images\quiniela\btn_historico.png" />
+    <Content Include="images\quiniela\btn_siguiente-hover.png" />
+    <Content Include="images\quiniela\btn_siguiente.png" />
+    <Content Include="images\quiniela\header_historico_ok.jpg" />
+    <Content Include="images\quiniela\paises banderas\local\alemania-local.png" />
+    <Content Include="images\quiniela\paises banderas\local\argelia-local.png" />
+    <Content Include="images\quiniela\paises banderas\local\argentina-local.png" />
+    <Content Include="images\quiniela\paises banderas\local\australia-local.png" />
+    <Content Include="images\quiniela\paises banderas\local\belgica-local.png" />
+    <Content Include="images\quiniela\paises banderas\local\bosnia-local.png" />
+    <Content Include="images\quiniela\paises banderas\local\brasil-local.png" />
+    <Content Include="images\quiniela\paises banderas\local\camerun-local.png" />
+    <Content Include="images\quiniela\paises banderas\local\chile-local.png" />
+    <Content Include="images\quiniela\paises banderas\local\colombia-local.png" />
+    <Content Include="images\quiniela\paises banderas\local\coreadelsur-local.png" />
+    <Content Include="images\quiniela\paises banderas\local\costademarfil-local.png" />
+    <Content Include="images\quiniela\paises banderas\local\costarica-local.png" />
+    <Content Include="images\quiniela\paises banderas\local\croacia-local.png" />
+    <Content Include="images\quiniela\paises banderas\local\ecuador-local.png" />
+    <Content Include="images\quiniela\paises banderas\local\espana-local.png" />
+    <Content Include="images\quiniela\paises banderas\local\estadosunidos-local.png" />
+    <Content Include="images\quiniela\paises banderas\local\francia-local.png" />
+    <Content Include="images\quiniela\paises banderas\local\ghana-local.png" />
+    <Content Include="images\quiniela\paises banderas\local\grecia-local.png" />
+    <Content Include="images\quiniela\paises banderas\local\holanda-local.png" />
+    <Content Include="images\quiniela\paises banderas\local\honduras-local.png" />
+    <Content Include="images\quiniela\paises banderas\local\inglaterra-local.png" />
+    <Content Include="images\quiniela\paises banderas\local\iran-local.png" />
+    <Content Include="images\quiniela\paises banderas\local\italia-local.png" />
+    <Content Include="images\quiniela\paises banderas\local\japon-local.png" />
+    <Content Include="images\quiniela\paises banderas\local\mexico-local.png" />
+    <Content Include="images\quiniela\paises banderas\local\nigeria-local.png" />
+    <Content Include="images\quiniela\paises banderas\local\portugal-local.png" />
+    <Content Include="images\quiniela\paises banderas\local\rusia-local.png" />
+    <Content Include="images\quiniela\paises banderas\local\suiza-local.png" />
+    <Content Include="images\quiniela\paises banderas\local\uruguay-local.png" />
+    <Content Include="images\quiniela\paises banderas\visitantes\alemania-visitante.png" />
+    <Content Include="images\quiniela\paises banderas\visitantes\argelia-visitante.png" />
+    <Content Include="images\quiniela\paises banderas\visitantes\argentina-visitante.png" />
+    <Content Include="images\quiniela\paises banderas\visitantes\australia-visitante.png" />
+    <Content Include="images\quiniela\paises banderas\visitantes\belgica-visitante.png" />
+    <Content Include="images\quiniela\paises banderas\visitantes\bosnia-visitante.png" />
+    <Content Include="images\quiniela\paises banderas\visitantes\brasil-visitante.png" />
+    <Content Include="images\quiniela\paises banderas\visitantes\camerun-visitante.png" />
+    <Content Include="images\quiniela\paises banderas\visitantes\chile-visitante.png" />
+    <Content Include="images\quiniela\paises banderas\visitantes\colombia-visitante.png" />
+    <Content Include="images\quiniela\paises banderas\visitantes\coreadelsur-visitante.png" />
+    <Content Include="images\quiniela\paises banderas\visitantes\costademarfil-visitante.png" />
+    <Content Include="images\quiniela\paises banderas\visitantes\costarica-visitante.png" />
+    <Content Include="images\quiniela\paises banderas\visitantes\croacia-visitante.png" />
+    <Content Include="images\quiniela\paises banderas\visitantes\ecuador-visitante.png" />
+    <Content Include="images\quiniela\paises banderas\visitantes\espana-visitante.png" />
+    <Content Include="images\quiniela\paises banderas\visitantes\estadosunidos-visitante.png" />
+    <Content Include="images\quiniela\paises banderas\visitantes\francia-visitante.png" />
+    <Content Include="images\quiniela\paises banderas\visitantes\ghana-visitante.png" />
+    <Content Include="images\quiniela\paises banderas\visitantes\grecia-visitante.png" />
+    <Content Include="images\quiniela\paises banderas\visitantes\holanda-visitante.png" />
+    <Content Include="images\quiniela\paises banderas\visitantes\honduras-visitante.png" />
+    <Content Include="images\quiniela\paises banderas\visitantes\inglaterra-visitante.png" />
+    <Content Include="images\quiniela\paises banderas\visitantes\iran-visitante.png" />
+    <Content Include="images\quiniela\paises banderas\visitantes\italia-visitante.png" />
+    <Content Include="images\quiniela\paises banderas\visitantes\japon-visitante.png" />
+    <Content Include="images\quiniela\paises banderas\visitantes\mexico-visitante.png" />
+    <Content Include="images\quiniela\paises banderas\visitantes\nigeria-visitante.png" />
+    <Content Include="images\quiniela\paises banderas\visitantes\portugal-visitante.png" />
+    <Content Include="images\quiniela\paises banderas\visitantes\rusia-visitante.png" />
+    <Content Include="images\quiniela\paises banderas\visitantes\suiza-visitante.png" />
+    <Content Include="images\quiniela\paises banderas\visitantes\uruguay-visitante.png" />
+    <Content Include="images\triangulito.png" />
+    <Content Include="images\tv-led.jpg" />
+    <Content Include="js\jquery-1.10.2.min.js" />
+    <Content Include="listacontratos.aspx" />
+    <Content Include="mailing\aviso_canje_vw.html" />
+    <Content Include="mailing\comentarios.html" />
+    <Content Include="mailing\recuperar_contrasena.html" />
+    <Content Include="mailing\teaser2_audi.html" />
+    <Content Include="mailing\teaser2_seat.html" />
+    <Content Include="mailing\teaser2_vw.html" />
+    <Content Include="mailing\teaser_3_vw.html" />
+    <Content Include="mecanica.aspx" />
+    <Content Include="micuenta.aspx" />
+    <Content Include="preguntas-frecuentes.aspx" />
+    <Content Include="premios.aspx" />
+    <Content Include="promociones.aspx" />
+    <Content Include="Quiniela.aspx" />
+    <Content Include="ranking.aspx" />
+    <Content Include="specimen_files\easytabs.js" />
+    <Content Include="specimen_files\grid_12-825-55-15.css" />
+    <Content Include="specimen_files\scoreboard-cleartype.png" />
+    <Content Include="specimen_files\specimen_stylesheet.css" />
+    <Content Include="src\jquery.mousewheel.js" />
+    <Content Include="src\min\smk-accordion.min.js" />
+    <Content Include="src\perfect-scrollbar.css" />
+    <Content Include="src\perfect-scrollbar.js" />
+    <Content Include="src\smk-accordion.js" />
+    <Content Include="src\_notes\dwsync.xml" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="acceso\cambiar.aspx.cs">
+      <DependentUpon>cambiar.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="acceso\cambiar.aspx.designer.cs">
+      <DependentUpon>cambiar.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="acceso\login.aspx.cs">
+      <DependentUpon>login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="acceso\login.aspx.designer.cs">
+      <DependentUpon>login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="acceso\recupera.aspx.cs">
+      <DependentUpon>recupera.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="acceso\recupera.aspx.designer.cs">
+      <DependentUpon>recupera.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="asignacionventas.aspx.cs">
+      <DependentUpon>asignacionventas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="asignacionventas.aspx.designer.cs">
+      <DependentUpon>asignacionventas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="busqueda.aspx.cs">
+      <DependentUpon>busqueda.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="busqueda.aspx.designer.cs">
+      <DependentUpon>busqueda.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="cambiocontrasena.aspx.cs">
+      <DependentUpon>cambiocontrasena.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="cambiocontrasena.aspx.designer.cs">
+      <DependentUpon>cambiocontrasena.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="carrito.aspx.cs">
+      <DependentUpon>carrito.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="carrito.aspx.designer.cs">
+      <DependentUpon>carrito.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="catalogo.aspx.cs">
+      <DependentUpon>catalogo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="catalogo.aspx.designer.cs">
+      <DependentUpon>catalogo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="contacto.aspx.cs">
+      <DependentUpon>contacto.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="contacto.aspx.designer.cs">
+      <DependentUpon>contacto.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="contenido.master.cs">
+      <DependentUpon>contenido.master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="contenido.master.designer.cs">
+      <DependentUpon>contenido.master</DependentUpon>
+    </Compile>
+    <Compile Include="controles\categoria.ascx.cs">
+      <DependentUpon>categoria.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="controles\categoria.ascx.designer.cs">
+      <DependentUpon>categoria.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="controles\ucDireccionDistribuidor_MX.ascx.cs">
+      <DependentUpon>ucDireccionDistribuidor_MX.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="controles\ucDireccionDistribuidor_MX.ascx.designer.cs">
+      <DependentUpon>ucDireccionDistribuidor_MX.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="controles\ucDireccion_MX.ascx.cs">
+      <DependentUpon>ucDireccion_MX.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="controles\ucDireccion_MX.ascx.designer.cs">
+      <DependentUpon>ucDireccion_MX.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="datos.master.cs">
+      <DependentUpon>datos.master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="datos.master.designer.cs">
+      <DependentUpon>datos.master</DependentUpon>
+    </Compile>
+    <Compile Include="default.aspx.cs">
+      <DependentUpon>default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="default.aspx.designer.cs">
+      <DependentUpon>default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Error.aspx.cs">
+      <DependentUpon>Error.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Error.aspx.designer.cs">
+      <DependentUpon>Error.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Canjes.aspx.cs">
+      <DependentUpon>Canjes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Canjes.aspx.designer.cs">
+      <DependentUpon>Canjes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="general.master.cs">
+      <DependentUpon>general.master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="general.master.designer.cs">
+      <DependentUpon>general.master</DependentUpon>
+    </Compile>
+    <Compile Include="guias.aspx.cs">
+      <DependentUpon>guias.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="guias.aspx.designer.cs">
+      <DependentUpon>guias.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="listacontratos.aspx.cs">
+      <DependentUpon>listacontratos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="listacontratos.aspx.designer.cs">
+      <DependentUpon>listacontratos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="mecanica.aspx.cs">
+      <DependentUpon>mecanica.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="mecanica.aspx.designer.cs">
+      <DependentUpon>mecanica.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="micuenta.aspx.cs">
+      <DependentUpon>micuenta.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="micuenta.aspx.designer.cs">
+      <DependentUpon>micuenta.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="preguntas-frecuentes.aspx.cs">
+      <DependentUpon>preguntas-frecuentes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="preguntas-frecuentes.aspx.designer.cs">
+      <DependentUpon>preguntas-frecuentes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="premios.aspx.cs">
+      <DependentUpon>premios.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="premios.aspx.designer.cs">
+      <DependentUpon>premios.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="promociones.aspx.cs">
+      <DependentUpon>promociones.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="promociones.aspx.designer.cs">
+      <DependentUpon>promociones.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Quiniela.aspx.cs">
+      <DependentUpon>Quiniela.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Quiniela.aspx.designer.cs">
+      <DependentUpon>Quiniela.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ranking.aspx.cs">
+      <DependentUpon>ranking.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ranking.aspx.designer.cs">
+      <DependentUpon>ranking.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="contenido.master" />
+    <Content Include="datos.master" />
+    <Content Include="general.master" />
+    <Content Include="css\smk-accordion.less" />
+    <Content Include="docs\Manual_Acuse_recibo.pdf" />
+    <Content Include="docs\Manual_Canje.pdf" />
+    <Content Include="docs\Manual_Mecanica.pdf" />
+    <Content Include="docs\Proceso_Asignacion_ventas.pdf" />
+    <Content Include="fonts\vwheabla-webfont.eot" />
+    <Content Include="fonts\vwheabla-webfont.ttf" />
+    <Content Include="fonts\vwheabla-webfont.woff" />
+    <Content Include="fonts\vwheaboo-webfont.eot" />
+    <Content Include="fonts\vwheaboo-webfont.ttf" />
+    <Content Include="fonts\vwheaboo-webfont.woff" />
+    <Content Include="fonts\scoreboard-webfont.eot" />
+    <Content Include="fonts\scoreboard-webfont.ttf" />
+    <Content Include="fonts\scoreboard-webfont.woff" />
+    <Content Include="packages.config" />
+    <None Include="Properties\PublishProfiles\Portal.pubxml" />
+    <None Include="Properties\PublishProfiles\Web Deploy Portal.pubxml" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\CNegocio\CNegocio.csproj">
+      <Project>{5f2a2496-1196-4db3-9728-d576a9a53d5f}</Project>
+      <Name>CNegocio</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\DataSQL\DataSQL.csproj">
+      <Project>{5b02aee7-ff3d-4115-bbd4-8025e7a5dd1d}</Project>
+      <Name>DataSQL</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>2452</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:2287/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>http://192.168.5.124:2289</CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

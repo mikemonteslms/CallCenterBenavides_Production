@@ -1,0 +1,72 @@
+<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.Mobile.master.cs" Inherits="MnuMain.Site_Mobile" %>
+<%@ Register Src="~/ViewSwitcher.ascx" TagPrefix="friendlyUrls" TagName="ViewSwitcher" %>
+<%@ Register Assembly="Telerik.Web.UI" Namespace="Telerik.Web.UI"  TagPrefix="telerik"%>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <meta name="viewport" content="width=device-width" />
+    <title></title>
+    <asp:ContentPlaceHolder runat="server" ID="HeadContent" />
+</head>
+<body>
+    
+    <form id="form1" runat="server">
+        <asp:ScriptManager runat="server"> </asp:ScriptManager>
+
+         <%--<ajaxToolkit:ToolkitScriptManager runat="server" ></ajaxToolkit:ToolkitScriptManager>--%>
+        <telerik:RadMenu runat="server" RenderMode="Mobile">
+                <Items>
+                    <telerik:RadMenuItem Text="File">
+                        <Items>
+                            <telerik:RadMenuItem Text="New" />
+                            <telerik:RadMenuItem Text="Open" />
+                            <telerik:RadMenuItem IsSeparator="True" />
+                            <telerik:RadMenuItem Text="Save" />
+                            <telerik:RadMenuItem Text="Save As" />
+                            <telerik:RadMenuItem IsSeparator="True" />
+                            <telerik:RadMenuItem Text="Print Preview" />
+                            <telerik:RadMenuItem Text="Print" />
+                            <telerik:RadMenuItem IsSeparator="True" />
+                            <telerik:RadMenuItem Text="Close" />
+                        </Items>
+                    </telerik:RadMenuItem>
+                    <telerik:RadMenuItem Text="Edit">
+                        <Items>
+                            <telerik:RadMenuItem Text="Undo" />
+                            <telerik:RadMenuItem IsSeparator="True" />
+                            <telerik:RadMenuItem Text="Cut" />
+                            <telerik:RadMenuItem Text="Copy" />
+                            <telerik:RadMenuItem Text="Paste" />
+                            <telerik:RadMenuItem Text="Clipboard..." />
+                            <telerik:RadMenuItem IsSeparator="True" />
+                        </Items>
+                    </telerik:RadMenuItem>
+                    <telerik:RadMenuItem Text="Insert">
+                        <Items>
+                            <telerik:RadMenuItem Text="Break..." />
+                            <telerik:RadMenuItem Text="Page Numbers..." />
+                            <telerik:RadMenuItem Text="Date and Time..." />
+                            <telerik:RadMenuItem Text="Field..." />
+                            <telerik:RadMenuItem Text="Symbol..." />
+                            <telerik:RadMenuItem Text="Comment" />
+                            <telerik:RadMenuItem IsSeparator="True" />
+                            <telerik:RadMenuItem Text="Picture" />
+                            <telerik:RadMenuItem Text="Diagram" />
+                            <telerik:RadMenuItem Text="Text Box" />
+                            <telerik:RadMenuItem Text="Hyperlink" />
+                        </Items>
+                    </telerik:RadMenuItem>
+</Items>
+            </telerik:RadMenu>
+    <div>
+        <h1>Mobile Master Page</h1>
+        <asp:ContentPlaceHolder runat="server" ID="FeaturedContent" />
+        <section class="content-wrapper main-content clear-fix">
+            <asp:ContentPlaceHolder runat="server" ID="MainContent" />
+        </section>
+        <friendlyUrls:ViewSwitcher runat="server" />
+    </div>
+    </form>
+</body>
+</html>

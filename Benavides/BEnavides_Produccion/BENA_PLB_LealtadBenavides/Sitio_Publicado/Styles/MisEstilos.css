@@ -1,0 +1,77 @@
+﻿.modalBackground
+{
+    background-color: black;
+    filter: alpha(opacity=60);
+    opacity: 0.6;
+}
+
+.modalBackground1
+{
+    background-color: gray;
+    filter: alpha(opacity=70);
+    opacity: 0.7;
+}
+.modalBackground2
+{
+    background-color: white;
+    filter: alpha(opacity=70);
+    opacity: 0.7;
+}
+
+.contacto
+{
+    color: #004A99;
+    font-weight: bold;
+    font-family: Arial;
+    font-size: 18pt;
+}
+.nombres
+{
+    color: #004A99;
+    font-weight: bold;
+    font-family: Arial;
+}
+.panelModal
+{
+    width: 400px;
+    height: 440px;
+}
+.tablaModal
+{
+    width: 380px;
+    margin: 8px;
+    padding: 8px;
+    border-spacing: 5px;
+}
+.cajaModal
+{
+    width: 300px;
+    height: 70px;
+    font-family: Arial;
+    font-style: italic;
+}
+
+.panelReportes
+{
+    width: 1010px;
+    height: 1100px;
+    display: block;
+}
+.panelTablaReportes
+{
+    width: 990px;
+    height: 900px;
+    display: block;
+    align: center;
+    text-align: center;
+}
+.gridReportes
+{
+    width: 800px;
+    height: 850px;
+}
+.imgReportes
+{
+    display: block;
+    width: 1010px;
+}

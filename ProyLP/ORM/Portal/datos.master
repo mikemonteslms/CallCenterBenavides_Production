@@ -1,0 +1,80 @@
+﻿<%@ Master Language="C#" MasterPageFile="~/contenido.master" AutoEventWireup="true" CodeBehind="datos.master.cs" Inherits="Portal.datos" %>
+
+<%@ MasterType VirtualPath="~/contenido.master" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="contenido_head" runat="server">
+    <style>
+        #cuadrilla-productos {
+            height: 540px !important;
+            overflow: hidden;
+            position: absolute;
+        }
+    </style>
+    <script type="text/javascript">
+        $(document).ready(function ($) {
+            $('#cuadrilla-productos').perfectScrollbar({
+                wheelSpeed: 15,
+                wheelPropagation: false
+            });
+        });
+    </script>
+
+    <!-- Archivos del Acordión -->
+    <link rel="stylesheet" href="css/smk-accordion.css" />
+    <script type="text/javascript" src="src/smk-accordion.js"></script>
+    <script type="text/javascript">
+        jQuery(document).ready(function ($) {
+
+
+            $(".accordion_example3").smk_Accordion({
+                showIcon: false, //boolean
+            });
+
+        });
+    </script>
+    <!-- Termina archivos del acordión -->
+    <asp:ContentPlaceHolder ID="datos_head" runat="server"></asp:ContentPlaceHolder>
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="contenido_body" runat="server">
+    <div id="contenedor" class="main">
+
+        <!-- CATÁLOGO -->
+        <main id="mi-perfil">
+<div id="sub-menu-mi-perfil">
+	<asp:HyperLink ID="lnkContrasena" runat="server" NavigateUrl="cambiocontrasena.aspx">Cambio de Contraseña</asp:HyperLink>
+    <asp:HyperLink ID="lnkEstadoCuenta" runat="server" NavigateUrl="micuenta.aspx">Estado de Cuenta</asp:HyperLink>
+    <asp:HyperLink ID="lnkCanjes" runat="server" NavigateUrl="canjes.aspx">Canjes</asp:HyperLink>
+    <asp:HyperLink ID="lnkCarrito" runat="server" NavigateUrl="carrito.aspx">Carrito de Compras</asp:HyperLink>
+    <asp:HyperLink ID="lnkPremios" runat="server" NavigateUrl="premios.aspx">Detalle de entrega de premios</asp:HyperLink>
+</div>
+<h3>Mi Cuenta</h3>
+    <section id="categorias">
+    	
+        <!-- Accordion begin -->
+		<div class="accordion_example3" id="columna-izquierda">
+
+			<!-- Datos Generales -->
+			<div class="accordion_in acc_active">
+				<div class="acc_head">Datos Generales</div>
+				<div class="acc_content">
+					 <p>
+                    	<span>Nombre:</span><br /><asp:Label ID="lblNombre" runat="server" CssClass="datos_participante"></asp:Label><br />
+						<span>Apellido Paterno:</span><br/><asp:Label ID="lblApellidoPaterno" runat="server" CssClass="datos_participante"></asp:Label><br />
+						<span>Apellido Materno:</span><br/><asp:Label ID="lblApellidoMaterno" runat="server" CssClass="datos_participante"></asp:Label><br />
+                      <span>Fecha de Nacimiento:</span><br/><asp:Label ID="lblFechaNacimiento" runat="server" CssClass="datos_participante"></asp:Label><br />
+						<span>Fecha de alta en concesionaria:</span><br/><asp:Label ID="lblFechaAlta" runat="server" CssClass="datos_participante"></asp:Label><br />
+                      <span>Puesto:</span><br/><asp:Label ID="lblTipoParticipante" runat="server" CssClass="datos_participante"></asp:Label><br />
+						<span>Concesionaria a la que pertenece:</span><br/><asp:Label ID="lblDistribuidor" runat="server" CssClass="datos_participante"></asp:Label><br />
+						<span>Celular:</span><br/><asp:Label ID="lblCelular" runat="server" CssClass="datos_participante"></asp:Label><br />
+                      <span>Email:</span><br/><asp:Label ID="lblEmail" runat="server" CssClass="datos_participante"></asp:Label><br />						
+                    </p>
+				</div>
+			</div>
+		</div>
+		<!-- Accordion end -->
+        <br />
+        <%--<asp:LinkButton ID="btnEditar" runat="server" Text="Editar" CssClass="boton-gris"></asp:LinkButton>--%>    
+    </section>
+<asp:ContentPlaceHolder ID="datos_body" runat="server"></asp:ContentPlaceHolder>    	
+     </main>
+    </div>
+</asp:Content>

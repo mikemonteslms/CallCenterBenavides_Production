@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="VipClubDB_stg" Class="CatalogoLlamadaDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=184.106.188.43;Initial Catalog=VipClubDB_stg;Persist Security Info=True;User ID=sa" SettingsObjectName="CallCenterDB.Properties.Settings" SettingsPropertyName="VipClubDBConnectionString1" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.tipo_llamada" Member="TipoLlamada">
+    <Type Name="TipoLlamada">
+      <Column Name="id" Member="ID" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="clave" Member="Clave" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="descripcion" Member="Descripcion" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="descripcion_larga" Member="DescripcionLarga" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="categoria_tipo_llamada_id" Member="CategoriaTipoLlamadaID" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" CanBeNull="false" />
+      <Column Name="usuario_alta_id" Member="UsuarioAltaID" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" CanBeNull="false" />
+      <Column Name="usuario_cambio_id" Member="UsuarioCambioID" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="usuario_baja_id" Member="UsuarioBajaID" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="fecha_alta" Member="FechaAlta" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="fecha_cambio" Member="FechaCambio" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="fecha_baja" Member="FechaBaja" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="categoria_tipo_llamada_TipoLlamada" Member="CategoriaTipoLlamada" ThisKey="CategoriaTipoLlamadaID" OtherKey="ID" Type="CategoriaTipoLlamada" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.categoria_tipo_llamada" Member="CategoriaTipoLlamada">
+    <Type Name="CategoriaTipoLlamada">
+      <Column Name="id" Member="ID" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="clave" Member="Clave" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="descripcion" Member="Descripcion" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="descripcion_larga" Member="DescripcionLarga" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="usuario_alta_id" Member="UsuarioAltaID" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" CanBeNull="false" />
+      <Column Name="usuario_cambio_id" Member="UsuarioCambioID" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="usuario_baja_id" Member="UsuarioBajaID" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="fecha_alta" Member="FechaAlta" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="fecha_cambio" Member="FechaCambio" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="fecha_baja" Member="FechaBaja" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="country_code" Member="CountryCode" Type="System.String" DbType="VarChar(5)" CanBeNull="true" />
+      <Association Name="categoria_tipo_llamada_TipoLlamada" Member="TipoLlamada" ThisKey="ID" OtherKey="CategoriaTipoLlamadaID" Type="TipoLlamada" />
+    </Type>
+  </Table>
+</Database>

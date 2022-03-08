@@ -1,0 +1,145 @@
+﻿<%@ Master Language="C#" MasterPageFile="~/site.master" AutoEventWireup="true" CodeBehind="contenido.master.cs" Inherits="ORMOperacion.contenido" %>
+
+<%@ MasterType VirtualPath="~/site.master" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
+    <asp:ContentPlaceHolder ID="head_contenido" runat="server">
+    </asp:ContentPlaceHolder>
+    <style>
+        .RadMenu_Bootstrap .rmRootLink.rmSelected,
+        .RadMenu_Bootstrap .rmRootLink.rmSelected:hover,
+        .RadMenu_Bootstrap .rmRootLink.rmExpanded,
+        .RadMenu_Bootstrap .rmRootLink.rmExpanded:hover {
+            background-color: chocolate !important;
+        }
+
+        .RadMenu_Bootstrap .rmRootLink.rmExpanded {
+            background-color: chocolate;
+        }
+
+        .RadMenu .rmHorizontal .rmItem {
+            clear: none;
+            background: rgb(247, 148, 30);
+        }
+
+        .RadMenu_Bootstrap .rmRootGroup .rmItem .rmGroup.rmVertical {
+            background: rgb(247, 148, 30);
+        }
+
+        .RadGrid_Bootstrap .rgHeader, .RadGrid_Bootstrap .rgHeader a {
+            color: white !important;
+            background: #70b8d3 !important;
+        }
+
+        .RadGrid_Bootstrap .rgCommandRow {
+            background: #70b8d3 !important;
+        }
+
+        .RadGrid_Bootstrap .rgCommandCell a {
+            color: white !important;
+        }
+
+        .RadMenu_Bootstrap {
+            margin: 0 auto;
+        }
+
+            .RadMenu_Bootstrap .rmRootLink {
+                color: white !important;
+            }
+
+                .RadMenu_Bootstrap .rmRootLink .rmExpanded, .RadMenu_Bootstrap .rmExpanded:hover {
+                    color: white !important;
+                    background-color: chocolate !important;
+                }
+
+            .RadMenu_Bootstrap .rmGroup .rmLink .rmText {
+                color: white;
+            }
+
+            .RadMenu_Bootstrap .rmGroup .rmLink:hover {
+                background-color: chocolate !important;
+            }
+    </style>
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
+    <div class="content">
+        <div id="rounded-box6" style="position: relative; top: -124px; left: 380px;">
+            <table border="0" width="380px">
+                <tr>
+                    <td align="center">
+                        <p></p>
+                        <p></p>
+                        <p runat="server" id="programa_clave" class="texto13 negrita"></p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <%--<telerik:RadTextBox ID="txtBuscar" runat="server" Width="100%" MaxLength="60" CssClass="texto11 sin_borde"
+                            EmptyMessage="B&uacute;squeda de participante" style="width:100% !important">
+                        </telerik:RadTextBox>--%>
+                    </td>
+                    <td>
+                        <%--<telerik:RadButton ID="btnBuscar" runat="server" Text="Buscar"
+                            OnClick="btnBuscar_Click" ValidationGroup="busquedaGrl" />--%>
+                    </td>
+                    <td>
+                        <asp:Button ID="btnRegistraParticipante" runat="server" Text="Registrar participante" OnClick="btnRegistraParticipante_Click" CausesValidation="false" Visible="false" />
+                    </td>
+                </tr>
+                <tr>
+                    <td style="text-align: center">
+                        <%--<asp:RequiredFieldValidator ID="rfvCriterioBuqueda" runat="server" ErrorMessage="* Ingrese criterio de búsqueda." Font-Size="X-Small" Display="Dynamic" ForeColor="Red" ControlToValidate="txtBuscar" ValidationGroup="busquedaGrl"></asp:RequiredFieldValidator>--%>
+                    <td></td>
+                </tr>
+            </table>
+        </div>
+        <div style="position: relative; top: 0px; margin: 0 auto; width: 100%;">
+            <telerik:RadMenu runat="server" ID="RadMenu1" EnableRoundedCorners="true" DataSourceID="SqlDataSource1"
+                DataFieldID="id" DataFieldParentID="menu_id" DataTextField="nombre"
+                EnableShadows="true" EnableTextHTMLEncoding="true" Width="967"
+                OnItemDataBound="RadMenu1_ItemDataBound" Style="z-index: 3000">
+                <Items>
+                    <telerik:RadMenuItem runat="server" Value="templateHolder" Font-Size="280px">
+                    </telerik:RadMenuItem>
+                </Items>
+            </telerik:RadMenu>
+            <asp:SqlDataSource runat="server" ID="SqlDataSource1" ConnectionString="<%$ ConnectionStrings:GaleniaTest %>"
+                ProviderName="System.Data.SqlClient" SelectCommand="sp_menu_usuario" SelectCommandType="StoredProcedure">
+                <SelectParameters>
+                    <asp:ControlParameter ControlID="hidUserId" Name="usuario_id" />
+                </SelectParameters>
+            </asp:SqlDataSource>
+            <asp:HiddenField ID="hidUserId" runat="server" />
+        </div>
+        <asp:HyperLink ID="lnkMensaje" runat="server"></asp:HyperLink>
+        <cc1:ModalPopupExtender ID="popMensaje" runat="server" TargetControlID="lnkMensaje"
+            PopupControlID="pnlMensaje" BackgroundCssClass="Sombra" CancelControlID="imgCerrarMensaje">
+        </cc1:ModalPopupExtender>
+        <asp:Panel ID="pnlMensaje" runat="server" Width="225px" Style="display: none;">
+            <table border="0" width="225px">
+                <tr class="mensaje_sup">
+                    <td></td>
+                </tr>
+                <tr>
+                    <td class="mensaje_cen">
+                        <asp:Label ID="lblMensajePopup" runat="server"></asp:Label>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="mensaje_inf">
+                        <asp:Button ID="imgCerrarMensaje" runat="server" CssClass="cerrar" Text="Aceptar"
+                            CausesValidation="false" />
+                    </td>
+                </tr>
+            </table>
+        </asp:Panel>
+        <div style="padding: 40px 10px 10px 10px;">
+            <asp:Label runat="server" ID="menuLbl" Style="padding-left: 25px;"></asp:Label>
+            <asp:Label runat="server" Text=" >> "></asp:Label>
+            <asp:Label runat="server" ID="subMenuLbl"></asp:Label>
+            <div id="rounded-box4">
+                <asp:ContentPlaceHolder ID="body_contenido" runat="server">
+                </asp:ContentPlaceHolder>
+            </div>
+        </div>
+    </div>
+</asp:Content>

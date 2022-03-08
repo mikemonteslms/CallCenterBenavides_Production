@@ -1,0 +1,223 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{9BF20EF5-4A62-40D8-806C-40743A74E343}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ORMModel</RootNamespace>
+    <AssemblyName>ORMAModel</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Telerik.OpenAccess, Version=2014.3.1027.1, Culture=neutral, PublicKeyToken=7ce17eeaf1d59342">
+      <HintPath>C:\Program Files (x86)\Telerik\Data Access\bin\Telerik.OpenAccess.dll</HintPath>
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="Telerik.OpenAccess.35.Extensions, Version=2014.3.1027.1, Culture=neutral, PublicKeyToken=7ce17eeaf1d59342">
+      <HintPath>C:\Program Files (x86)\Telerik\Data Access\bin\Telerik.OpenAccess.35.Extensions.dll</HintPath>
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="bodega.generated.cs">
+      <DependentUpon>EntitiesModel.rlinq</DependentUpon>
+    </Compile>
+    <Compile Include="calendario.generated.cs">
+      <DependentUpon>EntitiesModel.rlinq</DependentUpon>
+    </Compile>
+    <Compile Include="calendario_canje.generated.cs">
+      <DependentUpon>EntitiesModel.rlinq</DependentUpon>
+    </Compile>
+    <Compile Include="catalogos_lealtad.generated.cs">
+      <DependentUpon>EntitiesModel.rlinq</DependentUpon>
+    </Compile>
+    <Compile Include="catalogos_relaciones.generated.cs">
+      <DependentUpon>EntitiesModel.rlinq</DependentUpon>
+    </Compile>
+    <Compile Include="categoria_pasatiempos.generated.cs">
+      <DependentUpon>EntitiesModel.rlinq</DependentUpon>
+    </Compile>
+    <Compile Include="categoria_premio.generated.cs">
+      <DependentUpon>EntitiesModel.rlinq</DependentUpon>
+    </Compile>
+    <Compile Include="categoria_producto.generated.cs">
+      <DependentUpon>EntitiesModel.rlinq</DependentUpon>
+    </Compile>
+    <Compile Include="categoria_tipo_llamada.generated.cs">
+      <DependentUpon>EntitiesModel.rlinq</DependentUpon>
+    </Compile>
+    <Compile Include="categoria_transaccion.generated.cs">
+      <DependentUpon>EntitiesModel.rlinq</DependentUpon>
+    </Compile>
+    <Compile Include="credito_debito.generated.cs">
+      <DependentUpon>EntitiesModel.rlinq</DependentUpon>
+    </Compile>
+    <Compile Include="distribuidor.generated.cs">
+      <DependentUpon>EntitiesModel.rlinq</DependentUpon>
+    </Compile>
+    <Compile Include="distribuidor_direccion.generated.cs">
+      <DependentUpon>EntitiesModel.rlinq</DependentUpon>
+    </Compile>
+    <Compile Include="encuesta.generated.cs">
+      <DependentUpon>EntitiesModel.rlinq</DependentUpon>
+    </Compile>
+    <Compile Include="EntitiesModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EntitiesModel.rlinq</DependentUpon>
+    </Compile>
+    <Compile Include="escolaridad.generated.cs">
+      <DependentUpon>EntitiesModel.rlinq</DependentUpon>
+    </Compile>
+    <Compile Include="estado_civil.generated.cs">
+      <DependentUpon>EntitiesModel.rlinq</DependentUpon>
+    </Compile>
+    <Compile Include="marca.generated.cs">
+      <DependentUpon>EntitiesModel.rlinq</DependentUpon>
+    </Compile>
+    <Compile Include="marca_premio.generated.cs">
+      <DependentUpon>EntitiesModel.rlinq</DependentUpon>
+    </Compile>
+    <Compile Include="mecanica.generated.cs">
+      <DependentUpon>EntitiesModel.rlinq</DependentUpon>
+    </Compile>
+    <Compile Include="ocupacion.generated.cs">
+      <DependentUpon>EntitiesModel.rlinq</DependentUpon>
+    </Compile>
+    <Compile Include="operadora.generated.cs">
+      <DependentUpon>EntitiesModel.rlinq</DependentUpon>
+    </Compile>
+    <Compile Include="participante.generated.cs">
+      <DependentUpon>EntitiesModel.rlinq</DependentUpon>
+    </Compile>
+    <Compile Include="participante_distribuidor.generated.cs">
+      <DependentUpon>EntitiesModel.rlinq</DependentUpon>
+    </Compile>
+    <Compile Include="pasatiempo.generated.cs">
+      <DependentUpon>EntitiesModel.rlinq</DependentUpon>
+    </Compile>
+    <Compile Include="pregunta.generated.cs">
+      <DependentUpon>EntitiesModel.rlinq</DependentUpon>
+    </Compile>
+    <Compile Include="premio.generated.cs">
+      <DependentUpon>EntitiesModel.rlinq</DependentUpon>
+    </Compile>
+    <Compile Include="producto.generated.cs">
+      <DependentUpon>EntitiesModel.rlinq</DependentUpon>
+    </Compile>
+    <Compile Include="programa.generated.cs">
+      <DependentUpon>EntitiesModel.rlinq</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="proveedor_premios.generated.cs">
+      <DependentUpon>EntitiesModel.rlinq</DependentUpon>
+    </Compile>
+    <Compile Include="respuesta.generated.cs">
+      <DependentUpon>EntitiesModel.rlinq</DependentUpon>
+    </Compile>
+    <Compile Include="sexo.generated.cs">
+      <DependentUpon>EntitiesModel.rlinq</DependentUpon>
+    </Compile>
+    <Compile Include="status.generated.cs">
+      <DependentUpon>EntitiesModel.rlinq</DependentUpon>
+    </Compile>
+    <Compile Include="status_carga.generated.cs">
+      <DependentUpon>EntitiesModel.rlinq</DependentUpon>
+    </Compile>
+    <Compile Include="status_llamada.generated.cs">
+      <DependentUpon>EntitiesModel.rlinq</DependentUpon>
+    </Compile>
+    <Compile Include="status_participante.generated.cs">
+      <DependentUpon>EntitiesModel.rlinq</DependentUpon>
+    </Compile>
+    <Compile Include="status_premio.generated.cs">
+      <DependentUpon>EntitiesModel.rlinq</DependentUpon>
+    </Compile>
+    <Compile Include="status_seguimiento.generated.cs">
+      <DependentUpon>EntitiesModel.rlinq</DependentUpon>
+    </Compile>
+    <Compile Include="status_transaccion.generated.cs">
+      <DependentUpon>EntitiesModel.rlinq</DependentUpon>
+    </Compile>
+    <Compile Include="tipo_asentamiento.generated.cs">
+      <DependentUpon>EntitiesModel.rlinq</DependentUpon>
+    </Compile>
+    <Compile Include="tipo_direccion.generated.cs">
+      <DependentUpon>EntitiesModel.rlinq</DependentUpon>
+    </Compile>
+    <Compile Include="tipo_encuesta.generated.cs">
+      <DependentUpon>EntitiesModel.rlinq</DependentUpon>
+    </Compile>
+    <Compile Include="tipo_llamada.generated.cs">
+      <DependentUpon>EntitiesModel.rlinq</DependentUpon>
+    </Compile>
+    <Compile Include="tipo_parentesco.generated.cs">
+      <DependentUpon>EntitiesModel.rlinq</DependentUpon>
+    </Compile>
+    <Compile Include="tipo_participante.generated.cs">
+      <DependentUpon>EntitiesModel.rlinq</DependentUpon>
+    </Compile>
+    <Compile Include="tipo_respuesta.generated.cs">
+      <DependentUpon>EntitiesModel.rlinq</DependentUpon>
+    </Compile>
+    <Compile Include="tipo_telefono.generated.cs">
+      <DependentUpon>EntitiesModel.rlinq</DependentUpon>
+    </Compile>
+    <Compile Include="tipo_transaccion.generated.cs">
+      <DependentUpon>EntitiesModel.rlinq</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.Config" />
+    <None Include="EntitiesModel.rlinq.diagram">
+      <DependentUpon>EntitiesModel.rlinq</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <OpenAccessDeploy Include="EntitiesModel.rlinq">
+      <Generator>MetaModelCodeGenerator</Generator>
+      <LastGenOutput>EntitiesModel.cs</LastGenOutput>
+    </OpenAccessDeploy>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Condition="Exists('$(MSBuildExtensionsPath)\OpenAccess.targets')" Project="$(MSBuildExtensionsPath)\OpenAccess.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

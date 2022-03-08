@@ -1,0 +1,33 @@
+﻿h3 {
+    font-size: 24px !important;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: 500;
+    line-height: 1.1;
+    color: #333333;
+}
+
+main h3 {
+    padding: 0 0 7px 0;
+    margin: 0 0 11px 0;
+    display: block;
+    border-bottom: 1px solid #eaeaea;
+}
+
+p {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1em;
+    color: #7B7E84;
+    margin: 0;
+    padding: 0;
+}
+
+.noticia {
+    padding: 0 0 10px 0;
+    margin: 0 0 10px 0;
+    border-bottom: 1px solid #eaeaea;
+    font-size: 1.1em;
+}
+
+.texto-small {
+    font-size: 10px;
+}

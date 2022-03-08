@@ -1,0 +1,191 @@
+<html>
+<head>
+    <title>Estado de Cuenta Galenia Loyalty Program</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+    <style>
+        @font-face {
+            font-family: melocheFont;
+            src: url(../fonts/melocheRegular.ttf);
+        }
+
+        body {
+            font-family: melocheFont;
+            margin: auto;
+            width: 50%;
+        }
+
+        .largeGaleniaFont {
+            font-size: 19px;
+            color: #606060;
+        }
+
+        .mediumGaleniaFont {
+            font-size: 17px;
+            color: #606060;
+        }
+
+        .TFtable {
+            position: relative;
+            width: 95%;
+            font-size: 12px;
+            font-family: Arial;
+            text-align: center;
+            border-collapse: collapse;
+        }
+
+            .TFtable th {
+                font-size: 16px;
+            }
+            /*  Define the background color for all the ODD background rows  */
+            .TFtable tr:nth-child(odd) {
+                background: #2A5D81;
+                height: 30px;
+                color: white;
+            }
+            /*  Define the background color for all the EVEN background rows  */
+            .TFtable tr:nth-child(even) {
+                background: #dae5f4;
+                height: 30px;
+                color: gray;
+            }
+
+        .tituloMailing {
+            width: 400px;
+            height: 45px;
+            z-index: 1;
+            position: absolute;
+            top: 40px;
+            left: 50px;
+            color: white;
+            font-size: 24px;
+        }
+
+        .headerMailing {
+            position: absolute;
+            top: 0;
+        }
+
+        .footerMailing {
+            position: relative;
+            bottom: 0;
+        }
+
+        .contentMailing {
+            position: relative;
+            top: 150px;
+            width: 600px;
+            padding-left: 50px;
+            min-height: 50%;
+            height: auto;
+        }
+
+            .contentMailing p {
+                max-width: 480px;
+            }
+    </style>
+</head>
+<body bgcolor="#FFFFFF" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0">
+    <div class="headerMailing">
+        <img src="http://72.3.180.150:6050/images/mailing/mailingHeader.png" />
+        <p class="tituloMailing">ESTADO DE CUENTA</p>
+    </div>
+
+    <div class="contentMailing">
+        <p style="width:100%;" class="largeGaleniaFont">
+            *&iexcl;Tienes @saldo puntos <span style="width:100%;color:#405E7E;font-size:20px;" class="largeGaleniaFont">
+                GALENIA LOYALTY PROGRAM!
+            </span><span>*</span>
+        </p>
+
+        <p style="width:100%;" class="largeGaleniaFont">
+            *Informaci&oacute;n al @fecha *
+        </p>
+        
+        <p style="width:100%;" class="largeGaleniaFont">
+            A continuaci&oacute;n le presentamos el detalle de sus movimientos del mes de @mes.
+        </p>
+        
+        <p style="width:100%;" class="largeGaleniaFont">
+            N&uacute;mero de Cuenta: @usuario
+        </p>
+
+        <table class="TFtable">
+            <tr style="background-color:#2A5D81;color:white;text-align:center;" border="0" cellpadding="0" cellspacing="0"
+                height="30px">
+                <th><b>No. de Trans.</b></th>
+                <th><b>Descripci&oacute;n</b></th>
+                <th><b>Puntos</b></th>
+                <th><b>Fecha</b></th>
+            </tr>
+            @Canjes
+            <!--<tr>
+                <td><b>GLP13-38517</b></td>
+                <td><b>Certificado Liverpool $1,500</b></td>
+                <td><b>184</b></td>
+                <td><b>18/07/2014</b></td>
+            </tr>
+            <tr>
+                <td><b>GLP13-38517</b></td>
+                <td><b>Certificado Liverpool $1,500</b></td>
+                <td><b>184</b></td>
+                <td><b>18/07/2014</b></td>
+            </tr>
+            <tr>
+                <td><b>GLP13-38517</b></td>
+                <td><b>Certificado Liverpool $1,500</b></td>
+                <td><b>184</b></td>
+                <td><b>18/07/2014</b></td>
+            </tr>
+            <tr>
+                <td><b>GLP13-38517</b></td>
+                <td><b>Certificado Liverpool $1,500</b></td>
+                <td><b>184</b></td>
+                <td><b>18/07/2014</b></td>
+            </tr>
+            <tr>
+                <td><b>GLP13-38517</b></td>
+                <td><b>Certificado Liverpool $1,500</b></td>
+                <td><b>184</b></td>
+                <td><b>18/07/2014</b></td>
+            </tr>
+            <tr>
+                <td><b>GLP13-38517</b></td>
+                <td><b>Certificado Liverpool $1,500</b></td>
+                <td><b>184</b></td>
+                <td><b>18/07/2014</b></td>
+            </tr>
+            <tr>
+                <td><b>GLP13-38517</b></td>
+                <td><b>Certificado Liverpool $1,500</b></td>
+                <td><b>184</b></td>
+                <td><b>18/07/2014</b></td>
+            </tr>
+            <tr>
+                <td><b>GLP13-38517</b></td>
+                <td><b>Certificado Liverpool $1,500</b></td>
+                <td><b>184</b></td>
+                <td><b>18/07/2014</b></td>
+            </tr>
+            <tr>
+                <td><b>GLP13-38517</b></td>
+                <td><b>Certificado Liverpool $1,500</b></td>
+                <td><b>184</b></td>
+                <td><b>18/07/2014</b></td>
+            </tr>
+            <tr>
+                <td><b>GLP13-38517</b></td>
+                <td><b>Certificado Liverpool $1,500</b></td>
+                <td><b>184</b></td>
+                <td><b>18/07/2014</b></td>
+            </tr>-->
+        </table>
+        <p class="mediumGaleniaFont">
+            Recuerde que acumula puntos por cada transacci&oacute;n que sus pacientes realicen en
+            cirug&iacute;as, imagenolog&iacute;a y laboratorios.
+        </p>
+    </div>
+    <div class="footerMailing">
+        <img src="http://72.3.180.150:6050/images/mailing/mailingFooter.png" />
+    </div>
+</body>
+</html>

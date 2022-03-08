@@ -1,0 +1,188 @@
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/contenido.Master" AutoEventWireup="true" CodeBehind="mantenimientoEncuestas.aspx.cs" Inherits="ORMOperacion.mantenimientoEncuestas" %>
+
+<%@ MasterType VirtualPath="~/contenido.Master" %>
+
+<%@ Register Assembly="Telerik.OpenAccess.Web.40, Version=2014.3.1027.1, Culture=neutral, PublicKeyToken=7ce17eeaf1d59342" Namespace="Telerik.OpenAccess.Web" TagPrefix="telerik" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="head_contenido" runat="server">
+    <style>
+        .RadGrid_Bootstrap .rgRow > td img, .RadGrid_Bootstrap .rgAltRow > td img {
+            height: 75px !important;
+            width: 150px !important;
+        }
+
+        .RadGrid_Bootstrap .rgEditForm [type="text"] {
+            width: 265px;
+        }
+    </style>
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="body_contenido" runat="server">
+    <telerik:RadScriptBlock ID="RadScriptBlock2" runat="server">
+        <script type="text/javascript">
+            //On insert and update buttons click temporarily disables ajax to perform upload actions
+            function conditionalPostback(sender, args) {
+                console.log("sender name: " + args.get_tableView().get_name());
+                if (args.get_tableView().get_name() == "Encuestas") {
+                    console.log("Entro con sender name: " + args.get_tableView().get_name());
+                    var theRegexp = new RegExp("\.UpdateButton$|\.PerformInsertButton$", "ig");
+                    console.log("regexp: " + args.get_commandName());
+                    if (args.get_commandName() == "PerformInsert" || args.get_commandName() == "Update") {
+                        console.log("Entro conditionalPostBack");
+                        var upload = $find(window['UploadId']);
+                        //AJAX is disabled only if file is selected for upload
+                        if (upload.getFileInputs()[0].value != "") {
+                            console.log("Entro upload");
+                            var ajaxPanel = $find("<%= ajaxPanel.ClientID %>");
+                            ajaxPanel.set_enableAJAX(false);
+                        }
+                    }
+                }
+            }
+        </script>
+    </telerik:RadScriptBlock>
+    <telerik:OpenAccessLinqDataSource ID="OAEncuesta" runat="server"
+        ContextTypeName="EntitiesModel.EntitiesModel" EntityTypeName="" EnableUpdate="true" EnableDelete="true" EnableInsert="true"
+        ResourceSetName="encuestas" OrderBy="id,nombre" OnUpdating="OAEncuesta_Updating" OnInserting="OAEncuestas_Inserting" />
+    <telerik:OpenAccessLinqDataSource ID="OATipoEncuesta" runat="server"
+        ContextTypeName="EntitiesModel.EntitiesModel" EntityTypeName=""
+        ResourceSetName="tipo_encuestas" OrderBy="Descripcion" />
+    <telerik:OpenAccessLinqDataSource ID="OAPreguntas" runat="server"
+        ContextTypeName="EntitiesModel.EntitiesModel" EntityTypeName="" EnableInsert="true" EnableDelete="true" EnableUpdate="true"
+        OnUpdating="OAPreguntas_Updating"
+        ResourceSetName="preguntas" OrderBy="orden,nombre" OnInserting="OAPreguntas_Inserting">
+        <InsertParameters>
+            <asp:Parameter Name="encuesta_id" />
+        </InsertParameters>
+    </telerik:OpenAccessLinqDataSource>
+    <telerik:OpenAccessLinqDataSource ID="OARespuestas" runat="server"
+        ContextTypeName="EntitiesModel.EntitiesModel" EntityTypeName="" EnableInsert="true" EnableUpdate="true" EnableDelete="true"
+        ResourceSetName="respuestas" OrderBy="descripcion" OnInserting="OARespuestas_Inserting" OnUpdating="OARespuestas_Updating">
+        <InsertParameters>
+            <asp:Parameter Name="pregunta_id" />
+        </InsertParameters>
+    </telerik:OpenAccessLinqDataSource>
+    <center>
+    <div id="rounded-box3" style="width:100% !important">
+        <table border="0">
+            <tr align="center">
+                <td class="texto18 negrita">
+                    <table border="0" width="900px" height="400px">
+                        <tr valign="top">
+                            <td align="center">
+                                <div>
+                                    <asp:MultiView ID="mvEncuestas" runat="server" ActiveViewIndex="0">
+                                        <asp:View ID="vBusqueda" runat="server">
+                                            <table border="0" cellpadding="0" cellspacing="0" width="900px">
+                                                <tr>
+                                                    <td>
+                                                        <div>
+                                                            <h2 style="text-align: center;">Encuestas</h2>
+                                                            <telerik:radajaxpanel runat="server" id="ajaxPanel">
+                                                                <telerik:RadGrid ID="RadGrid1" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateDeleteColumn="True" AutoGenerateEditColumn="True" 
+                                                                CellSpacing="0" DataSourceID="OAEncuesta" GridLines="Vertical" Culture="es" OnItemDataBound="RadGrid1_ItemDataBound"
+                                                                OnDetailTableDataBind="RadGrid1_DetailTableDataBind" AutoGenerateColumns="false" OnInsertCommand="RadGrid1_InsertCommand"
+                                                                    OnItemCommand="RadGrid1_ItemCommand"
+                                                                    MasterTableView-EditFormSettings-EditColumn-InsertText="Insertar" 
+                                                                    MasterTableView-EditFormSettings-EditColumn-EditText="Editar"
+                                                                    MasterTableView-EditFormSettings-EditColumn-UpdateText="Actualizar"
+                                                                    MasterTableView-EditFormSettings-EditColumn-CancelText="Cancelar"
+                                                                    MasterTableView-CommandItemSettings-RefreshText = "Refrescar"
+                                                                    >
+                                                                <MasterTableView CommandItemDisplay="TopAndBottom" DataKeyNames="id" AllowAutomaticDeletes="true" AllowAutomaticInserts="true" AllowAutomaticUpdates="true"
+                                                                    CommandItemSettings-AddNewRecordText="Agregar nueva Encuesta" Name="Encuestas" TableLayout="Auto" >
+                                                                    <Columns>
+                                                                        <telerik:GridBoundColumn DataField="id" DataType="System.Int64" FilterControlAltText="Filter id column" HeaderText="ID" ReadOnly="True" SortExpression="id" UniqueName="id">
+                                                                        </telerik:GridBoundColumn>
+                                                                        <telerik:GridDropDownColumn DataSourceID="OATipoEncuesta" DataField="tipo_encuesta_id" DataType="System.Int64" 
+                                                                            FilterControlAltText="Filter tipo_encuesta_id column" HeaderText="Tipo Encuesta" SortExpression="tipo_encuesta_id" 
+                                                                            UniqueName="tipo_encuesta_id" ListTextField="Descripcion" ListValueField="id" HeaderStyle-Wrap="false" ItemStyle-Wrap="false">
+                                                                            
+                                                                        </telerik:GridDropDownColumn>
+                                                                        <telerik:GridBoundColumn DataField="nombre" FilterControlAltText="Filter nombre column" HeaderText="Nombre" SortExpression="nombre" UniqueName="nombre" ItemStyle-Wrap="false">
+                                                                        </telerik:GridBoundColumn>
+                                                                        <telerik:GridDateTimeColumn DataField="fecha_inicial" DataType="System.DateTime" FilterControlAltText="Filter fecha_inicial column" HeaderText="Fecha Inicial" SortExpression="fecha_inicial" UniqueName="fecha_inicial">
+                                                                        </telerik:GridDateTimeColumn>
+                                                                        <telerik:GridDateTimeColumn DataField="fecha_final" FilterControlAltText="Filter fecha_final column" HeaderText="Fecha Final" SortExpression="fecha_final" UniqueName="fecha_final" DataType="System.DateTime">
+                                                                        </telerik:GridDateTimeColumn>
+                                                                        <telerik:GridBoundColumn DataField="status_id" FilterControlAltText="Filter status_id column" HeaderText="Status" SortExpression="status_id" UniqueName="status_id" DataType="System.Int64">
+                                                                        </telerik:GridBoundColumn>
+                                                                        <telerik:GridBoundColumn DataField="fecha_status" Visible="false" DataType="System.DateTime" FilterControlAltText="Filter fecha_status column" HeaderText="Fecha Status" SortExpression="fecha_status" UniqueName="fecha_status">
+                                                                        </telerik:GridBoundColumn>
+                                                                        <telerik:GridBoundColumn DataField="guion" Visible="false" FilterControlAltText="Filter guion column" HeaderText="guion" SortExpression="guion" UniqueName="guion">
+                                                                        </telerik:GridBoundColumn>
+                                                                        <telerik:GridBoundColumn DataField="cierre" Visible="false" FilterControlAltText="Filter cierre column" HeaderText="cierre" SortExpression="cierre" UniqueName="cierre">
+                                                                        </telerik:GridBoundColumn>
+                                                                        <telerik:GridBoundColumn DataField="fecha_alta" DataType="System.DateTime" FilterControlAltText="Filter fecha_alta column" HeaderText="Fecha Alta" SortExpression="fecha_alta" UniqueName="fecha_alta">
+                                                                        </telerik:GridBoundColumn>
+                                                                        <telerik:GridBoundColumn DataField="fecha_cambio" Visible="True" DataType="System.DateTime" FilterControlAltText="Filter fecha_cambio column" HeaderText="Fecha Cambio" SortExpression="fecha_cambio" UniqueName="fecha_cambio">
+                                                                        </telerik:GridBoundColumn>
+                                                                        <telerik:GridBoundColumn DataField="fecha_baja" Visible="false" DataType="System.DateTime" FilterControlAltText="Filter fecha_baja column" HeaderText="Fecha Baja" SortExpression="fecha_baja" UniqueName="fecha_baja">
+                                                                        </telerik:GridBoundColumn>
+                                                                        <telerik:GridBoundColumn DataField="usuario_alta_id" Visible="false" DataType="System.Guid" FilterControlAltText="Filter usuario_alta_id column" HeaderText="Usuario Alta" SortExpression="usuario_alta_id" UniqueName="usuario_alta_id">
+                                                                        </telerik:GridBoundColumn>
+                                                                        <telerik:GridBoundColumn DataField="usuario_cambio_id" Visible="false" DataType="System.Guid" FilterControlAltText="Filter usuario_cambio_id column" HeaderText="Usuario Cambio" SortExpression="usuario_cambio_id" UniqueName="usuario_cambio_id">
+                                                                        </telerik:GridBoundColumn>
+                                                                        <telerik:GridBoundColumn DataField="usuario_baja_id" Visible="false" DataType="System.Guid" FilterControlAltText="Filter usuario_baja_id column" HeaderText="Usuario Baja" SortExpression="usuario_baja_id" UniqueName="usuario_baja_id">
+                                                                        </telerik:GridBoundColumn>
+                                                                        <telerik:GridBinaryImageColumn DataField="logo" DataType="System.Byte" HeaderText="Logo" SortExpression="logo" UniqueName="" ImageWidth="50px" ItemStyle-Width="50px" ></telerik:GridBinaryImageColumn>                                
+                                                                    </Columns>                                    
+                                                                    <NoRecordsTemplate>
+                                                                        No se encontraron Encuestas.
+                                                                    </NoRecordsTemplate>                    
+                                                                    <DetailTables>                                
+                                                                        <telerik:GridTableView SkinID="Bootstrap" DataKeyNames="id" Name="Preguntas" AutoGenerateColumns="false" AllowAutomaticInserts="true" AllowAutomaticUpdates="true" AllowAutomaticDeletes="true"
+                                                                            CommandItemDisplay="Bottom" CommandItemSettings-AddNewRecordText="Agregar nueva Pregunta" DataSourceID="OAPreguntas">
+                                                                            <telerik:ParentTableRelation>
+                                                                                <telerik:GridRelationFields MasterKeyField="id" DetailKeyField="encuesta_id" />                                        
+                                                                                </telerik:ParentTableRelation>
+                                                                            <DetailTables>
+                                                                                <telerik:GridTableView DataKeyNames="id" Name="Respuestas" AutoGenerateColumns="false"
+                                                                                    AllowAutomaticDeletes="true" AllowAutomaticInserts="true" AllowAutomaticUpdates="true"
+                                                                                    CommandItemSettings-AddNewRecordText="Agregar nueva Respuesta" CommandItemDisplay="Bottom"
+                                                                                    EditFormSettings-EditColumn-ColumnGroupName="Encuesta" DataSourceID="OARespuestas">
+                                                                                    <Columns>
+                                                                                        <telerik:GridBoundColumn DataField="id" FilterControlAltText="Filter id column" HeaderText="RespuestaID" SortExpression="id" UniqueName="id"></telerik:GridBoundColumn>
+                                                                                        <telerik:GridBoundColumn DataField="clave" FilterControlAltText="Filter clave column" HeaderText="Clave" SortExpression="clave" UniqueName="clave"></telerik:GridBoundColumn>
+                                                                                        <telerik:GridBoundColumn DataField="descripcion" FilterControlAltText="Filter descripcion column" HeaderText="Descripcion" SortExpression="descripcion" UniqueName="descripcion"></telerik:GridBoundColumn>
+                                                                                        <telerik:GridBoundColumn DataField="descripcion_larga" FilterControlAltText="Filter descripcion_larga column" HeaderText="Descripcion Larga" SortExpression="descripcion_larga" UniqueName="descripcion_larga"></telerik:GridBoundColumn>
+                                                                                        <telerik:GridBoundColumn DataField="ponderacion" FilterControlAltText="Filter ponderacion column" HeaderText="Puntuación" SortExpression="ponderacion" UniqueName="ponderacion"></telerik:GridBoundColumn>
+                                                                                    </Columns>
+                                                                                    <NoRecordsTemplate>
+                                                                                        No se encontraron respuestas.
+                                                                                    </NoRecordsTemplate>
+                                                                                </telerik:GridTableView>
+                                                                            </DetailTables>
+                                                                            <Columns>
+                                                                                <telerik:GridBoundColumn DataField="id" FilterControlAltText="Filter id column" HeaderText="PreguntaID" SortExpression="id" UniqueName="id">
+                                                                                </telerik:GridBoundColumn>
+                                                                                <telerik:GridBoundColumn DataField="orden" FilterControlAltText="Filter orden column" HeaderText="Orden" SortExpression="orden" UniqueName="orden">
+                                                                                </telerik:GridBoundColumn>
+                                                                                <telerik:GridBoundColumn DataField="nombre" FilterControlAltText="Filter nombre column" HeaderText="Pregunta" SortExpression="nombre" UniqueName="nombre">
+                                                                                </telerik:GridBoundColumn>                                        
+                                                                                <telerik:GridBoundColumn DataField="explicacion" FilterControlAltText="Filter explicacion column" HeaderText="Explicación" SortExpression="explicacion" UniqueName="explicacion">
+                                                                                </telerik:GridBoundColumn>                                        
+                                                                            </Columns>
+                                                                            <NoRecordsTemplate>
+                                                                                No se encontraron preguntas.
+                                                                            </NoRecordsTemplate>
+                                                                        </telerik:GridTableView>
+                                                                    </DetailTables>
+                                                                </MasterTableView>
+                                                                    <ClientSettings ClientEvents-OnCommand="conditionalPostback"></ClientSettings>
+                                                                </telerik:RadGrid>                                
+                                                           </telerik:radajaxpanel>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </asp:View>
+                                    </asp:MultiView>
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+    </div>
+    </center>
+</asp:Content>

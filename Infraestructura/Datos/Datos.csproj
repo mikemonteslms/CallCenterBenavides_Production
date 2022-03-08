@@ -1,0 +1,187 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{CEB2E923-146B-4828-8FC3-B9CFB89F3586}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Datos</RootNamespace>
+    <AssemblyName>Datos</AssemblyName>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>2.0</OldToolsVersion>
+    <TargetFrameworkProfile />
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.ApplicationBlocks.Data, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Microsoft.ApplicationBlocks.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Common, Version=3.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\applicationBlock\Bin\Microsoft.Practices.EnterpriseLibrary.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Data, Version=5.0.414.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Microsoft.Practices.EnterpriseLibrary.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.ObjectBuilder, Version=1.0.51206.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>bin\Microsoft.Practices.ObjectBuilder.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DatActualizarCliente.cs" />
+    <Compile Include="ConexionBD.cs" />
+    <Compile Include="DataBase.cs" />
+    <Compile Include="DataHelper.cs" />
+    <Compile Include="DatReportes.cs" />
+    <Compile Include="DLCategoriaMecanica.cs" />
+    <Compile Include="DLClub.cs" />
+    <Compile Include="DLConfiguracion.cs" />
+    <Compile Include="DLMecanica.cs" />
+    <Compile Include="DLNivel.cs" />
+    <Compile Include="DLPeriodo.cs" />
+    <Compile Include="DLStatus.cs" />
+    <Compile Include="DLTipoPrecio.cs" />
+    <Compile Include="ModAutorizarPromociones.cs" />
+    <Compile Include="ModAñosMeses.cs" />
+    <Compile Include="ModBin.cs" />
+    <Compile Include="ModBitacoraAdminPromocion.cs" />
+    <Compile Include="ModCategorias.cs" />
+    <Compile Include="ModcatRoles.cs" />
+    <Compile Include="ModContenedorEstadisticas.cs" />
+    <Compile Include="ModContenedorMecanicas.cs" />
+    <Compile Include="ModContenedorUsuarios.cs" />
+    <Compile Include="ModCuponCargaTarjetasMasivasResult.cs" />
+    <Compile Include="ModCupones.cs" />
+    <Compile Include="ModDatosGrid.cs" />
+    <Compile Include="ModDiasPromoACBAse.cs" />
+    <Compile Include="ModDiasX.cs" />
+    <Compile Include="ModEquivalencias.cs" />
+    <Compile Include="ModGuardaDatosGrid.cs" />
+    <Compile Include="ModLaboratorio.cs" />
+    <Compile Include="ModLimitePeriodo.cs" />
+    <Compile Include="ModMecanica.cs" />
+    <Compile Include="ModMecanicaDEPorc.cs" />
+    <Compile Include="ModMenu.cs" />
+    <Compile Include="ModMenus.cs" />
+    <Compile Include="ModMetodos.cs" />
+    <Compile Include="ModNumeroAsignacionesCupon.cs" />
+    <Compile Include="ModProductos.cs" />
+    <Compile Include="ModProductosPOS.cs" />
+    <Compile Include="ModProductosPromoACBase.cs" />
+    <Compile Include="ModPromoACBaseValidaciones.cs" />
+    <Compile Include="ModPromocionDescuentos.cs" />
+    <Compile Include="ModPromociones.cs" />
+    <Compile Include="ModPromocionesACBase.cs" />
+    <Compile Include="ModPromocionesDEIniciadas.cs" />
+    <Compile Include="ModPromocionesDENoIniciadas.cs" />
+    <Compile Include="ModPromocionesNoIniciadas.cs" />
+    <Compile Include="ModPromoCupon.cs" />
+    <Compile Include="ModPromoDobleAcumulacion.cs" />
+    <Compile Include="ModPromoEscalonada.cs" />
+    <Compile Include="ModPromoMecanicas.cs" />
+    <Compile Include="ModPromosTipoTrigger.cs" />
+    <Compile Include="ModRoles.cs" />
+    <Compile Include="ModSegmento.cs" />
+    <Compile Include="ModsetNvasPromLaboratorio.cs" />
+    <Compile Include="ModSubMenu.cs" />
+    <Compile Include="ModSubmnusxRol.cs" />
+    <Compile Include="ModSucursales.cs" />
+    <Compile Include="ModSucursalesPromoACBase.cs" />
+    <Compile Include="ModTarjetasResult.cs" />
+    <Compile Include="ModTiemposPromedioPOS.cs" />
+    <Compile Include="ModTipoCupon.cs" />
+    <Compile Include="ModTipoPromocion.cs" />
+    <Compile Include="ModUsuarioapp.cs" />
+    <Compile Include="ModValidaPromocion.cs" />
+    <Compile Include="ParameterIn.cs" />
+    <Compile Include="ParameterOut.cs" />
+    <Compile Include="Parametros.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ReportesDatos.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\DataSQL\DataSQL.csproj">
+      <Project>{c17322d0-8ff5-4b57-bff1-3fdc1bd380c5}</Project>
+      <Name>DataSQL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Entidades\Entidades.csproj">
+      <Project>{9c834930-82a4-4b38-bef2-70e3c14e8c30}</Project>
+      <Name>Entidades</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

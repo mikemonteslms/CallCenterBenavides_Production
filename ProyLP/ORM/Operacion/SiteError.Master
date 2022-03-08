@@ -1,0 +1,31 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="SiteError.master.cs" Inherits="ORMOperacion.SiteError" %>
+
+<!DOCTYPE html>
+<html lang="es">
+<head id="Head1" runat="server">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>LMS Operaci&oacute;n</title>
+    <link id="styleSite" runat="server" rel="stylesheet" type="text/css" />
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+
+    <form id="Form1" runat="server">
+        <div class="content_error">
+            <div class="logo_error"></div>
+            <div class="logo_velsimex_error"></div>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+        <table width="100%">
+            <tr>
+                <td align="center">
+                    <span class="texto11 color_blanco">
+                        <label>Aviso de Privacidad&nbsp;&nbsp;|&nbsp;&nbsp;T&eacute;rminos y condiciones</label></span>
+                </td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>

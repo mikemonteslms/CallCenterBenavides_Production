@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11.25, 9.625" name="TablasGenerales">
+  <DataContextMoniker Name="/TablasGeneralesDataContext" />
+  <nestedChildShapes>
+    <classShape Id="732170aa-bcfb-459c-a63e-8477549b8ce5" absoluteBounds="6.25, 1.5, 2, 3.8862125651041666">
+      <DataClassMoniker Name="/TablasGeneralesDataContext/participante" />
+      <nestedChildShapes>
+        <elementListCompartment Id="bf7742fa-bc8b-4ba4-8bc3-226cc620525f" absoluteBounds="6.265, 1.96, 1.9700000000000002, 3.3262125651041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="e010b589-bde1-4704-9095-ef3fc0b5eae3" absoluteBounds="6.25, 7.25, 2, 2.1554996744791666">
+      <DataClassMoniker Name="/TablasGeneralesDataContext/aspnet_Users" />
+      <nestedChildShapes>
+        <elementListCompartment Id="40aedb13-2c46-4f01-985f-e9bec614290c" absoluteBounds="6.265, 7.71, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="ff983929-685a-44c8-9a42-fed1909e5ff9" absoluteBounds="9, 2.625, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/TablasGeneralesDataContext/participante_aspnet_User" />
+      <nestedChildShapes>
+        <elementListCompartment Id="29dad415-2a79-4917-b45f-1ed1865eefe0" absoluteBounds="9.015, 3.085, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="7affeac8-c4ae-4103-861b-036b91746a45" absoluteBounds="3.5, 1.5, 2, 3.1170068359375005">
+      <DataClassMoniker Name="/TablasGeneralesDataContext/distribuidor" />
+      <nestedChildShapes>
+        <elementListCompartment Id="bf4a28b9-d27e-4d86-a413-81dabb7bfd2e" absoluteBounds="3.515, 1.96, 1.9700000000000002, 2.5570068359375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="565b149d-af07-4bd8-a5b6-25e794887e0b" absoluteBounds="0.75, 1, 2, 4.6554182942708326">
+      <DataClassMoniker Name="/TablasGeneralesDataContext/programa" />
+      <nestedChildShapes>
+        <elementListCompartment Id="1992b92d-045a-477b-908c-92a639006074" absoluteBounds="0.765, 1.46, 1.9700000000000002, 4.095418294270833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(5.5 : 3.05850341796875); (6.25 : 3.05850341796875)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/TablasGeneralesDataContext/distribuidor/distribuidor_participante" />
+      <nodes>
+        <classShapeMoniker Id="7affeac8-c4ae-4103-861b-036b91746a45" />
+        <classShapeMoniker Id="732170aa-bcfb-459c-a63e-8477549b8ce5" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(8.25 : 8.32774983723958); (10 : 8.32774983723958); (10 : 4.20359537760417)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/TablasGeneralesDataContext/aspnet_Users/aspnet_Users_participante_aspnet_User" />
+      <nodes>
+        <classShapeMoniker Id="e010b589-bde1-4704-9095-ef3fc0b5eae3" />
+        <classShapeMoniker Id="ff983929-685a-44c8-9a42-fed1909e5ff9" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(8.25 : 3.41429768880208); (9 : 3.41429768880208)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/TablasGeneralesDataContext/participante/participante_participante_aspnet_User" />
+      <nodes>
+        <classShapeMoniker Id="732170aa-bcfb-459c-a63e-8477549b8ce5" />
+        <classShapeMoniker Id="ff983929-685a-44c8-9a42-fed1909e5ff9" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 3.05850341796875); (3.5 : 3.05850341796875)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/TablasGeneralesDataContext/programa/programa_distribuidor" />
+      <nodes>
+        <classShapeMoniker Id="565b149d-af07-4bd8-a5b6-25e794887e0b" />
+        <classShapeMoniker Id="7affeac8-c4ae-4103-861b-036b91746a45" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

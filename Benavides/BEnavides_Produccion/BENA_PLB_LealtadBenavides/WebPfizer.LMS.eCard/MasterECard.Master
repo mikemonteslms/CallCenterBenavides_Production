@@ -1,0 +1,377 @@
+<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MasterECard.Master.cs"
+    Inherits="WebPfizer.LMS.eCard.MasterECard" %>
+
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="cc1" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+   <script>
+       (function (i, s, o, g, r, a, m) {
+           i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+               (i[r].q = i[r].q || []).push(arguments)
+           }, i[r].l = 1 * new Date(); a = s.createElement(o),
+  m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+       })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+       ga('create', 'UA-73644905-1', 'auto');
+       ga('send', 'pageview');
+
+</script>
+
+    <!--<link rel="Shortcut Icon" href="Images\IconPfizerConmigo.ico" />-->
+    <title>Farmacias Benavides</title>
+    <link href="Styles/MisEstilos.css" rel="stylesheet" type="text/css" />
+    <link href="Styles/Calendar.css" rel="stylesheet" type="text/css" />
+    <link href="Styles/style.css" rel="stylesheet" type="text/css" media="screen" />
+    <link href="Styles/jcarousel-skin-tango.css" rel="stylesheet" type="text/css" media="screen" />
+    <link href="Estilos.css" rel="stylesheet" type="text/css" media="screen" />
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <script type="text/javascript" src="http://74.205.99.124/PLB/jquery.jcarousel.min.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            $('#mycarousel').jcarousel();
+        });
+    </script>
+</head>
+<body>
+    <center>
+        <form id="masterPage" runat="server">
+        <div id="content">
+            <asp:ScriptManager ID="ScriptManager1" EnablePartialRendering="true" runat="server"
+                EnableScriptGlobalization="true" EnableScriptLocalization="true">
+            </asp:ScriptManager>
+            <div>
+                <table style="background-image: url(Imagenes_Benavides/header-azul.jpg); background-repeat: no-repeat;
+                    height: 360px; width: 1020px">
+                    <tr>
+                        <td style="width: 60px; height: 50px">
+                        </td>
+                        <td style="width: 20px">
+                        </td>
+                        <td style="width: 100px">
+                            &nbsp;
+                        </td>
+                        <td style="width: 16px">
+                            &nbsp;
+                        </td>
+                        <td colspan="2" align="right">
+                            <img src="Imagenes_Benavides/logo-benavides.png" />
+                        </td>
+                        <td style="width: 60px">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="width: 60px; height: 120px">
+                        </td>
+                        <td colspan="5">
+                            <table>
+                                <tr>
+                                    <td>
+                                        <asp:Image ID="Image2" runat="server" ImageUrl="~/Imagenes_Benavides/nuevo-logo-bi.png" />
+                                    </td>
+                                    <td style="width: 220px">
+                                    </td>
+                                    <td style="text-align: right; vertical-align: top">
+                                        <table>
+                                            <tr>
+                                                <td style="height: 40px; vertical-align: top">
+                                                    <asp:ImageButton ID="btnCerrarSesion" runat="server" ImageUrl="~/Imagenes_Benavides/cerrar-btn.png"
+                                                        OnClick="btnCerrarSesion_Click" />
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td style="height: 50px">
+                                                    <table>
+                                                        <tr>
+                                                            <td style="width: 150px">
+                                                                <asp:ImageButton ID="btnInicio" runat="server" ImageUrl="~/Imagenes_Benavides/menu/inicio-btn.png"
+                                                                    OnClick="btnInicio_Click" />
+                                                            </td>
+                                                            <td style="width: 20px">
+                                                            </td>
+                                                            <td style="width: 150px">
+                                                                <asp:ImageButton ID="btnMisDatos" runat="server" ImageUrl="~/Imagenes_Benavides/menu/mis_datos-btn.png"
+                                                                    OnClick="btnMisDatos_Click" />
+                                                            </td>
+                                                            <td style="width: 20px">
+                                                            </td>
+                                                            <td style="width: 150px">
+                                                                <div>
+                                                                    <asp:ImageButton ID="imgBtnContacto1" runat="server" ImageUrl="~/Imagenes_Benavides/menu/contacto-btn.png"
+                                                                        OnClick="imgBtnContacto1_Click" />
+                                                                </div>
+                                                                <div id="DivMP" runat="server" visible="false">
+                                                                    <asp:Panel ID="PnlMP" runat="server" BackImageUrl="Imagenes_Benavides/contacto-fondo.png"
+                                                                        CssClass="panelModal">
+                                                                        <table class="tablaModal">
+                                                                            <tr>
+                                                                                <td>
+                                                                                    <br />
+                                                                                    <br />
+                                                                                    <br />
+                                                                                    <asp:Label ID="lblContactoMP" runat="server" Text="Contacto" CssClass="contacto"></asp:Label>
+                                                                                </td>
+                                                                                <td>
+                                                                                </td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td colspan="2" style="text-align: center">
+                                                                                    <asp:Label ID="lblMsnMP" runat="server" Text="Proporciona tus datos y escribe tus sugerencias o comentarios."
+                                                                                        Font-Names="Arial" ForeColor="#777E7F"></asp:Label>
+                                                                                </td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td colspan="2" style="text-align: center">
+                                                                                    <asp:Label ID="lblMsn2MP" runat="server" Text="Son obligatorios los datos marcados con "
+                                                                                        Font-Names="Arial" ForeColor="#777E7F"></asp:Label>
+                                                                                    <span style="color: #777e7f">(</span><font color="#e42313"><b>*</b></font><font color="#777e7f">)</font>
+                                                                                </td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td style="width: 140px; text-align: right">
+                                                                                    <br />
+                                                                                    <asp:Label ID="lblNombreMP" runat="server" Text="Nombre" CssClass="nombres"></asp:Label>
+                                                                                    <span style="color: #004a99">(</span><font color="#e42313"><b>*</b></font><font color="#004a99">)</font>
+                                                                                    <br />
+                                                                                    <br />
+                                                                                </td>
+                                                                                <td style="width: 220px; text-align: left">
+                                                                                    <br />
+                                                                                    <asp:TextBox ID="txtNombreMP" runat="server" Width="200px" MaxLength="200"></asp:TextBox>
+                                                                                    <br />
+                                                                                    <br />
+                                                                                </td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td style="width: 140px; text-align: right">
+                                                                                    <asp:Label ID="lblTarjetaMP" runat="server" Text="Tarjeta" CssClass="nombres"></asp:Label>
+                                                                                    <span style="color: #004a99">(</span><font color="#e42313"><b>*</b></font><font color="#004a99">)</font>
+                                                                                </td>
+                                                                                <td style="width: 220px; text-align: left">
+                                                                                    <asp:TextBox ID="txtTarjetaMP" runat="server" Width="200px" MaxLength="20"></asp:TextBox>
+                                                                                    <br />
+                                                                                    <br />
+                                                                                </td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td style="width: 140px; text-align: right">
+                                                                                    <asp:Label ID="lblCorreoMP" runat="server" Text="Correo electrónico" CssClass="nombres"></asp:Label>
+                                                                                    <span style="color: #004a99">(</span><font color="#e42313"><b>*</b></font><font color="#004a99">)</font>
+                                                                                </td>
+                                                                                <td style="width: 220px; text-align: left">
+                                                                                    <asp:TextBox ID="txtCorreoMP" runat="server" Width="200px" MaxLength="50"></asp:TextBox>
+                                                                                </td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td colspan="2" align="center">
+                                                                                    <asp:RegularExpressionValidator ID="REVMP" runat="server" ControlToValidate="txtCorreoMP"
+                                                                                        ErrorMessage="El correo electrónico no es válido" ValidationExpression="\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*"
+                                                                                        ValidationGroup="ValidaContacto"></asp:RegularExpressionValidator>
+                                                                                </td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td colspan="2" align="center">
+                                                                                    <br />
+                                                                                    <asp:TextBox ID="txtComentarioMP" runat="server" TextMode="MultiLine" Text="Escribe aqui tu comentario.."
+                                                                                        CssClass="cajaModal"></asp:TextBox>
+                                                                                    <br />
+                                                                                    <asp:Label ID="lblError" runat="server" Font-Names="Arial" ForeColor="Red"></asp:Label>
+                                                                                </td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td colspan="2" align="center">
+                                                                                    <asp:ImageButton ID="imgbtnEnviarMP" runat="server" ImageUrl="~/Imagenes_Benavides/botones/enviar-btn.png"
+                                                                                        OnClick="imgbtnEnviarMP_Click" ValidationGroup="ValidaContacto" />
+                                                                                    &nbsp &nbsp &nbsp
+                                                                                    <asp:ImageButton ID="imgBtnCancelarMP" runat="server" ImageUrl="~/Imagenes_Benavides/botones/cancelar-btn.png"
+                                                                                        OnClick="imgBtnCancelarMP_Click" />
+                                                                                </td>
+                                                                            </tr>
+                                                                        </table>
+                                                                    </asp:Panel>
+                                                                    <cc1:ModalPopupExtender ID="mpeContacto" runat="server" PopupControlID="PnlMP" TargetControlID="imgBtnContacto1"
+                                                                        DynamicServicePath="" BackgroundCssClass="modalBackground">
+                                                                    </cc1:ModalPopupExtender>
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+                                                    </table>
+                                                </td>
+                                                <td style="height: 20px">
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                        <td style="width: 40px">
+                            &nbsp;
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="width: 60px">
+                            &nbsp;
+                        </td>
+                        <td style="width: 20px">
+                        </td>
+                        <td style="width: 100px; vertical-align:top">
+                            <table style="background-image: url(Imagenes_Benavides/mi-perfil-fondo.jpg); background-repeat: no-repeat;"
+                                cellspacing="5px">
+                                <tr>
+                                    <td style="width: 100px" height="45px">
+                                        <asp:Label ID="Label2" runat="server" Text="Mi Perfil" Font-Bold="True" Font-Names="Lucida Bright"
+                                            ForeColor="#004A99"></asp:Label>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="width: 100px; height: 103px; vertical-align: top">
+                                        <img src="Imagenes_Benavides/tarjeta-azul.png" />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="width: 100px">
+                                        <br />
+                                        <font color="#004A99" style="">
+                                            <asp:Label ID="Label10" runat="server" Font-Names="Arial" Font-Size="10pt" Font-Italic="true"
+                                                Text="Hola"></asp:Label>
+                                            &nbsp </font>
+                                        <asp:Label ID="lblSaludo" runat="server" Font-Bold="True" Font-Names="Arial" ForeColor="#004A99"
+                                            Font-Size="10pt"></asp:Label>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="width: 100px">
+                                        <asp:Label ID="Label3" runat="server" Font-Bold="True" Font-Names="Arial" ForeColor="#777E7F"
+                                            Text="Número de tarjeta:" Font-Size="10pt"></asp:Label>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="width: 100px">
+                                        <asp:Label ID="lblTarjeta" runat="server" Font-Bold="True" Font-Names="Arial" ForeColor="#004A99"
+                                            Font-Size="10pt"></asp:Label>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="width: 100px">
+                                        <asp:Label ID="Label5" runat="server" Font-Bold="True" Font-Names="Arial" ForeColor="#777E7F"
+                                            Text="Nivel:" Font-Size="10pt"></asp:Label>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="width: 100px">
+                                        <asp:Label ID="lblNivel" runat="server" Font-Bold="True" Font-Names="Arial" ForeColor="#004A99"
+                                            Font-Size="10pt"></asp:Label>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="width: 100px">
+                                        <asp:Label ID="Label7" runat="server" Font-Bold="True" Font-Names="Arial" ForeColor="#777E7F"
+                                            Text="Saldo:" Font-Size="10pt"></asp:Label>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="width: 100px">
+                                        <asp:Label ID="lblSaldo" runat="server" Font-Bold="True" Font-Names="Arial" ForeColor="#004A99"
+                                            Font-Size="10pt"></asp:Label>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="width: 100px">
+                                        <br />
+                                        <br />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="width: 100px" align="center">
+                                        <asp:Image ID="Image1" runat="server" ImageUrl="~/Imagenes_Benavides/01800-img.png" />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="width: 100px">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="width: 100px">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="width: 100px">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="width: 100px">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="width: 100px">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="width: 100px">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="width: 100px">
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                        <td style="width: 16px">
+                            &nbsp;
+                        </td>
+                        <td valign="top">
+                            <table>
+                                <tr>
+                                    <td>
+                                        <asp:ContentPlaceHolder ID="ContentPlaceHolder" runat="server">
+                                            <%--<img src="Imagenes_Benavides/banner-puntos.jpg" />--%>
+                                            <img src="Imagenes_Benavides/banner-promociones.jpg" />
+                                        </asp:ContentPlaceHolder>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                        <td style="width: 20px">
+                        </td>
+                        <td style="width: 40px">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="7" style="text-align: center">
+                            <asp:HyperLink ID="HyperLink1" runat="server" Font-Bold="True" Target="_blank" Font-Names="Arial"
+                                Font-Size="8pt" ForeColor="#004A99" NavigateUrl="~/Terminos.aspx">Términos y Condiciones</asp:HyperLink>
+                            &nbsp <span style="font-family: Arial; font-weight: bold; font-size: 8px; color: #004A99">
+                                |</span> &nbsp
+                            <asp:HyperLink ID="HyperLink2" runat="server" Font-Bold="True" Target="_blank" Font-Names="Arial"
+                                Font-Size="8pt" ForeColor="#004A99" NavigateUrl="~/AvisoPrivacidad.aspx">Aviso de Privacidad</asp:HyperLink>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="7" style="text-align: center">
+                            <br />
+                            <asp:Label ID="lblCopy" runat="server" Font-Size="8pt" ForeColor="Silver" Text="Copyright © 2013 Farmacias Benavides. Todos los derechos reservados"></asp:Label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="width: 60px">
+                        </td>
+                        <td style="width: 20px">
+                        </td>
+                        <td style="width: 100px">
+                        </td>
+                        <td style="width: 16px">
+                        </td>
+                        <td colspan="2">
+                        </td>
+                        <td style="width: 60px">
+                        </td>
+                    </tr>
+                </table>
+                <br />
+            </div>
+        </div>
+        </form>
+    </center>
+</body>
+</html>

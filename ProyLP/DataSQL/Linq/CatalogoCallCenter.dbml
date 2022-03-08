@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="VipClubDB_stg" Class="CatalogoCallCenterDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=184.106.188.43;Initial Catalog=VipClubDB_stg;User ID=sa" SettingsObjectName="CallCenterDB.Properties.Settings" SettingsPropertyName="VipClubDB_stgConnectionString1" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.tipo_participante" Member="tipo_participante">
+    <Type Name="tipo_participante">
+      <Column Name="id" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="clave" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="descripcion" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="descripcion_larga" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="usuario_alta_id" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" CanBeNull="false" />
+      <Column Name="usuario_cambio_id" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="usuario_baja_id" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="fecha_alta" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="fecha_cambio" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="fecha_baja" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="country_code" Type="System.String" DbType="VarChar(5)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.country" Member="country">
+    <Type Name="country">
+      <Column Name="id" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="clave" Type="System.String" DbType="VarChar(128) NOT NULL" CanBeNull="false" />
+      <Column Name="country_code2" Type="System.String" DbType="NVarChar(2) NOT NULL" CanBeNull="false" />
+      <Column Name="descripcion" Type="System.String" DbType="VarChar(128) NOT NULL" CanBeNull="false" />
+      <Column Name="descripcion_larga" Type="System.String" DbType="VarChar(128) NOT NULL" CanBeNull="false" />
+      <Column Name="market_id" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" CanBeNull="false" />
+      <Column Name="usuario_alta_id" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="usuario_cambio_id" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="usuario_baja_id" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="fecha_alta" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="fecha_cambio" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="fecha_baja" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="country_distributor" Member="distributor" ThisKey="id" OtherKey="country_id" Type="distributor" />
+    </Type>
+  </Table>
+  <Table Name="dbo.distributor" Member="distributor">
+    <Type Name="distributor">
+      <Column Name="id" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="clave" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="descripcion" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="descripcion_larga" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="country_id" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" CanBeNull="false" />
+      <Column Name="usuario_alta_id" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="usuario_cambio_id" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="usuario_baja_id" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="fecha_alta" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="fecha_cambio" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="fecha_baja" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="url_imagen" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Association Name="country_distributor" Member="country" ThisKey="country_id" OtherKey="id" Type="country" IsForeignKey="true" />
+    </Type>
+  </Table>
+</Database>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<cadContacto
+    smtpServer="mailing.lms-la.com"
+    mailVSC="alina.sanchez@lms-la.com"
+    NameVSC="Alina Sánchez"
+    ToMail="contacto@triangulopremia.com.mx"
+    ToName="Triangulo Premia"
+    FromMail="contacto@triangulopremia.com.mx"
+    FromName="Contacto TrianguloPremia"
+    fromNamePassw="C0nt4ct0V3lsiw3x!"
+    Subject="COMENTARIO PAGINA TRIANGULO PREMIA"
+    smtpCredentials="contacto@triangulopremia.com.mx"
+    smptCredentialsPwd="C0nt4ct0V3lsiw3x!"
+    nombreAplicacion="Triangulo Premia"
+>
+</cadContacto>

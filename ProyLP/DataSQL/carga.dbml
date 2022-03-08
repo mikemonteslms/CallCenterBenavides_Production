@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="vipclubla" Class="cargaDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=204.71.233.8;Initial Catalog=vipclubla;Persist Security Info=True;User ID=w_vipclubla_dbo" SettingsObjectName="CallCenterDB.Properties.Settings" SettingsPropertyName="vipclublaConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.tmp_ventas" Member="TmpVentas">
+    <Type Name="TmpVentas">
+      <Column Name="REGION_NAME" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="MARKET_NAME" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="COUNTRY_NAME" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="DISTRIBUTOR_NAME" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="BRANCH_NAME" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="STORE_CODE" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="STORE_NAME" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="STORE_SUP_CODE" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="STORE_SUP_NAME" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="STORE_SALES_REP_CODE" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="STORE_SALES_REP_NAME" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="STORE_TRADE_CHANNEL" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="PRODUCT_DUN_CODE" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="PRODUCT_EAN_CODE" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="PRODUCT_DESCRIPTION" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="CATEGORY_DESCRIPTION" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="BRAND_DESCRIPTION" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="SALES_AMOUNT" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="SALES_QUANTITY" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="PERIOD" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="id" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.status_carga" Member="StatusCargas">
+    <Type Name="StatusCarga">
+      <Column Name="id" Type="System.Int32" DbType="Decimal(18,0) NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="clave" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="descripcion" Member="status" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="descripcion_larga" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="usuario_alta_id" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" CanBeNull="false" />
+      <Column Name="usuario_cambio_id" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="usuario_baja_id" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="fecha_alta" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="fecha_cambio" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="fecha_baja" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="StatusCarga_HistoricoCargaPartes" Member="HistoricoCargaPartes" ThisKey="id" OtherKey="status_carga_id" Type="HistoricoCargaPartes" />
+      <Association Name="HistoricoCarga_StatusCarga" Member="HistoricoCargas" ThisKey="id" OtherKey="status_carga_id" Type="HistoricoCargas" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tmp_ventas_error" Member="TmpVentasErrors">
+    <Type Name="TmpVentasError">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="datos" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.historico_carga" Member="HistoricoCargas">
+    <Type Name="HistoricoCargas">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="nombre" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="ext" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="mimetype" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="fecha" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="status_carga_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="HistoricoCarga_StatusCarga" Member="StatusCarga" ThisKey="status_carga_id" OtherKey="id" Type="StatusCarga" />
+      <Association Name="HistoricoCargas_HistoricoCargaPartes" Member="HistoricoCargaPartes" ThisKey="id" OtherKey="historico_carga_id" Type="HistoricoCargaPartes" />
+    </Type>
+  </Table>
+  <Table Name="dbo.historico_carga_partes" Member="HistoricoCargaPartes">
+    <Type Name="HistoricoCargaPartes">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="historico_carga_id" Type="System.Int32" DbType="Decimal(18,0) NOT NULL" CanBeNull="false" />
+      <Column Name="nombre" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="fecha" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="status_carga_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="HistoricoCargas_HistoricoCargaPartes" Member="HistoricoCargas" ThisKey="historico_carga_id" OtherKey="id" Type="HistoricoCargas" IsForeignKey="true" />
+      <Association Name="StatusCarga_HistoricoCargaPartes" Member="StatusCarga" ThisKey="status_carga_id" OtherKey="id" Type="StatusCarga" IsForeignKey="true" />
+    </Type>
+  </Table>
+</Database>

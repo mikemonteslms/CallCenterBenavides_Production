@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="vipclubla" Class="FuerzaVentasDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=204.71.233.8;Initial Catalog=vipclubla;Persist Security Info=True;User ID=w_vipclubla_dbo" SettingsObjectName="CallCenterDB.Properties.Settings" SettingsPropertyName="vipclublaConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.tmp_fuerza_ventas" Member="FuerzaVentas">
+    <Type Name="FuerzaVentas">
+      <Column Name="id" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="distributor_id" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="distributor_name" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="STORE_SALES_REP_CODE" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="STORE_SALES_REP_NAME" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="STORE_SUP_CODE" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="STORE_SUP_NAME" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="STORE_MANAGER_CODE" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="STORE_MANAGER_NAME" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="empleado_id" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="supervisor_id" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="gerente_id" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+    </Type>
+  </Table>
+</Database>

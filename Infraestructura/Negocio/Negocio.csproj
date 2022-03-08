@@ -1,0 +1,150 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{9B4F4765-82AA-4B38-A3B6-00D19F5CD3EC}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Negocio</RootNamespace>
+    <AssemblyName>Negocio</AssemblyName>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>2.0</OldToolsVersion>
+    <TargetFrameworkProfile />
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Runtime.Caching" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ActualizaDatos.cs" />
+    <Compile Include="AdministraPOS.cs" />
+    <Compile Include="AdministraPromocion.cs" />
+    <Compile Include="Banner.cs" />
+    <Compile Include="BLCategoriaMecanica.cs" />
+    <Compile Include="BLClub.cs" />
+    <Compile Include="BLMecanica.cs" />
+    <Compile Include="BLNivel.cs" />
+    <Compile Include="BLPeriodo.cs" />
+    <Compile Include="BLStatus.cs" />
+    <Compile Include="BLTipoPrecio.cs" />
+    <Compile Include="Cadenas.cs" />
+    <Compile Include="Catalogos.cs" />
+    <Compile Include="Clientes.cs" />
+    <Compile Include="Compras.cs" />
+    <Compile Include="cSHA1.cs" />
+    <Compile Include="Cupones.cs" />
+    <Compile Include="EstadisticasCC.cs" />
+    <Compile Include="Excepciones.cs" />
+    <Compile Include="ExceptionManager.cs" />
+    <Compile Include="HerramientasApp.cs" />
+    <Compile Include="HistoricoPac.cs" />
+    <Compile Include="Ips.cs" />
+    <Compile Include="Medicamentos.cs" />
+    <Compile Include="Menusapp.cs" />
+    <Compile Include="NegReportes.cs" />
+    <Compile Include="Programas.cs" />
+    <Compile Include="Promociones.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Reportes.cs" />
+    <Compile Include="ReportesNeg.cs" />
+    <Compile Include="TransaccionesNegocio.cs" />
+    <Compile Include="Usuariosapp.cs" />
+    <Compile Include="utilidades.cs" />
+    <Compile Include="ValidaAcceso.cs" />
+    <Compile Include="ValidaPassword.cs" />
+    <Compile Include="Sucursales.cs" />
+    <Compile Include="Tarjetas.cs" />
+    <Compile Include="Tickets.cs" />
+    <Compile Include="Transaccion.cs" />
+    <Compile Include="Validacion.cs" />
+    <Compile Include="ValidacionCotizacion.cs" />
+    <Compile Include="ValidarDatos.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\DataSQL\DataSQL.csproj">
+      <Project>{c17322d0-8ff5-4b57-bff1-3fdc1bd380c5}</Project>
+      <Name>DataSQL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Datos\Datos.csproj">
+      <Project>{ceb2e923-146b-4828-8fc3-b9cfb89f3586}</Project>
+      <Name>Datos</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Entidades\Entidades.csproj">
+      <Project>{30CBF117-9454-4F4A-B262-91CB31A40261}</Project>
+      <Name>Entidades</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

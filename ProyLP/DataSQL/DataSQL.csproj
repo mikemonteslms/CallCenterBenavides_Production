@@ -1,0 +1,456 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{5B02AEE7-FF3D-4115-BBD4-8025E7A5DD1D}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CallCenterDB</RootNamespace>
+    <AssemblyName>CallCenterDB</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.configuration">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Core">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Data.Linq">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.EnterpriseServices">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.ServiceModel">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.ApplicationServices">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Services">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Data">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Telerik.OpenAccess, Version=2014.3.1027.1, Culture=neutral, PublicKeyToken=7ce17eeaf1d59342">
+      <HintPath>C:\Program Files (x86)\Telerik\Data Access\bin\Telerik.OpenAccess.dll</HintPath>
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="Telerik.OpenAccess.35.Extensions, Version=2014.3.1027.1, Culture=neutral, PublicKeyToken=7ce17eeaf1d59342">
+      <HintPath>C:\Program Files (x86)\Telerik\Data Access\bin\Telerik.OpenAccess.35.Extensions.dll</HintPath>
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="Telerik.Web.UI, Version=2015.1.401.40, Culture=neutral, PublicKeyToken=121fae78165ba3d4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\lib\RCAJAX\2015.1.401.40\Telerik.Web.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Web.UI.Skins, Version=2015.1.401.40, Culture=neutral, PublicKeyToken=121fae78165ba3d4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\lib\RCAJAX\2015.1.401.40\Telerik.Web.UI.Skins.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Documents.Core, Version=2015.1.401.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\lib\RCAJAX\2015.1.401.40\AdditionalLibraries\Bin40\Telerik.Windows.Documents.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Documents.Flow, Version=2015.1.401.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\lib\RCAJAX\2015.1.401.40\AdditionalLibraries\Bin40\Telerik.Windows.Documents.Flow.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Documents.Spreadsheet, Version=2015.1.401.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\lib\RCAJAX\2015.1.401.40\AdditionalLibraries\Bin40\Telerik.Windows.Documents.Spreadsheet.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Documents.Spreadsheet.FormatProviders.OpenXml, Version=2015.1.401.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\lib\RCAJAX\2015.1.401.40\AdditionalLibraries\Bin40\Telerik.Windows.Documents.Spreadsheet.FormatProviders.OpenXml.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Maths, Version=2015.1.401.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\lib\RCAJAX\2015.1.401.40\AdditionalLibraries\Bin40\Telerik.Windows.Maths.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Zip, Version=2015.1.401.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\lib\RCAJAX\2015.1.401.40\AdditionalLibraries\Bin40\Telerik.Windows.Zip.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CatalogoLlamada.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CatalogoLlamada.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="csCarritoComprasMX.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="csDetalleCanjesParticipante.cs" />
+    <Compile Include="csEncuesta.cs" />
+    <Compile Include="csHistoricoVentas.cs" />
+    <Compile Include="csMecanicas.cs" />
+    <Compile Include="csMenu.cs" />
+    <Compile Include="csCalendario.cs" />
+    <Compile Include="csParticipante.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="csParticipanteComplemento.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="csParticipanteComplementoMX.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="csParticipanteVentas.cs" />
+    <Compile Include="csPremioBR.cs" />
+    <Compile Include="csPremioCO.cs" />
+    <Compile Include="csMailing.cs" />
+    <Compile Include="csCatalogoLlamada.cs" />
+    <Compile Include="csCountry.cs" />
+    <Compile Include="csHistoricoCanje.cs" />
+    <Compile Include="csPais.cs" />
+    <Compile Include="CryptoUtil.cs" />
+    <Compile Include="csCatalogo.cs" />
+    <Compile Include="csDataBase.cs" />
+    <Compile Include="csPrograma.cs" />
+    <Compile Include="csPromocion.cs" />
+    <Compile Include="csQuniela.cs" />
+    <Compile Include="csReporte.cs" />
+    <Compile Include="csDireccion.cs" />
+    <Compile Include="csDistribuidor.cs" />
+    <Compile Include="csError.cs" />
+    <Compile Include="csLlamada.cs" />
+    <Compile Include="csPremio.cs" />
+    <Compile Include="csPremioMX.cs" />
+    <Compile Include="csRMS.cs" />
+    <Compile Include="csTransaccion.cs" />
+    <Compile Include="csUsuario.cs" />
+    <Compile Include="csValidarTransacciones.cs" />
+    <Compile Include="cs_controlaccesos.cs" />
+    <Compile Include="DateAndTime.cs" />
+    <Compile Include="Datos.cs" />
+    <Compile Include="Entidades\Busqueda.cs" />
+    <Compile Include="Entidades\Calendario.cs" />
+    <Compile Include="Entidades\CalendarioCO.cs" />
+    <Compile Include="Entidades\Calendario_Canje.cs" />
+    <Compile Include="Entidades\Direccion.cs" />
+    <Compile Include="Entidades\Mailing.cs" />
+    <Compile Include="Entidades\RMS.cs" />
+    <Compile Include="FuerzaVentas.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FuerzaVentas.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="Funciones.cs" />
+    <Compile Include="GridViewExportUtil.cs" />
+    <Compile Include="HistoricoCanje.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HistoricoCanje.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="Linq\br\Tablas_br.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Tablas_br.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="Linq\Calendario.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Calendario.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="Linq\CalendarioCO.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CalendarioCO.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="Linq\CallCenter\TablasGenerales.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TablasGenerales.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="Linq\CatalogoCallCenter.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CatalogoCallCenter.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="Linq\Control_Acceso_Portal.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Control_Acceso_Portal.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="Linq\Mailing.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Mailing.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="Membership_Distributor.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Membership_Distributor.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="Participante.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Participante.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\mx.com.rewards\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferences Include="Web References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Linq\CalendarioCO.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>CalendarioCO.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Linq\CallCenter\TablasGenerales.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>TablasGenerales.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Linq\Control_Acceso_Portal.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>Control_Acceso_Portal.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="CatalogoLlamada.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>CatalogoLlamada.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="FuerzaVentas.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>FuerzaVentas.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="HistoricoCanje.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>HistoricoCanje.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Linq\br\Tablas_br.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>Tablas_br.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Linq\Calendario.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>Calendario.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Linq\CatalogoCallCenter.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>CatalogoCallCenter.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Linq\Mailing.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>Mailing.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Membership_Distributor.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>Membership_Distributor.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Participante.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>Participante.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\mx.com.rewards\Consulta.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\mx.com.rewards\ConsultaMultiple.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\mx.com.rewards\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\mx.com.rewards\rescan.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\mx.com.rewards\resga.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\mx.com.rewards\resguia.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\mx.com.rewards\resguiaNuevo.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\mx.com.rewards\responsePedido.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\mx.com.rewards\responsePedidoCM.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\mx.com.rewards\responsePedidoCS.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\mx.com.rewards\responsePedidoMR.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\mx.com.rewards\rud.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\mx.com.rewards\wsRewards_Service_2.wsdl" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="FuerzaVentas.dbml.layout">
+      <DependentUpon>FuerzaVentas.dbml</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Membership_Distributor.dbml.layout">
+      <DependentUpon>Membership_Distributor.dbml</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="HistoricoCanje.dbml.layout">
+      <DependentUpon>HistoricoCanje.dbml</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="CatalogoLlamada.dbml.layout">
+      <DependentUpon>CatalogoLlamada.dbml</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Participante.dbml.layout">
+      <DependentUpon>Participante.dbml</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Linq\Mailing.dbml.layout">
+      <DependentUpon>Mailing.dbml</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Linq\CatalogoCallCenter.dbml.layout">
+      <DependentUpon>CatalogoCallCenter.dbml</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Linq\Calendario.dbml.layout">
+      <DependentUpon>Calendario.dbml</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Linq\br\Tablas_br.dbml.layout">
+      <DependentUpon>Tablas_br.dbml</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Linq\Control_Acceso_Portal.dbml.layout">
+      <DependentUpon>Control_Acceso_Portal.dbml</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Linq\CalendarioCO.dbml.layout">
+      <DependentUpon>CalendarioCO.dbml</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferenceUrl Include="http://rewards.com.mx/wsrms/wsRewards_Service_2.php%3fwsdl">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\mx.com.rewards\</RelPath>
+      <UpdateFromURL>http://rewards.com.mx/wsrms/wsRewards_Service_2.php%3fwsdl</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>CallCenterDB_mx_com_rewards_wsRewards_Service_2</CachedSettingsPropName>
+    </WebReferenceUrl>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Linq\CallCenter\TablasGenerales.dbml.layout">
+      <DependentUpon>TablasGenerales.dbml</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ORM\ORMModel\ORMModel.csproj">
+      <Project>{c50145e6-a244-4f1f-b41f-90d1925b4a00}</Project>
+      <Name>ORMModel</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

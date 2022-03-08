@@ -1,0 +1,84 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="ORMOperacion.SiteMaster" %>
+
+<%@ Register Assembly="Telerik.Web.UI" Namespace="Telerik.Web.UI" TagPrefix="telerik" %>
+
+<!DOCTYPE html>
+<html lang="es">
+<head runat="server">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Operación</title>
+    <link rel="stylesheet" type="text/css" href="style/css/estilo-operacion.css" />
+    <style>
+        .RadMenu .rmHorizontal .rmText {
+            color: white !important;
+        }
+    </style>
+    <asp:ContentPlaceHolder ID="head" runat="server"></asp:ContentPlaceHolder>
+</head>
+<body>
+    <form runat="server">
+        <cc1:ToolkitScriptManager ID="ToolkitScriptManager1" runat="server">
+            <%--<Scripts>
+                <asp:ScriptReference Name="jquery" />
+                <asp:ScriptReference Name="jquery.ui.combined" />
+            </Scripts>--%>
+        </cc1:ToolkitScriptManager>
+        <header>
+            <telerik:RadToolTipManager ID="RadToolTipManager1" runat="server" OnAjaxUpdate="RadToolTipManager1_AjaxUpdate"
+                RelativeTo="Element" Width="365px" Height="180px" Style="z-index: 31000" Position="BottomLeft" ContentScrolling="Auto"
+                HideEvent="ManualClose" Title="" ShowEvent="OnClick">
+            </telerik:RadToolTipManager>
+            <div class="contentBack">
+
+                <asp:LoginView ID="LoginView1" runat="server" ViewStateMode="Disabled">
+                    <AnonymousTemplate>
+                        <ul>
+                        </ul>
+                    </AnonymousTemplate>
+                    <LoggedInTemplate>
+                        <br />
+                        <div class="contentLogged">
+                            <table width="100%" cellpadding="0" cellspacing="0">
+                                <tr>
+                                    <td>
+                                        <div class="logo"></div>
+                                    </td>
+                                    <td align="right">
+                                        <table width="100%" cellpadding="0" cellspacing="0">
+                                            <tr>
+                                                <td align="right">
+                                                    <asp:Image ID="imgLogo" runat="server" Width="119" Height="69" ImageUrl="style/images/Logo-LMS.png" />
+                                                </td>
+                                                <td>&nbsp;</td>
+                                            </tr>
+                                        </table>
+                                        <p class="texto11">
+                                            Hola, <a id="A1" runat="server" class="username" title="">
+                                                <asp:LoginName ID="LoginName1" runat="server" CssClass="username" />
+                                            </a>!                               
+                                                <asp:LoginStatus ID="LoginStatus1" runat="server" class="texto11" LogoutAction="Redirect" LogoutText="Cerrar sesi&oacute;n" LogoutPageUrl="~/Account/login.aspx" />
+                                        </p>
+                                        <p class="texto11">
+                                            <asp:HyperLink runat="server" NavigateUrl="#" onclick="return false;" Text="Cambiar Contraseña" ID="hlCambi">
+                                            </asp:HyperLink>
+                                        </p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2" class="borde_division"></td>
+                                </tr>
+                            </table>
+                        </div>
+                    </LoggedInTemplate>
+                </asp:LoginView>
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                </asp:ContentPlaceHolder>
+            </div>
+            <div id="foot" style="position: relative; top: 0px;">
+                <p class="texto11 color_blanco"></p>
+                <%-- <p class="texto11 color_blanco">Aviso de Privacidad | T&eacute;rminos y condiciones</p>--%>
+            </div>
+        </header>
+    </form>
+</body>
+</html>

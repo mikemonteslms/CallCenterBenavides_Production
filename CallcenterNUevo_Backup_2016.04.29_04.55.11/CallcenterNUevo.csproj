@@ -1,0 +1,825 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{D27C0DBD-763A-409F-92A9-9EDBAF32EAE7}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CallcenterNUevo</RootNamespace>
+    <AssemblyName>CallcenterNUevo</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AjaxControlToolkit">
+      <HintPath>..\LibExternas\AjaxControlToolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="AspNet.ScriptManager.bootstrap, Version=3.3.6.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\AspNet.ScriptManager.bootstrap.3.3.6\lib\net40\AspNet.ScriptManager.bootstrap.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ApplicationBlocks.Data">
+      <HintPath>..\LibExternas\Microsoft.ApplicationBlocks.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Common, Version=4.1.0.0, Culture=neutral, PublicKeyToken=e44a2bc38ed2c13c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\LibExternas\Microsoft.Practices.EnterpriseLibrary.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Data">
+      <HintPath>..\LibExternas\Microsoft.Practices.EnterpriseLibrary.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.ObjectBuilder, Version=1.0.51206.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\LibExternas\Microsoft.Practices.ObjectBuilder.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.ServiceLocation">
+      <HintPath>..\LibExternas\Microsoft.Practices.ServiceLocation.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity, Version=1.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\LibExternas\Microsoft.Practices.Unity.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity.Interception">
+      <HintPath>..\LibExternas\Microsoft.Practices.Unity.Interception.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="AspNet.ScriptManager.jQuery">
+      <HintPath>..\packages\AspNet.ScriptManager.jQuery.1.7.1\lib\net40\AspNet.ScriptManager.jQuery.dll</HintPath>
+    </Reference>
+    <Reference Include="AspNet.ScriptManager.jQuery.UI.Combined">
+      <HintPath>..\packages\AspNet.ScriptManager.jQuery.UI.Combined.1.8.20\lib\net40\AspNet.ScriptManager.jQuery.UI.Combined.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=4.4.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net40\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Providers, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+      <HintPath>..\packages\Microsoft.AspNet.Providers.Core.1.1\lib\net40\System.Web.Providers.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.Core, Version=4.0.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\DotNetOpenAuth.Core.4.0.3.12153\lib\net40-full\DotNetOpenAuth.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.OAuth, Version=4.0.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\DotNetOpenAuth.OAuth.Core.4.0.3.12153\lib\net40-full\DotNetOpenAuth.OAuth.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.OAuth.Consumer, Version=4.0.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\DotNetOpenAuth.OAuth.Consumer.4.0.3.12153\lib\net40-full\DotNetOpenAuth.OAuth.Consumer.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.OpenId, Version=4.0.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\DotNetOpenAuth.OpenId.Core.4.0.3.12153\lib\net40-full\DotNetOpenAuth.OpenId.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.OpenId.RelyingParty, Version=4.0.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\DotNetOpenAuth.OpenId.RelyingParty.4.0.3.12153\lib\net40-full\DotNetOpenAuth.OpenId.RelyingParty.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.AspNet, Version=4.0.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\DotNetOpenAuth.AspNet.4.0.3.12153\lib\net40-full\DotNetOpenAuth.AspNet.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Membership.OpenAuth, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+      <HintPath>..\packages\Microsoft.AspNet.Membership.OpenAuth.1.0.0\lib\net40\Microsoft.AspNet.Membership.OpenAuth.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Web.UI">
+      <HintPath>..\LibExternas\Telerik.Web.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Web.UI.Skins">
+      <HintPath>..\LibExternas\Telerik.Web.UI.Skins.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="About.aspx" />
+    <Content Include="Account\Login.aspx" />
+    <Content Include="AvisoPrivacidad.aspx" />
+    <Content Include="CALLCENTER\CancelaContactoXPadecimiento.aspx" />
+    <Content Include="CALLCENTER\RecuperarContraseñaCallCenter.aspx" />
+    <Content Include="CALLCENTER\RegistroClienteCallCenter.aspx" />
+    <Content Include="CALLCENTER\RegistroCliente_PrimeraVez.aspx" />
+    <Content Include="CALLCENTER\RegistroLLamadas.aspx" />
+    <Content Include="CALLCENTER\ReporteActivacion3MesesTl.aspx" />
+    <Content Include="CALLCENTER\ReporteActivacionXPeriodo.aspx" />
+    <Content Include="CALLCENTER\ReporteActivacionXPeriodoTl.aspx" />
+    <Content Include="CALLCENTER\ReporteAsistencias.aspx" />
+    <Content Include="CALLCENTER\ReporteReenvioMailB.aspx" />
+    <Content Include="CALLCENTER\ReportesBenavides.aspx" />
+    <Content Include="CALLCENTER\rptTraspasos.aspx" />
+    <Content Include="CALLCENTER\SaldoMovClienteCallCenter.aspx" />
+    <Content Include="CALLCENTER\ValidaCodigoTarjeta.aspx" />
+    <Content Include="CALLCENTER\WebForm1.aspx" />
+    <Content Include="Contact.aspx" />
+    <Content Include="Content\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\EstilosBenavides.css" />
+    <Content Include="Content\MisEstilos.css" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Content\themes\base\images\ui-icons_222222_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_454545_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_888888_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Content\themes\base\jquery-ui.css" />
+    <Content Include="Content\themes\base\jquery.ui.accordion.css" />
+    <Content Include="Content\themes\base\jquery.ui.all.css" />
+    <Content Include="Content\themes\base\jquery.ui.autocomplete.css" />
+    <Content Include="Content\themes\base\jquery.ui.base.css" />
+    <Content Include="Content\themes\base\jquery.ui.button.css" />
+    <Content Include="Content\themes\base\jquery.ui.core.css" />
+    <Content Include="Content\themes\base\jquery.ui.datepicker.css" />
+    <Content Include="Content\themes\base\jquery.ui.dialog.css" />
+    <Content Include="Content\themes\base\jquery.ui.progressbar.css" />
+    <Content Include="Content\themes\base\jquery.ui.resizable.css" />
+    <Content Include="Content\themes\base\jquery.ui.selectable.css" />
+    <Content Include="Content\themes\base\jquery.ui.slider.css" />
+    <Content Include="Content\themes\base\jquery.ui.tabs.css" />
+    <Content Include="Content\themes\base\jquery.ui.theme.css" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_222222_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_454545_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_888888_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Content\themes\base\minified\jquery-ui.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.accordion.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.autocomplete.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.button.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.core.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.datepicker.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.dialog.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.progressbar.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.resizable.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.selectable.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.slider.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.tabs.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.theme.min.css" />
+    <Content Include="Controles\ControlMnu\MnuManager.ascx" />
+    <Content Include="fonts\FuturaStd-Bold.svg" />
+    <Content Include="fonts\FuturaStd-Book.svg" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="fonts\interstate_light-webfont.svg" />
+    <Content Include="Imagenes\acceso-registro-header.jpg" />
+    <Content Include="Imagenes\aero_light.gif" />
+    <Content Include="Imagenes\Logo.gif" />
+    <Content Include="Imagenes\Logo.png" />
+    <Content Include="Imagenes\Logo1.png" />
+    <Content Include="Imagenes_Benavides\01800-img.png" />
+    <Content Include="Imagenes_Benavides\1-Micrositio-Benavides_Acceso.jpg" />
+    <Content Include="Imagenes_Benavides\3-Micrositio-Benavides_Inicio.jpg" />
+    <Content Include="Imagenes_Benavides\acceso-registro-header.jpg" />
+    <Content Include="Imagenes_Benavides\banner-prueba.png" />
+    <Content Include="Imagenes_Benavides\banner-puntos.jpg" />
+    <Content Include="Imagenes_Benavides\banners\banner-formula.jpg" />
+    <Content Include="Imagenes_Benavides\banners\Banner-principal-BI.jpg" />
+    <Content Include="Imagenes_Benavides\banners\banner-promociones.jpg" />
+    <Content Include="Imagenes_Benavides\banners\banner-serviciodomicilio.jpg" />
+    <Content Include="Imagenes_Benavides\banners\banner-umeb.jpg" />
+    <Content Include="Imagenes_Benavides\Bebes.png" />
+    <Content Include="Imagenes_Benavides\Belleza.png" />
+    <Content Include="Imagenes_Benavides\benavides.png" />
+    <Content Include="Imagenes_Benavides\beneficios-back.jpg" />
+    <Content Include="Imagenes_Benavides\beneficios-btn-BI.jpg" />
+    <Content Include="Imagenes_Benavides\beneficios-btn.jpg" />
+    <Content Include="Imagenes_Benavides\beneficios-fondo-BI.jpg" />
+    <Content Include="Imagenes_Benavides\botones\align bottom.png" />
+    <Content Include="Imagenes_Benavides\botones\align bottom_Menu.png" />
+    <Content Include="Imagenes_Benavides\botones\beneficios-btn-BI.PNG" />
+    <Content Include="Imagenes_Benavides\botones\btn-guardar.png" />
+    <Content Include="Imagenes_Benavides\botones\BuscarF.png" />
+    <Content Include="Imagenes_Benavides\botones\cambiarcontrasena-btn-over.png" />
+    <Content Include="Imagenes_Benavides\botones\cambiarcontrasena-btn.png" />
+    <Content Include="Imagenes_Benavides\botones\cancelar-btn-over.png" />
+    <Content Include="Imagenes_Benavides\botones\cancelar-btn.png" />
+    <Content Include="Imagenes_Benavides\botones\cd.png" />
+    <Content Include="Imagenes_Benavides\botones\cerrar-btn-over.jpg" />
+    <Content Include="Imagenes_Benavides\botones\cerrar-btn-over.png" />
+    <Content Include="Imagenes_Benavides\botones\cerrar-btn.jpg" />
+    <Content Include="Imagenes_Benavides\botones\cerrar-btn.png" />
+    <Content Include="Imagenes_Benavides\botones\cerrarsesion-btn-over.jpg" />
+    <Content Include="Imagenes_Benavides\botones\cerrarsesion-btn.jpg" />
+    <Content Include="Imagenes_Benavides\botones\chat.png" />
+    <Content Include="Imagenes_Benavides\botones\Default.png" />
+    <Content Include="Imagenes_Benavides\botones\del.ico.us.png" />
+    <Content Include="Imagenes_Benavides\botones\del.ico.us_Menu.png" />
+    <Content Include="Imagenes_Benavides\botones\entrar-btn-over.png" />
+    <Content Include="Imagenes_Benavides\botones\entrar-btn.png" />
+    <Content Include="Imagenes_Benavides\botones\enviar-btn-over.png" />
+    <Content Include="Imagenes_Benavides\botones\enviar-btn.png" />
+    <Content Include="Imagenes_Benavides\botones\Excel.png" />
+    <Content Include="Imagenes_Benavides\botones\farma.png" />
+    <Content Include="Imagenes_Benavides\botones\farma2.png" />
+    <Content Include="Imagenes_Benavides\botones\farma3.png" />
+    <Content Include="Imagenes_Benavides\botones\farma4.png" />
+    <Content Include="Imagenes_Benavides\botones\farma5.png" />
+    <Content Include="Imagenes_Benavides\botones\files_add.png" />
+    <Content Include="Imagenes_Benavides\botones\files_add_Menu.png" />
+    <Content Include="Imagenes_Benavides\botones\home.png" />
+    <Content Include="Imagenes_Benavides\botones\home_Menu.png" />
+    <Content Include="Imagenes_Benavides\botones\icn-1.png" />
+    <Content Include="Imagenes_Benavides\botones\icn-2.png" />
+    <Content Include="Imagenes_Benavides\botones\icn-3.png" />
+    <Content Include="Imagenes_Benavides\botones\icn-4.png" />
+    <Content Include="Imagenes_Benavides\botones\icn-5.png" />
+    <Content Include="Imagenes_Benavides\botones\icn-6.png" />
+    <Content Include="Imagenes_Benavides\botones\icn-7.png" />
+    <Content Include="Imagenes_Benavides\botones\icn-8.png" />
+    <Content Include="Imagenes_Benavides\botones\info.png" />
+    <Content Include="Imagenes_Benavides\botones\keyboard.png" />
+    <Content Include="Imagenes_Benavides\botones\masinf-btn-over.png" />
+    <Content Include="Imagenes_Benavides\botones\masinf-btn.png" />
+    <Content Include="Imagenes_Benavides\botones\minimize.png" />
+    <Content Include="Imagenes_Benavides\botones\minimize_Menu.png" />
+    <Content Include="Imagenes_Benavides\botones\mouse.png" />
+    <Content Include="Imagenes_Benavides\botones\network.png" />
+    <Content Include="Imagenes_Benavides\botones\network_Menu.png" />
+    <Content Include="Imagenes_Benavides\botones\next-horizontal.png" />
+    <Content Include="Imagenes_Benavides\botones\next-vertical.png" />
+    <Content Include="Imagenes_Benavides\botones\phone.png" />
+    <Content Include="Imagenes_Benavides\botones\ppActivaPromo.png" />
+    <Content Include="Imagenes_Benavides\botones\prev-horizontal.png" />
+    <Content Include="Imagenes_Benavides\botones\registrar-btn-over.png" />
+    <Content Include="Imagenes_Benavides\botones\registrar-btn.png" />
+    <Content Include="Imagenes_Benavides\botones\restart.png" />
+    <Content Include="Imagenes_Benavides\botones\right_top.png" />
+    <Content Include="Imagenes_Benavides\botones\right_top_Menu.png" />
+    <Content Include="Imagenes_Benavides\botones\scroll left.png" />
+    <Content Include="Imagenes_Benavides\botones\search.png" />
+    <Content Include="Imagenes_Benavides\botones\search_Menu.png" />
+    <Content Include="Imagenes_Benavides\botones\shopping cart.png" />
+    <Content Include="Imagenes_Benavides\botones\shopping cart_Menu.png" />
+    <Content Include="Imagenes_Benavides\botones\undo.png" />
+    <Content Include="Imagenes_Benavides\botones\undo_Menu.png" />
+    <Content Include="Imagenes_Benavides\botones\waiting.png" />
+    <Content Include="Imagenes_Benavides\botones\write 1.png" />
+    <Content Include="Imagenes_Benavides\btnEntrar.png" />
+    <Content Include="Imagenes_Benavides\cambiar-contraseña-fondo.png" />
+    <Content Include="Imagenes_Benavides\cerrar-btn-over.png" />
+    <Content Include="Imagenes_Benavides\cerrar-btn.png" />
+    <Content Include="Imagenes_Benavides\cerrarsesion-btn-over.png" />
+    <Content Include="Imagenes_Benavides\cerrarsesion-btn.png" />
+    <Content Include="Imagenes_Benavides\como-ganas-back.jpg" />
+    <Content Include="Imagenes_Benavides\como-ganas-btn.jpg" />
+    <Content Include="Imagenes_Benavides\como-ganas-puntos.jpg" />
+    <Content Include="Imagenes_Benavides\como-ganas.jpg" />
+    <Content Include="Imagenes_Benavides\contacto-fondo.png" />
+    <Content Include="Imagenes_Benavides\cuadro1.png" />
+    <Content Include="Imagenes_Benavides\cuadro2.png" />
+    <Content Include="Imagenes_Benavides\cuadro3.png" />
+    <Content Include="Imagenes_Benavides\cuidado.png" />
+    <Content Include="Imagenes_Benavides\edocuenta-bi_1_01.jpg" />
+    <Content Include="Imagenes_Benavides\edocuenta-bi_1_02.jpg" />
+    <Content Include="Imagenes_Benavides\edocuenta-bi_1_03.jpg" />
+    <Content Include="Imagenes_Benavides\edocuenta-bi_1_04.jpg" />
+    <Content Include="Imagenes_Benavides\edocuenta-bi_1_05.jpg" />
+    <Content Include="Imagenes_Benavides\edocuenta-bi_1_06.jpg" />
+    <Content Include="Imagenes_Benavides\edocuenta-bi_1_07.jpg" />
+    <Content Include="Imagenes_Benavides\edocuenta-bi_1_08.jpg" />
+    <Content Include="Imagenes_Benavides\edocuenta-bi_1_09.jpg" />
+    <Content Include="Imagenes_Benavides\edocuenta-bi_1_10.jpg" />
+    <Content Include="Imagenes_Benavides\edocuenta-bi_1_11.jpg" />
+    <Content Include="Imagenes_Benavides\edocuenta-bi_1_12.jpg" />
+    <Content Include="Imagenes_Benavides\edocuenta-bi_1_13.jpg" />
+    <Content Include="Imagenes_Benavides\edocuenta-bi_1_14.jpg" />
+    <Content Include="Imagenes_Benavides\edocuenta-bi_1_15.jpg" />
+    <Content Include="Imagenes_Benavides\edocuenta-bi_1_16.jpg" />
+    <Content Include="Imagenes_Benavides\edocuenta-bi_1_17.jpg" />
+    <Content Include="Imagenes_Benavides\edocuenta-bi_1_18.jpg" />
+    <Content Include="Imagenes_Benavides\edocuenta-bi_1_19.jpg" />
+    <Content Include="Imagenes_Benavides\edocuenta-bi_1_20.jpg" />
+    <Content Include="Imagenes_Benavides\edocuenta-bi_1_21.jpg" />
+    <Content Include="Imagenes_Benavides\edocuenta-bi_1_22.jpg" />
+    <Content Include="Imagenes_Benavides\edocuenta-bi_1_23.jpg" />
+    <Content Include="Imagenes_Benavides\farma.png" />
+    <Content Include="Imagenes_Benavides\fondoBco.jpg" />
+    <Content Include="Imagenes_Benavides\fondoConfirmaContraseña.jpg" />
+    <Content Include="Imagenes_Benavides\header-azul.jpg" />
+    <Content Include="Imagenes_Benavides\header-azul.png" />
+    <Content Include="Imagenes_Benavides\header-tabla.png" />
+    <Content Include="Imagenes_Benavides\icono-telefono.png" />
+    <Content Include="Imagenes_Benavides\Index.png" />
+    <Content Include="Imagenes_Benavides\informacion-BI.jpg" />
+    <Content Include="Imagenes_Benavides\Libreta.png" />
+    <Content Include="Imagenes_Benavides\logo-benavides.png" />
+    <Content Include="Imagenes_Benavides\logo-beneficio-int.png" />
+    <Content Include="Imagenes_Benavides\LogoAzul.png" />
+    <Content Include="Imagenes_Benavides\LogoFarBen.jpg" />
+    <Content Include="Imagenes_Benavides\Man.png" />
+    <Content Include="Imagenes_Benavides\masinf-btn-over.png" />
+    <Content Include="Imagenes_Benavides\masinf-btn.png" />
+    <Content Include="Imagenes_Benavides\MasterNueva\11-contacto\bg-contacto-495x560.png" />
+    <Content Include="Imagenes_Benavides\MasterNueva\13-cambiar_contrasena\bg-cambiar_contrasena-495x425.png" />
+    <Content Include="Imagenes_Benavides\MasterNueva\13-cambiar_contrasena\btn-guardar-hover.jpg" />
+    <Content Include="Imagenes_Benavides\MasterNueva\13-cambiar_contrasena\btn-guardar.jpg" />
+    <Content Include="Imagenes_Benavides\MasterNueva\14-club_peques_que_es\btn-registrate-aqui-hover.png" />
+    <Content Include="Imagenes_Benavides\MasterNueva\14-club_peques_que_es\btn-registrate-aqui.png" />
+    <Content Include="Imagenes_Benavides\MasterNueva\14-club_peques_que_es\img-clubpeques-que-es-555x420.jpg" />
+    <Content Include="Imagenes_Benavides\MasterNueva\14-club_peques_que_es\submenu-clubpeques\submenu-clubpeques_1-hover.jpg" />
+    <Content Include="Imagenes_Benavides\MasterNueva\14-club_peques_que_es\submenu-clubpeques\submenu-clubpeques_2-hover.jpg" />
+    <Content Include="Imagenes_Benavides\MasterNueva\14-club_peques_que_es\submenu-clubpeques\submenu-clubpeques_3-hover.jpg" />
+    <Content Include="Imagenes_Benavides\MasterNueva\14-club_peques_que_es\submenu-clubpeques\submenu-club_peques_1.jpg" />
+    <Content Include="Imagenes_Benavides\MasterNueva\14-club_peques_que_es\submenu-clubpeques\submenu-club_peques_2.jpg" />
+    <Content Include="Imagenes_Benavides\MasterNueva\14-club_peques_que_es\submenu-clubpeques\submenu-club_peques_3.jpg" />
+    <Content Include="Imagenes_Benavides\MasterNueva\2-mis_datos\btn-actualizar-datos-hover.jpg" />
+    <Content Include="Imagenes_Benavides\MasterNueva\2-mis_datos\btn-actualizar-datos.jpg" />
+    <Content Include="Imagenes_Benavides\MasterNueva\2-mis_datos\btn-cambiar-contasena-hover.jpg" />
+    <Content Include="Imagenes_Benavides\MasterNueva\2-mis_datos\btn-cambiar-contasena.jpg" />
+    <Content Include="Imagenes_Benavides\MasterNueva\2-mis_datos\img-mis_datos-85x420.png" />
+    <Content Include="Imagenes_Benavides\MasterNueva\21-descuentos_laboratorios\img-tabla-descuentos\img-tabla-descuentos_01.jpg" />
+    <Content Include="Imagenes_Benavides\MasterNueva\21-descuentos_laboratorios\img-tabla-descuentos\img-tabla-descuentos_02.jpg" />
+    <Content Include="Imagenes_Benavides\MasterNueva\21-descuentos_laboratorios\img-tabla-descuentos\img-tabla-descuentos_03.jpg" />
+    <Content Include="Imagenes_Benavides\MasterNueva\21-descuentos_laboratorios\img-tabla-descuentos\img-tabla-descuentos_04.jpg" />
+    <Content Include="Imagenes_Benavides\MasterNueva\21-descuentos_laboratorios\img-tabla-descuentos\img-tabla-descuentos_05.jpg" />
+    <Content Include="Imagenes_Benavides\MasterNueva\22-club_peques_promo\img-clubpeques-promo-555x420.jpg" />
+    <Content Include="Imagenes_Benavides\MasterNueva\23-popup_atencion\bg-contacto-500x500.png" />
+    <Content Include="Imagenes_Benavides\MasterNueva\24-iconos_cumpleanios\Circle_Blue.png" />
+    <Content Include="Imagenes_Benavides\MasterNueva\24-iconos_cumpleanios\Circle_Green.png" />
+    <Content Include="Imagenes_Benavides\MasterNueva\24-iconos_cumpleanios\Circle_Grey.png" />
+    <Content Include="Imagenes_Benavides\MasterNueva\24-iconos_cumpleanios\Circle_Orange.png" />
+    <Content Include="Imagenes_Benavides\MasterNueva\24-iconos_cumpleanios\Circle_Red.png" />
+    <Content Include="Imagenes_Benavides\MasterNueva\24-iconos_cumpleanios\Circle_Yellow.png" />
+    <Content Include="Imagenes_Benavides\MasterNueva\3-mis_compras\img-tabla-compras\img-tabla-compras_01.jpg" />
+    <Content Include="Imagenes_Benavides\MasterNueva\3-mis_compras\img-tabla-compras\img-tabla-compras_02.jpg" />
+    <Content Include="Imagenes_Benavides\MasterNueva\3-mis_compras\img-tabla-compras\img-tabla-compras_03.jpg" />
+    <Content Include="Imagenes_Benavides\MasterNueva\3-mis_compras\img-tabla-compras\img-tabla-compras_04.jpg" />
+    <Content Include="Imagenes_Benavides\MasterNueva\3-mis_compras\img-tabla-compras\img-tabla-compras_05.jpg" />
+    <Content Include="Imagenes_Benavides\MasterNueva\3-mis_compras\img-tabla-compras\img-tabla-compras_06.jpg" />
+    <Content Include="Imagenes_Benavides\MasterNueva\3-mis_compras\img-tabla-compras\Separador.jpg" />
+    <Content Include="Imagenes_Benavides\MasterNueva\4-mis_beneficios_blue\btn-beneficios-blue-235x60-5-hover.png" />
+    <Content Include="Imagenes_Benavides\MasterNueva\4-mis_beneficios_blue\btn-beneficios-blue-235x60-5.png" />
+    <Content Include="Imagenes_Benavides\MasterNueva\4-mis_beneficios_blue\btn-beneficios-blue-235x60-6-hover.png" />
+    <Content Include="Imagenes_Benavides\MasterNueva\4-mis_beneficios_blue\btn-beneficios-blue-235x60-6.png" />
+    <Content Include="Imagenes_Benavides\MasterNueva\4-mis_beneficios_blue\img-beneficios-blue-235x60-1.png" />
+    <Content Include="Imagenes_Benavides\MasterNueva\4-mis_beneficios_blue\img-beneficios-blue-235x60-2.png" />
+    <Content Include="Imagenes_Benavides\MasterNueva\4-mis_beneficios_blue\img-beneficios-blue-235x60-3.png" />
+    <Content Include="Imagenes_Benavides\MasterNueva\4-mis_beneficios_blue\img-beneficios-blue-235x60-4.png" />
+    <Content Include="Imagenes_Benavides\MasterNueva\4-mis_beneficios_blue\img-beneficios-blue.png" />
+    <Content Include="Imagenes_Benavides\MasterNueva\4-mis_beneficios_blue\submenu-mis_beneficios\submenu-mis_beneficios_1-hover.jpg" />
+    <Content Include="Imagenes_Benavides\MasterNueva\4-mis_beneficios_blue\submenu-mis_beneficios\submenu-mis_beneficios_1.jpg" />
+    <Content Include="Imagenes_Benavides\MasterNueva\4-mis_beneficios_blue\submenu-mis_beneficios\submenu-mis_beneficios_2-hover.jpg" />
+    <Content Include="Imagenes_Benavides\MasterNueva\4-mis_beneficios_blue\submenu-mis_beneficios\submenu-mis_beneficios_2.jpg" />
+    <Content Include="Imagenes_Benavides\MasterNueva\4-mis_beneficios_blue\submenu-mis_beneficios\submenu-mis_beneficios_3-hover.jpg" />
+    <Content Include="Imagenes_Benavides\MasterNueva\4-mis_beneficios_blue\submenu-mis_beneficios\submenu-mis_beneficios_3.jpg" />
+    <Content Include="Imagenes_Benavides\MasterNueva\5-mis_beneficios_platino\btn-beneficios-platino-235x60-10-hover.png" />
+    <Content Include="Imagenes_Benavides\MasterNueva\5-mis_beneficios_platino\btn-beneficios-platino-235x60-10.png" />
+    <Content Include="Imagenes_Benavides\MasterNueva\5-mis_beneficios_platino\btn-beneficios-platino-235x60-5-hover.png" />
+    <Content Include="Imagenes_Benavides\MasterNueva\5-mis_beneficios_platino\btn-beneficios-platino-235x60-5.png" />
+    <Content Include="Imagenes_Benavides\MasterNueva\5-mis_beneficios_platino\btn-beneficios-platino-235x60-6-hover.png" />
+    <Content Include="Imagenes_Benavides\MasterNueva\5-mis_beneficios_platino\btn-beneficios-platino-235x60-6.png" />
+    <Content Include="Imagenes_Benavides\MasterNueva\5-mis_beneficios_platino\btn-beneficios-platino-235x60-7-hover.png" />
+    <Content Include="Imagenes_Benavides\MasterNueva\5-mis_beneficios_platino\btn-beneficios-platino-235x60-7.png" />
+    <Content Include="Imagenes_Benavides\MasterNueva\5-mis_beneficios_platino\btn-beneficios-platino-235x60-8-hover.png" />
+    <Content Include="Imagenes_Benavides\MasterNueva\5-mis_beneficios_platino\btn-beneficios-platino-235x60-8.png" />
+    <Content Include="Imagenes_Benavides\MasterNueva\5-mis_beneficios_platino\btn-beneficios-platino-235x60-9-hover.png" />
+    <Content Include="Imagenes_Benavides\MasterNueva\5-mis_beneficios_platino\btn-beneficios-platino-235x60-9.png" />
+    <Content Include="Imagenes_Benavides\MasterNueva\5-mis_beneficios_platino\img-beneficios-platino-235x60-1.png" />
+    <Content Include="Imagenes_Benavides\MasterNueva\5-mis_beneficios_platino\img-beneficios-platino-235x60-2.png" />
+    <Content Include="Imagenes_Benavides\MasterNueva\5-mis_beneficios_platino\img-beneficios-platino-235x60-3.png" />
+    <Content Include="Imagenes_Benavides\MasterNueva\5-mis_beneficios_platino\img-beneficios-platino-235x60-4.png" />
+    <Content Include="Imagenes_Benavides\MasterNueva\5-mis_beneficios_platino\img-beneficios-platino.png" />
+    <Content Include="Imagenes_Benavides\MasterNueva\6-login\btn-entrar-hover.jpg" />
+    <Content Include="Imagenes_Benavides\MasterNueva\6-login\btn-entrar.jpg" />
+    <Content Include="Imagenes_Benavides\MasterNueva\6-login\fondo.jpg" />
+    <Content Include="Imagenes_Benavides\MasterNueva\6-login\img-login-bienvenida-420x100.png" />
+    <Content Include="Imagenes_Benavides\MasterNueva\6-login\img-login-tarjeta-blue-400x650.png" />
+    <Content Include="Imagenes_Benavides\MasterNueva\7-olvidaste_contrasena\btn-enviar-hover.jpg" />
+    <Content Include="Imagenes_Benavides\MasterNueva\7-olvidaste_contrasena\btn-enviar.jpg" />
+    <Content Include="Imagenes_Benavides\MasterNueva\7-olvidaste_contrasena\btn-regresar-hover.jpg" />
+    <Content Include="Imagenes_Benavides\MasterNueva\7-olvidaste_contrasena\btn-regresar.jpg" />
+    <Content Include="Imagenes_Benavides\MasterNueva\8-registro\bg-registro-clubpeques\bg-registro-clubpeques_1.png" />
+    <Content Include="Imagenes_Benavides\MasterNueva\8-registro\bg-registro-clubpeques\bg-registro-clubpeques_2.png" />
+    <Content Include="Imagenes_Benavides\MasterNueva\8-registro\bg-registro-clubpeques\bg-registro-clubpeques_3.png" />
+    <Content Include="Imagenes_Benavides\MasterNueva\8-registro\btn-aceptar-hover.jpg" />
+    <Content Include="Imagenes_Benavides\MasterNueva\8-registro\btn-aceptar.jpg" />
+    <Content Include="Imagenes_Benavides\MasterNueva\8-registro\img-categorias-25x25-1.png" />
+    <Content Include="Imagenes_Benavides\MasterNueva\8-registro\img-categorias-25x25-2.png" />
+    <Content Include="Imagenes_Benavides\MasterNueva\8-registro\img-categorias-25x25-3.png" />
+    <Content Include="Imagenes_Benavides\MasterNueva\8-registro\img-categorias-25x25-4.png" />
+    <Content Include="Imagenes_Benavides\MasterNueva\8-registro\img-categorias-25x25-5.png" />
+    <Content Include="Imagenes_Benavides\MasterNueva\8-registro\img-categorias-logo-140x15.png" />
+    <Content Include="Imagenes_Benavides\MasterNueva\8-registro\img-check-25x25.png" />
+    <Content Include="Imagenes_Benavides\MasterNueva\8-registro\img-checkbox-25x25-off.png" />
+    <Content Include="Imagenes_Benavides\MasterNueva\8-registro\img-checkbox-25x25-on.png" />
+    <Content Include="Imagenes_Benavides\MasterNueva\8-registro\img-circulo-25x25-hover.png" />
+    <Content Include="Imagenes_Benavides\MasterNueva\8-registro\img-circulo-25x25.png" />
+    <Content Include="Imagenes_Benavides\MasterNueva\8-registro\img-clubpeques-logo-200x140.png" />
+    <Content Include="Imagenes_Benavides\MasterNueva\8-registro\img-combo-10x17.png" />
+    <Content Include="Imagenes_Benavides\MasterNueva\8-registro\img-genero-25x25-1.png" />
+    <Content Include="Imagenes_Benavides\MasterNueva\8-registro\img-genero-25x25-2.png" />
+    <Content Include="Imagenes_Benavides\MasterNueva\8-registro\img-genero-25x25-3.png" />
+    <Content Include="Imagenes_Benavides\MasterNueva\8-registro\img-genero-25x25-4.png" />
+    <Content Include="Imagenes_Benavides\MasterNueva\8-registro\img-registro-tarjeta-platino-235x800.png" />
+    <Content Include="Imagenes_Benavides\MasterNueva\8-registro\MasInfo.png" />
+    <Content Include="Imagenes_Benavides\MasterNueva\9-niveles\bg-niveles-555x420.jpg" />
+    <Content Include="Imagenes_Benavides\MasterNueva\9-niveles\img-niveles-445x182.png" />
+    <Content Include="Imagenes_Benavides\MasterNueva\banner_inferior.png" />
+    <Content Include="Imagenes_Benavides\MasterNueva\bg-popup_01.png" />
+    <Content Include="Imagenes_Benavides\MasterNueva\bg-popup_02.png" />
+    <Content Include="Imagenes_Benavides\MasterNueva\boomerangs.png" />
+    <Content Include="Imagenes_Benavides\MasterNueva\boomerang_solo.png" />
+    <Content Include="Imagenes_Benavides\MasterNueva\btn-cerrar-hover.jpg" />
+    <Content Include="Imagenes_Benavides\MasterNueva\btn-cerrar.jpg" />
+    <Content Include="Imagenes_Benavides\MasterNueva\pantene.png" />
+    <Content Include="Imagenes_Benavides\MasterNueva\termometro.png" />
+    <Content Include="Imagenes_Benavides\menu\contacto-btn-over.png" />
+    <Content Include="Imagenes_Benavides\menu\contacto-btn.png" />
+    <Content Include="Imagenes_Benavides\menu\inicio-btn-over.png" />
+    <Content Include="Imagenes_Benavides\menu\inicio-btn.png" />
+    <Content Include="Imagenes_Benavides\menu\mis_datos-btn-over.png" />
+    <Content Include="Imagenes_Benavides\menu\mis_datos-btn.png" />
+    <Content Include="Imagenes_Benavides\menu\promociones-btn-over.png" />
+    <Content Include="Imagenes_Benavides\menu\promociones-btn.png" />
+    <Content Include="Imagenes_Benavides\mi-perfil-fondo.jpg" />
+    <Content Include="Imagenes_Benavides\misdatos-fondo.jpg" />
+    <Content Include="Imagenes_Benavides\misdatos-fondo2.png" />
+    <Content Include="Imagenes_Benavides\nuevo-logo-bi.png" />
+    <Content Include="Imagenes_Benavides\otros-back.jpg" />
+    <Content Include="Imagenes_Benavides\otrosprogramas-btn.jpg" />
+    <Content Include="Imagenes_Benavides\reg.png" />
+    <Content Include="Imagenes_Benavides\registro-acceso-fondo-reportes.jpg" />
+    <Content Include="Imagenes_Benavides\registro-acceso-fondo.jpg" />
+    <Content Include="Imagenes_Benavides\registro.png" />
+    <Content Include="Imagenes_Benavides\SaldoCliente.png" />
+    <Content Include="Imagenes_Benavides\SaldoMov-fondo.png" />
+    <Content Include="Imagenes_Benavides\Snack.png" />
+    <Content Include="Imagenes_Benavides\tarjeta-azul.png" />
+    <Content Include="Imagenes_Benavides\Woman.png" />
+    <Content Include="Images\accent.png" />
+    <Content Include="Images\bullet.png" />
+    <Content Include="Images\heroAccent.png" />
+    <Content Include="Images\orderedList0.png" />
+    <Content Include="Images\orderedList1.png" />
+    <Content Include="Images\orderedList2.png" />
+    <Content Include="Images\orderedList3.png" />
+    <Content Include="Images\orderedList4.png" />
+    <Content Include="Images\orderedList5.png" />
+    <Content Include="Images\orderedList6.png" />
+    <Content Include="Images\orderedList7.png" />
+    <Content Include="Images\orderedList8.png" />
+    <Content Include="Images\orderedList9.png" />
+    <Content Include="packages.config" />
+    <Content Include="fonts\FuturaStd-Bold.eot" />
+    <Content Include="fonts\FuturaStd-Bold.woff" />
+    <Content Include="fonts\FuturaStd-Book.eot" />
+    <Content Include="fonts\FuturaStd-Book.woff" />
+    <Content Include="fonts\interstate-regular-webfont.eot" />
+    <Content Include="fonts\interstate_light-webfont.ttf" />
+    <Content Include="fonts\interstate_light-webfont.woff" />
+    <Content Include="Imagenes_Benavides\botones\.DS_Store" />
+    <Content Include="Imagenes_Benavides\MasterNueva\11-contacto\.DS_Store" />
+    <Content Include="Imagenes_Benavides\MasterNueva\11-contacto\Thumbs.db" />
+    <Content Include="Imagenes_Benavides\MasterNueva\13-cambiar_contrasena\Thumbs.db" />
+    <Content Include="Imagenes_Benavides\MasterNueva\14-club_peques_que_es\.DS_Store" />
+    <Content Include="Imagenes_Benavides\MasterNueva\14-club_peques_que_es\submenu-clubpeques\.DS_Store" />
+    <Content Include="Imagenes_Benavides\MasterNueva\14-club_peques_que_es\submenu-clubpeques\Thumbs.db" />
+    <Content Include="Imagenes_Benavides\MasterNueva\14-club_peques_que_es\Thumbs.db" />
+    <Content Include="Imagenes_Benavides\MasterNueva\2-mis_datos\Thumbs.db" />
+    <Content Include="Imagenes_Benavides\MasterNueva\21-descuentos_laboratorios\.DS_Store" />
+    <Content Include="Imagenes_Benavides\MasterNueva\21-descuentos_laboratorios\img-tabla-descuentos\Thumbs.db" />
+    <Content Include="Imagenes_Benavides\MasterNueva\22-club_peques_promo\Thumbs.db" />
+    <Content Include="Imagenes_Benavides\MasterNueva\23-popup_atencion\Thumbs.db" />
+    <Content Include="Imagenes_Benavides\MasterNueva\3-mis_compras\img-tabla-compras\Thumbs.db" />
+    <Content Include="Imagenes_Benavides\MasterNueva\4-mis_beneficios_blue\.DS_Store" />
+    <Content Include="Imagenes_Benavides\MasterNueva\4-mis_beneficios_blue\submenu-mis_beneficios\Thumbs.db" />
+    <Content Include="Imagenes_Benavides\MasterNueva\4-mis_beneficios_blue\Thumbs.db" />
+    <Content Include="Imagenes_Benavides\MasterNueva\5-mis_beneficios_platino\Thumbs.db" />
+    <Content Include="Imagenes_Benavides\MasterNueva\8-registro\.DS_Store" />
+    <Content Include="Imagenes_Benavides\MasterNueva\8-registro\bg-registro-clubpeques\.DS_Store" />
+    <Content Include="Imagenes_Benavides\MasterNueva\9-niveles\.DS_Store" />
+    <Content Include="Imagenes_Benavides\MasterNueva\9-niveles\Thumbs.db" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\bootstrap-theme.min.css.map" />
+    <Content Include="Content\bootstrap-theme.css.map" />
+    <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Scripts\jquery-1.10.2.min.map" />
+    <None Include="Scripts\jquery-1.7.1.intellisense.js" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\jquery-1.10.2.js" />
+    <Content Include="Scripts\jquery-1.10.2.min.js" />
+    <Content Include="Scripts\jquery-1.7.1.js" />
+    <Content Include="Scripts\jquery-1.7.1.min.js" />
+    <Content Include="Scripts\jquery-ui-1.8.20.js" />
+    <Content Include="Scripts\jquery-ui-1.8.20.min.js" />
+    <Content Include="Scripts\modernizr-2.5.3.js" />
+    <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\respond.js" />
+    <Content Include="Scripts\respond.min.js" />
+    <Content Include="Scripts\_references.js" />
+    <Content Include="Default.aspx" />
+    <Content Include="favicon.ico" />
+    <Content Include="Global.asax" />
+    <Content Include="Terminos.aspx" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\AuthConfig.cs" />
+    <Compile Include="About.aspx.cs">
+      <DependentUpon>About.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="About.aspx.designer.cs">
+      <DependentUpon>About.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AvisoPrivacidad.aspx.cs">
+      <DependentUpon>AvisoPrivacidad.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AvisoPrivacidad.aspx.designer.cs">
+      <DependentUpon>AvisoPrivacidad.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CALLCENTER\CancelaContactoXPadecimiento.aspx.cs">
+      <DependentUpon>CancelaContactoXPadecimiento.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CALLCENTER\CancelaContactoXPadecimiento.aspx.designer.cs">
+      <DependentUpon>CancelaContactoXPadecimiento.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CALLCENTER\RecuperarContraseñaCallCenter.aspx.cs">
+      <DependentUpon>RecuperarContraseñaCallCenter.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CALLCENTER\RecuperarContraseñaCallCenter.aspx.designer.cs">
+      <DependentUpon>RecuperarContraseñaCallCenter.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CALLCENTER\RegistroClienteCallCenter.aspx.cs">
+      <DependentUpon>RegistroClienteCallCenter.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CALLCENTER\RegistroClienteCallCenter.aspx.designer.cs">
+      <DependentUpon>RegistroClienteCallCenter.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CALLCENTER\RegistroCliente_PrimeraVez.aspx.cs">
+      <DependentUpon>RegistroCliente_PrimeraVez.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CALLCENTER\RegistroCliente_PrimeraVez.aspx.designer.cs">
+      <DependentUpon>RegistroCliente_PrimeraVez.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CALLCENTER\RegistroLLamadas.aspx.cs">
+      <DependentUpon>RegistroLLamadas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CALLCENTER\RegistroLLamadas.aspx.designer.cs">
+      <DependentUpon>RegistroLLamadas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CALLCENTER\ReporteActivacion3MesesTl.aspx.cs">
+      <DependentUpon>ReporteActivacion3MesesTl.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CALLCENTER\ReporteActivacion3MesesTl.aspx.designer.cs">
+      <DependentUpon>ReporteActivacion3MesesTl.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CALLCENTER\ReporteActivacionXPeriodo.aspx.cs">
+      <DependentUpon>ReporteActivacionXPeriodo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CALLCENTER\ReporteActivacionXPeriodo.aspx.designer.cs">
+      <DependentUpon>ReporteActivacionXPeriodo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CALLCENTER\ReporteActivacionXPeriodoTl.aspx.cs">
+      <DependentUpon>ReporteActivacionXPeriodoTl.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CALLCENTER\ReporteActivacionXPeriodoTl.aspx.designer.cs">
+      <DependentUpon>ReporteActivacionXPeriodoTl.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CALLCENTER\ReporteAsistencias.aspx.cs">
+      <DependentUpon>ReporteAsistencias.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CALLCENTER\ReporteAsistencias.aspx.designer.cs">
+      <DependentUpon>ReporteAsistencias.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CALLCENTER\ReporteReenvioMailB.aspx.cs">
+      <DependentUpon>ReporteReenvioMailB.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CALLCENTER\ReporteReenvioMailB.aspx.designer.cs">
+      <DependentUpon>ReporteReenvioMailB.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CALLCENTER\ReportesBenavides.aspx.cs">
+      <DependentUpon>ReportesBenavides.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CALLCENTER\ReportesBenavides.aspx.designer.cs">
+      <DependentUpon>ReportesBenavides.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CALLCENTER\rptTraspasos.aspx.cs">
+      <DependentUpon>rptTraspasos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CALLCENTER\rptTraspasos.aspx.designer.cs">
+      <DependentUpon>rptTraspasos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CALLCENTER\SaldoMovClienteCallCenter.aspx.cs">
+      <DependentUpon>SaldoMovClienteCallCenter.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CALLCENTER\SaldoMovClienteCallCenter.aspx.designer.cs">
+      <DependentUpon>SaldoMovClienteCallCenter.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CALLCENTER\ValidaCodigoTarjeta.aspx.cs">
+      <DependentUpon>ValidaCodigoTarjeta.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CALLCENTER\ValidaCodigoTarjeta.aspx.designer.cs">
+      <DependentUpon>ValidaCodigoTarjeta.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CALLCENTER\WebForm1.aspx.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CALLCENTER\WebForm1.aspx.designer.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Contact.aspx.cs">
+      <DependentUpon>Contact.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Contact.aspx.designer.cs">
+      <DependentUpon>Contact.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Controles\ControlMnu\MnuManager.ascx.cs">
+      <DependentUpon>MnuManager.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controles\ControlMnu\MnuManager.ascx.designer.cs">
+      <DependentUpon>MnuManager.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Site.Master.cs">
+      <DependentUpon>Site.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Site.Master.designer.cs">
+      <DependentUpon>Site.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Site1.Master.cs">
+      <DependentUpon>Site1.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Site1.Master.designer.cs">
+      <DependentUpon>Site1.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Terminos.aspx.cs">
+      <DependentUpon>Terminos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Terminos.aspx.designer.cs">
+      <DependentUpon>Terminos.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Account\Web.config" />
+    <Content Include="Site.Master" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Site1.Master" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Infraestructura\Datos\Datos.csproj">
+      <Project>{ceb2e923-146b-4828-8fc3-b9cfb89f3586}</Project>
+      <Name>Datos</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Infraestructura\Entidades\Entidades.csproj">
+      <Project>{9c834930-82a4-4b38-bef2-70e3c14e8c30}</Project>
+      <Name>Entidades</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Infraestructura\Negocio\Negocio.csproj">
+      <Project>{9b4f4765-82aa-4b38-a3b6-00d19f5cd3ec}</Project>
+      <Name>Negocio</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>0</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:15858/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

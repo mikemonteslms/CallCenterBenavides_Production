@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="GaleniaTest" Class="CalendarioDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=184.107.55.171;Initial Catalog=Galenia_Loyalty_Program;User ID=usr_galenia_lp" SettingsObjectName="CallCenterDB.Properties.Settings" SettingsPropertyName="GaleniaTestConnectionString1" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.calendario" Member="calendario">
+    <Type Name="calendario">
+      <Column Name="id" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="fecha" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="descripcion" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="descripcion_larga" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.calendario_canje" Member="calendario_canje">
+    <Type Name="calendario_canje">
+      <Column Name="id" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="fecha_inicial" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="fecha_final" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="descripcion" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="descripcion_larga" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+    </Type>
+  </Table>
+</Database>

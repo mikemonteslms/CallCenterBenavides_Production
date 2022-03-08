@@ -1,0 +1,243 @@
+﻿<%@ Master Language="C#" MasterPageFile="~/general.master" AutoEventWireup="true" CodeBehind="contenido.master.cs" Inherits="Portal.contenido" %>
+
+<%@ MasterType VirtualPath="~/general.master" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="general_head" runat="server">
+    <link id="scriptMenu" rel="stylesheet" runat="server" />
+    <link href="css/estilos.css" rel="stylesheet" type="text/css">
+    <link href="src/perfect-scrollbar.css" rel="stylesheet" />
+    <style>
+        .RadMenu ul.rmHorizontal {
+            position: absolute !important;
+        }
+
+        ul.rmRootGroup {
+            display: block;
+            width: 100% !important;
+        }
+
+        .RadMenu .rmHorizontal .rmText {
+            padding: 0 11px 1px 0 !important;
+        }
+    </style>
+
+    <script src="src/jquery.mousewheel.js"></script>
+    <script src="src/perfect-scrollbar.js"></script>
+    <script>
+        function MuestraTerminos() {
+            $("#pnlTerminos").attr("class", "visible");
+        };
+        function OcultaTerminos() {
+            $("#pnlTerminos").attr("class", "novisible");
+        };
+    </script>
+    <script type="text/javascript">
+        $(document).ready(function ($) {
+            $('#divMensaje').perfectScrollbar({
+                wheelSpeed: 15,
+                wheelPropagation: false
+            });
+        });
+    </script>
+
+
+    <telerik:RadScriptBlock runat="server">
+        <script type="text/javascript">
+            function pageLoad(clave) {
+
+                var menu = $find("<%= rad_menu.ClientID %>");
+                var cuenta = menu.get_items().get_count();
+                var width = menu.get_element().offsetWidth;
+                var singleItemLength = Math.floor(width / menu.get_items().get_count()) - 1 + "px";
+
+                if (cuenta == 15) {
+                    for (var i = 0; i <= 8; i++) {
+                        if (!menu.get_items().getItem(i).get_isSeparator()) {
+                            if (menu.get_items().getItem(i).get_text() == 'Promociones y noticias') {
+                                var li = menu.get_items().getItem(i).get_element();
+                                li.style.width = '20.2%';
+                            } else if (menu.get_items().getItem(i).get_text() == 'Inicio') {
+                                var li = menu.get_items().getItem(i).get_element();
+                                li.style.width = '8%';
+                            } else if (menu.get_items().getItem(i).get_text() == 'Guía y tips') {
+                                var li = menu.get_items().getItem(i).get_element();
+                                li.style.width = '12.4%';
+                            } else {
+                                var li = menu.get_items().getItem(i).get_element();
+                                li.style.width = '11%';
+                            }
+                        }
+                    }
+                }
+            }
+            window.onresize = pageLoad;
+        </script>
+    </telerik:RadScriptBlock>
+    <asp:ContentPlaceHolder ID="contenido_head" runat="server">
+    </asp:ContentPlaceHolder>
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="general_body" runat="server">
+    <header>
+        <div id="plecagris">
+        </div>
+        <div id="vw-header">
+            <a href="default.aspx">
+                <h1 id="logoLoyalty"><span>Loyalty World</span></h1>
+            </a>
+            <div id="plecavw">
+                <div id="nombre">
+                    <span class="grisTitulo">¡Bienvenido!</span>
+                    <asp:Label ID="lblNombre" runat="server"></asp:Label>
+                </div>
+                <div id="saldo">
+                    <span class="grisTitulo">Saldo:</span>
+                    <asp:Label ID="lblSaldo" runat="server"></asp:Label>
+                    puntos
+                </div>
+                <p id="boton3">
+                    <span id="triangulo">&nbsp;</span>&nbsp;&nbsp;&nbsp;<asp:LoginStatus ID="logStatus" runat="server" LogoutText="Cerrar sesión" LogoutAction="RedirectToLoginPage" OnLoggingOut="logStatus_LoggingOut" />
+                </p>
+                <div class="contenedor_chat">
+                    <div id="craftysyntax_13">
+                        <script type="text/javascript" src="http://chat2.lms-la.com/livehelp_js.php?eo=0&amp;department=13&amp;serversession=1&amp;pingtimes=10&amp;dynamic=Y&amp;creditline=N"></script>
+                    </div>
+                </div>
+            </div>
+            <div id="contenedor_menu">
+                <nav id="menu">
+                    <telerik:RadMenu ID="rad_menu" runat="server" EnableEmbeddedSkins="false" CssClass="menu_debajo" Style="min-width: 900px;" DefaultGroupSettings-Width="100%">
+                        <Items>
+                            <telerik:RadMenuItem NavigateUrl="default.aspx" Value="inicio" Text="Inicio"></telerik:RadMenuItem>
+                            <telerik:RadMenuItem Text="<span id='divisor'>|</span>&nbsp;" Value="divisor_inicio" IsSeparator="true" Width="6px"></telerik:RadMenuItem>
+                            <telerik:RadMenuItem NavigateUrl="catalogo.aspx" Value="catalogo" Text="Catálogo"></telerik:RadMenuItem>
+                            <telerik:RadMenuItem Text="<span id='divisor'>|</span>&nbsp;" Value="divisor_catalogo" IsSeparator="true" Width="6px"></telerik:RadMenuItem>
+                            <telerik:RadMenuItem NavigateUrl="micuenta.aspx" Value="micuenta" Text="Mi cuenta"></telerik:RadMenuItem>
+                            <telerik:RadMenuItem Text="<span id='divisor'>|</span>&nbsp;" Value="divisor_micuenta" IsSeparator="true" Width="6px"></telerik:RadMenuItem>
+                            <%--<telerik:RadMenuItem NavigateUrl="asignacionventas.aspx" Value="asignacionventas" Text="Asignaciones"></telerik:RadMenuItem>--%>
+                            <%--<telerik:RadMenuItem Text="<span id='divisor'>|</span>&nbsp;" Value="divisor_asignacionventas" IsSeparator="true" Width="6px"></telerik:RadMenuItem>--%>
+                            <telerik:RadMenuItem NavigateUrl="promociones.aspx" Value="promociones" Text="Promociones y noticias"></telerik:RadMenuItem>
+                            <telerik:RadMenuItem Text="<span id='divisor'>|</span>&nbsp;" Value="divisor_promociones" IsSeparator="true" Width="6px"></telerik:RadMenuItem>
+                            <%--<telerik:RadMenuItem NavigateUrl="ranking.aspx" Value="ranking" Text="Ranking"></telerik:RadMenuItem>--%>
+                            <%--<telerik:RadMenuItem Text="<span id='divisor'>|</span>&nbsp;" Value="divisor_ranking" IsSeparator="true" Width="6px"></telerik:RadMenuItem>--%>
+                            <telerik:RadMenuItem NavigateUrl="mecanica.aspx" Value="mecanica" Text="Mecánica"></telerik:RadMenuItem>
+                            <telerik:RadMenuItem Text="<span id='divisor'>|</span>&nbsp;" Value="divisor_mecanica" IsSeparator="true" Width="6px"></telerik:RadMenuItem>
+                            <telerik:RadMenuItem NavigateUrl="guias.aspx" Value="guias" Text="Guía y tips"></telerik:RadMenuItem>
+                            <telerik:RadMenuItem Text="<span id='divisor'>|</span>&nbsp;" Value="divisor_guias" IsSeparator="true" Width="6px"></telerik:RadMenuItem>
+                            <telerik:RadMenuItem NavigateUrl="contacto.aspx" Value="contacto" Text="Contacto"></telerik:RadMenuItem>
+                        </Items>
+                    </telerik:RadMenu>
+                </nav>
+            </div>
+        </div>
+    </header>
+    <asp:ContentPlaceHolder ID="contenido_body" runat="server">
+    </asp:ContentPlaceHolder>
+    <cc1:ModalPopupExtender ID="popDistribuidores" runat="server" TargetControlID="lnkDistribuidores"
+        PopupControlID="pnlDistribuidores" BackgroundCssClass="Sombra" CancelControlID="btnCerrar">
+    </cc1:ModalPopupExtender>
+    <asp:HyperLink ID="lnkDistribuidores" runat="server"></asp:HyperLink>
+    <asp:Panel ID="pnlDistribuidores" runat="server" Style="display: none;">
+        <div class="cuadro_mensaje" style="width: 600px; height: 250px; text-align:left;">
+            <div class="marco_cerrar">
+                <asp:LinkButton ID="btnCerrarDistribuidores" runat="server" CssClass="boton-cerrar" OnClick="btnCerrarDistribuidores_Click"></asp:LinkButton>
+            </div>
+            <div class="mensaje">
+                <div id="contenedor-movimientos">
+                    <asp:Repeater ID="rptDistribuidores" runat="server">
+                        <HeaderTemplate>
+                            <div class="barra-titulo" style="width:580px;">
+                                <p class="fecha">Marca</p>
+                                <p class="fecha">Clave</p>
+                                <p class="kilometros">Nombre</p>
+                            </div>
+                        </HeaderTemplate>
+                        <ItemTemplate>
+                            <div class="barra-contenido" style="padding-left: 10px; width:580px;">
+                                <p class="fecha">
+                                    <asp:LinkButton ID="lnkMarca" runat="server" Text='<%# Eval("ClavePrograma") %>' OnCommand="SeleccionaDistribuidor_Command" CommandName='<%# Eval("ID") %>' CommandArgument='<%# Eval("Programa") %>'></asp:LinkButton>
+                                </p>
+                                <p class="fecha" style="width:120px;">
+                                    <asp:LinkButton ID="lnkClave" runat="server" Text='<%# Eval("Clave") %>' OnCommand="SeleccionaDistribuidor_Command" CommandName='<%# Eval("ID") %>' CommandArgument='<%# Eval("Programa") %>'></asp:LinkButton>
+                                </p>
+                                <p class="kilometros" style="width:300px; text-align:left">
+                                    <asp:LinkButton ID="lnkDescripcion" runat="server" Text='<%# Eval("Descripcion") %>' OnCommand="SeleccionaDistribuidor_Command" CommandName='<%# Eval("ID") %>' CommandArgument='<%# Eval("Programa") %>'></asp:LinkButton>
+                                </p>
+                            </div>
+                        </ItemTemplate>
+                    </asp:Repeater>
+                </div>
+            </div>
+        </div>
+    </asp:Panel>
+</asp:Content>
+<asp:Content ContentPlaceHolderID="general_terminos" runat="server">
+    &Iota; <a href="#" onclick="MuestraTerminos()">Términos y Condiciones</a> &Iota; <a href="preguntas-frecuentes.aspx">FAQ’s</a><asp:LinkButton ID="lnkBusqueda" runat="server" PostBackUrl="~/busqueda.aspx" Text=" &Iota; Búsqueda" Visible="false"></asp:LinkButton>
+</asp:Content>
+<asp:Content ContentPlaceHolderID="general_div_terminos" runat="server">
+    <div id="pnlTerminos" class="novisible" onclick="OcultaTerminos()">
+        <div id="divMensaje">
+            <div id="cuadroMensaje">
+                <div class="marcoMensaje terminos">
+                    <div class="marco_cerrar">
+                        <a href="#" class="boton-cerrar" onclick="OcultaTerminos()"></a>
+                    </div>
+                    <div class="titulo_privacidad">
+                        <b>Términos y condiciones</b>
+                    </div>
+                    <div class="cuerpo_privacidad">
+                        <p>
+                            <b>Vigencia y Aplicación del Programa</b><br />
+                            El Programa tendrá una vigencia de 12 meses: 1° de Abril del 2014 al 31 de Marzo del 2015 para generación de Kilómetros y hasta el 30 de Abril del 2015 para la redención de Kilómetros.
+                        <br />
+                            Aplica únicamente para Gerente de Servicios Financieros, Gerente de Ventas y Asesores de Ventas de las concesionarias autorizadas Volkswagen.
+                        </p>
+
+                        <p>
+                            <b>Inscripción</b><br />
+                            Para poder inscribirse al Programa, los Participantes deberán recibir por correo electrónico su usuario y contraseña para ingresar a sistema. Si el correo no llega al mail del Participante después de 1 semana de haberse dado de alta en la concesionaria, deberá acudir con el Gerente de Servicios Financieros o con su Consultor de Negocios para que verifiquen su alta en sistema o bien, deberá comunicarse al Centro de Atención Telefónico, donde podrán reenviar su contraseña. Es obligación de los Participantes conocer y cumplir todas las reglas y políticas del Programa. Es responsabilidad del Participante verificar que los datos que aparecen en el sitio del Programa sean correctos y deberán notificar cualquier cambio de domicilio, teléfono y/o dirección de correo electrónico ingresando a la sección “Mi cuenta”, dentro de la página web.<br />
+                            Los Participantes contarán con una clave de usuario individual e intransferible (Número de usuario), así como una contraseña para la realización de transacciones sobre sus cuentas, la cual se les hará llegar a través del correo electrónico registrado. Queda bajo responsabilidad del Participante el uso que se le dé a la clave de acceso y contraseña que se le concede para navegar en el Sitio del Programa.<br />
+                        </p>
+
+                        <p>
+                            <b>Baja o cambio de Concesionaria de los Participantes</b><br />
+                            La baja o cambio de concesionaria del Participante se verá reflejado de manera semanal, siempre y cuando los cambios hayan sido notificados a la marca.
+                        </p>
+
+                        <p>
+                            <b>Acumulación de Kilómetros</b><br />
+                            La acumulación de Kilómetros es individual e intransferible. En caso de que las ventas registradas en la base de datos generen Kilómetros, éstos se verán reflejados en su estado de cuenta. La información sobre los Kilómetros acumulados podrá ser consultada en cualquier momento a través de la página web en la sección “Mi cuenta” o a través del Centro de Atención Telefónico del Programa. Los Kilómetros tendrán una vigencia máxima hasta el 1° de Abril del 2014 al 31 de Marzo del 2015, posterior a esa fecha, los Kilómetros restantes serán eliminados de las cuentas de los Participantes y no tendrán valor alguno.
+                        <br />
+                            Nota: El Programa NO tomará en consideración la venta de flotillas para la acumulación de Kilómetros de los Asesores de Ventas, por lo cual no se tomarán en cuenta las ventas a partir de 5 unidades a un mismo cliente. El Programa toma en cuenta la venta de autos nuevos, seminuevos y usados.
+                        </p>
+
+                        <p>
+                            <b>Auditoría</b><br />
+                            Es importante que el Gerente de Servicios Financieros, quien es responsable del Programa dentro de su Concesionaria, registre las ventas realizadas al asesor de ventas correspondiente.<br />
+                            De manera trimestral, se auditará el reporte de ventas del periodo para asegurar que las ventas se estén asignando a los Asesores de Ventas correspondientes y que no se estén asignando todas las ventas de la Concesionaria a un sólo asesor de ventas para alcanzar una mayor acumulación de Kilómetros. En caso de que se detecte una asignación errónea de ventas a la persona que no corresponde, se sancionará al Gerente de Servicios Financieros y se realizará una averiguación, al Asesor de Ventas implicado, para conocer la responsabilidad del mismo.<br />
+                            Como penalización, se bloqueará la cuenta de los implicados y se eliminarán los Kilómetros generados en el Programa.
+                        </p>
+
+                        <p>
+                            <b>Redención de Kilómetros</b><br />
+                        </p>
+                        <ul>
+                            <li>Los Kilómetros acumulados podrán ser redimidos para obtener cualquiera de los productos que aparecen en el catálogo de premios.</li>
+                            <li>Para efectuar la redención, es necesario que el Participante cumpla con las reglas que establece el Programa y con los kilómetros necesarios para adquirir el beneficio. </li>
+                            <li>Sólo el titular de la cuenta podrá hacer uso de los kilómetros acumulados para utilizarlos de manera personal.</li>
+                            <li>La redención de kilómetros será por medio de la página web del Programa, para dudas puede comunicarse al Centro de Atención Telefónico de Loyalty World.</li>
+                            <li>Una vez canjeados los Kilómetros, éstos no podrán ser reembolsados nuevamente a la cuenta del titular. En el canje, el Participante recibirá una clave de confirmación del canje en su correo electrónico y otro mail de confirmación cuando reciba el artículo redimido.</li>
+                            <li>Una vez canjeado los Kilómetros por el artículo solicitado no hay cambios ni cancelaciones.</li>
+                            <li>Volkswagen Servicios Financieros se reserva el derecho de modificar en cualquier momento, con o sin previo aviso, el catálogo de recompensas, ya sea en el número de Kilómetros por los artículos disponibles. </li>
+                            <li>Los artículos serán enviados a la concesionaria en donde el asesor de ventas se encuentre laborando.</li>
+                            <li>En caso de no recibir los artículos en los plazos señalados, deberá notificarse a la brevedad al Centro de Atención Telefónico de Loyalty World o en el recuadro que aparecerá en la página web para regularizar la entrega. </li>
+                            <li>En caso de que se solicite un artículo determinado y no se encuentre en existencia, se ofrecerá un producto similar o modelo más reciente que el artículo original solicitado anteriormente por el Participante, sin costo adicional. </li>
+                            <li>El Participante una vez recibido su artículo, deberá revisar que se encuentre en perfectas condiciones; si no es así, el Participante no deberá firmar de recibido y deberá llamar al Centro de Atención Telefónico para comunicar lo sucedido. </li>
+                            <li>El participante, una vez aceptado de conformidad el artículo que solicitó, deberá firmar el formato de la mensajería y al ingresar a la página web, le aparecerá un recuadro con información del artículo recibido, llamado “Acuse de Recibo”, para continuar con la navegación deberá marcar si recibió o no el artículo, y recibirá un correo electrónico notificando la recepción.</li>
+                            <li>El Gerente de Servicios Financieros tiene la obligación de solicitar al Participante que notifique al sistema que ya recibió o no el artículo.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</asp:Content>

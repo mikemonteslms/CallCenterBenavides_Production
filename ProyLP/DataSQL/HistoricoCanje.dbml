@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="vipclubla" Class="HistoricoCanjeDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=204.71.233.8;Initial Catalog=vipclubla;Persist Security Info=True;User ID=w_vipclubla_dbo" SettingsObjectName="CallCenterDB.Properties.Settings" SettingsPropertyName="vipclublaConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.transaccion" Member="transaccion">
+    <Type Name="transaccion">
+      <Column Name="id" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="participante_id" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" CanBeNull="false" />
+      <Column Name="tipo_transaccion_id" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" CanBeNull="false" />
+      <Column Name="fecha" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="puntos" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="importe" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="puntos_redimidos" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="aspnet_UserId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="fecha_captura" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="estado_cuenta_id" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Association Name="transaccion_transaccion_premio" Member="transaccion_premio" ThisKey="id" OtherKey="transaccion_id" Type="transaccion_premio" />
+    </Type>
+  </Table>
+  <Table Name="dbo.transaccion_premio" Member="transaccion_premio">
+    <Type Name="transaccion_premio">
+      <Column Name="id" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="transaccion_id" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" CanBeNull="false" />
+      <Column Name="premio_id" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" CanBeNull="false" />
+      <Column Name="puntos" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="pedido_rms" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="direccion_entrega" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="transaccion_transaccion_premio" Member="transaccion" ThisKey="transaccion_id" OtherKey="id" Type="transaccion" IsForeignKey="true" />
+      <Association Name="premio_transaccion_premio" Member="premio" ThisKey="premio_id" OtherKey="id" Type="premio" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.premio" Member="premio">
+    <Type Name="premio">
+      <Column Name="id" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="clave" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="descripcion" Type="System.String" DbType="VarChar(130) NOT NULL" CanBeNull="false" />
+      <Column Name="descripcion_larga" Type="System.String" DbType="VarChar(1000) NOT NULL" CanBeNull="false" />
+      <Column Name="url_imagen" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="categoria_premio_id" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" CanBeNull="false" />
+      <Column Name="usuario_alta_id" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" CanBeNull="false" />
+      <Column Name="usuario_cambio_id" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="usuario_baja_id" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="fecha_alta" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="fecha_cambio" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="fecha_baja" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="puntos" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="proveedor_rms" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="premio_transaccion_premio" Member="transaccion_premio" ThisKey="id" OtherKey="premio_id" Type="transaccion_premio" />
+    </Type>
+  </Table>
+  <Table Name="dbo.clave_rms" Member="clave_rms">
+    <Type Name="clave_rms">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="anio" Type="System.String" DbType="VarChar(4) NOT NULL" CanBeNull="false" />
+      <Column Name="clave" Type="System.String" DbType="VarChar(7) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.historial_status_premio" Member="historial_status_premio">
+    <Type Name="historial_status_premio">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="transaccion_premio_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="status_premio_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="fecha" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="observaciones" Type="System.String" DbType="Text NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+    </Type>
+  </Table>
+  <Table Name="dbo.status_premio" Member="status_premio">
+    <Type Name="status_premio">
+      <Column Name="id" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="clave" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="descripcion" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="descripcion_larga" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="usuario_alta_id" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" CanBeNull="false" />
+      <Column Name="usuario_cambio_id" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="usuario_baja_id" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="fecha_alta" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="fecha_cambio" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="fecha_baja" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+</Database>

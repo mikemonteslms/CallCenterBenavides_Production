@@ -1,0 +1,181 @@
+<html>
+<head>
+    <title>NOTIFICACI&Oacute;N DE REDENCI&Oacute;N</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+    <style>
+        @font-face {
+            font-family: melocheFont;
+            src: url(../fonts/melocheRegular.ttf);
+        }
+
+        body {
+            font-family: melocheFont;
+            margin: auto;
+            width: 50%;
+        }
+
+        .largeGaleniaFont {
+            font-size: 19px;
+            color: #606060;
+        }
+
+        .mediumGaleniaFont {
+            font-size: 17px;
+            color: #606060;
+        }
+
+        .TFtable {
+            position: relative;
+            width: 95%;
+            font-size: 12px;
+            font-family: Arial;
+            text-align: center;
+            border-collapse: collapse;
+        }
+
+            .TFtable th {
+                font-size: 16px;
+            }
+            /*  Define the background color for all the ODD background rows  */
+            .TFtable tr:nth-child(odd) {
+                background: #2A5D81;
+                height: 30px;
+                color: white;
+            }
+            /*  Define the background color for all the EVEN background rows  */
+            .TFtable tr:nth-child(even) {
+                background: #dae5f4;
+                height: 30px;
+                color: gray;
+            }
+
+        .tituloMailing {
+            width: 400px;
+            height: 45px;
+            z-index: 1;
+            position: absolute;
+            top: 40px;
+            left: 50px;
+            color: white;
+            font-size: 24px;
+        }
+
+        .headerMailing {
+            position: absolute;
+            top: 0;
+        }
+
+        .footerMailing {
+            position: relative;
+            bottom: 0;
+        }
+
+        .contentMailing {
+            position: relative;
+            top: 150px;
+            width: 600px;
+            padding-left: 50px;
+            min-height: 50%;
+            height: auto;
+        }
+
+            .contentMailing p {
+                max-width: 480px;
+            }
+    </style>
+</head>
+<body bgcolor="#FFFFFF" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0">
+    <div class="headerMailing">
+        <img src="http://acuraadvancedlife.com.mx/images/galenia/mailingHeader.png" />
+        <p class="tituloMailing">NOTIFICACI&Oacute;N DE REDENCI&Oacute;N</p>
+    </div>
+
+    <div class="contentMailing">
+        <p style="width:100%;" class="largeGaleniaFont">
+            Estimada <b>@Nombre</b> <br /><br />
+            Se ha realizado un canje de puntos en su cuenta de Galenia Loyalty Program.<br />
+        </p>
+        <p style="width:100%;" class="largeGaleniaFont">Esta es la informaci&oacute;n referente a su redenci&oacute;n:</p>
+        <table class="TFtable">
+            <tr style="background-color:#2A5D81;color:white;text-align:center;" border="0" cellpadding="0" cellspacing="0"
+                height="30px">
+                <th><b>Folio:</b></th>
+                <th><b>Descripci&oacute;n de premio</b></th>
+                <th><b>Puntos:</b></th>
+                <th><b>Fecha:</b></th>
+            </tr>
+            @Canjes
+            <!--<tr>
+                <td><b>GLP13-38517</b></td>
+                <td><b>Certificado Liverpool $1,500</b></td>
+                <td><b>184</b></td>
+                <td><b>18/07/2014</b></td>
+            </tr>
+            <tr>
+                <td><b>GLP13-38517</b></td>
+                <td><b>Certificado Liverpool $1,500</b></td>
+                <td><b>184</b></td>
+                <td><b>18/07/2014</b></td>
+            </tr>
+            <tr>
+                <td><b>GLP13-38517</b></td>
+                <td><b>Certificado Liverpool $1,500</b></td>
+                <td><b>184</b></td>
+                <td><b>18/07/2014</b></td>
+            </tr>
+            <tr>
+                <td><b>GLP13-38517</b></td>
+                <td><b>Certificado Liverpool $1,500</b></td>
+                <td><b>184</b></td>
+                <td><b>18/07/2014</b></td>
+            </tr>
+            <tr>
+                <td><b>GLP13-38517</b></td>
+                <td><b>Certificado Liverpool $1,500</b></td>
+                <td><b>184</b></td>
+                <td><b>18/07/2014</b></td>
+            </tr>
+            <tr>
+                <td><b>GLP13-38517</b></td>
+                <td><b>Certificado Liverpool $1,500</b></td>
+                <td><b>184</b></td>
+                <td><b>18/07/2014</b></td>
+            </tr>
+            <tr>
+                <td><b>GLP13-38517</b></td>
+                <td><b>Certificado Liverpool $1,500</b></td>
+                <td><b>184</b></td>
+                <td><b>18/07/2014</b></td>
+            </tr>
+            <tr>
+                <td><b>GLP13-38517</b></td>
+                <td><b>Certificado Liverpool $1,500</b></td>
+                <td><b>184</b></td>
+                <td><b>18/07/2014</b></td>
+            </tr>
+            <tr>
+                <td><b>GLP13-38517</b></td>
+                <td><b>Certificado Liverpool $1,500</b></td>
+                <td><b>184</b></td>
+                <td><b>18/07/2014</b></td>
+            </tr>
+            <tr>
+                <td><b>GLP13-38517</b></td>
+                <td><b>Certificado Liverpool $1,500</b></td>
+                <td><b>184</b></td>
+                <td><b>18/07/2014</b></td>
+            </tr>-->
+        </table>
+        <p class="mediumGaleniaFont">
+            Folio de canje: @NumeroAutorizacion<br /><br />
+            Direcci&oacute; de entrega: Hospital Galenia<br /><br />
+            Sus premios los recibir&aacute; en un plazo no mayor a 20 d&iacute;as h&aacute;biles<br />
+            a partir de la fecha de canje.<br /><br />
+            Si tiene dudas, escr&iacute;banos a <a href="mailto:contacto@galenialoyaltyprogram.com">contacto@galenialoyaltyprogram.com</a>
+        </p>
+    </div>
+    <div class="footerMailing">
+        <img src="http://acuraadvancedlife.com.mx/images/galenia/mailingFooter.png" />
+    </div>
+</body>
+</html>

@@ -1,0 +1,23 @@
+body {
+
+  font-family:Georgia, serif;
+  font-size:1.2em;
+  margin:2em 4em;
+
+}
+
+#header h1 { margin-bottom:0; text-shadow:1px 1px 1px #ccc; }
+#header p { margin-top:0; }
+
+sup {
+  color:#666;
+}
+
+#notes {
+  width:20em;
+  margin-top:2em;
+  padding-top:1em;
+  border-top:1px solid #666;
+  font-size:0.9em;
+  color:#666;
+}

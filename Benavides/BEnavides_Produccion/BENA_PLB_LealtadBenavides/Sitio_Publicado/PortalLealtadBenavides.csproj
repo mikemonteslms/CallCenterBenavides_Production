@@ -1,0 +1,1167 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{DEC67F99-F3E2-4F57-BC1A-CD9C76E17D5A}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>WebPfizer.LMS.eCard</RootNamespace>
+    <AssemblyName>WebPfizer.LMS.eCard</AssemblyName>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+    <ApplicationIcon>
+    </ApplicationIcon>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>2.0</OldToolsVersion>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <FilesToIncludeForPublish>AllFilesInTheProject</FilesToIncludeForPublish>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AjaxControlToolkit, Version=1.0.20229.42558, Culture=neutral, PublicKeyToken=28f01b0e84b6d53e, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.ApplicationBlocks.Data, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Portal_Benavides\bin\Microsoft.ApplicationBlocks.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Common, Version=5.0.414.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Datos\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Data, Version=5.0.414.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Datos\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.ObjectBuilder, Version=1.0.51206.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Datos\bin\Debug\Microsoft.Practices.ObjectBuilder.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity">
+      <HintPath>..\Portal_Benavides\bin\Microsoft.Practices.Unity.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity.Interception">
+      <HintPath>..\Portal_Benavides\bin\Microsoft.Practices.Unity.Interception.dll</HintPath>
+    </Reference>
+    <Reference Include="Recaptcha, Version=1.0.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Recaptcha.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.Mobile" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="AccesoCallCenter.aspx" />
+    <Content Include="ActivaAcumulacionEspecial.aspx" />
+    <Content Include="ActualizarMisDatos.aspx" />
+    <Content Include="AvisoPrivacidad.aspx" />
+    <Content Include="BajaNivelTarjeta.aspx" />
+    <Content Include="Beneficios.aspx" />
+    <Content Include="CampañaTripleAcumulacion.aspx" />
+    <Content Include="ComoGanarPuntos.aspx" />
+    <Content Include="AccesoRep.aspx" />
+    <Content Include="CancelaContacto.aspx" />
+    <Content Include="AvisoPrivacidadAPP.aspx" />
+    <Content Include="BeneficioInteligenteBenavides.aspx" />
+    <Content Include="ActivaAcumulacion.aspx" />
+    <Content Include="Imagenes_Benavides\botones\chat.png" />
+    <Content Include="Imagenes_Benavides\botones\waiting.png" />
+    <Content Include="InsertaPromocion.aspx" />
+    <Content Include="InsertaPromocionPorPieza.aspx" />
+    <Content Include="InsertaPromocionXtarjeta.aspx" />
+    <Content Include="RegistroCliente_EncuestaInicial_Nuevo.aspx" />
+    <Content Include="ReporteVendedoresV2.aspx" />
+    <Content Include="ReporteAcumRedSemanal.aspx" />
+    <Content Include="Imagenes_Benavides\banners\Banner-principal-BI.jpg" />
+    <Content Include="Imagenes_Benavides\beneficios-btn-BI.jpg" />
+    <Content Include="Imagenes_Benavides\beneficios-fondo-BI.jpg" />
+    <Content Include="Imagenes_Benavides\botones\beneficios-btn-BI.PNG" />
+    <Content Include="Imagenes_Benavides\informacion-BI.jpg" />
+    <Content Include="ReportesBenavidesSaldosSP.aspx" />
+    <Content Include="Imagenes_Benavides\Bebes.png" />
+    <Content Include="Imagenes_Benavides\Belleza.png" />
+    <Content Include="Imagenes_Benavides\botones\btn-guardar.png" />
+    <Content Include="Imagenes_Benavides\botones\farma.png" />
+    <Content Include="Imagenes_Benavides\botones\farma2.png" />
+    <Content Include="Imagenes_Benavides\botones\farma3.png" />
+    <Content Include="Imagenes_Benavides\botones\farma4.png" />
+    <Content Include="Imagenes_Benavides\botones\farma5.png" />
+    <Content Include="Imagenes_Benavides\botones\icn-1.png" />
+    <Content Include="Imagenes_Benavides\botones\icn-2.png" />
+    <Content Include="Imagenes_Benavides\botones\icn-3.png" />
+    <Content Include="Imagenes_Benavides\botones\icn-4.png" />
+    <Content Include="Imagenes_Benavides\botones\icn-5.png" />
+    <Content Include="Imagenes_Benavides\botones\icn-6.png" />
+    <Content Include="Imagenes_Benavides\botones\icn-7.png" />
+    <Content Include="Imagenes_Benavides\botones\icn-8.png" />
+    <Content Include="Imagenes_Benavides\botones\ppActivaPromo.png" />
+    <Content Include="Imagenes_Benavides\cuidado.png" />
+    <Content Include="Imagenes_Benavides\farma.png" />
+    <Content Include="Imagenes_Benavides\Man.png" />
+    <Content Include="Imagenes_Benavides\Snack.png" />
+    <Content Include="Imagenes_Benavides\Woman.png" />
+    <Content Include="RegistroCliente_EncuestaInicial.aspx" />
+    <Content Include="ReporteVendedores.aspx" />
+    <Content Include="ReportesAperturas.aspx" />
+    <Content Include="ReporteAcumulacion.aspx" />
+    <Content Include="ReportesBenavidesCambioNivel.aspx" />
+    <Content Include="ReportesBenavidesSemSucursal.aspx" />
+    <Content Include="ReportesBenavidesTopInusuales.aspx" />
+    <Content Include="ReportesBenavidesBuscaTarjeta.aspx" />
+    <Content Include="ReportesBenavidesUltimaCompra.aspx" />
+    <Content Include="Imagenes_Benavides\botones\search_Menu.png" />
+    <Content Include="ReportesBenavidesBusqueda.aspx" />
+    <Content Include="ReportesBenavidesCuboPromo.aspx" />
+    <Content Include="Imagenes_Benavides\banners\banner-promociones.jpg" />
+    <Content Include="Imagenes_Benavides\botones\shopping cart_Menu.png" />
+    <Content Include="Imagenes_Benavides\botones\shopping cart.png" />
+    <Content Include="Imagenes_Benavides\registro-acceso-fondo-reportes.jpg" />
+    <Content Include="ReporteBenavidesDetallePromociones.aspx" />
+    <Content Include="ReportesBenavidesSegmentos.aspx" />
+    <Content Include="Imagenes_Benavides\botones\align bottom.png" />
+    <Content Include="Imagenes_Benavides\botones\align bottom_Menu.png" />
+    <Content Include="ReporteBase.aspx" />
+    <Content Include="Imagenes_Benavides\botones\undo_Menu.png" />
+    <Content Include="Imagenes_Benavides\botones\home_Menu.png" />
+    <Content Include="Imagenes_Benavides\botones\minimize_Menu.png" />
+    <Content Include="Imagenes_Benavides\botones\files_add_Menu.png" />
+    <Content Include="Imagenes_Benavides\botones\del.ico.us_Menu.png" />
+    <Content Include="Imagenes_Benavides\botones\home.png" />
+    <Content Include="Imagenes_Benavides\botones\minimize.png" />
+    <Content Include="Imagenes_Benavides\botones\right_top_Menu.png" />
+    <Content Include="Imagenes_Benavides\botones\network_Menu.png" />
+    <Content Include="IndexRep.aspx" />
+    <Content Include="HomeRepMenu.aspx" />
+    <Content Include="Imagenes_Benavides\botones\cambiarcontrasena-btn-over.png" />
+    <Content Include="Imagenes_Benavides\botones\cambiarcontrasena-btn.png" />
+    <Content Include="Imagenes_Benavides\botones\cd.png" />
+    <Content Include="Imagenes_Benavides\botones\Default.png" />
+    <Content Include="Imagenes_Benavides\cambiar-contraseña-fondo.png" />
+    <Content Include="Imagenes_Benavides\header-tabla.png" />
+    <Content Include="Imagenes_Benavides\menu\promociones-btn-over.png" />
+    <Content Include="Imagenes_Benavides\menu\promociones-btn.png" />
+    <Content Include="Imagenes_Benavides\misdatos-fondo2.png" />
+    <Content Include="TerminosAPP.aspx" />
+    <Content Include="Imagenes_Benavides\botones\restart.png" />
+    <Content Include="Imagenes_Benavides\fondoConfirmaContraseña.jpg" />
+    <Content Include="RecuperarContraseñaCallCenter.aspx" />
+    <Content Include="RecuperarContraseña.aspx" />
+    <Content Include="Imagenes_Benavides\botones\files_add.png" />
+    <Content Include="ReportesBenavidesCasosInusuales.aspx" />
+    <Content Include="Imagenes_Benavides\edocuenta-bi_1_01.jpg" />
+    <Content Include="Imagenes_Benavides\edocuenta-bi_1_02.jpg" />
+    <Content Include="Imagenes_Benavides\edocuenta-bi_1_03.jpg" />
+    <Content Include="Imagenes_Benavides\edocuenta-bi_1_04.jpg" />
+    <Content Include="Imagenes_Benavides\edocuenta-bi_1_05.jpg" />
+    <Content Include="Imagenes_Benavides\edocuenta-bi_1_06.jpg" />
+    <Content Include="Imagenes_Benavides\edocuenta-bi_1_07.jpg" />
+    <Content Include="Imagenes_Benavides\edocuenta-bi_1_08.jpg" />
+    <Content Include="Imagenes_Benavides\edocuenta-bi_1_09.jpg" />
+    <Content Include="Imagenes_Benavides\edocuenta-bi_1_10.jpg" />
+    <Content Include="Imagenes_Benavides\edocuenta-bi_1_11.jpg" />
+    <Content Include="Imagenes_Benavides\edocuenta-bi_1_12.jpg" />
+    <Content Include="Imagenes_Benavides\edocuenta-bi_1_13.jpg" />
+    <Content Include="Imagenes_Benavides\edocuenta-bi_1_14.jpg" />
+    <Content Include="Imagenes_Benavides\edocuenta-bi_1_15.jpg" />
+    <Content Include="Imagenes_Benavides\edocuenta-bi_1_16.jpg" />
+    <Content Include="Imagenes_Benavides\edocuenta-bi_1_17.jpg" />
+    <Content Include="Imagenes_Benavides\edocuenta-bi_1_18.jpg" />
+    <Content Include="Imagenes_Benavides\edocuenta-bi_1_19.jpg" />
+    <Content Include="Imagenes_Benavides\edocuenta-bi_1_20.jpg" />
+    <Content Include="Imagenes_Benavides\edocuenta-bi_1_21.jpg" />
+    <Content Include="Imagenes_Benavides\edocuenta-bi_1_22.jpg" />
+    <Content Include="Imagenes_Benavides\edocuenta-bi_1_23.jpg" />
+    <Content Include="Prueba_HomeRep.aspx" />
+    <Content Include="Imagenes_Benavides\botones\del.ico.us.png" />
+    <Content Include="Imagenes_Benavides\fondoBco.jpg" />
+    <Content Include="ReportesBenavidesCubo.aspx" />
+    <Content Include="Imagenes_Benavides\botones\Excel.png" />
+    <Content Include="Imagenes_Benavides\botones\right_top.png" />
+    <Content Include="ReportesBenavidesActivacion.aspx" />
+    <Content Include="Imagenes_Benavides\botones\network.png" />
+    <Content Include="Imagenes_Benavides\como-ganas.jpg" />
+    <Content Include="Imagenes_Benavides\LogoFarBen.jpg" />
+    <Content Include="ReportesBenavidesRep.aspx" />
+    <Content Include="HomeRep.aspx" />
+    <Content Include="ReportesBenavides.aspx" />
+    <Content Include="Imagenes_Benavides\banner-puntos.jpg" />
+    <Content Include="Imagenes_Benavides\beneficios-btn.jpg" />
+    <Content Include="Imagenes_Benavides\botones\cerrar-btn-over.png" />
+    <Content Include="Imagenes_Benavides\botones\cerrar-btn.png" />
+    <Content Include="Imagenes_Benavides\botones\mouse.png" />
+    <Content Include="Imagenes_Benavides\cerrar-btn-over.png" />
+    <Content Include="Imagenes_Benavides\cerrar-btn.png" />
+    <Content Include="Imagenes_Benavides\como-ganas-btn.jpg" />
+    <Content Include="Imagenes_Benavides\header-azul.jpg" />
+    <Content Include="Imagenes_Benavides\logo-benavides.png" />
+    <Content Include="Imagenes_Benavides\nuevo-logo-bi.png" />
+    <Content Include="Imagenes_Benavides\otrosprogramas-btn.jpg" />
+    <Content Include="Imagenes_Benavides\registro-acceso-fondo.jpg" />
+    <Content Include="Negocio.dll" />
+    <Content Include="RegistroCliente_PrimeraVez.aspx" />
+    <Content Include="Imagenes_Benavides\botones\BuscarF.png" />
+    <Content Include="Imagenes_Benavides\botones\info.png" />
+    <Content Include="Imagenes_Benavides\botones\keyboard.png" />
+    <Content Include="Imagenes_Benavides\botones\phone.png" />
+    <Content Include="Imagenes_Benavides\botones\scroll left.png" />
+    <Content Include="Imagenes_Benavides\botones\search.png" />
+    <Content Include="Imagenes_Benavides\botones\undo.png" />
+    <Content Include="Imagenes_Benavides\botones\write 1.png" />
+    <Content Include="Imagenes_Benavides\SaldoMov-fondo.png" />
+    <Content Include="SaldoMovClienteCallCenter.aspx" />
+    <Content Include="Home.aspx" />
+    <Content Include="Imagenes_Benavides\banners\banner-formula.jpg" />
+    <Content Include="Imagenes_Benavides\banners\banner-serviciodomicilio.jpg" />
+    <Content Include="Imagenes_Benavides\banners\banner-umeb.jpg" />
+    <Content Include="Imagenes_Benavides\beneficios-back.jpg" />
+    <Content Include="Imagenes_Benavides\botones\next-horizontal.png" />
+    <Content Include="Imagenes_Benavides\botones\next-vertical.png" />
+    <Content Include="Imagenes_Benavides\botones\prev-horizontal.png" />
+    <Content Include="Imagenes_Benavides\como-ganas-back.jpg" />
+    <Content Include="Imagenes_Benavides\como-ganas-puntos.jpg" />
+    <Content Include="Imagenes_Benavides\icono-telefono.png" />
+    <Content Include="Imagenes_Benavides\Index.png" />
+    <Content Include="Imagenes_Benavides\Libreta.png" />
+    <Content Include="Imagenes_Benavides\otros-back.jpg" />
+    <Content Include="Imagenes_Benavides\reg.png" />
+    <Content Include="Imagenes_Benavides\registro.png" />
+    <Content Include="Imagenes_Benavides\SaldoCliente.png" />
+    <Content Include="jquery.jcarousel.min.js" />
+    <Content Include="Microsoft.Practices.ServiceLocation.dll" />
+    <Content Include="Microsoft.Practices.ServiceLocation.pdb" />
+    <Content Include="RegistroClienteCallCenter.aspx" />
+    <Content Include="Default.aspx" />
+    <Content Include="MasterECardMenu.Master" />
+    <None Include="ResolveAssemblyReference.cache" />
+    <None Include="Web.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Acceso.aspx.cs">
+      <DependentUpon>Acceso.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Acceso.aspx.designer.cs">
+      <DependentUpon>Acceso.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ActivaAcumulacionEspecial.aspx.cs">
+      <DependentUpon>ActivaAcumulacionEspecial.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ActivaAcumulacionEspecial.aspx.designer.cs">
+      <DependentUpon>ActivaAcumulacionEspecial.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ActualizarMisDatos.aspx.cs">
+      <DependentUpon>ActualizarMisDatos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ActualizarMisDatos.aspx.designer.cs">
+      <DependentUpon>ActualizarMisDatos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AvisoPrivacidad.aspx.cs">
+      <DependentUpon>AvisoPrivacidad.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AvisoPrivacidad.aspx.designer.cs">
+      <DependentUpon>AvisoPrivacidad.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BajaNivelTarjeta.aspx.cs">
+      <DependentUpon>BajaNivelTarjeta.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BajaNivelTarjeta.aspx.designer.cs">
+      <DependentUpon>BajaNivelTarjeta.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Beneficios.aspx.cs">
+      <DependentUpon>Beneficios.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Beneficios.aspx.designer.cs">
+      <DependentUpon>Beneficios.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CampañaTripleAcumulacion.aspx.cs">
+      <DependentUpon>CampañaTripleAcumulacion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CampañaTripleAcumulacion.aspx.designer.cs">
+      <DependentUpon>CampañaTripleAcumulacion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CentroMensajes.aspx.cs">
+      <DependentUpon>CentroMensajes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CentroMensajes.aspx.designer.cs">
+      <DependentUpon>CentroMensajes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ComoGanarPuntos.aspx.cs">
+      <DependentUpon>ComoGanarPuntos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ComoGanarPuntos.aspx.designer.cs">
+      <DependentUpon>ComoGanarPuntos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AccesoCallCenter.aspx.cs">
+      <DependentUpon>AccesoCallCenter.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AccesoCallCenter.aspx.designer.cs">
+      <DependentUpon>AccesoCallCenter.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AccesoRep.aspx.cs">
+      <DependentUpon>AccesoRep.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AccesoRep.aspx.designer.cs">
+      <DependentUpon>AccesoRep.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CancelaContacto.aspx.cs">
+      <DependentUpon>CancelaContacto.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CancelaContacto.aspx.designer.cs">
+      <DependentUpon>CancelaContacto.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AvisoPrivacidadAPP.aspx.cs">
+      <DependentUpon>AvisoPrivacidadAPP.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AvisoPrivacidadAPP.aspx.designer.cs">
+      <DependentUpon>AvisoPrivacidadAPP.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BeneficioInteligenteBenavides.aspx.cs">
+      <DependentUpon>BeneficioInteligenteBenavides.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BeneficioInteligenteBenavides.aspx.designer.cs">
+      <DependentUpon>BeneficioInteligenteBenavides.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ActivaAcumulacion.aspx.cs">
+      <DependentUpon>ActivaAcumulacion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ActivaAcumulacion.aspx.designer.cs">
+      <DependentUpon>ActivaAcumulacion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="InsertaPromocion.aspx.cs">
+      <DependentUpon>InsertaPromocion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="InsertaPromocion.aspx.designer.cs">
+      <DependentUpon>InsertaPromocion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="InsertaPromocionPorPieza.aspx.cs">
+      <DependentUpon>InsertaPromocionPorPieza.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="InsertaPromocionPorPieza.aspx.designer.cs">
+      <DependentUpon>InsertaPromocionPorPieza.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="InsertaPromocionXtarjeta.aspx.cs">
+      <DependentUpon>InsertaPromocionXtarjeta.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="InsertaPromocionXtarjeta.aspx.designer.cs">
+      <DependentUpon>InsertaPromocionXtarjeta.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="RegistroCliente_EncuestaInicial_Nuevo.aspx.cs">
+      <DependentUpon>RegistroCliente_EncuestaInicial_Nuevo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RegistroCliente_EncuestaInicial_Nuevo.aspx.designer.cs">
+      <DependentUpon>RegistroCliente_EncuestaInicial_Nuevo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ReporteVendedoresV2.aspx.cs">
+      <DependentUpon>ReporteVendedoresV2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ReporteVendedoresV2.aspx.designer.cs">
+      <DependentUpon>ReporteVendedoresV2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ReporteAcumRedSemanal.aspx.cs">
+      <DependentUpon>ReporteAcumRedSemanal.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ReporteAcumRedSemanal.aspx.designer.cs">
+      <DependentUpon>ReporteAcumRedSemanal.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ReportesBenavidesSaldosSP.aspx.cs">
+      <DependentUpon>ReportesBenavidesSaldosSP.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ReportesBenavidesSaldosSP.aspx.designer.cs">
+      <DependentUpon>ReportesBenavidesSaldosSP.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="RegistroCliente_EncuestaInicial.aspx.cs">
+      <DependentUpon>RegistroCliente_EncuestaInicial.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RegistroCliente_EncuestaInicial.aspx.designer.cs">
+      <DependentUpon>RegistroCliente_EncuestaInicial.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ReporteVendedores.aspx.cs">
+      <DependentUpon>ReporteVendedores.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ReporteVendedores.aspx.designer.cs">
+      <DependentUpon>ReporteVendedores.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ReportesAperturas.aspx.cs">
+      <DependentUpon>ReportesAperturas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ReportesAperturas.aspx.designer.cs">
+      <DependentUpon>ReportesAperturas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ReporteAcumulacion.aspx.cs">
+      <DependentUpon>ReporteAcumulacion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ReporteAcumulacion.aspx.designer.cs">
+      <DependentUpon>ReporteAcumulacion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ReportesBenavidesCambioNivel.aspx.cs">
+      <DependentUpon>ReportesBenavidesCambioNivel.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ReportesBenavidesCambioNivel.aspx.designer.cs">
+      <DependentUpon>ReportesBenavidesCambioNivel.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ReportesBenavidesSemSucursal.aspx.cs">
+      <DependentUpon>ReportesBenavidesSemSucursal.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ReportesBenavidesSemSucursal.aspx.designer.cs">
+      <DependentUpon>ReportesBenavidesSemSucursal.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ReportesBenavidesTopInusuales.aspx.cs">
+      <DependentUpon>ReportesBenavidesTopInusuales.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ReportesBenavidesTopInusuales.aspx.designer.cs">
+      <DependentUpon>ReportesBenavidesTopInusuales.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ReportesBenavidesBuscaTarjeta.aspx.cs">
+      <DependentUpon>ReportesBenavidesBuscaTarjeta.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ReportesBenavidesBuscaTarjeta.aspx.designer.cs">
+      <DependentUpon>ReportesBenavidesBuscaTarjeta.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ReportesBenavidesUltimaCompra.aspx.cs">
+      <DependentUpon>ReportesBenavidesUltimaCompra.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ReportesBenavidesUltimaCompra.aspx.designer.cs">
+      <DependentUpon>ReportesBenavidesUltimaCompra.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ReportesBenavidesBusqueda.aspx.cs">
+      <DependentUpon>ReportesBenavidesBusqueda.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ReportesBenavidesBusqueda.aspx.designer.cs">
+      <DependentUpon>ReportesBenavidesBusqueda.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ReportesBenavidesCuboPromo.aspx.cs">
+      <DependentUpon>ReportesBenavidesCuboPromo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ReportesBenavidesCuboPromo.aspx.designer.cs">
+      <DependentUpon>ReportesBenavidesCuboPromo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ReporteBenavidesDetallePromociones.aspx.cs">
+      <DependentUpon>ReporteBenavidesDetallePromociones.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ReporteBenavidesDetallePromociones.aspx.designer.cs">
+      <DependentUpon>ReporteBenavidesDetallePromociones.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ReportesBenavidesSegmentos.aspx.cs">
+      <DependentUpon>ReportesBenavidesSegmentos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ReportesBenavidesSegmentos.aspx.designer.cs">
+      <DependentUpon>ReportesBenavidesSegmentos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ReporteBase.aspx.cs">
+      <DependentUpon>ReporteBase.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ReporteBase.aspx.designer.cs">
+      <DependentUpon>ReporteBase.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="IndexRep.aspx.cs">
+      <DependentUpon>IndexRep.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="IndexRep.aspx.designer.cs">
+      <DependentUpon>IndexRep.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MasterECardMenu.Master.cs">
+      <DependentUpon>MasterECardMenu.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MasterECardMenu.Master.designer.cs">
+      <DependentUpon>MasterECardMenu.Master</DependentUpon>
+    </Compile>
+    <Compile Include="HomeRepMenu.aspx.cs">
+      <DependentUpon>HomeRepMenu.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HomeRepMenu.aspx.designer.cs">
+      <DependentUpon>HomeRepMenu.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TerminosAPP.aspx.cs">
+      <DependentUpon>TerminosAPP.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TerminosAPP.aspx.designer.cs">
+      <DependentUpon>TerminosAPP.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="RecuperarContraseñaCallCenter.aspx.cs">
+      <DependentUpon>RecuperarContraseñaCallCenter.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RecuperarContraseñaCallCenter.aspx.designer.cs">
+      <DependentUpon>RecuperarContraseñaCallCenter.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="RecuperarContraseña.aspx.cs">
+      <DependentUpon>RecuperarContraseña.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RecuperarContraseña.aspx.designer.cs">
+      <DependentUpon>RecuperarContraseña.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ReportesBenavidesCasosInusuales.aspx.cs">
+      <DependentUpon>ReportesBenavidesCasosInusuales.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ReportesBenavidesCasosInusuales.aspx.designer.cs">
+      <DependentUpon>ReportesBenavidesCasosInusuales.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Prueba_HomeRep.aspx.cs">
+      <DependentUpon>Prueba_HomeRep.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Prueba_HomeRep.aspx.designer.cs">
+      <DependentUpon>Prueba_HomeRep.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ReportesBenavidesCubo.aspx.cs">
+      <DependentUpon>ReportesBenavidesCubo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ReportesBenavidesCubo.aspx.designer.cs">
+      <DependentUpon>ReportesBenavidesCubo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ReportesBenavidesActivacion.aspx.cs">
+      <DependentUpon>ReportesBenavidesActivacion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ReportesBenavidesActivacion.aspx.designer.cs">
+      <DependentUpon>ReportesBenavidesActivacion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ReportesBenavidesRep.aspx.cs">
+      <DependentUpon>ReportesBenavidesRep.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ReportesBenavidesRep.aspx.designer.cs">
+      <DependentUpon>ReportesBenavidesRep.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HomeRep.aspx.cs">
+      <DependentUpon>HomeRep.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HomeRep.aspx.designer.cs">
+      <DependentUpon>HomeRep.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ReportesBenavides.aspx.cs">
+      <DependentUpon>ReportesBenavides.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ReportesBenavides.aspx.designer.cs">
+      <DependentUpon>ReportesBenavides.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="RegistroCliente_PrimeraVez.aspx.cs">
+      <DependentUpon>RegistroCliente_PrimeraVez.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RegistroCliente_PrimeraVez.aspx.designer.cs">
+      <DependentUpon>RegistroCliente_PrimeraVez.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SaldoMovClienteCallCenter.aspx.cs">
+      <DependentUpon>SaldoMovClienteCallCenter.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SaldoMovClienteCallCenter.aspx.designer.cs">
+      <DependentUpon>SaldoMovClienteCallCenter.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Home.aspx.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Home.aspx.designer.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="RegistroClienteCallCenter.aspx.cs">
+      <DependentUpon>RegistroClienteCallCenter.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RegistroClienteCallCenter.aspx.designer.cs">
+      <DependentUpon>RegistroClienteCallCenter.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MasterECard.Master.cs">
+      <DependentUpon>MasterECard.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MasterECard.Master.designer.cs">
+      <DependentUpon>MasterECard.Master</DependentUpon>
+    </Compile>
+    <Compile Include="MisDatos.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>MisDatos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MisDatos.aspx.designer.cs">
+      <DependentUpon>MisDatos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="RegistroCliente.aspx.cs">
+      <DependentUpon>RegistroCliente.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RegistroCliente.aspx.designer.cs">
+      <DependentUpon>RegistroCliente.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="RegistroLlamada.aspx.cs">
+      <DependentUpon>RegistroLlamada.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RegistroLlamada.aspx.designer.cs">
+      <DependentUpon>RegistroLlamada.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Index.aspx.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Index.aspx.designer.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="RegistroLLamadas.aspx.cs">
+      <DependentUpon>RegistroLLamadas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RegistroLLamadas.aspx.designer.cs">
+      <DependentUpon>RegistroLLamadas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Terminos.aspx.cs">
+      <DependentUpon>Terminos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Terminos.aspx.designer.cs">
+      <DependentUpon>Terminos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ValidaCodigoTarjeta.aspx.cs">
+      <DependentUpon>ValidaCodigoTarjeta.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ValidaCodigoTarjeta.aspx.designer.cs">
+      <DependentUpon>ValidaCodigoTarjeta.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\WSeCardPfizerVen\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\WsPrepago\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\WsPrepago_\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\ZWS_COMPLIANCEService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="WFTestVarios.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>WFTestVarios.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WFTestVarios.aspx.designer.cs">
+      <DependentUpon>WFTestVarios.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Datos\Datos.csproj">
+      <Project>{CBF35A6B-04D4-436A-9127-BC8FB40ED8A0}</Project>
+      <Name>Datos</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Entidades\Entidades.csproj">
+      <Project>{30CBF117-9454-4F4A-B262-91CB31A40261}</Project>
+      <Name>Entidades</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Negocio\Negocio.csproj">
+      <Project>{096C50B4-006D-4D40-9739-E9780619BBA4}</Project>
+      <Name>Negocio</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferences Include="Web References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Acceso.aspx" />
+    <Content Include="AjaxControlToolkit.dll" />
+    <Content Include="AjaxControlToolkit.pdb" />
+    <Content Include="Archivos\BannerInicio.swf" />
+    <Content Include="Styles\MisEstilos.css" />
+    <Content Include="ValidaCodigoTarjeta.aspx" />
+    <Content Include="Web References\bin\AjaxControlToolkit.dll" />
+    <Content Include="Web References\bin\Datos.dll" />
+    <Content Include="Web References\bin\Datos.pdb" />
+    <Content Include="Web References\bin\Entidades.dll" />
+    <Content Include="Web References\bin\Entidades.pdb" />
+    <Content Include="Web References\bin\Microsoft.ApplicationBlocks.Data.dll" />
+    <Content Include="Web References\bin\Microsoft.Practices.EnterpriseLibrary.Common.dll" />
+    <Content Include="Web References\bin\Microsoft.Practices.EnterpriseLibrary.Data.dll" />
+    <Content Include="Web References\bin\Microsoft.Practices.ObjectBuilder.dll" />
+    <Content Include="Web References\bin\Microsoft.Practices.ServiceLocation.dll" />
+    <Content Include="Web References\bin\Microsoft.Practices.ServiceLocation.pdb" />
+    <Content Include="Web References\bin\Microsoft.Practices.Unity.dll" />
+    <Content Include="Web References\bin\Microsoft.Practices.Unity.Interception.dll" />
+    <Content Include="Web References\bin\Negocio.dll" />
+    <Content Include="Web References\bin\Negocio.pdb" />
+    <Content Include="Web References\bin\Recaptcha.dll" />
+    <Content Include="Web References\bin\WebPfizer.LMS.eCard.dll" />
+    <Content Include="Web References\bin\WebPfizer.LMS.eCard.pdb" />
+    <Content Include="Calendar.css" />
+    <Content Include="CentroMensajes.aspx" />
+    <Content Include="EstilosBenavides.css" />
+    <Content Include="gral.css" />
+    <Content Include="Imagenes_Benavides\01800-img.png" />
+    <Content Include="Imagenes_Benavides\1-Micrositio-Benavides_Acceso.jpg" />
+    <Content Include="Imagenes_Benavides\3-Micrositio-Benavides_Inicio.jpg" />
+    <Content Include="Imagenes_Benavides\acceso-registro-header.jpg" />
+    <Content Include="Imagenes_Benavides\banner-prueba.png" />
+    <Content Include="Imagenes_Benavides\benavides.png" />
+    <Content Include="Imagenes_Benavides\botones\cancelar-btn-over.png" />
+    <Content Include="Imagenes_Benavides\botones\cancelar-btn.png" />
+    <Content Include="Imagenes_Benavides\botones\cerrar-btn-over.jpg" />
+    <Content Include="Imagenes_Benavides\botones\cerrar-btn.jpg" />
+    <Content Include="Imagenes_Benavides\botones\cerrarsesion-btn-over.jpg" />
+    <Content Include="Imagenes_Benavides\botones\cerrarsesion-btn.jpg" />
+    <Content Include="Imagenes_Benavides\botones\entrar-btn-over.png" />
+    <Content Include="Imagenes_Benavides\botones\entrar-btn.png" />
+    <Content Include="Imagenes_Benavides\botones\enviar-btn-over.png" />
+    <Content Include="Imagenes_Benavides\botones\enviar-btn.png" />
+    <Content Include="Imagenes_Benavides\botones\masinf-btn-over.png" />
+    <Content Include="Imagenes_Benavides\botones\masinf-btn.png" />
+    <Content Include="Imagenes_Benavides\botones\registrar-btn-over.png" />
+    <Content Include="Imagenes_Benavides\botones\registrar-btn.png" />
+    <Content Include="Imagenes_Benavides\btnEntrar.png" />
+    <Content Include="Imagenes_Benavides\cerrarsesion-btn-over.png" />
+    <Content Include="Imagenes_Benavides\cerrarsesion-btn.png" />
+    <Content Include="Imagenes_Benavides\contacto-fondo.png" />
+    <Content Include="Imagenes_Benavides\cuadro1.png" />
+    <Content Include="Imagenes_Benavides\cuadro2.png" />
+    <Content Include="Imagenes_Benavides\cuadro3.png" />
+    <Content Include="Imagenes_Benavides\header-azul.png" />
+    <Content Include="Imagenes_Benavides\logo-beneficio-int.png" />
+    <Content Include="Imagenes_Benavides\masinf-btn-over.png" />
+    <Content Include="Imagenes_Benavides\masinf-btn.png" />
+    <Content Include="Imagenes_Benavides\menu\contacto-btn-over.png" />
+    <Content Include="Imagenes_Benavides\menu\contacto-btn.png" />
+    <Content Include="Imagenes_Benavides\menu\inicio-btn-over.png" />
+    <Content Include="Imagenes_Benavides\menu\inicio-btn.png" />
+    <Content Include="Imagenes_Benavides\menu\mis_datos-btn-over.png" />
+    <Content Include="Imagenes_Benavides\menu\mis_datos-btn.png" />
+    <Content Include="Imagenes_Benavides\mi-perfil-fondo.jpg" />
+    <Content Include="Imagenes_Benavides\misdatos-fondo.jpg" />
+    <Content Include="Imagenes_Benavides\tarjeta-azul.png" />
+    <Content Include="Images\accept_.png" />
+    <Content Include="Images\AdminUsuario.png" />
+    <Content Include="Images\Banner-II-pfizer-conmigo-1000x350-sin-champix.gif" />
+    <Content Include="Images\cancel_.png" />
+    <Content Include="Images\Catalogos.png" />
+    <Content Include="Images\Complejo.png" />
+    <Content Include="Images\Configuracion.png" />
+    <Content Include="Images\Copia de bg.jpg" />
+    <Content Include="Images\Copia de Header.gif" />
+    <Content Include="Images\Copia de IconPfizerConmigo2.ico" />
+    <Content Include="Images\DeleteRed.png" />
+    <Content Include="Images\Estrenos.png" />
+    <Content Include="Images\files_add.png" />
+    <Content Include="Images\Footer2.jpg" />
+    <Content Include="Images\Footer2Blue.jpg" />
+    <Content Include="Images\Galeria.png" />
+    <Content Include="Images\Header.gif" />
+    <Content Include="Images\Header2.jpg" />
+    <Content Include="Images\IconPfizerConmigo.ico" />
+    <Content Include="Images\IconPfizerConmigo.jpg" />
+    <Content Include="Images\IconPfizerConmigo2.ico" />
+    <Content Include="Images\ImagenLipitor.png" />
+    <Content Include="Images\Magnifier2.png" />
+    <Content Include="Images\NuevaTarjeta.png" />
+    <Content Include="Images\Pagina.png" />
+    <Content Include="Images\Pelicula.png" />
+    <Content Include="Images\Pencil3.png" />
+    <Content Include="Images\Perfil.png" />
+    <Content Include="Images\pfizer-conmigobak.gif" />
+    <Content Include="Images\Plus__Orange.png" />
+    <Content Include="Images\Publicidad.png" />
+    <Content Include="Images\save.png" />
+    <Content Include="Images\TipoCalificacion.png" />
+    <Content Include="Images\TipoCine.png" />
+    <Content Include="Images\TipoComentario.png" />
+    <Content Include="Images\Title.jpg" />
+    <Content Include="Images\undo.png" />
+    <Content Include="Images\Usuario.png" />
+    <Content Include="Image\accept.png" />
+    <Content Include="Image\AdminUsuario.png" />
+    <Content Include="Image\bg.jpg" />
+    <Content Include="Image\calendario.gif" />
+    <Content Include="Image\Calendario.png" />
+    <Content Include="Image\cancel.png" />
+    <Content Include="Image\Catalogos.png" />
+    <Content Include="Image\Complejo.png" />
+    <Content Include="Image\conbg.jpg" />
+    <Content Include="Image\Configuracion.png" />
+    <Content Include="Image\Copia de conbg.jpg" />
+    <Content Include="Image\default.png" />
+    <Content Include="Image\DeleteRed.png" />
+    <Content Include="Image\Ecard.png" />
+    <Content Include="Image\Estrenos.png" />
+    <Content Include="Image\footer.jpg" />
+    <Content Include="Image\Galeria.png" />
+    <Content Include="Image\Header.gif" />
+    <Content Include="Image\headerbak.jpg" />
+    <Content Include="Image\hov.png" />
+    <Content Include="Image\Index.png" />
+    <Content Include="Image\Magnifier2.png" />
+    <Content Include="Image\Pagina.png" />
+    <Content Include="Image\Pelicula.png" />
+    <Content Include="Image\Pencil3.png" />
+    <Content Include="Image\Perfil.png" />
+    <Content Include="Image\Pfizer.gif" />
+    <Content Include="Image\Plus__Orange.png" />
+    <Content Include="Image\Publicidad.png" />
+    <Content Include="Image\read.png" />
+    <Content Include="Image\Salir.png" />
+    <Content Include="Image\TipoCalificacion.png" />
+    <Content Include="Image\TipoCine.png" />
+    <Content Include="Image\TipoComentario.png" />
+    <Content Include="Image\title_800.png" />
+    <Content Include="Image\title_center.png" />
+    <Content Include="Image\title_left.png" />
+    <Content Include="Image\title_right.png" />
+    <Content Include="Image\Usuario.png" />
+    <Content Include="MisDatos.aspx" />
+    <Content Include="obj\Debug\TempPE\Web References.72.32.11.237.Reference.cs.dll" />
+    <Content Include="obj\Debug\TempPE\Web References.localhost.Reference.cs.dll" />
+    <Content Include="obj\Debug\TempPE\Web References.WebServiceLMS_eCard.Reference.cs.dll" />
+    <Content Include="obj\Debug\TempPE\Web References.WSeCardPfizerVen.Reference.cs.dll" />
+    <Content Include="obj\Debug\TempPE\Web References.WsEcardPrePago.Reference.cs.dll" />
+    <Content Include="obj\Debug\TempPE\Web References.WsEcardPrePago_.Reference.cs.dll" />
+    <Content Include="obj\Debug\TempPE\Web References.WsPrepago.Reference.cs.dll" />
+    <Content Include="obj\Debug\TempPE\Web References.WsPrepago_.Reference.cs.dll" />
+    <Content Include="obj\Debug\TempPE\Web References.ZES_COMPLIANCEService.Reference.cs.dll" />
+    <Content Include="obj\Debug\TempPE\Web References.ZWS_COMPLIANCEService.Reference.cs.dll" />
+    <Content Include="obj\Debug\WebPfizer.LMS.eCard.dll" />
+    <Content Include="obj\Debug\WebPfizer.LMS.eCard.pdb" />
+    <Content Include="obj\WebPfizer.LMS.eCard.csproj.FileListAbsolute.txt" />
+    <Content Include="RegistroCliente.aspx" />
+    <Content Include="RegistroLlamada.aspx" />
+    <Content Include="RegistroLLamadas.aspx" />
+    <Content Include="Styles\Calendar.css" />
+    <Content Include="Images\accept.png" />
+    <Content Include="Images\bg.jpg" />
+    <Content Include="Images\calendario.gif" />
+    <Content Include="Images\Calendario.png" />
+    <Content Include="Images\cancel.png" />
+    <Content Include="Images\conbg.jpg" />
+    <Content Include="Images\default.png" />
+    <Content Include="Images\Ecard.png" />
+    <Content Include="Images\footer.jpg" />
+    <Content Include="Images\header.jpg" />
+    <Content Include="Images\hov.png" />
+    <Content Include="Images\Index.png" />
+    <Content Include="Images\Pfizer.gif" />
+    <Content Include="Images\read.png" />
+    <Content Include="Images\Salir.png" />
+    <Content Include="Images\title_800.png" />
+    <Content Include="Images\title_center.png" />
+    <Content Include="Images\title_left.png" />
+    <Content Include="Images\title_right.png" />
+    <Content Include="MasterECard.Master" />
+    <Content Include="Recaptcha.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Recaptcha.pdb" />
+    <Content Include="Index.aspx" />
+    <Content Include="Estilos.css" />
+    <Content Include="Styles\jcarousel-skin-tango.css" />
+    <Content Include="Styles\style.css" />
+    <Content Include="templates.css" />
+    <Content Include="Terminos.aspx" />
+    <Content Include="WebPfizer.LMS.eCard.csproj.vspscc" />
+    <Content Include="WebPfizer.LMS.eCard.Publish.xml" />
+    <Content Include="WFTestVarios.aspx" />
+    <None Include="Archivos\PfizerConmigo.zip" />
+    <None Include="Aspx\CVS\Repository" />
+    <None Include="Aspx\CVS\Root" />
+    <None Include="Web References\bin\ar\CVS\Repository" />
+    <None Include="Web References\bin\ar\CVS\Root" />
+    <None Include="Web References\bin\cs\CVS\Repository" />
+    <None Include="Web References\bin\cs\CVS\Root" />
+    <None Include="Web References\bin\CVS\Entries" />
+    <None Include="Web References\bin\CVS\Repository" />
+    <None Include="Web References\bin\CVS\Root" />
+    <None Include="Web References\bin\de\CVS\Repository" />
+    <None Include="Web References\bin\de\CVS\Root" />
+    <None Include="Web References\bin\es\CVS\Repository" />
+    <None Include="Web References\bin\es\CVS\Root" />
+    <None Include="Web References\bin\fr\CVS\Repository" />
+    <None Include="Web References\bin\fr\CVS\Root" />
+    <None Include="Web References\bin\he\CVS\Repository" />
+    <None Include="Web References\bin\he\CVS\Root" />
+    <None Include="Web References\bin\hi\CVS\Repository" />
+    <None Include="Web References\bin\hi\CVS\Root" />
+    <None Include="Web References\bin\it\CVS\Repository" />
+    <None Include="Web References\bin\it\CVS\Root" />
+    <None Include="Web References\bin\ja\CVS\Repository" />
+    <None Include="Web References\bin\ja\CVS\Root" />
+    <None Include="Web References\bin\ko\CVS\Repository" />
+    <None Include="Web References\bin\ko\CVS\Root" />
+    <None Include="Web References\bin\nl\CVS\Repository" />
+    <None Include="Web References\bin\nl\CVS\Root" />
+    <None Include="Web References\bin\pt\CVS\Repository" />
+    <None Include="Web References\bin\pt\CVS\Root" />
+    <None Include="Web References\bin\Recaptcha.dll.refresh" />
+    <None Include="Web References\bin\ru\CVS\Repository" />
+    <None Include="Web References\bin\ru\CVS\Root" />
+    <None Include="Web References\bin\tr-TR\CVS\Repository" />
+    <None Include="Web References\bin\tr-TR\CVS\Root" />
+    <None Include="Web References\bin\vssver.scc" />
+    <None Include="Web References\bin\zh-CHS\CVS\Repository" />
+    <None Include="Web References\bin\zh-CHS\CVS\Root" />
+    <None Include="Web References\bin\zh-CHT\CVS\Repository" />
+    <None Include="Web References\bin\zh-CHT\CVS\Root" />
+    <None Include="CVS\Entries" />
+    <None Include="CVS\Repository" />
+    <None Include="CVS\Root" />
+    <None Include="Imagenes_Benavides\botones\.DS_Store" />
+    <None Include="Imagenes_Benavides\botones\Thumbs.db" />
+    <None Include="Images\Thumbs.db" />
+    <None Include="Image\CVS\Entries" />
+    <None Include="Image\CVS\Repository" />
+    <None Include="Image\CVS\Root" />
+    <None Include="Image\vssver.scc" />
+    <None Include="mssccprj.scc" />
+    <None Include="obj\CVS\Entries" />
+    <None Include="obj\CVS\Repository" />
+    <None Include="obj\CVS\Root" />
+    <None Include="obj\Debug\CVS\Entries" />
+    <None Include="obj\Debug\CVS\Repository" />
+    <None Include="obj\Debug\CVS\Root" />
+    <None Include="obj\Debug\Refactor\CVS\Repository" />
+    <None Include="obj\Debug\Refactor\CVS\Root" />
+    <None Include="obj\Debug\TempPE\CVS\Entries" />
+    <None Include="obj\Debug\TempPE\CVS\Repository" />
+    <None Include="obj\Debug\TempPE\CVS\Root" />
+    <None Include="obj\Debug\TempPE\vssver.scc" />
+    <None Include="obj\Debug\vssver.scc" />
+    <None Include="obj\vssver.scc" />
+    <None Include="vssver.scc" />
+    <None Include="Web References\WSeCardPfizerVen\TarjetaCliente.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\WsPrepago\Comprobante.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\WsPrepago\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\WsPrepago\Ticket.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\WsPrepago\WsEcardPrePago.disco" />
+    <None Include="Web References\WsPrepago\WsEcardPrePago.wsdl" />
+    <None Include="Web References\WsPrepago_\Comprobante1.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\WsPrepago_\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\WsPrepago_\Ticket1.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\WsPrepago_\WsEcardPrePago.disco" />
+    <None Include="Web References\WsPrepago_\WsEcardPrePago.wsdl" />
+    <None Include="Web References\WSeCardPfizerVen\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\WSeCardPfizerVen\Transacciones.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\WSeCardPfizerVen\WsLMSeCardCRM.disco" />
+    <None Include="Web References\WSeCardPfizerVen\WsLMSeCardCRM.wsdl" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\ZWS_COMPLIANCEService\document.wsdl" />
+    <None Include="Web References\ZWS_COMPLIANCEService\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\ZWS_COMPLIANCEService\ZrfcComplianceSalidasResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\ZWS_COMPLIANCEService\ZrfcComplianceStocksMResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\ZWS_COMPLIANCEService\ZrfcComplianceStocksResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferenceUrl Include="http://72.32.11.237/WSeCardPfizerVen/WsLMSeCardCRM.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\WSeCardPfizerVen\</RelPath>
+      <UpdateFromURL>http://72.32.11.237/WSeCardPfizerVen/WsLMSeCardCRM.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>WebPfizer_LMS_eCard_WSeCardPfizerVen_WsLMSeCardCRM</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://72.32.11.237/WsEcardPrePagoDESA/WsEcardPrePago.asmx">
+      <UrlBehavior>Static</UrlBehavior>
+      <RelPath>Web References\WsPrepago_\</RelPath>
+      <UpdateFromURL>http://72.32.11.237/WsEcardPrePagoDESA/WsEcardPrePago.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>WebPfizer_LMS_eCard_WsPrepago_WsEcardPrePago</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://72.32.11.237/WsEcardPrePagoDESA/WsEcardPrePago.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\WsPrepago\</RelPath>
+      <UpdateFromURL>http://72.32.11.237/WsEcardPrePagoDESA/WsEcardPrePago.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>WebPfizer_LMS_eCard_WsPrepago_WsEcardPrePago</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://webservices.locatelve.com:8000/sap/bc/srt/wsdl/bndg_D0789D4D6CD1A034E10000000A7A278F/wsdl11/allinone/ws_policy/document%3fsap-client=400">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\ZWS_COMPLIANCEService\</RelPath>
+      <UpdateFromURL>http://webservices.locatelve.com:8000/sap/bc/srt/wsdl/bndg_D0789D4D6CD1A034E10000000A7A278F/wsdl11/allinone/ws_policy/document%3fsap-client=400</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>WebPfizer_LMS_eCard_ZWS_COMPLIANCEService_ZWS_COMPLIANCE</CachedSettingsPropName>
+    </WebReferenceUrl>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Web References\bin\App_LocalResources\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>2305</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>
+          </IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

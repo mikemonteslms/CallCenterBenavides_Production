@@ -1,0 +1,192 @@
+﻿.modalBackground
+{
+    background-color: black;
+    filter: alpha(opacity=60);
+    opacity: 0.6;
+}
+
+.modalBackground1
+{
+    background-color: gray;
+    filter: alpha(opacity=70);
+    opacity: 0.7;
+    te
+}
+.modalBackground2
+{
+    background-color: white;
+    filter: alpha(opacity=70);
+    opacity: 0.7;
+}
+
+.contacto
+{
+    color: #004A99;
+    font-weight: bold;
+    font-family: Arial;
+    font-size: 18pt;
+}
+.nombres
+{
+    color: #004A99;
+    font-weight: bold;
+    font-family: Arial;
+}
+.panelModal
+{
+    width: 400px;
+    height: 440px;
+}
+.tablaModal
+{
+    width: 380px;
+    margin: 8px;
+    padding: 8px;
+    border-spacing: 5px;
+}
+.cajaModal
+{
+    width: 300px;
+    height: 70px;
+    font-family: Arial;
+    font-style: italic;
+}
+
+.panelReportes
+{
+    width: 1010px;
+    height: 1100px;
+    display: block;
+}
+.panelTablaReportes
+{
+    width: 990px;
+    height: 900px;
+    display: block;
+    align: center;
+    text-align: center;
+}
+.gridReportes
+{
+    width: 800px;
+    height: 850px;
+}
+.imgReportes
+{
+    display: block;
+    width: 1010px;
+}
+.LabelRegistro
+{
+    font-family:FuturaStd-Bold;
+    color:#666666;
+    font-size:14px;
+}
+.LabelMisDatos
+{
+    font-family:FuturaStd-Book;
+    color:#666666;
+    font-size:14px;
+}
+.LabelPanelPeque
+{
+    font-family:FuturaStd-Bold;
+    color:#2B347A;
+    font-size:14px;
+}
+.CajaTextoRegistroPeque
+{
+    border-style: none;
+    border-color: inherit;
+    border-width: 0;
+    font-family: FuturaStd-Book; Font-Size:14px; color: #857F7A;
+    
+}
+.CajaTextoMisDatos
+{
+    border-style: none;
+    border-color: inherit;
+    border-width: 0;
+    font-family: FuturaStd-Book; Font-Size:14px; color: #857F7A;
+    
+}
+.tablaSinbordes
+{
+    border:0;
+    border-style: none;
+    border-collapse:collapse; 
+    border-spacing:0;
+    padding:0; 
+    margin:0; 
+    border-bottom-width:0;
+    padding:0;        
+}
+
+.linksBenaRecupera
+{
+    font-family:FuturaStd-Book;    
+    Font-Size:14px;
+    color:#2B347A;
+    text-decoration:none;
+}
+.linksBenaAcceso
+{
+    font-family:FuturaStd-Book;
+    Font-Size:14px;
+    color:#666666; 
+    text-decoration:none;
+}
+ .staticMenuItem 
+{ 
+    font-family:FuturaStd-Bold;
+    Font-Size:14px;
+    color:White;
+    background-color:#00B8EE;     
+    
+} 
+.menuHover 
+{ 
+    font-family:FuturaStd-Bold;
+    Font-Size:14px;
+    color:White;
+    background-color:#0DD2FD; 
+} 
+.headerfreezer
+{
+    position:absolute;
+    background-color:#436DB5;
+    color:#FFFFFF;
+    width:400px;
+
+}
+
+@font-face {
+    font-family: 'FuturaStd-Book';
+
+    src: url('../fonts/FuturaStd-Book.ttf') format('truetype');
+       
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'FuturaStd-Bold';
+  
+         src: url('../fonts/FuturaStd-Bold.ttf') format('truetype');
+       
+    font-weight: normal;
+    font-style: normal;
+}
+  
+.shadow {box-shadow: 1px 1px 7px #999999; }
+
+.content {
+box-shadow: 1px 1px 7px #999999;
+}
+
+.Menuseparado
+{
+    padding-bottom:5px;
+    margin-bottom: 3px;
+    height:25px;
+}

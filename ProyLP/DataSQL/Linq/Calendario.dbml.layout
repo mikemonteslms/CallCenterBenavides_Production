@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="Calendario">
+  <DataContextMoniker Name="/CalendarioDataContext" />
+  <nestedChildShapes>
+    <classShape Id="4c81b356-285f-4194-860a-03e06eb0bf86" absoluteBounds="1.125, 0.75, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/CalendarioDataContext/calendario" />
+      <nestedChildShapes>
+        <elementListCompartment Id="b6dd0cc5-4f64-4460-a286-8e6ac6abf381" absoluteBounds="1.1400000000000001, 1.21, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="17b83751-0aab-4db4-844b-03739efeb726" absoluteBounds="1.125, 2.5, 2, 1.7708968098958331">
+      <DataClassMoniker Name="/CalendarioDataContext/calendario_canje" />
+      <nestedChildShapes>
+        <elementListCompartment Id="e53c83a3-fa96-491b-9c15-3cf619d24288" absoluteBounds="1.1399999999999997, 2.96, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

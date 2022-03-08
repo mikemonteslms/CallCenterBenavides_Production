@@ -1,0 +1,1321 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://lms.com.mx/WebServices/LealtadBenavides" xmlns:s1="http://www.lms.com.mx/WebServices/Prepago" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://lms.com.mx/WebServices/LealtadBenavides" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://lms.com.mx/WebServices/LealtadBenavides">
+      <s:import namespace="http://www.lms.com.mx/WebServices/Prepago" />
+      <s:element name="ActivaTarjeta">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ProgramaID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Llave" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Sucursal" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Terminal" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Usuario" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Tarjeta" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ApellidoP" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ApellidoM" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Nombre" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="FechaNac" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CorreoE" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Telefono" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="TelefonoM" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Sexo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CP" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="NumAutorizacion" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Ticket" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ActivaTarjetaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ActivaTarjetaResult" type="tns:ArrayOfActivaTarjetaResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfActivaTarjetaResult">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ActivaTarjetaResult" nillable="true" type="tns:ActivaTarjetaResult" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ActivaTarjetaResult">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="NuevaFechaVigencia" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Tarjeta_strNumero" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CodigoError_strCodigo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CodigoRespuesta_StrCodigo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CodigoRespuesta_strDescripcion" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="CerrarCompra">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="objCotizacion" type="tns:CerrarCotizacionEntrada" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="CerrarCotizacionEntrada">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Pedidos" type="tns:ArrayOfPedidosCerrarCotizacion" />
+        </s:sequence>
+        <s:attribute name="Promociones" type="s:string" />
+        <s:attribute name="NoTicket" type="s:string" />
+        <s:attribute name="Cotizacion" type="s:string" />
+        <s:attribute name="Importe" type="s:float" use="required" />
+        <s:attribute name="TipoAcumulacion" type="s:string" />
+        <s:attribute name="ClienteABF" type="s:string" />
+        <s:attribute name="Usuario" type="s:string" />
+        <s:attribute name="Terminal" type="s:int" use="required" />
+        <s:attribute name="SucursalId" type="s:int" use="required" />
+        <s:attribute name="Tarjeta" type="s:string" />
+        <s:attribute name="ProgramaId" type="s:int" use="required" />
+        <s:attribute name="Llave" type="s:string" />
+        <s:attribute name="FormaPago" type="s:string" />
+        <s:attribute name="FechaContable" type="s:string" />
+        <s:attribute name="ConfirmacionRedencion" type="s:string" />
+        <s:attribute name="MontoTotalRedimido" type="s:float" use="required" />
+      </s:complexType>
+      <s:complexType name="ArrayOfPedidosCerrarCotizacion">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="PedidosCerrarCotizacion" nillable="true" type="s1:PedidosCerrarCotizacion" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="CerrarCompraResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CerrarCompraResult" type="tns:CerrarCotizacionSalida" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="CerrarCotizacionSalida">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Folios" type="tns:ArrayOfWsFolioCerrarCompra" />
+        </s:sequence>
+        <s:attribute name="Referencia" type="s:string" />
+        <s:attribute name="DescripcionTipoPago" type="s:string" />
+        <s:attribute name="IdTipoPago" type="s:string" />
+        <s:attribute name="TicketMensaje" type="s:string" />
+        <s:attribute name="FechaVencimientoPuntos" type="s:string" />
+        <s:attribute name="Cliente_intSaldoActual" type="s:string" />
+        <s:attribute name="Cliente_intSaldoActualPesos" type="s:string" />
+        <s:attribute name="Tarjeta" type="s:string" />
+        <s:attribute name="SucursalId" type="s:string" />
+        <s:attribute name="Usuario" type="s:string" />
+        <s:attribute name="CodigoError" type="s:string" />
+        <s:attribute name="IdCodigoRespuesta" type="s:string" />
+        <s:attribute name="DescripcionCodigoRespuesta" type="s:string" />
+        <s:attribute name="Confirmacion" type="s:string" />
+        <s:attribute name="Terminal" type="s:string" />
+        <s:attribute name="Cliente_intSaldoAnterior" type="s:string" />
+        <s:attribute name="PuntosRedimidos" type="s:string" />
+        <s:attribute name="Cliente_intPesosObtenidos" type="s:string" />
+        <s:attribute name="Promociones" type="s:string" />
+        <s:attribute name="VigenciaTarjeta" type="s:string" />
+      </s:complexType>
+      <s:complexType name="ArrayOfWsFolioCerrarCompra">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="wsFolioCerrarCompra" nillable="true" type="s1:wsFolioCerrarCompra" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ValidaTarjeta">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ProgramaID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Llave" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Tarjeta" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="VesionPos" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Usuario" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="sucursalId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="terminal" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ValidaTarjetaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ValidaTarjetaResult" type="tns:ArrayOfValidaTarjetaResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfValidaTarjetaResult">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ValidaTarjetaResult" nillable="true" type="tns:ValidaTarjetaResult" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ValidaTarjetaResult">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Tarjeta_strNumero" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CodigoError_strCodigo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CodigoRespuesta_StrCodigo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CodigoRespuesta_strDescripcion" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Cliente_strNombre" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Cliente_strAPaterno" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Cliente_strAMaterno" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Cliente_strCodigoPostal" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Tarjeta_strEstatus" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Tarjeta_intMontoAcumulados" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Tarjeta_intPuntosAcumulados" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MensajePublicar" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="FechaVencimientoPuntos" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Tarjeta_intNivel" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Tarjeta_strNivel" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DateFechaAlta" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="StrIdPromocion" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="StrMsgPromocion" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="SaldoAnteriorPesos" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="SaldoAnteriorPuntos" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="FechaNacimiento" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Sexo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Telefono" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Celular" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CorreoE" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PromoAcumulacionPendiente" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TarjetaGP" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="BoomerangsAcumulados" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ClubPeques" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ListaPromociones" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="SegmentoInformativo" type="tns:ArrayOfClub" />
+          <s:element minOccurs="0" maxOccurs="1" name="FechaVigencia" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MensajeVigencia" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="FechaInicioClubPeques" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfClub">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Club" nillable="true" type="s1:Club" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ProcesarPago">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ProgramaID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Llave" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Tarjeta" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Sucursal" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Terminal" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Usuario" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Importe" type="s:double" />
+            <s:element minOccurs="0" maxOccurs="1" name="Ticket" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="FechaContable" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="IdCotizacion" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ProcesarPagoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ProcesarPagoResult" type="tns:ArrayOfProcesarPagoResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfProcesarPagoResult">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ProcesarPagoResult" nillable="true" type="tns:ProcesarPagoResult" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ProcesarPagoResult">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Tarjeta_strNumero" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CodigoError_strCodigo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CodigoRespuesta_StrCodigo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CodigoRespuesta_strDescripcion" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="StrConfirmacion" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Cliente_intSaldoAnterior" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Cliente_intPuntosRedimidos" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Cliente_intSaldoActual" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Cliente_intSaldoActualPesos" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="CancelarCompra">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ProgramaID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Llave" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Tarjeta" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Cotizacion" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ProductoSku" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Terminal" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="UsuarioCaja" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="SucursalId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="NumeroTicket" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="FechaContable" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CancelarCompraResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CancelarCompraResult" type="tns:ArrayOfCancelarCompraResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfCancelarCompraResult">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="CancelarCompraResult" nillable="true" type="tns:CancelarCompraResult" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="CancelarCompraResult">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Tarjeta_strNumero" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CodigoError_strCodigo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CodigoRespuesta_StrCodigo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CodigoRespuesta_strDescripcion" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="StrConfirmacion" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Cliente_intSaldoAnterior" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Cliente_intPuntosCancelados" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Cliente_intSaldoActual" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Cliente_intSaldoActualPesos" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Cliente_intSaldoAnteriorPesos" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="CancelarCompraSinCandados">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ProgramaID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Llave" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Tarjeta" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Cotizacion" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ProductoSku" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Terminal" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="UsuarioCaja" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="SucursalId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="NumeroTicket" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="FechaContable" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CancelarCompraSinCandadosResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CancelarCompraSinCandadosResult" type="tns:ArrayOfCancelarCompraResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CancelarPago">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ProgramaID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Llave" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Tarjeta" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Sucursal" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Terminal" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Usuario" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Importe" type="s:double" />
+            <s:element minOccurs="0" maxOccurs="1" name="Ticket" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="StrConfirmacion" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CancelarPagoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CancelarPagoResult" type="tns:ArrayOfCancelarPagoResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfCancelarPagoResult">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="CancelarPagoResult" nillable="true" type="tns:CancelarPagoResult" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="CancelarPagoResult">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Tarjeta_strNumero" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CodigoError_strCodigo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CodigoRespuesta_StrCodigo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CodigoRespuesta_strDescripcion" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="StrConfirmacion" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Cliente_intPuntosDevueltos" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Cliente_intSaldoAnterior" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Cliente_intSaldoActual" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Cliente_intSaldoActualPesos" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Cliente_intSaldoAnteriorPesos" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="BuscarPaciente">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ProgramaID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Llave" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strAPaterno" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strAMaterno" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strNombre" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strFechaNac" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strCorreo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strCelular" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strTelefono" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BuscarPacienteResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="BuscarPacienteResult" type="tns:ArrayOfBuscarPacienteResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfBuscarPacienteResult">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="BuscarPacienteResult" nillable="true" type="tns:BuscarPacienteResult" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="BuscarPacienteResult">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="TipoTarjeta" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="EstatusTarjeta" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Tarjeta_strNumero" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Cliente_strApellidoPaterno" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Cliente_strApellidoMaterno" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Cliente_strPrimerNombre" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Cliente_dateFechaNacimiento" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Cliente_dateFechaAlta" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Cliente_strCorreoElectronico" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Cliente_strTelefonoCelular" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Cliente_strTelefonoCasa" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="FechaVigencia" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ActivaTarjetaFB">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="usuarioALTA" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="tarjeta" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="contraseña" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="apellidoP" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="apellidoM" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="nombre" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="fechaNac" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="correoE" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="telefono" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="telefonoM" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="genero" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="calle" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="numExt" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="numInt" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="idColonia" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="idMunicipio" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="idEstado" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="CP" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="idFacebook" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="likeCadenas" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ActivaTarjetaFBResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ActivaTarjetaFBResult" type="tns:ArrayOfActivaTarjetaFBResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfActivaTarjetaFBResult">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ActivaTarjetaFBResult" nillable="true" type="tns:ActivaTarjetaFBResult" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ActivaTarjetaFBResult">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Tarjeta_strNumero" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CodigoError_strCodigo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CodigoRespuesta_StrCodigo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CodigoRespuesta_strDescripcion" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ConsultaAcumulacionPendiente">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ProgramaID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Llave" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Tarjeta" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Sucursal" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Usuario" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConsultaAcumulacionPendienteResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ConsultaAcumulacionPendienteResult" type="tns:ConsultaAcumulacionPendienteResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ConsultaAcumulacionPendienteResult">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Data" type="tns:ArrayOfDataConsultaAcumulacion" />
+          <s:element minOccurs="0" maxOccurs="1" name="CodigoRespuesta_StrCodigo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CodigoRespuesta_strDescripcion" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfDataConsultaAcumulacion">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="dataConsultaAcumulacion" nillable="true" type="tns:dataConsultaAcumulacion" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="dataConsultaAcumulacion">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="NombreLab" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="NombreProducto" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Cupon" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="VigenciaFin" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PiezasFaltaCompra" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Tarjeta_strNumero" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Sku" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Acumulado" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DescripcionMecanica" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ConsultaPromocion">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ProgramaID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Llave" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Tarjeta" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Ticket" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Terminal" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="UsuarioCaja" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SucursalId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConsultaPromocionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ConsultaPromocionResult" type="tns:ArrayOfConsultaAcumulacionResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfConsultaAcumulacionResult">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ConsultaAcumulacionResult" nillable="true" type="tns:ConsultaAcumulacionResult" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ConsultaAcumulacionResult">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Cotizacion" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Tarjeta_strNumero" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TicketResult" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CodigoRespuesta_StrCodigo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CodigoRespuesta_strDescripcion" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="TraspasaPuntos">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ProgramaID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Llave" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Sucursal" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Terminal" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="TarjetaOrigen" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="TarjetaDestino" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Motivo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="UsuarioTras" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TraspasaPuntosResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="TraspasaPuntosResult" type="tns:ArrayOfTraspasaPuntosResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfTraspasaPuntosResult">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="TraspasaPuntosResult" nillable="true" type="tns:TraspasaPuntosResult" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="TraspasaPuntosResult">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Tarjeta_strNumeroD" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CodigoError_strCodigo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CodigoRespuesta_StrCodigo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CodigoRespuesta_strDescripcion" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Tarjeta_decSaldoIniO" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Tarjeta_decSaldoIniD" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Tarjeta_decSaldoFinO" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Tarjeta_decSaldoFinD" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ObtenerBeneficios">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" ref="s1:wsCompra" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ObtenerBeneficiosResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" ref="s1:wsTicket" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConsultaMovimientos">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Tarjeta" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="CodigoInterno" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="codigoBarras" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="NoRegistros" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConsultaMovimientosResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ConsultaMovimientosResult" type="tns:ConsultaMovimientosResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ConsultaMovimientosResult">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Data" type="tns:ArrayOfMovimiento" />
+          <s:element minOccurs="0" maxOccurs="1" name="CodigoRespuesta_StrCodigo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CodigoRespuesta_strDescripcion" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfMovimiento">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Movimiento" nillable="true" type="tns:Movimiento" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Movimiento">
+        <s:attribute name="TipoTransaccion" type="s:string" />
+        <s:attribute name="HoraMov" type="s:string" />
+        <s:attribute name="FechaMov" type="s:string" />
+        <s:attribute name="NombreCadena" type="s:string" />
+        <s:attribute name="SucursalId" type="s:int" use="required" />
+        <s:attribute name="SucursalNombre" type="s:string" />
+        <s:attribute name="CadenaId" type="s:int" use="required" />
+        <s:attribute name="Preciofinal" type="s:float" use="required" />
+        <s:attribute name="Descuento" type="s:float" use="required" />
+        <s:attribute name="Cantidad" type="s:int" use="required" />
+        <s:attribute name="Tarjeta" type="s:string" />
+        <s:attribute name="Ticket" type="s:string" />
+        <s:attribute name="Pedido_CodigoInterno" type="s:int" use="required" />
+        <s:attribute name="Promociones" type="s:string" />
+        <s:attribute name="PrecioLista" type="s:float" use="required" />
+        <s:attribute name="PrecioOferta" type="s:float" use="required" />
+        <s:attribute name="PrecioMaximoPublico" type="s:float" use="required" />
+        <s:attribute name="PedidoIVA" type="s:int" use="required" />
+        <s:attribute name="PedidoReferencia" type="s:string" />
+        <s:attribute name="PiezasVenta" type="s:int" use="required" />
+        <s:attribute name="PiezasGratis" type="s:int" use="required" />
+        <s:attribute name="Pedido_Sku" type="s:string" />
+      </s:complexType>
+      <s:element name="ConsultaTraspasos">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ProgramaID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Llave" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="TarjetaOrigen" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConsultaTraspasosResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ConsultaTraspasosResult" type="tns:ArrayOfTraspasosResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfTraspasosResult">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="TraspasosResult" nillable="true" type="tns:TraspasosResult" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="TraspasosResult">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Tarjeta_strNumeroD" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Tarjeta_strNumeroO" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Traspaso_dateFechaTraspado" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Traspaso_timeHoraTraspaso" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Traspaso_strSucursal" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Traspaso_strCaja" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Traspaso_strMonto" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="PromocionesSucursal">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Sucursal" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PromocionesSucursalResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" ref="s1:ListaPromociones" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="HistorialCompras">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="tarjeta" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="NumeroRegistros" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="HistorialComprasResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" ref="s1:HistorialCompras" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://www.lms.com.mx/WebServices/Prepago">
+      <s:complexType name="PedidosCerrarCotizacion">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="PromocionesDp" type="s:string" />
+        </s:sequence>
+        <s:attribute name="CodigoBarras" type="s:string" />
+        <s:attribute name="Compras" type="s:int" use="required" />
+        <s:attribute name="Beneficios" type="s:int" use="required" />
+        <s:attribute name="CodigoInterno" type="s:string" />
+        <s:attribute name="PrecioDescuento" type="s:float" use="required" />
+        <s:attribute name="PrecioFinal" type="s:float" use="required" />
+        <s:attribute name="RefProducto" type="s:string" />
+        <s:attribute name="MontoBaseParaAcumular" type="s:float" use="required" />
+        <s:attribute name="MontoRedimido" type="s:float" use="required" />
+      </s:complexType>
+      <s:complexType name="wsFolioCerrarCompra">
+        <s:attribute name="CodigoBarras" type="s:string" />
+        <s:attribute name="CodigoInterno" type="s:string" />
+        <s:attribute name="IntMontoAcumSKU" type="s:string" />
+        <s:attribute name="Compras" type="s:int" use="required" />
+        <s:attribute name="Beneficios" type="s:int" use="required" />
+        <s:attribute name="RefProducto" type="s:string" />
+        <s:attribute name="Laboratorio" type="s:string" />
+        <s:attribute name="IdLaboratorio" type="s:int" use="required" />
+        <s:attribute name="PromocionDp" type="s:string" />
+        <s:attribute name="PuntosAcumSKU" type="s:string" />
+        <s:attribute name="ProveedorID" type="s:string" />
+      </s:complexType>
+      <s:complexType name="Club">
+        <s:attribute name="IdSegmento" type="s:string" />
+        <s:attribute name="Segmento_descripcion" type="s:string" />
+      </s:complexType>
+      <s:element name="wsCompra" type="s1:wsCompra" />
+      <s:complexType name="wsCompra">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="wsPedido" type="s1:wsPedido" />
+        </s:sequence>
+        <s:attribute name="ProgramaID" type="s:string" />
+        <s:attribute name="Llave" type="s:string" />
+        <s:attribute name="Tarjeta" type="s:string" />
+        <s:attribute name="Ticket_strId" type="s:string" />
+        <s:attribute name="Terminal_intId" type="s:int" use="required" />
+        <s:attribute name="UsuarioCaja" type="s:string" />
+        <s:attribute name="Cadena_intId" type="s:int" use="required" />
+        <s:attribute name="TipoAcumulacion" type="s:string" />
+        <s:attribute name="Sucursal_intId" type="s:int" use="required" />
+        <s:attribute name="VersionPOS" type="s:string" />
+        <s:attribute name="IntABF" type="s:string" />
+        <s:attribute name="CveClienteABF" type="s:string" />
+        <s:attribute name="NumPedidoDomicilio" type="s:int" use="required" />
+        <s:attribute name="FolioRecetaSAC" type="s:int" use="required" />
+        <s:attribute name="Cedulaprofesional" type="s:string" />
+      </s:complexType>
+      <s:complexType name="wsPedido">
+        <s:attribute name="CodigoBarras" type="s:string" />
+        <s:attribute name="CodigoInterno" type="s:string" />
+        <s:attribute name="CantidadPiezas" type="s:int" use="required" />
+        <s:attribute name="PrecioLista" type="s:float" use="required" />
+        <s:attribute name="PrecioOferta" type="s:float" use="required" />
+        <s:attribute name="PrecioMaximoPublico" type="s:float" use="required" />
+        <s:attribute name="PedidoIVA" type="s:float" use="required" />
+        <s:attribute name="RefProducto" type="s:string" />
+      </s:complexType>
+      <s:element name="wsTicket" type="s1:wsTicket" />
+      <s:complexType name="wsTicket">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Folios" type="s1:ArrayOfWsFolioRespuesta" />
+          <s:element minOccurs="0" maxOccurs="1" name="CodigoRespuesta_StrCodigo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CodigoRespuesta_strDescripcion" type="s:string" />
+        </s:sequence>
+        <s:attribute name="DescripcionMecanica" type="s:string" />
+        <s:attribute name="Acumulado" type="s:float" use="required" />
+        <s:attribute name="Tarjeta_strNumero" type="s:string" />
+        <s:attribute name="TicketResult" type="s:string" />
+        <s:attribute name="CotizacionId" type="s:string" />
+      </s:complexType>
+      <s:complexType name="ArrayOfWsFolioRespuesta">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="wsFolioRespuesta" nillable="true" type="s1:wsFolioRespuesta" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="wsFolioRespuesta">
+        <s:attribute name="CodigoBarras" type="s:string" />
+        <s:attribute name="CodigoExcepcion" type="s:string" />
+        <s:attribute name="DescripcionExcepcion" type="s:string" />
+        <s:attribute name="Compras" type="s:int" use="required" />
+        <s:attribute name="Beneficios" type="s:int" use="required" />
+        <s:attribute name="Sugeridos" type="s:int" use="required" />
+        <s:attribute name="CodigoInterno" type="s:string" />
+        <s:attribute name="PrecioBase" type="s:float" use="required" />
+        <s:attribute name="PorcentajeDescuento" type="s:float" use="required" />
+        <s:attribute name="PrecioFinal" type="s:float" use="required" />
+        <s:attribute name="ReferenciaProducto" type="s:string" />
+        <s:attribute name="Laboratorio" type="s:string" />
+        <s:attribute name="IdLaboratorio" type="s:int" use="required" />
+        <s:attribute name="PrecioUnitarioFinal" type="s:float" use="required" />
+      </s:complexType>
+      <s:element name="ListaPromociones" type="s1:ListaPromociones" />
+      <s:complexType name="ListaPromociones">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="PromocionesResult" type="s1:ArrayOfListaPromocionesResult" />
+        </s:sequence>
+        <s:attribute name="TotalPromociones" type="s:int" use="required" />
+        <s:attribute name="CodigoError" type="s:string" />
+        <s:attribute name="IdCodigoRespuesta" type="s:string" />
+        <s:attribute name="DescripcionCodigoRespuesta" type="s:string" />
+      </s:complexType>
+      <s:complexType name="ArrayOfListaPromocionesResult">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ListaPromocionesResult" nillable="true" type="s1:ListaPromocionesResult" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ListaPromocionesResult">
+        <s:attribute name="SKU" type="s:string" />
+        <s:attribute name="NombreProd" type="s:string" />
+        <s:attribute name="DescrPromocion" type="s:string" />
+        <s:attribute name="VigenciaFin" type="s:string" />
+        <s:attribute name="MsgLimite" type="s:string" />
+        <s:attribute name="MsgSegmento" type="s:string" />
+        <s:attribute name="TipoAcumulacion" type="s:int" use="required" />
+        <s:attribute name="IdPromocion" type="s:int" use="required" />
+      </s:complexType>
+      <s:element name="HistorialCompras" type="s1:HistorialCompras" />
+      <s:complexType name="HistorialCompras">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="HistorialComprasResult" type="s1:ArrayOfHistorialComprasResult" />
+        </s:sequence>
+        <s:attribute name="CodigoError" type="s:string" />
+        <s:attribute name="IdCodigoRespuesta" type="s:string" />
+        <s:attribute name="DescripcionCodigoRespuesta" type="s:string" />
+      </s:complexType>
+      <s:complexType name="ArrayOfHistorialComprasResult">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="HistorialComprasResult" nillable="true" type="s1:HistorialComprasResult" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="HistorialComprasResult">
+        <s:attribute name="Codigo" type="s:string" />
+        <s:attribute name="Descripcion" type="s:string" />
+        <s:attribute name="CantidadComprada" type="s:string" />
+        <s:attribute name="FechaUltimaCompra" type="s:string" />
+      </s:complexType>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="ActivaTarjetaSoapIn">
+    <wsdl:part name="parameters" element="tns:ActivaTarjeta" />
+  </wsdl:message>
+  <wsdl:message name="ActivaTarjetaSoapOut">
+    <wsdl:part name="parameters" element="tns:ActivaTarjetaResponse" />
+  </wsdl:message>
+  <wsdl:message name="CerrarCompraSoapIn">
+    <wsdl:part name="parameters" element="tns:CerrarCompra" />
+  </wsdl:message>
+  <wsdl:message name="CerrarCompraSoapOut">
+    <wsdl:part name="parameters" element="tns:CerrarCompraResponse" />
+  </wsdl:message>
+  <wsdl:message name="ValidaTarjetaSoapIn">
+    <wsdl:part name="parameters" element="tns:ValidaTarjeta" />
+  </wsdl:message>
+  <wsdl:message name="ValidaTarjetaSoapOut">
+    <wsdl:part name="parameters" element="tns:ValidaTarjetaResponse" />
+  </wsdl:message>
+  <wsdl:message name="ProcesarPagoSoapIn">
+    <wsdl:part name="parameters" element="tns:ProcesarPago" />
+  </wsdl:message>
+  <wsdl:message name="ProcesarPagoSoapOut">
+    <wsdl:part name="parameters" element="tns:ProcesarPagoResponse" />
+  </wsdl:message>
+  <wsdl:message name="CancelarCompraSoapIn">
+    <wsdl:part name="parameters" element="tns:CancelarCompra" />
+  </wsdl:message>
+  <wsdl:message name="CancelarCompraSoapOut">
+    <wsdl:part name="parameters" element="tns:CancelarCompraResponse" />
+  </wsdl:message>
+  <wsdl:message name="CancelarCompraSinCandadosSoapIn">
+    <wsdl:part name="parameters" element="tns:CancelarCompraSinCandados" />
+  </wsdl:message>
+  <wsdl:message name="CancelarCompraSinCandadosSoapOut">
+    <wsdl:part name="parameters" element="tns:CancelarCompraSinCandadosResponse" />
+  </wsdl:message>
+  <wsdl:message name="CancelarPagoSoapIn">
+    <wsdl:part name="parameters" element="tns:CancelarPago" />
+  </wsdl:message>
+  <wsdl:message name="CancelarPagoSoapOut">
+    <wsdl:part name="parameters" element="tns:CancelarPagoResponse" />
+  </wsdl:message>
+  <wsdl:message name="BuscarPacienteSoapIn">
+    <wsdl:part name="parameters" element="tns:BuscarPaciente" />
+  </wsdl:message>
+  <wsdl:message name="BuscarPacienteSoapOut">
+    <wsdl:part name="parameters" element="tns:BuscarPacienteResponse" />
+  </wsdl:message>
+  <wsdl:message name="ActivaTarjetaFBSoapIn">
+    <wsdl:part name="parameters" element="tns:ActivaTarjetaFB" />
+  </wsdl:message>
+  <wsdl:message name="ActivaTarjetaFBSoapOut">
+    <wsdl:part name="parameters" element="tns:ActivaTarjetaFBResponse" />
+  </wsdl:message>
+  <wsdl:message name="ConsultaAcumulacionPendienteSoapIn">
+    <wsdl:part name="parameters" element="tns:ConsultaAcumulacionPendiente" />
+  </wsdl:message>
+  <wsdl:message name="ConsultaAcumulacionPendienteSoapOut">
+    <wsdl:part name="parameters" element="tns:ConsultaAcumulacionPendienteResponse" />
+  </wsdl:message>
+  <wsdl:message name="ConsultaPromocionSoapIn">
+    <wsdl:part name="parameters" element="tns:ConsultaPromocion" />
+  </wsdl:message>
+  <wsdl:message name="ConsultaPromocionSoapOut">
+    <wsdl:part name="parameters" element="tns:ConsultaPromocionResponse" />
+  </wsdl:message>
+  <wsdl:message name="TraspasaPuntosSoapIn">
+    <wsdl:part name="parameters" element="tns:TraspasaPuntos" />
+  </wsdl:message>
+  <wsdl:message name="TraspasaPuntosSoapOut">
+    <wsdl:part name="parameters" element="tns:TraspasaPuntosResponse" />
+  </wsdl:message>
+  <wsdl:message name="ObtenerBeneficiosSoapIn">
+    <wsdl:part name="parameters" element="tns:ObtenerBeneficios" />
+  </wsdl:message>
+  <wsdl:message name="ObtenerBeneficiosSoapOut">
+    <wsdl:part name="parameters" element="tns:ObtenerBeneficiosResponse" />
+  </wsdl:message>
+  <wsdl:message name="ConsultaMovimientosSoapIn">
+    <wsdl:part name="parameters" element="tns:ConsultaMovimientos" />
+  </wsdl:message>
+  <wsdl:message name="ConsultaMovimientosSoapOut">
+    <wsdl:part name="parameters" element="tns:ConsultaMovimientosResponse" />
+  </wsdl:message>
+  <wsdl:message name="ConsultaTraspasosSoapIn">
+    <wsdl:part name="parameters" element="tns:ConsultaTraspasos" />
+  </wsdl:message>
+  <wsdl:message name="ConsultaTraspasosSoapOut">
+    <wsdl:part name="parameters" element="tns:ConsultaTraspasosResponse" />
+  </wsdl:message>
+  <wsdl:message name="PromocionesSucursalSoapIn">
+    <wsdl:part name="parameters" element="tns:PromocionesSucursal" />
+  </wsdl:message>
+  <wsdl:message name="PromocionesSucursalSoapOut">
+    <wsdl:part name="parameters" element="tns:PromocionesSucursalResponse" />
+  </wsdl:message>
+  <wsdl:message name="HistorialComprasSoapIn">
+    <wsdl:part name="parameters" element="tns:HistorialCompras" />
+  </wsdl:message>
+  <wsdl:message name="HistorialComprasSoapOut">
+    <wsdl:part name="parameters" element="tns:HistorialComprasResponse" />
+  </wsdl:message>
+  <wsdl:portType name="WsReglasNegocioSoap">
+    <wsdl:operation name="ActivaTarjeta">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Metodo que nos permite activar una tarjeta.</wsdl:documentation>
+      <wsdl:input message="tns:ActivaTarjetaSoapIn" />
+      <wsdl:output message="tns:ActivaTarjetaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CerrarCompra">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Metodo que nos permite cerrar una compra.</wsdl:documentation>
+      <wsdl:input message="tns:CerrarCompraSoapIn" />
+      <wsdl:output message="tns:CerrarCompraSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ValidaTarjeta">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Metodo que nos permite validar una tarjeta.</wsdl:documentation>
+      <wsdl:input message="tns:ValidaTarjetaSoapIn" />
+      <wsdl:output message="tns:ValidaTarjetaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ProcesarPago">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Metodo que nos permite procesar pago.</wsdl:documentation>
+      <wsdl:input message="tns:ProcesarPagoSoapIn" />
+      <wsdl:output message="tns:ProcesarPagoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CancelarCompra">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Metodo que nos permite cancelar una compra.</wsdl:documentation>
+      <wsdl:input message="tns:CancelarCompraSoapIn" />
+      <wsdl:output message="tns:CancelarCompraSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CancelarCompraSinCandados">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Metodo que nos permite cancelar una compra sin candados.</wsdl:documentation>
+      <wsdl:input message="tns:CancelarCompraSinCandadosSoapIn" />
+      <wsdl:output message="tns:CancelarCompraSinCandadosSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CancelarPago">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Metodo que nos permite procesar pago.</wsdl:documentation>
+      <wsdl:input message="tns:CancelarPagoSoapIn" />
+      <wsdl:output message="tns:CancelarPagoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="BuscarPaciente">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Metodo que nos permite buscar un paciente.</wsdl:documentation>
+      <wsdl:input message="tns:BuscarPacienteSoapIn" />
+      <wsdl:output message="tns:BuscarPacienteSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ActivaTarjetaFB">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Metodo que nos permite registrar un cliente.</wsdl:documentation>
+      <wsdl:input message="tns:ActivaTarjetaFBSoapIn" />
+      <wsdl:output message="tns:ActivaTarjetaFBSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaAcumulacionPendiente">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Regresa todos los productos del programa de Pieza Gratis que tengan una acumulación</wsdl:documentation>
+      <wsdl:input message="tns:ConsultaAcumulacionPendienteSoapIn" />
+      <wsdl:output message="tns:ConsultaAcumulacionPendienteSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaPromocion">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Consulta Promoción</wsdl:documentation>
+      <wsdl:input message="tns:ConsultaPromocionSoapIn" />
+      <wsdl:output message="tns:ConsultaPromocionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="TraspasaPuntos">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Traspaso de puntos entre tarjetas</wsdl:documentation>
+      <wsdl:input message="tns:TraspasaPuntosSoapIn" />
+      <wsdl:output message="tns:TraspasaPuntosSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerBeneficios">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Método que nos permite Obtener Beneficios de Pfizer, new!. </wsdl:documentation>
+      <wsdl:input message="tns:ObtenerBeneficiosSoapIn" />
+      <wsdl:output message="tns:ObtenerBeneficiosSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaMovimientos">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Obtener ultimos 10 movimientos</wsdl:documentation>
+      <wsdl:input message="tns:ConsultaMovimientosSoapIn" />
+      <wsdl:output message="tns:ConsultaMovimientosSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaTraspasos">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Regresa la lista de traspasos de una tarjeta</wsdl:documentation>
+      <wsdl:input message="tns:ConsultaTraspasosSoapIn" />
+      <wsdl:output message="tns:ConsultaTraspasosSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PromocionesSucursal">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Regresa la lista de promociones de una sucursal</wsdl:documentation>
+      <wsdl:input message="tns:PromocionesSucursalSoapIn" />
+      <wsdl:output message="tns:PromocionesSucursalSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="HistorialCompras">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Regresa la lista de promociones de una sucursal</wsdl:documentation>
+      <wsdl:input message="tns:HistorialComprasSoapIn" />
+      <wsdl:output message="tns:HistorialComprasSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WsReglasNegocioSoap" type="tns:WsReglasNegocioSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ActivaTarjeta">
+      <soap:operation soapAction="http://lms.com.mx/WebServices/LealtadBenavides/ActivaTarjeta" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CerrarCompra">
+      <soap:operation soapAction="http://lms.com.mx/WebServices/LealtadBenavides/CerrarCompra" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidaTarjeta">
+      <soap:operation soapAction="http://lms.com.mx/WebServices/LealtadBenavides/ValidaTarjeta" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ProcesarPago">
+      <soap:operation soapAction="http://lms.com.mx/WebServices/LealtadBenavides/ProcesarPago" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CancelarCompra">
+      <soap:operation soapAction="http://lms.com.mx/WebServices/LealtadBenavides/CancelarCompra" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CancelarCompraSinCandados">
+      <soap:operation soapAction="http://lms.com.mx/WebServices/LealtadBenavides/CancelarCompraSinCandados" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CancelarPago">
+      <soap:operation soapAction="http://lms.com.mx/WebServices/LealtadBenavides/CancelarPago" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BuscarPaciente">
+      <soap:operation soapAction="http://lms.com.mx/WebServices/LealtadBenavides/BuscarPaciente" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActivaTarjetaFB">
+      <soap:operation soapAction="http://lms.com.mx/WebServices/LealtadBenavides/ActivaTarjetaFB" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaAcumulacionPendiente">
+      <soap:operation soapAction="http://lms.com.mx/WebServices/LealtadBenavides/ConsultaAcumulacionPendiente" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaPromocion">
+      <soap:operation soapAction="http://lms.com.mx/WebServices/LealtadBenavides/ConsultaPromocion" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TraspasaPuntos">
+      <soap:operation soapAction="http://lms.com.mx/WebServices/LealtadBenavides/TraspasaPuntos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerBeneficios">
+      <soap:operation soapAction="http://lms.com.mx/WebServices/LealtadBenavides/ObtenerBeneficios" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaMovimientos">
+      <soap:operation soapAction="http://lms.com.mx/WebServices/LealtadBenavides/ConsultaMovimientos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaTraspasos">
+      <soap:operation soapAction="http://lms.com.mx/WebServices/LealtadBenavides/ConsultaTraspasos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PromocionesSucursal">
+      <soap:operation soapAction="http://lms.com.mx/WebServices/LealtadBenavides/PromocionesSucursal" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HistorialCompras">
+      <soap:operation soapAction="http://lms.com.mx/WebServices/LealtadBenavides/HistorialCompras" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WsReglasNegocioSoap12" type="tns:WsReglasNegocioSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ActivaTarjeta">
+      <soap12:operation soapAction="http://lms.com.mx/WebServices/LealtadBenavides/ActivaTarjeta" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CerrarCompra">
+      <soap12:operation soapAction="http://lms.com.mx/WebServices/LealtadBenavides/CerrarCompra" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidaTarjeta">
+      <soap12:operation soapAction="http://lms.com.mx/WebServices/LealtadBenavides/ValidaTarjeta" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ProcesarPago">
+      <soap12:operation soapAction="http://lms.com.mx/WebServices/LealtadBenavides/ProcesarPago" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CancelarCompra">
+      <soap12:operation soapAction="http://lms.com.mx/WebServices/LealtadBenavides/CancelarCompra" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CancelarCompraSinCandados">
+      <soap12:operation soapAction="http://lms.com.mx/WebServices/LealtadBenavides/CancelarCompraSinCandados" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CancelarPago">
+      <soap12:operation soapAction="http://lms.com.mx/WebServices/LealtadBenavides/CancelarPago" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BuscarPaciente">
+      <soap12:operation soapAction="http://lms.com.mx/WebServices/LealtadBenavides/BuscarPaciente" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActivaTarjetaFB">
+      <soap12:operation soapAction="http://lms.com.mx/WebServices/LealtadBenavides/ActivaTarjetaFB" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaAcumulacionPendiente">
+      <soap12:operation soapAction="http://lms.com.mx/WebServices/LealtadBenavides/ConsultaAcumulacionPendiente" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaPromocion">
+      <soap12:operation soapAction="http://lms.com.mx/WebServices/LealtadBenavides/ConsultaPromocion" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TraspasaPuntos">
+      <soap12:operation soapAction="http://lms.com.mx/WebServices/LealtadBenavides/TraspasaPuntos" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerBeneficios">
+      <soap12:operation soapAction="http://lms.com.mx/WebServices/LealtadBenavides/ObtenerBeneficios" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaMovimientos">
+      <soap12:operation soapAction="http://lms.com.mx/WebServices/LealtadBenavides/ConsultaMovimientos" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaTraspasos">
+      <soap12:operation soapAction="http://lms.com.mx/WebServices/LealtadBenavides/ConsultaTraspasos" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PromocionesSucursal">
+      <soap12:operation soapAction="http://lms.com.mx/WebServices/LealtadBenavides/PromocionesSucursal" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HistorialCompras">
+      <soap12:operation soapAction="http://lms.com.mx/WebServices/LealtadBenavides/HistorialCompras" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WsReglasNegocio">
+    <wsdl:port name="WsReglasNegocioSoap" binding="tns:WsReglasNegocioSoap">
+      <soap:address location="http://beneficiointeligente.com.mx/WsLealtadBenavidesPruebasV7/WsReglasNegocio.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WsReglasNegocioSoap12" binding="tns:WsReglasNegocioSoap12">
+      <soap12:address location="http://beneficiointeligente.com.mx/WsLealtadBenavidesPruebasV7/WsReglasNegocio.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

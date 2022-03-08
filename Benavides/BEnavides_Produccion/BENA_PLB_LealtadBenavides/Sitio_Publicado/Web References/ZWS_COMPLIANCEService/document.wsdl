@@ -1,0 +1,318 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="urn:sap-com:document:sap:soap:functions:mc-style" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:n1="urn:sap-com:document:sap:rfc:functions" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" targetNamespace="urn:sap-com:document:sap:soap:functions:mc-style" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:documentation>
+    <sidl:sidl xmlns:sidl="http://www.sap.com/2007/03/sidl" />
+  </wsdl:documentation>
+  <wsp:UsingPolicy wsdl:required="true" />
+  <wsp:Policy wsu:Id="BN_BN_ZWS_COMPLIANCE">
+    <saptrnbnd:OptimizedXMLTransfer uri="http://xml.sap.com/2006/11/esi/esp/binxml" xmlns:saptrnbnd="http://www.sap.com/webas/710/soap/features/transportbinding/" wsp:Optional="true" />
+    <saptrnbnd:OptimizedXMLTransfer uri="http://www.w3.org/2004/08/soap/features/http-optimization" xmlns:saptrnbnd="http://www.sap.com/webas/710/soap/features/transportbinding/" wsp:Optional="true" />
+    <wsp:ExactlyOne xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:sapsp="http://www.sap.com/webas/630/soap/features/security/policy" xmlns:sp="http://docs.oasis-open.org/ws-sx/ws-securitypolicy/200702" xmlns:wsa="http://www.w3.org/2005/08/addressing" xmlns:wst="http://docs.oasis-open.org/ws-sx/ws-trust/200512" xmlns:wsu="http://schemas.xmlsoap.org/ws/2002/07/utility" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex">
+      <wsp:All>
+        <sp:TransportBinding>
+          <wsp:Policy>
+            <sp:TransportToken>
+              <wsp:Policy>
+                <sp:HttpsToken>
+                  <wsp:Policy>
+                    <sp:HttpBasicAuthentication />
+                  </wsp:Policy>
+                </sp:HttpsToken>
+              </wsp:Policy>
+            </sp:TransportToken>
+            <sp:AlgorithmSuite>
+              <wsp:Policy>
+                <sp:TripleDesRsa15 />
+              </wsp:Policy>
+            </sp:AlgorithmSuite>
+            <sp:Layout>
+              <wsp:Policy>
+                <sp:Strict />
+              </wsp:Policy>
+            </sp:Layout>
+          </wsp:Policy>
+        </sp:TransportBinding>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="IF_IF_ZWS_COMPLIANCE">
+    <sapsession:Session xmlns:sapsession="http://www.sap.com/webas/630/soap/features/session/">
+      <sapsession:enableSession>false</sapsession:enableSession>
+    </sapsession:Session>
+    <sapcentraladmin:CentralAdministration xmlns:sapcentraladmin="http://www.sap.com/webas/700/soap/features/CentralAdministration/" wsp:Optional="true" />
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="OP_IF_OP_ZrfcComplianceSalidas">
+    <sapcomhnd:enableCommit xmlns:sapcomhnd="http://www.sap.com/NW05/soap/features/commit/">false</sapcomhnd:enableCommit>
+    <sapblock:enableBlocking xmlns:sapblock="http://www.sap.com/NW05/soap/features/blocking/">true</sapblock:enableBlocking>
+    <saptrhnw05:required xmlns:saptrhnw05="http://www.sap.com/NW05/soap/features/transaction/">no</saptrhnw05:required>
+    <saprmnw05:enableWSRM xmlns:saprmnw05="http://www.sap.com/NW05/soap/features/wsrm/">false</saprmnw05:enableWSRM>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="OP_IF_OP_ZrfcComplianceStocks">
+    <sapcomhnd:enableCommit xmlns:sapcomhnd="http://www.sap.com/NW05/soap/features/commit/">false</sapcomhnd:enableCommit>
+    <sapblock:enableBlocking xmlns:sapblock="http://www.sap.com/NW05/soap/features/blocking/">true</sapblock:enableBlocking>
+    <saptrhnw05:required xmlns:saptrhnw05="http://www.sap.com/NW05/soap/features/transaction/">no</saptrhnw05:required>
+    <saprmnw05:enableWSRM xmlns:saprmnw05="http://www.sap.com/NW05/soap/features/wsrm/">false</saprmnw05:enableWSRM>
+  </wsp:Policy>
+  <wsdl:types>
+    <xsd:schema attributeFormDefault="qualified" targetNamespace="urn:sap-com:document:sap:rfc:functions">
+      <xsd:simpleType name="char1">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="1" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char10">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="10" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char18">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="18" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char20">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="20" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char220">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="220" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char3">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="3" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char4">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="4" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="date">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="10" />
+          <xsd:pattern value="\d\d\d\d-\d\d-\d\d" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="numeric3">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="3" />
+          <xsd:pattern value="\d*" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="numeric4">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="4" />
+          <xsd:pattern value="\d*" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="quantum13.3">
+        <xsd:restriction base="xsd:decimal">
+          <xsd:totalDigits value="13" />
+          <xsd:fractionDigits value="3" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="time">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="8" />
+          <xsd:pattern value="\d\d:\d\d:\d\d" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="unit3">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="3" />
+        </xsd:restriction>
+      </xsd:simpleType>
+    </xsd:schema>
+    <xsd:schema xmlns:n0="urn:sap-com:document:sap:rfc:functions" attributeFormDefault="qualified" targetNamespace="urn:sap-com:document:sap:soap:functions:mc-style">
+      <xsd:import namespace="urn:sap-com:document:sap:rfc:functions" />
+      <xsd:complexType name="ZrfcComplianceMovs">
+        <xsd:sequence>
+          <xsd:element name="Mblnr" type="n0:char10" />
+          <xsd:element name="Mjahr" type="n0:numeric4" />
+          <xsd:element name="Zeile" type="n0:numeric4" />
+          <xsd:element name="Cpudt" type="n0:date" />
+          <xsd:element name="Cputm" type="n0:time" />
+          <xsd:element name="Bwart" type="n0:char3" />
+          <xsd:element name="Tipo" type="n0:char1" />
+          <xsd:element name="Menge" type="n0:quantum13.3" />
+          <xsd:element name="Meins" type="n0:unit3" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ZrfcMensajes">
+        <xsd:sequence>
+          <xsd:element name="Type" type="n0:char1" />
+          <xsd:element name="MsgClass" type="n0:char20" />
+          <xsd:element name="MsgNumb" type="n0:numeric3" />
+          <xsd:element name="Message" type="n0:char220" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ZmmStockCompliance">
+        <xsd:sequence>
+          <xsd:element name="LabstCentro" type="n0:quantum13.3" />
+          <xsd:element name="Labst1000" type="n0:quantum13.3" />
+          <xsd:element name="Ean11" type="n0:char18" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="TableOfZrfcComplianceMovs">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="item" type="tns:ZrfcComplianceMovs" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="TableOfZrfcMensajes">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="item" type="tns:ZrfcMensajes" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ZmmTtComplianceEan11">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="item" type="n0:char18" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="TableOfZmmStockCompliance">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="item" type="tns:ZmmStockCompliance" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="ZrfcComplianceStocks">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="Centro" type="n0:char4" />
+            <xsd:element name="Detalle" type="n0:char1" />
+            <xsd:element name="DetalleMovs" type="tns:TableOfZrfcComplianceMovs" />
+            <xsd:element name="Ean" type="n0:char18" />
+            <xsd:element name="FecDesde" type="n0:date" />
+            <xsd:element name="FecHasta" type="n0:date" />
+            <xsd:element name="Mensajes" type="tns:TableOfZrfcMensajes" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ZrfcComplianceStocksResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="DetalleMovs" type="tns:TableOfZrfcComplianceMovs" />
+            <xsd:element name="Mensajes" type="tns:TableOfZrfcMensajes" />
+            <xsd:element name="StockCentro" type="n0:quantum13.3" />
+            <xsd:element name="Stock_1000" type="n0:quantum13.3" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ZrfcComplianceStocksM">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="Centro" type="n0:char4" />
+            <xsd:element name="Mensajes" type="tns:TableOfZrfcMensajes" />
+            <xsd:element name="TEan" type="tns:ZmmTtComplianceEan11" />
+            <xsd:element name="TStocks" type="tns:TableOfZmmStockCompliance" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ZrfcComplianceStocksMResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="Mensajes" type="tns:TableOfZrfcMensajes" />
+            <xsd:element name="TStocks" type="tns:TableOfZmmStockCompliance" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ZrfcComplianceSalidas">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="Cantidad" type="n0:quantum13.3" />
+            <xsd:element name="Centro" type="n0:char4" />
+            <xsd:element name="Ean" type="n0:char18" />
+            <xsd:element name="Mensajes" type="tns:TableOfZrfcMensajes" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ZrfcComplianceSalidasResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="Mensajes" type="tns:TableOfZrfcMensajes" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="ZrfcComplianceStocks">
+    <wsdl:part name="parameters" element="tns:ZrfcComplianceStocks" />
+  </wsdl:message>
+  <wsdl:message name="ZrfcComplianceStocksResponse">
+    <wsdl:part name="parameter" element="tns:ZrfcComplianceStocksResponse" />
+  </wsdl:message>
+  <wsdl:message name="ZrfcComplianceStocksM">
+    <wsdl:part name="parameters" element="tns:ZrfcComplianceStocksM" />
+  </wsdl:message>
+  <wsdl:message name="ZrfcComplianceStocksMResponse">
+    <wsdl:part name="parameter" element="tns:ZrfcComplianceStocksMResponse" />
+  </wsdl:message>
+  <wsdl:message name="ZrfcComplianceSalidas">
+    <wsdl:part name="parameters" element="tns:ZrfcComplianceSalidas" />
+  </wsdl:message>
+  <wsdl:message name="ZrfcComplianceSalidasResponse">
+    <wsdl:part name="parameter" element="tns:ZrfcComplianceSalidasResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ZWS_COMPLIANCE">
+    <wsp:Policy>
+      <wsp:PolicyReference URI="#IF_IF_ZWS_COMPLIANCE" />
+    </wsp:Policy>
+    <wsdl:operation name="ZrfcComplianceStocks">
+      <wsp:Policy>
+        <wsp:PolicyReference URI="#OP_IF_OP_ZrfcComplianceStocks" />
+      </wsp:Policy>
+      <wsdl:input message="tns:ZrfcComplianceStocks" />
+      <wsdl:output message="tns:ZrfcComplianceStocksResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="ZrfcComplianceStocksM">
+      <wsdl:input message="tns:ZrfcComplianceStocksM" />
+      <wsdl:output message="tns:ZrfcComplianceStocksMResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="ZrfcComplianceSalidas">
+      <wsp:Policy>
+        <wsp:PolicyReference URI="#OP_IF_OP_ZrfcComplianceSalidas" />
+      </wsp:Policy>
+      <wsdl:input message="tns:ZrfcComplianceSalidas" />
+      <wsdl:output message="tns:ZrfcComplianceSalidasResponse" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ZWS_COMPLIANCE" type="tns:ZWS_COMPLIANCE">
+    <wsp:Policy>
+      <wsp:PolicyReference URI="#BN_BN_ZWS_COMPLIANCE" />
+    </wsp:Policy>
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ZrfcComplianceStocks">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ZrfcComplianceStocksM">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ZrfcComplianceSalidas">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ZWS_COMPLIANCE">
+    <wsdl:port name="ZWS_COMPLIANCE" binding="tns:ZWS_COMPLIANCE">
+      <soap:address location="http://mia33363ap05.managed.cln:8000/sap/bc/srt/rfc/sap/zws_compliance/400/zws_compliance/zws_compliance" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

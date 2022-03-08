@@ -1,0 +1,234 @@
+.Header1
+{
+    color: navy;
+    background-image: url(Images/Header.gif);
+    background-attachment: fixed;
+    background-repeat: repeat-x;
+}
+.ValSumm
+{
+    text-align: left;
+}
+
+.Header
+{
+    background-image: url(Images/Header.gif);
+    color: silver;
+    background-repeat: repeat-x;
+    height: 30px;
+    left: 0px;
+    width: 100%;
+    position: absolute;
+    top: 0px;
+}
+.Menu
+{
+    background-image: url(images/Title.jpg);
+    background-repeat: repeat-x;
+    position: absolute;
+    top: 130px;
+    text-align: left;
+    text-transform: capitalize;
+    font-family: Calibri;
+    color: black;
+    font-size: 11px;
+    vertical-align: top;
+    font-weight: bold;
+}
+
+.SubMenu
+{
+    text-align: left;
+    text-transform: capitalize;
+    font-family: Calibri;
+    color: black;
+    font-size: 11px;
+    vertical-align: top;
+    border-bottom: Navy 1px solid;
+    border-left: Navy 1px solid;
+    border-top: Navy 1px solid;
+    border-right: Navy 1px solid;
+    background-color: silver;
+    z-index: 50;
+}
+.Titulo
+{
+    font-weight: normal;
+    font-size: 11pt;
+    vertical-align: top;
+    color: navy;
+    text-indent: 14px;
+    font-family: Calibri;
+}
+.TituloPrograma
+{
+    font-weight: normal;
+    font-size: 11pt;
+    vertical-align: top;
+    color: navy;
+    text-indent: 12px;
+    font-family: Calibri;
+}
+.TituloPagina
+{
+    font-family: Calibri;
+    font-weight: normal;
+    font-size: 18px;
+    color: navy;
+}
+.TituloBusqueda
+{
+    font-family: Calibri;
+    color: white;
+    font-size: 11pt;
+}
+.Grid
+{
+    font-family: Calibri;
+    color: white;
+    font-size: 11pt;
+    text-align: left;
+}
+.Boton
+{
+    font-family: Calibri;
+    color: navy;
+    font-size: 11pt;
+    background-image: url(images/backInput.jpg);
+}
+.Etiqueta
+{
+    font-family: Calibri;
+    color: navy;
+    font-size: 11pt;
+    background-image: url(images/backInput.jpg);
+}
+.EtiquetaBIG
+{
+    font-family: Calibri;
+    color: navy;
+    font-size: 13pt;
+    font-weight: bold;
+    background-image: url(images/backInput.jpg);
+}
+
+.EtiquetaInversa
+{
+    font-family: Calibri;
+    color: navy;
+    font-size: 11pt;
+    background-color: silver;
+}
+
+.Requerido
+{
+    font-family: Calibri;
+    color: yellow;
+    font-size: 11pt;
+    background-color: navy;
+    font-weight: bold;
+}
+.Tabla3d
+{
+    border-bottom-style: ridge;
+    border-right-style: ridge;
+    border-top-style: ridge;
+    border-left-style: ridge;
+}
+.TableBorder
+{
+    border-right: silver 1px solid;
+    border-top: silver 1px solid;
+    border-left: silver 1px solid;
+    border-bottom: silver 1px solid;
+    font-family: Calibri;
+    color: navy;
+    font-size: 11pt;
+    line-height: 12pt;
+    vertical-align: top;
+}
+
+.TableTitle
+{
+    color: navy;
+    background: url(Images/Header.gif) fixed no-repeat center top;
+}
+
+.TituloTabla
+{
+    background-position: center top;
+    background-image: url(Images/title_800.png);
+    background-repeat: no-repeat;
+    height: 42px;
+    text-align: center;
+    font-family: Calibri;
+    color: navy;
+    font-size: 11pt;
+    line-height: 12pt;
+    vertical-align: top;
+}
+
+.TablaConTitulo
+{
+    border-bottom: navy 1px solid;
+    border-left: navy 1px solid;
+    border-top: navy 1px solid;
+    border-right: navy 1px solid;
+    text-align: left;
+    vertical-align: text-top;
+    font-family: Calibri;
+    color: navy;
+    font-size: 11pt;
+    line-height: 12pt;
+    vertical-align: top;
+}
+
+.Texto
+{
+    font-family: Calibri;
+    color: Navy;
+    font-size: 11pt;
+    background-image: url(images/backInput.jpg);
+}
+
+.TextoComentario
+{
+    font-family: Calibri;
+    color: Navy;
+    font-size: 10pt;
+    background-image: url(images/backInput.jpg);
+}
+.Combo
+{
+    font-family: Calibri;
+    color: Navy;
+    font-size: 11pt;
+}
+.Validacion
+{
+    font-family: Calibri;
+    color: red;
+    font-size: 11pt;
+}
+.gridEspecial
+{
+    text-indent: 8px;
+    text-align: left;
+}
+.gridTransacciones
+{
+    font-family:"Arial";
+    color:#777E7F;
+    border-bottom-color: #777E7F;
+    border-bottom-style: solid;
+    border-bottom-width: .5px;
+    text-align:left;
+}
+.gridMisMov
+{
+    font-family:'FuturaStd-Book';
+    font-size:12px;
+    color:#666666;   
+    border-bottom-style: none;    
+    text-align:center;      
+}

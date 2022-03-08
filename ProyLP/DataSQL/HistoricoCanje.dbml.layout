@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="HistoricoCanje">
+  <DataContextMoniker Name="/HistoricoCanjeDataContext" />
+  <nestedChildShapes>
+    <classShape Id="85d96476-2768-4aa1-8c91-133590238134" absoluteBounds="0.5, 0.5, 2, 2.7324039713541666">
+      <DataClassMoniker Name="/HistoricoCanjeDataContext/transaccion" />
+      <nestedChildShapes>
+        <elementListCompartment Id="2bf54eef-d33b-462f-ba68-3566773118ba" absoluteBounds="0.51500000000000012, 0.96, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="d84c8bfe-7d80-4180-bbb1-fca61404fb69" absoluteBounds="3.25, 0.875, 2, 1.9631982421875">
+      <DataClassMoniker Name="/HistoricoCanjeDataContext/transaccion_premio" />
+      <nestedChildShapes>
+        <elementListCompartment Id="783044f1-eff0-42df-83b3-2a9bf861767f" absoluteBounds="3.265, 1.335, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(2.5 : 1.85659912109375); (3.25 : 1.85659912109375)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/HistoricoCanjeDataContext/transaccion/transaccion_transaccion_premio" />
+      <nodes>
+        <classShapeMoniker Id="85d96476-2768-4aa1-8c91-133590238134" />
+        <classShapeMoniker Id="d84c8bfe-7d80-4180-bbb1-fca61404fb69" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="dbbfdd6c-4719-46b5-a2fc-462d32993635" absoluteBounds="3.25, 4, 2, 3.5016097005208326">
+      <DataClassMoniker Name="/HistoricoCanjeDataContext/premio" />
+      <nestedChildShapes>
+        <elementListCompartment Id="b8921475-6ba8-4a78-9687-1d9ed0fd8306" absoluteBounds="3.265, 4.46, 1.9700000000000002, 2.941609700520833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(4.25 : 4); (4.25 : 2.8381982421875)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/HistoricoCanjeDataContext/premio/premio_transaccion_premio" />
+      <nodes>
+        <classShapeMoniker Id="dbbfdd6c-4719-46b5-a2fc-462d32993635" />
+        <classShapeMoniker Id="d84c8bfe-7d80-4180-bbb1-fca61404fb69" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="fc200964-d120-4f11-83cd-dd52f9784086" absoluteBounds="0.75, 4, 2, 1.3862939453125">
+      <DataClassMoniker Name="/HistoricoCanjeDataContext/clave_rms" />
+      <nestedChildShapes>
+        <elementListCompartment Id="43681021-be43-45ce-9d2e-169def79a5e5" absoluteBounds="0.76500000000000012, 4.46, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="0d360166-724b-46da-a775-171c8bd679d3" absoluteBounds="5.5, 0.875, 2, 1.7708968098958331">
+      <DataClassMoniker Name="/HistoricoCanjeDataContext/historial_status_premio" />
+      <nestedChildShapes>
+        <elementListCompartment Id="aa975ac4-09ea-4219-a83f-2908051f31b1" absoluteBounds="5.515, 1.335, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="6e9d5286-ea55-4c41-82e8-b46f0130f8a1" absoluteBounds="5.5, 3.125, 2, 2.7324039713541666">
+      <DataClassMoniker Name="/HistoricoCanjeDataContext/status_premio" />
+      <nestedChildShapes>
+        <elementListCompartment Id="34a9afb6-bf4e-477e-b097-c2465b6a1919" absoluteBounds="5.515, 3.585, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

@@ -1,0 +1,209 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="GaleniaTest" Class="ParticipanteDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=184.107.55.171;Initial Catalog=Galenia_Loyalty_Program;Persist Security Info=True;User ID=usr_galenia_lp" 
+              SettingsObjectName="CallCenterDB.Properties.Settings" SettingsPropertyName="GaleniaTestConnectionString" 
+              Provider="System.Data.SqlClient" />
+  <Table Name="dbo.participante" Member="participante">
+    <Type Name="participante">
+      <Column Name="id" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="clave" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="nombre" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="apellido_paterno" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="apellido_materno" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="razon_social" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="documento_identidad" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="correo_electronico" Type="System.String" DbType="VarChar(80)" CanBeNull="true" />
+      <Column Name="sexo_id" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="estado_civil_id" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="fecha_nacimiento" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="distribuidor_id" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="tipo_participante_id" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="usuario_alta" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="fecha_alta" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="status_participante_id" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="fecha_status" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="usuario_status" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="acepta_terminos" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="informacion_email" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="informacion_sms" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Association Name="participante_participante_complemento" Member="participante_complemento" ThisKey="id" OtherKey="participante_id" Type="participante_complemento" />
+      <Association Name="participante_participante_familiar" Member="participante_familiar" ThisKey="id" OtherKey="participante_id" Type="participante_familiar" />
+      <Association Name="participante_participante_aspnet_User" Member="participante_aspnet_User" ThisKey="id" OtherKey="participante_id" Type="participante_aspnet_User" />
+      <Association Name="status_participante_participante" Member="status_participante" ThisKey="status_participante_id" OtherKey="id" Type="status_participante" IsForeignKey="true" />
+      <Association Name="tipo_participante_participante" Member="tipo_participante" ThisKey="tipo_participante_id" OtherKey="id" Type="tipo_participante" IsForeignKey="true" />
+      <Association Name="distribuidor_participante" Member="distribuidor" ThisKey="distribuidor_id" OtherKey="id" Type="distribuidor" IsForeignKey="true" />
+      <Association Name="sexo_participante" Member="sexo" ThisKey="sexo_id" OtherKey="id" Type="sexo" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.participante_complemento" Member="participante_complemento">
+    <Type Name="participante_complemento">
+      <Column Name="id" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="participante_id" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" CanBeNull="false" />
+      <Column Name="escolaridad_id" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="hijos" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="nhijos" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="ocupacion_id" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Association Name="participante_participante_complemento" Member="participante" ThisKey="participante_id" OtherKey="id" Type="participante" IsForeignKey="true" />
+      <Association Name="ocupacion_participante_complemento" Member="ocupacion" ThisKey="ocupacion_id" OtherKey="id" Type="ocupacion" IsForeignKey="true" />
+      <Association Name="escolaridad_participante_complemento" Member="escolaridad" ThisKey="escolaridad_id" OtherKey="id" Type="escolaridad" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.programa" Member="programas">
+    <Type Name="programa">
+      <Column Name="id" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="clave" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="descripcion" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="descripcion_larga" Type="System.String" DbType="VarChar(250) NOT NULL" CanBeNull="false" />
+      <Column Name="fecha_alta" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="fecha_cambio" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="fecha_baja" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="usuario_alta_id" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="usuario_cambio_id" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="usuario_baja_id" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="correo_electronico" Type="System.String" DbType="VarChar(250) NULL" CanBeNull="false" />
+      <Column Name="remitente" Type="System.String" DbType="VarChar(250) NULL" CanBeNull="false" />
+      <Association Name="programa_estado_civil" Member="estado_civil" ThisKey="id" OtherKey="programa_id" Type="estado_civil" />
+      <Association Name="programa_ocupacion" Member="ocupacion" ThisKey="id" OtherKey="programa_id" Type="ocupacion" />
+      <Association Name="programa_escolaridad" Member="escolaridad" ThisKey="id" OtherKey="programa_id" Type="escolaridad" />
+      <Association Name="programa_distribuidor" Member="distribuidor" ThisKey="id" OtherKey="programa_id" Type="distribuidor" />
+      <Association Name="programa_sexo" Member="sexo" ThisKey="id" OtherKey="programa_id" Type="sexo" />
+    </Type>
+  </Table>
+  <Table Name="dbo.estado_civil" Member="estado_civil">
+    <Type Name="estado_civil">
+      <Column Name="id" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="clave" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="descripcion" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="descripcion_larga" Type="System.String" DbType="VarChar(250) NOT NULL" CanBeNull="false" />
+      <Column Name="fecha_alta" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="fecha_cambio" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="fecha_baja" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="usuario_alta_id" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="usuario_cambio_id" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="usuario_baja_id" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="programa_id" Storage="_pais_id" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" CanBeNull="false" />
+      <Association Name="programa_estado_civil" Member="programa" Storage="_pais" ThisKey="programa_id" OtherKey="id" Type="programa" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ocupacion" Member="ocupacion">
+    <Type Name="ocupacion">
+      <Column Name="id" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="clave" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="descripcion" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="descripcion_larga" Type="System.String" DbType="VarChar(250) NOT NULL" CanBeNull="false" />
+      <Column Name="fecha_alta" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="fecha_cambio" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="fecha_baja" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="usuario_alta_id" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="usuario_cambio_id" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="usuario_baja_id" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="programa_id" Storage="_pais_id" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" CanBeNull="false" />
+      <Association Name="ocupacion_participante_complemento" Member="participante_complemento" ThisKey="id" OtherKey="ocupacion_id" Type="participante_complemento" />
+      <Association Name="programa_ocupacion" Member="programa" Storage="_pais" ThisKey="programa_id" OtherKey="id" Type="programa" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.escolaridad" Member="escolaridad">
+    <Type Name="escolaridad">
+      <Column Name="id" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="clave" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="descripcion" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="descripcion_larga" Type="System.String" DbType="VarChar(250) NOT NULL" CanBeNull="false" />
+      <Column Name="fecha_alta" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="fecha_cambio" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="fecha_baja" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="usuario_alta_id" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="usuario_cambio_id" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="usuario_baja_id" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="programa_id" Storage="_pais_id" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" CanBeNull="false" />
+      <Association Name="escolaridad_participante_complemento" Member="participante_complemento" ThisKey="id" OtherKey="escolaridad_id" Type="participante_complemento" />
+      <Association Name="programa_escolaridad" Member="programa" Storage="_pais" ThisKey="programa_id" OtherKey="id" Type="programa" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.participante_familiar" Member="participante_familiar">
+    <Type Name="participante_familiar">
+      <Column Name="id" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="participante_id" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" CanBeNull="false" />
+      <Column Name="tipo_parentesco_id" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="nombre" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="apellido_paterno" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="apellido_materno" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="fecha_nacimiento" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="participante_participante_familiar" Member="participante" ThisKey="participante_id" OtherKey="id" Type="participante" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.status_participante" Member="status_participante">
+    <Type Name="status_participante">
+      <Column Name="id" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="clave" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="descripcion" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="descripcion_larga" Type="System.String" DbType="VarChar(250) NOT NULL" CanBeNull="false" />
+      <Column Name="fecha_alta" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="fecha_cambio" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="fecha_baja" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="usuario_alta_id" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="usuario_cambio_id" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="usuario_baja_id" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="programa_id" Storage="_pais_id" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" CanBeNull="false" />
+      <Association Name="status_participante_participante" Member="participante" ThisKey="id" OtherKey="status_participante_id" Type="participante" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tipo_participante" Member="tipo_participante">
+    <Type Name="tipo_participante">
+      <Column Name="id" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="clave" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="descripcion" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="descripcion_larga" Type="System.String" DbType="VarChar(250) NOT NULL" CanBeNull="false" />
+      <Column Name="fecha_alta" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="fecha_cambio" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="fecha_baja" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="usuario_alta_id" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="usuario_cambio_id" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="usuario_baja_id" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="programa_id" Storage="_pais_id" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" CanBeNull="false" />
+      <Association Name="tipo_participante_participante" Member="participante" ThisKey="id" OtherKey="tipo_participante_id" Type="participante" />
+    </Type>
+  </Table>
+  <Table Name="dbo.distribuidor" Member="distribuidor">
+    <Type Name="distribuidor">
+      <Column Name="id" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="clave" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="descripcion" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="descripcion_larga" Type="System.String" DbType="VarChar(250) NOT NULL" CanBeNull="false" />
+      <Column Name="url_imagen" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="fecha_alta" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="fecha_cambio" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="fecha_baja" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="usuario_alta_id" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="usuario_cambio_id" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="usuario_baja_id" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="programa_id" Storage="_pais_id" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" CanBeNull="false" />
+      <Association Name="distribuidor_participante" Member="participante" ThisKey="id" OtherKey="distribuidor_id" Type="participante" />
+      <Association Name="programa_distribuidor" Member="programa" Storage="_pais" ThisKey="programa_id" OtherKey="id" Type="programa" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.participante_aspnet_User" Member="participante_aspnet_User">
+    <Type Name="participante_aspnet_User">
+      <Column Name="id" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="participante_id" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" CanBeNull="false" />
+      <Column Name="aspnet_UserId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="fecha" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Association Name="participante_participante_aspnet_User" Member="participante" ThisKey="participante_id" OtherKey="id" Type="participante" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.sexo" Member="sexo">
+    <Type Name="sexo">
+      <Column Name="id" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="clave" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="descripcion" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="descripcion_larga" Type="System.String" DbType="VarChar(250) NOT NULL" CanBeNull="false" />
+      <Column Name="fecha_alta" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="fecha_cambio" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="fecha_baja" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="usuario_alta_id" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="usuario_cambio_id" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="usuario_baja_id" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="programa_id" Storage="_pais_id" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" CanBeNull="false" />
+      <Association Name="sexo_participante" Member="participante" ThisKey="id" OtherKey="sexo_id" Type="participante" />
+      <Association Name="programa_sexo" Member="programa" Storage="_pais" ThisKey="programa_id" OtherKey="id" Type="programa" IsForeignKey="true" />
+    </Type>
+  </Table>
+</Database>

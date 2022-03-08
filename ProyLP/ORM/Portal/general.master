@@ -1,0 +1,122 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="general.master.cs" Inherits="Portal.general" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title>Loyalty Points</title>
+    <script>
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date(); a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+        ga('create', 'UA-49095646-4', 'loyaltyworldvwfs.com');
+        ga('send', 'pageview');
+
+    </script>
+    <script src="js/jquery-1.10.2.min.js"></script>
+    <script>
+        function MuestraAviso() {
+            $("#pnlAvisoPrivacidad").attr("class", "visible");
+        };
+        function OcultaAviso() {
+            $("#pnlAvisoPrivacidad").attr("class", "novisible");
+        };
+    </script>
+    <link href="css/privacidad.css" rel="stylesheet" type="text/css"/>
+    <link href="css/extras.css" rel="stylesheet" />
+    <asp:ContentPlaceHolder ID="general_head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <telerik:RadScriptManager runat="server" ID="manager"></telerik:RadScriptManager>
+        <div id="container">
+            <asp:ContentPlaceHolder ID="general_body" runat="server">
+            </asp:ContentPlaceHolder>
+            <footer>
+                <asp:ContentPlaceHolder ID="general_foot" runat="server">
+                </asp:ContentPlaceHolder>
+                <div id="pie">
+                    <p id="pieizq">
+                        D.F. y Área Metropolitana <span class="bold">1085 9813</span> Lada sin costo: <span class="bold">01800 272 2582</span> correo electrónico: <span class="bold"><a href="mailto:programa-vwfs@loyaltyworldvwfs.com">programa-vwfs@loyaltyworldvwfs.com</a></span>
+                    </p>
+                    <p id="pieder">
+                        <a href="#" onclick="MuestraAviso()">Aviso de Privacidad</a><asp:ContentPlaceHolder ID="general_terminos" runat="server"></asp:ContentPlaceHolder>
+                    </p>
+                </div>
+            </footer>
+        </div>
+        <cc1:ModalPopupExtender ID="popMensaje" runat="server" TargetControlID="lnkMensaje"
+            PopupControlID="pnlMensaje" BackgroundCssClass="Sombra" CancelControlID="btnCerrar">
+        </cc1:ModalPopupExtender>
+        <asp:HyperLink ID="lnkMensaje" runat="server"></asp:HyperLink>
+        <asp:Panel ID="pnlMensaje" runat="server" Style="display: none;">
+            <div class="cuadro_mensaje">
+                    <div class="marco_cerrar">
+                        <asp:LinkButton ID="btnCerrar" runat="server" CssClass="boton-cerrar"></asp:LinkButton>
+                    </div>
+                <div class="mensaje">
+                    <asp:Label ID="lblMensaje" runat="server"></asp:Label>
+                </div>
+            </div>
+        </asp:Panel>
+    </form>
+    <div id="pnlAvisoPrivacidad" class="novisible" onclick="OcultaAviso()">
+        <div id="divMensaje">
+            <div id="cuadroMensaje">
+                <div class="marcoMensaje privacidad">
+                    <div class="marco_cerrar">
+                        <a href="#" class="boton-cerrar" onclick="OcultaAviso()" ></a>
+                    </div>
+                    <div class="titulo_privacidad">
+                        <b>Aviso de Privacidad</b>
+                    </div>
+                    <div class="cuerpo_privacidad">
+                        <p>“El tratamiento que <b>VOLKSWAGEN BANK, S.A., INSTITUCIÓN DE BANCA MÚLTIPLE Y VOLKSWAGEN LEASING, S.A. DE C.V.</b> (en lo sucesivo <b>VOLKSWAGEN</b>), da a los Datos Personales es estrictamente confidencial, apegado a la legalidad y está sujeto a las más altas normas de seguridad, cumpliendo con estándares internacionales en materia de protección de datos personales en posesión de particulares.</p>
+
+                        <p>De conformidad con la Ley Federal de Protección de Datos Personales en Posesión de Particulares, <b>VOLKSWAGEN</b> le informa lo siguiente:</p>
+
+                        <p>
+                            <b>Responsable y Domicilio</b><br />
+                            El responsable de la protección de datos personales es <b>VOLKSWAGEN</b>, con domicilio en Autopista México Puebla Km. 116 más 900 San Lorenzo Almecatla, Cuautlancingo, Puebla
+                        </p>
+
+                        <p>
+                            <b>Información Recopilada</b><br />
+                            La información recopilada del cliente frecuente: es la contenida en los formularios que se requisitan con motivo de inscribirse al programa; los datos que son proporcionados de tiempo en tiempo por el cliente  frecuente, para la localización y contacto.
+                        </p>
+
+                        <p>
+                            <b>Para que fines se recaban y utilizan sus datos personales</b><br />
+                            Para la ejecución de todo lo relacionado con el programa, realizar actividades de promoción en general, mantener actualizados nuestros registros para poder responder a sus consultas, invitarle a eventos, hacer de su conocimiento nuestras promociones y lanzamientos así como mantener comunicación en general.
+                        </p>
+
+                        <p>
+                            <b>Derechos Arco</b><br />
+                            Para ejercer los derechos de Acceso, Rectificación, Cancelación u Oposición, se deberá contactar a <b>VOLKSWAGEN</b>, en el domicilio indicado en el presente aviso, debiendo acreditar su identidad y en su caso, la representación y carácter con el que se comparece.
+                        </p>
+
+                        <p>
+                            <b>Transferencia de datos</b><br />
+                            Los datos proporcionados únicamente podrán ser transferidos dentro y fuera del país a empresas subsidiarias, filiales y/o licenciatarias; o a las empresas que por motivo u objeto del programa este obligado a compartir <b>VOLKSWAGEN</b>.
+                        </p>
+
+                        <p>
+                            <b>Modificación del aviso</b><br />
+                            <b>VOLKSWAGEN</b> se reserva el derecho de realizar cambios en el Aviso de Privacidad, en cuyo caso se comunicará esta situación, mediante las siguiente dirección de internet <a href="www.volkswagen.loyaltyworldvwfs.com">www.volkswagen.loyaltyworldvwfs.com</a>, o cualquier otro medio de comunicación oral, impreso o electrónico que <b>VOLKSWAGEN</b> determine para tal efecto.
+                        </p>
+
+                        <p>El presente aviso se encuentra actualizado al día 1 de abril del 2014.”</p>
+                        <br />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <asp:ContentPlaceHolder ID="general_div_terminos" runat="server"></asp:ContentPlaceHolder>
+</body>
+</html>
