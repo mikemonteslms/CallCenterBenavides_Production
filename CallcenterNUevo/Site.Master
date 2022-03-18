@@ -44,7 +44,73 @@
     </asp:PlaceHolder>
     <webopt:bundlereference runat="server" path="~/Content/css" />--%>
     <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+
+
     <script>
+
+        var inicio = 0;
+        var timeout = 0;
+
+        $(document).ready(function () {
+            //console.log("ready!");
+            // $('[data-toggle="tooltip"]').tooltip();
+
+
+            //Ejecuta timer
+            timerinactivo();
+            // Obtenemos el valor actual
+            inicio = vuelta = new Date().getTime();
+            // iniciamos el proceso
+            funcionando();
+        });
+
+
+        function timerinactivo() {
+            var timer;
+            //al mover el mouse resetea timer
+            document.onmousemove = resetTimer;
+            //al presionar cualquier tecla resetea timer
+            document.onkeypress = resetTimer;
+
+            //funcion que reiniciara el timer mientras detecte mocimiento con el mouse o presionar cualquier tecla
+            function resetTimer() {
+                //clearTimeout(timeout);   //cronometro        
+                //inicio = vuelta = new Date().getTime();
+                // iniciamos el proceso
+                funcionando();
+
+                clearTimeout(timer);
+                timer = setTimeout(logout, 3600000);   //1hr  3600000
+            }
+
+            //si se cumple el tiempo de inactividad  cierra la sesión redireccionando al Login
+            function logout() {
+                __doPostBack('ctl00$ctl12$LoginStatus1$ctl00', '');
+                return;
+            }
+        }
+
+        //Cronometro
+        function funcionando() {
+            // obteneos la fecha actual
+            var actual = new Date().getTime();
+
+            // obtenemos la diferencia entre la fecha actual y la de inicio
+            var diff = new Date(actual - inicio);
+
+            // mostramos la diferencia entre la fecha actual y la inicial
+            //var result = LeadingZero(diff.getUTCHours()) + ":" + LeadingZero(diff.getUTCMinutes()) + ":" + LeadingZero(diff.getUTCSeconds());
+            //document.getElementById('crono').innerHTML = result;
+
+            // Indicamos que se ejecute esta función nuevamente dentro de 1 segundo
+            timeout = setTimeout("funcionando()", 1000);
+        }
+
+        /* Funcion que pone un 0 delante de un valor si es necesario */
+        function LeadingZero(Time) {
+            return (Time < 10) ? "0" + Time : + Time;
+        }
+
         (function (i, s, o, g, r, a, m) {
             i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
                 (i[r].q = i[r].q || []).push(arguments)
@@ -55,7 +121,7 @@
         ga('create', 'UA-73644905-1', 'auto');
         ga('send', 'pageview');
 
-</script>
+    </script>
 
 </head>
 <body>
