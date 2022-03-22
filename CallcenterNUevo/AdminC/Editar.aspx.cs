@@ -333,9 +333,10 @@ namespace CallcenterNUevo.AdminC
             strURL = "https://www.beneficiointeligente.com.mx/PLB/Promos/imagenPromo/" + strFile;
             //======================================================================================
 
-
-
-
+            if (string.IsNullOrWhiteSpace(txtEcommerce.Text))
+            {
+                txtEcommerce.Text = txtNombrePromo.Text;
+            }
 
             Bitacora.Bitacora.Registrar(Bitacora.Bitacora.TipoRegistro.INFO, System.Reflection.Assembly.GetExecutingAssembly(), "FRONT", "CallCenterNUevo.AdminC.Editar", "btnConfirmaContinua_Click", "Inicio de Actualizacion", this.User.Identity.Name.ToString(), null);
             Result resultado = Cupones.ActualizaCupon(hdnId.Value, txtMensaje.Text, txtNombrePromo.Text, rcmbSucursal.SelectedValue, rdcFechaFin.SelectedDate, Convert.ToInt32(rcmbUso.SelectedValue), rcmbAsignacion.SelectedValue, HttpContext.Current.User.Identity.Name, IdTipoCupon, strIdentificador, Convert.ToInt32(txtCuponesDisponibles.Text), txtEcommerce.Text.Trim(), strURL);

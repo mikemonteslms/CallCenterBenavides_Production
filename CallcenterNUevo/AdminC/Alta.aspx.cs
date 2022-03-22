@@ -144,6 +144,10 @@ namespace CallcenterNUevo.AdminC
                 strURL = "https://www.beneficiointeligente.com.mx/PLB/Promos/imagenPromo/" + strFile;
                 //======================================================================================
 
+                if (string.IsNullOrWhiteSpace(txtEcommerce.Text))
+                {
+                    txtEcommerce.Text = txtNombrePromo.Text;
+                }
 
                 Bitacora.Bitacora.Registrar(Bitacora.Bitacora.TipoRegistro.INFO, System.Reflection.Assembly.GetExecutingAssembly(), "FRONT", "CallCenterNUevo.AdminC.Alta", "btnAutoriza_Click", "Inicio Registro", this.User.Identity.Name.ToString(), null);
                 Result obj = Cupones.InsertaCupon(txtCupon.Text, txtIDPromo.Text, txtNombrePromo.Text, txtMensaje.Text,
