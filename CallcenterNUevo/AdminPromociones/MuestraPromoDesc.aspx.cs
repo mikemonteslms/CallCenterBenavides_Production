@@ -389,14 +389,14 @@ namespace CallcenterNUevo.AdminPromociones
             {
                 foreach (ModBin reg in lstBins)
                 {
-                    if (reg.IdClub == 3 || reg.IdClub == 12)
-                    {
-                        chkBIN.Items[0].Selected = true;
-                    }
-                    else if (reg.IdClub == Convert.ToInt32(chkBIN.Items[i].Value))
-                    {
+                    //if (reg.IdClub == 3 || reg.IdClub == 12)
+                    //{
+                    //    chkBIN.Items[0].Selected = true;
+                    //}
+                    //else if (reg.IdClub == Convert.ToInt32(chkBIN.Items[i].Value))
+                    //{
                         chkBIN.Items[i].Selected = true;
-                    }
+                    //}
                 }
             }
         }
