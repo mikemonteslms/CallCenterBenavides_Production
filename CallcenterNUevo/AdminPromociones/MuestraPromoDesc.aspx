@@ -328,10 +328,10 @@
                     </asp:TableRow>
                     <asp:TableRow >
                         <asp:TableCell VerticalAlign="Top" >
-                            <asp:Label ID="Label8" runat="server" Text="Bin:"></asp:Label>
+                            <asp:Label ID="Label8" runat="server" Text="Bin:" hidden="true"></asp:Label>
                         </asp:TableCell>
                         <asp:TableCell >
-                            <asp:CheckBoxList ID="chkBIN" runat="server" />
+                            <asp:CheckBoxList ID="chkBIN" runat="server" hidden="true"/>
                         </asp:TableCell>
                     </asp:TableRow>
                             <asp:TableRow>

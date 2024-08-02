@@ -1019,6 +1019,7 @@ namespace CallcenterNUevo.AdminPromociones
                 {
                     campos.AcumulacionPiezas = 0;
                 }
+                
                 campos.UsuarioRegistra = this.User.Identity.Name.ToString();
 
                 blnResultado = Ejecutar.ModificarPromoDescuento(campos);

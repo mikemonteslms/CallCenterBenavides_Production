@@ -393,37 +393,33 @@ namespace CallcenterNUevo.AdminPromociones
             AdministraPromocion Ejecutar = new AdministraPromocion();
 
             //Recorre checkboxList 
-            int i = 0;
             try
             {
 
-                for (i = 0; i <= (chkBIN.Items.Count - 1); i++)
+                //for (i = 0; i <= (chkBIN.Items.Count - 1); i++)
+                //{
+                //    if (chkBIN.Items[i].Selected)
+                //    {
+                //        ModBin campos = new ModBin();
+                //        campos.IdPDescuento = IdPDescuento;
+                //        campos.IdClub = Convert.ToInt32(chkBIN.Items[i].Value);
+
+                //        blnRespuesta = Ejecutar.GuardarBinsPromoDescuento(campos);
+                //    }
+                //}
+                // Recorre checkboxList
+                for (int i = 0; i < chkBIN.Items.Count; i++)
                 {
-                    if (chkBIN.Items[i].Selected)
-                    {
-                        ModBin campos = new ModBin();
+                    // Establecer todos los checkboxes en true
+                    chkBIN.Items[i].Selected = true;
 
-                        //if (chkBIN.Items[i].Value.Equals("3"))
-                        //{
-                        //Insertara ambos Bin's 150 
-                        //campos.IdPDescuento = IdPDescuento;
-                        //campos.IdClub = 3;
+                    // Crear y configurar el objeto ModBin
+                    ModBin campos = new ModBin();
+                    campos.IdPDescuento = IdPDescuento;
+                    campos.IdClub = Convert.ToInt32(chkBIN.Items[i].Value);
 
-                        //blnRespuesta = Ejecutar.GuardarBinsPromoDescuento(campos);
-
-                        //Insertara ambos Bin's 151
-                        //campos.IdPDescuento = IdPDescuento;
-                        //campos.IdClub = 12;
-                        //blnRespuesta = Ejecutar.GuardarBinsPromoDescuento(campos);
-                        //}
-                        //else
-                        //{
-                        campos.IdPDescuento = IdPDescuento;
-                        campos.IdClub = Convert.ToInt32(chkBIN.Items[i].Value);
-
-                        blnRespuesta = Ejecutar.GuardarBinsPromoDescuento(campos);
-                        //}
-                    }
+                    // Llamar al método GuardarBinsPromoDescuento
+                    blnRespuesta = Ejecutar.GuardarBinsPromoDescuento(campos);
                 }
 
                 return blnRespuesta;
@@ -593,23 +589,23 @@ namespace CallcenterNUevo.AdminPromociones
 
 
             //Bin´s
-            int i = 0;
-            bool blnSeleccionbin = false;
-            for (i = 0; i <= (chkBIN.Items.Count - 1); i++)
-            {
-                if (chkBIN.Items[i].Selected)
-                {
-                    blnSeleccionbin = true;
-                    break;
-                }
-            }
+            //int i = 0;
+            //bool blnSeleccionbin = false;
+            //for (i = 0; i <= (chkBIN.Items.Count - 1); i++)
+            //{
+            //    if (chkBIN.Items[i].Selected)
+            //    {
+            //        blnSeleccionbin = true;
+            //        break;
+            //    }
+            //}
 
-            if (!blnSeleccionbin)
-            {
-                Mensajes("Debe seleccionar un Bin de la lista.");
-                chkBIN.Focus();
-                return false;
-            }
+            //if (!blnSeleccionbin)
+            //{
+            //    Mensajes("Debe seleccionar un Bin de la lista.");
+            //    chkBIN.Focus();
+            //    return false;
+            //}
 
             //=========================================================================================================================================
             //Sucursales
